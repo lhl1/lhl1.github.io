@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>KMP算法 | LHL&#39; s Network Station</title>
+  <title>6-2 顺序表操作集 (20分) | LHL&#39; s Network Station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第三次更新   1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;stdlib.h&gt;using namespace std;in">
+  <meta name="description" content="6-2 顺序表操作集 (20分)本题要求实现顺序表的操作集。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KMP算法">
-<meta property="og:url" content="http://example.com/2020/10/11/KMP%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="6-2 顺序表操作集 (20分)">
+<meta property="og:url" content="http://example.com/2020/10/19/6-2-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E6%93%8D%E4%BD%9C%E9%9B%86-20%E5%88%86/index.html">
 <meta property="og:site_name" content="LHL&#39; s Network Station">
-<meta property="og:description" content="第三次更新   1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;stdlib.h&gt;using namespace std;in">
+<meta property="og:description" content="6-2 顺序表操作集 (20分)本题要求实现顺序表的操作集。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-10-11T00:56:16.000Z">
-<meta property="article:modified_time" content="2020-10-11T02:12:52.313Z">
+<meta property="article:published_time" content="2020-10-19T01:18:14.000Z">
+<meta property="article:modified_time" content="2020-10-19T01:20:34.985Z">
 <meta property="article:author" content="LHL">
 <meta name="twitter:card" content="summary">
   
@@ -176,14 +176,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-KMP算法" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-6-2-顺序表操作集-20分" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      KMP算法
+      6-2 顺序表操作集 (20分)
     </h1>
   
 
@@ -198,8 +198,8 @@
   </a>
   
         
-        <a href="/2020/10/11/KMP%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-10-11T00:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
+        <a href="/2020/10/19/6-2-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E6%93%8D%E4%BD%9C%E9%9B%86-20%E5%88%86/" class="archive-article-date">
+  	<time datetime="2020-10-19T01:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-19</time>
 </a>
         
       </header>
@@ -208,11 +208,42 @@
      
       
         <blockquote>
-<ul>
-<li>第三次更新</li>
-</ul>
+<p>6-2 顺序表操作集 (20分)<br>本题要求实现顺序表的操作集。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int next[15]&#x3D;&#123;-1&#125;;</span><br><span class="line">void getnext(char t[])</span><br><span class="line">&#123;</span><br><span class="line">	int j,i,k,n,m;</span><br><span class="line">	m&#x3D;strlen(t);</span><br><span class="line">	j&#x3D;0;k&#x3D;-1;</span><br><span class="line">	while(j&lt;m-1)</span><br><span class="line">	&#123;</span><br><span class="line">		if(k&#x3D;&#x3D;-1||t[j]&#x3D;&#x3D;t[k])</span><br><span class="line">		&#123;</span><br><span class="line">			j++;</span><br><span class="line">			k++;</span><br><span class="line">			next[j]&#x3D;k;</span><br><span class="line">		&#125;</span><br><span class="line">		else k&#x3D;next[k];</span><br><span class="line">	&#125;</span><br><span class="line">	for(i&#x3D;0;i&lt;m;i++)</span><br><span class="line">	cout&lt;&lt;next[i]&lt;&lt;&#39; &#39;;</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int KMPmatching(char *s,char *t)</span><br><span class="line">&#123;</span><br><span class="line">	int i,j;</span><br><span class="line">	i&#x3D;0;</span><br><span class="line">	j&#x3D;0;</span><br><span class="line">	int m,n;</span><br><span class="line">	m&#x3D;strlen(s);</span><br><span class="line">	n&#x3D;strlen(t);</span><br><span class="line">	while(i&lt;m&amp;&amp;j&lt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		if(j&#x3D;&#x3D;-1||s[i]&#x3D;&#x3D;t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;</span><br><span class="line">		else j&#x3D;next[j];</span><br><span class="line">	&#125;</span><br><span class="line">	if(j&gt;&#x3D;n) return i-n;</span><br><span class="line">	else return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[20]&#x3D;&quot;abcaababc&quot;;</span><br><span class="line">	char b[20]&#x3D;&quot;aba&quot;;</span><br><span class="line">	getnext(b);</span><br><span class="line">	cout&lt;&lt;KMPmatching(a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">函数接口定义：</span><br><span class="line">List MakeEmpty(); </span><br><span class="line">Position Find( List L, ElementType X );</span><br><span class="line">bool Insert( List L, ElementType X, Position P );</span><br><span class="line">bool Delete( List L, Position P );</span><br><span class="line">其中List结构定义如下：</span><br><span class="line"></span><br><span class="line">typedef int Position;</span><br><span class="line">typedef struct LNode *List;</span><br><span class="line">struct LNode &#123;</span><br><span class="line">    ElementType Data[MAXSIZE];</span><br><span class="line">    Position Last; &#x2F;* 保存线性表中最后一个元素的位置 *&#x2F;</span><br><span class="line">&#125;;</span><br><span class="line">各个操作函数的定义为：</span><br><span class="line"></span><br><span class="line">List MakeEmpty()：创建并返回一个空的线性表；</span><br><span class="line"></span><br><span class="line">Position Find( List L, ElementType X )：返回线性表中X的位置。若找不到则返回ERROR；</span><br><span class="line"></span><br><span class="line">bool Insert( List L, ElementType X, Position P )：将X插入在位置P并返回true。若空间已满，则打印“FULL”并返回false；如果参数P指向非法位置，则打印“ILLEGAL POSITION”并返回false；</span><br><span class="line"></span><br><span class="line">bool Delete( List L, Position P )：将位置P的元素删除并返回true。若参数P指向非法位置，则打印“POSITION P EMPTY”（其中P是参数值）并返回false。</span><br></pre></td></tr></table></figure>
+<p>裁判测试程序样例：<br>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
+<p>#define MAXSIZE 5<br>#define ERROR -1<br>typedef enum {false, true} bool;<br>typedef int ElementType;<br>typedef int Position;<br>typedef struct LNode <em>List;<br>struct LNode {<br>    ElementType Data[MAXSIZE];<br>    Position Last; /</em> 保存线性表中最后一个元素的位置 */<br>};</p>
+<p>List MakeEmpty();<br>Position Find( List L, ElementType X );<br>bool Insert( List L, ElementType X, Position P );<br>bool Delete( List L, Position P );</p>
+<p>int main()<br>{<br>    List L;<br>    ElementType X;<br>    Position P;<br>    int N;</p>
+<pre><code>L = MakeEmpty();
+scanf(&quot;%d&quot;, &amp;N);
+while ( N-- ) &#123;
+    scanf(&quot;%d&quot;, &amp;X);
+    if ( Insert(L, X, 0)==false )
+        printf(&quot; Insertion Error: %d is not in.\n&quot;, X);
+&#125;
+scanf(&quot;%d&quot;, &amp;N);
+while ( N-- ) &#123;
+    scanf(&quot;%d&quot;, &amp;X);
+    P = Find(L, X);
+    if ( P == ERROR )
+        printf(&quot;Finding Error: %d is not in.\n&quot;, X);
+    else
+        printf(&quot;%d is at position %d.\n&quot;, X, P);
+&#125;
+scanf(&quot;%d&quot;, &amp;N);
+while ( N-- ) &#123;
+    scanf(&quot;%d&quot;, &amp;P);
+    if ( Delete(L, P)==false )
+        printf(&quot; Deletion Error.\n&quot;);
+    if ( Insert(L, 0, P)==false )
+        printf(&quot; Insertion Error: 0 is not in.\n&quot;);
+&#125;
+return 0;</code></pre>
+<p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 你的代码将被嵌在这里 *&#x2F;</span><br><span class="line">输入样例：</span><br><span class="line">6</span><br><span class="line">1 2 3 4 5 6</span><br><span class="line">3</span><br><span class="line">6 5 1</span><br><span class="line">2</span><br><span class="line">-1 6</span><br><span class="line">输出样例：</span><br><span class="line">FULL Insertion Error: 6 is not in.</span><br><span class="line">Finding Error: 6 is not in.</span><br><span class="line">5 is at position 0.</span><br><span class="line">1 is at position 4.</span><br><span class="line">POSITION -1 EMPTY Deletion Error.</span><br><span class="line">FULL Insertion Error: 0 is not in.</span><br><span class="line">POSITION 6 EMPTY Deletion Error.</span><br><span class="line">FULL Insertion Error: 0 is not in.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">List MakeEmpty()</span><br><span class="line">&#123;</span><br><span class="line">    List L &#x3D; (List)malloc(sizeof(struct LNode));</span><br><span class="line">    L-&gt;Last &#x3D; -1;</span><br><span class="line">    return L;</span><br><span class="line">&#125;</span><br><span class="line">Position Find(List L, ElementType X)</span><br><span class="line">&#123;</span><br><span class="line">    Position count &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; 0; i &lt;&#x3D; L-&gt;Last; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (L-&gt;Data[i] &#x3D;&#x3D; X)</span><br><span class="line">            return count;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    return ERROR;</span><br><span class="line">&#125;</span><br><span class="line">bool Insert(List L, ElementType X, Position P)</span><br><span class="line">&#123;</span><br><span class="line">     if (L-&gt;Last &#x3D;&#x3D; MAXSIZE - 1)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;FULL&quot;);</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    if (L-&gt;Last + 1 &lt; P || P &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;ILLEGAL POSITION&quot;);</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    int i;</span><br><span class="line">    for (i &#x3D; L-&gt;Last; i &gt;&#x3D; P; i--)</span><br><span class="line">        L-&gt;Data[i + 1] &#x3D; L-&gt;Data[i];</span><br><span class="line">    L-&gt;Data[P] &#x3D; X;</span><br><span class="line">    L-&gt;Last++;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">bool Delete(List L, Position P)</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    if (P &lt; 0 || P &gt; L-&gt;Last)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;POSITION %d EMPTY&quot;, P);</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    for (i &#x3D; P + 1; i &lt;&#x3D; L-&gt;Last; i++)</span><br><span class="line">        L-&gt;Data[i - 1] &#x3D; L-&gt;Data[i];</span><br><span class="line">    L-&gt;Last--;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
       
       
@@ -296,7 +327,7 @@
   <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
   <p>扫一扫，分享到微信</p>
   <div class="wx-qrcode">
-    <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lhl1.github.io/com/2020/10/11/KMP%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lhl1.github.io/com/2020/10/19/6-2-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E6%93%8D%E4%BD%9C%E9%9B%86-20%E5%88%86/" alt="微信分享二维码">
   </div>
 </div>
 
@@ -310,18 +341,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/11/%E7%9F%A9%E9%98%B5%E5%8E%8B%E7%BC%A9%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/10/19/6-1-%E5%8D%95%E9%93%BE%E8%A1%A8%E9%80%86%E8%BD%AC-20%E5%88%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          矩阵压缩题
+          6-1 单链表逆转 (20分)
         
       </div>
     </a>
   
   
-    <a href="/2020/10/11/%E5%87%86%E5%A4%87%E6%9B%B4%E6%96%B0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">准备更新评论功能</div>
+    <a href="/2020/10/17/%E7%A4%BA%E6%B3%A2%E5%99%A8%E5%AE%9E%E9%AA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">示波器实验</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -351,7 +382,7 @@
   
 
   
-  <div id="SOHUCS" sid="KMP算法" ></div> 
+  <div id="SOHUCS" sid="6-2-顺序表操作集-20分" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
