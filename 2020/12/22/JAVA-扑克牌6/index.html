@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>JAVA 扑克牌6 | LHL&#39; s Network Station</title>
+  <title>JAVA 扑克牌6 | LHL&#39; s NetWork Station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="JAVA 扑克牌6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA 扑克牌6">
 <meta property="og:url" content="http://example.com/2020/12/22/JAVA-%E6%89%91%E5%85%8B%E7%89%8C6/index.html">
-<meta property="og:site_name" content="LHL&#39; s Network Station">
+<meta property="og:site_name" content="LHL&#39; s NetWork Station">
 <meta property="og:description" content="JAVA 扑克牌6">
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/photo/sy6-1.png">
 <meta property="og:image" content="http://example.com/photo/sy6-2.png">
 <meta property="article:published_time" content="2020-12-22T04:59:23.000Z">
-<meta property="article:modified_time" content="2020-12-22T05:10:13.402Z">
+<meta property="article:modified_time" content="2020-12-22T06:03:21.498Z">
 <meta property="article:author" content="LHL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/photo/sy6-1.png">
   
-    <link rel="alternative" href="/atom.xml" title="LHL&#39; s Network Station" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="LHL&#39; s NetWork Station" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/favicon.ico">
@@ -218,208 +218,12 @@
 <li><a target="_blank" rel="noopener" href="https://lhl1.lanzous.com/iP3SMjlfp2h">sy6源码 </a></li>
 </ul>
 </blockquote>
-<p><img src="/photo/sy6-1.png" alt="sy6源码"><br><img src="/photo/sy6-2.png" alt="sy6源码"></p>
-<blockquote>
-<ul>
-<li></li>
-</ul>
-</blockquote>
-<pre><code>package pukepai;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-public class test implements ActionListener
-&#123;
-    JFrame jf;
-    JButton b1;
-    JButton b2;
-
-    public test()
-    &#123;
-        dapai da = new dapai();
-        //抽取程序
-        Font font = new Font(&quot;黑体&quot;, Font.BOLD, 36);
-        JFrame jf = new JFrame(&quot;LHL&#39;s Java&quot;);
-        jf.setLayout(new FlowLayout(FlowLayout.CENTER));
-        JButton b1 = new JButton(&quot;Play 1&quot;);
-        b1.addActionListener(new ActionListener()
-                             &#123;
-                                 @Override
-                                 public void actionPerformed(ActionEvent e)
-                                 &#123;
-                                     JFrame jf2 = new JFrame(&quot;Play1&quot;);
-
-                                     jf2.setLayout(new GridLayout(1,1));
-                                     //外窗口
-                                     JInternalFrame jif = new JInternalFrame();
-                                     jif = new createChuangkou1(1);
-                                     jif.setVisible(true);
-                                     jf2.add(jif);
-                                     jf2.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                                     jf2.setVisible(true);
-                                     jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                 &#125;
+<p><img src="/photo/sy6-1.png" alt="sy6源码"><br><img src="/photo/sy6-2.png" alt="sy6源码"> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br></pre></td><td class="code"><pre><span class="line">package pukepai;</span><br><span class="line"></span><br><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line">public class test implements ActionListener</span><br><span class="line">&#123;</span><br><span class="line">    JFrame jf;</span><br><span class="line">    JButton b1;</span><br><span class="line">    JButton b2;</span><br><span class="line"></span><br><span class="line">    public test()</span><br><span class="line">    &#123;</span><br><span class="line">        dapai da &#x3D; new dapai();</span><br><span class="line">        &#x2F;&#x2F;抽取程序</span><br><span class="line">        Font font &#x3D; new Font(&quot;黑体&quot;, Font.BOLD, 36);</span><br><span class="line">        JFrame jf &#x3D; new JFrame(&quot;LHL&#39;s Java&quot;);</span><br><span class="line">        jf.setLayout(new FlowLayout(FlowLayout.CENTER));</span><br><span class="line">        JButton b1 &#x3D; new JButton(&quot;Play 1&quot;);</span><br><span class="line">        b1.addActionListener(new ActionListener()</span><br><span class="line">                             &#123;</span><br><span class="line">                                 @Override</span><br><span class="line">                                 public void actionPerformed(ActionEvent e)</span><br><span class="line">                                 &#123;</span><br><span class="line">                                     JFrame jf2 &#x3D; new JFrame(&quot;Play1&quot;);</span><br><span class="line"></span><br><span class="line">                                     jf2.setLayout(new GridLayout(1,1));</span><br><span class="line">                                     &#x2F;&#x2F;外窗口</span><br><span class="line">                                     JInternalFrame jif &#x3D; new JInternalFrame();</span><br><span class="line">                                     jif &#x3D; new createChuangkou1(1);</span><br><span class="line">                                     jif.setVisible(true);</span><br><span class="line">                                     jf2.add(jif);</span><br><span class="line">                                     jf2.setExtendedState(JFrame.MAXIMIZED_BOTH);</span><br><span class="line">                                     jf2.setVisible(true);</span><br><span class="line">                                     jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">                                 &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                             &#125;</span><br><span class="line">        );</span><br><span class="line">        b1.setFont(font);</span><br><span class="line">        jf.add(b1,Component.CENTER_ALIGNMENT);</span><br><span class="line">        JButton b2 &#x3D; new JButton(&quot;Play 4&quot;);</span><br><span class="line">        b2.addActionListener(new ActionListener()</span><br><span class="line">        &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e)</span><br><span class="line">            &#123;</span><br><span class="line">                JFrame jf2 &#x3D; new JFrame(&quot;Play2&quot;);</span><br><span class="line"></span><br><span class="line">                jf2.setLayout(new GridLayout(2, 2));</span><br><span class="line">                &#x2F;&#x2F;外窗口</span><br><span class="line">                JInternalFrame jif[] &#x3D; new JInternalFrame[4];</span><br><span class="line">                for (int i &#x3D; 0; i &lt;&#x3D; 3; i++)</span><br><span class="line">                &#123;</span><br><span class="line">                    jif[i] &#x3D; new createChuangkou(i + 1);</span><br><span class="line">                    jif[i].setVisible(true);</span><br><span class="line">                    jf2.add(jif[i]);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                jf2.setExtendedState(JFrame.MAXIMIZED_BOTH);</span><br><span class="line">                jf2.setVisible(true);</span><br><span class="line">                jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        b2.setFont(font);</span><br><span class="line">        jf.add(b2);</span><br><span class="line"></span><br><span class="line">        jf.setBounds(500, 500, 400, 135);</span><br><span class="line">        jf.setVisible(true);</span><br><span class="line">        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        new test();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void actionPerformed(ActionEvent e)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class createChuangkou extends JInternalFrame</span><br><span class="line">&#123;</span><br><span class="line">    JLayeredPane jp;</span><br><span class="line">    int n &#x3D; 0;</span><br><span class="line">    dapai da &#x3D; new dapai();</span><br><span class="line">    Toolkit tk &#x3D; Toolkit.getDefaultToolkit();</span><br><span class="line">    &#x2F;&#x2F;工具包</span><br><span class="line">    int w &#x3D; (tk.getScreenSize().width) &#x2F; 2;</span><br><span class="line">    int h &#x3D; (tk.getScreenSize().height) &#x2F; 2;</span><br><span class="line"></span><br><span class="line">    public createChuangkou(int n)</span><br><span class="line">    &#123;</span><br><span class="line">        super(&quot;Player&quot; + n);</span><br><span class="line">        this.n &#x3D; n;</span><br><span class="line">        this.setLayout(null);</span><br><span class="line">        jp &#x3D; this.getLayeredPane();</span><br><span class="line">        Setbg();</span><br><span class="line">        Setbutton(n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void Setbg()</span><br><span class="line">    &#123;</span><br><span class="line">        ImageIcon bj &#x3D; new ImageIcon(&quot;img&#x2F;bj.jpg&quot;);</span><br><span class="line">        JLabel jl &#x3D; new JLabel(bj);</span><br><span class="line">        jl.setSize(w, h);</span><br><span class="line">        jp.add(jl, new Integer(-100));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void Setbutton(int k)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        String[] WpukePhoto &#x3D; new String[13];</span><br><span class="line">        WpukePhoto &#x3D; da.zuhe();</span><br><span class="line">        JButton[] ButtonPhoto &#x3D; new JButton[13];</span><br><span class="line">        ImageIcon PukePhoto &#x3D; new ImageIcon(&quot;img&#x2F;fang1.jpg&quot;);</span><br><span class="line">        int pw &#x3D; PukePhoto.getIconWidth();</span><br><span class="line">        int ph &#x3D; PukePhoto.getIconHeight();</span><br><span class="line">        int x1 &#x3D; 70; &#x2F;&#x2F; 表示2个扑克牌按钮叠加在一起的宽度</span><br><span class="line">        int y1 &#x3D; 150; &#x2F;&#x2F; 表示扑克牌按钮底边距离neibuchuangti底边的位置</span><br><span class="line">        int kuan &#x3D; pw - x1;</span><br><span class="line">        int firstPositionx &#x3D; (w - kuan * 13) &#x2F; 2 - 35;</span><br><span class="line">        int firstPositiony &#x3D; (h - ph - y1);</span><br><span class="line">        for (int i &#x3D; 0; i &lt;&#x3D; 12; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            PukePhoto &#x3D; new ImageIcon(&quot;img&#x2F;&quot; + WpukePhoto[i]);</span><br><span class="line">            ButtonPhoto[i] &#x3D; new JButton(PukePhoto);</span><br><span class="line">            ButtonPhoto[i].setBounds(firstPositionx + kuan * i, firstPositiony, pw, ph);</span><br><span class="line">            jp.add(ButtonPhoto[i], new Integer(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class createChuangkou1 extends JInternalFrame</span><br><span class="line">&#123;</span><br><span class="line">    JLayeredPane jp;</span><br><span class="line">    int n &#x3D; 0;</span><br><span class="line">    dapai da &#x3D; new dapai();</span><br><span class="line">    Toolkit tk &#x3D; Toolkit.getDefaultToolkit();</span><br><span class="line">    &#x2F;&#x2F;工具包</span><br><span class="line">    int w &#x3D; (tk.getScreenSize().width) ;</span><br><span class="line">    int h &#x3D; (tk.getScreenSize().height) ;</span><br><span class="line"></span><br><span class="line">    public createChuangkou1(int n)</span><br><span class="line">    &#123;</span><br><span class="line">        super(&quot;Player&quot; + n);</span><br><span class="line">        this.n &#x3D; n;</span><br><span class="line">        this.setLayout(null);</span><br><span class="line">        jp &#x3D; this.getLayeredPane();</span><br><span class="line">        Setbg();</span><br><span class="line">        Setbutton(n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void Setbg()</span><br><span class="line">    &#123;</span><br><span class="line">        ImageIcon bj &#x3D; new ImageIcon(&quot;img&#x2F;bj.jpg&quot;);</span><br><span class="line">        JLabel jl &#x3D; new JLabel(bj);</span><br><span class="line">        jl.setSize(w, h);</span><br><span class="line">        jp.add(jl, new Integer(-100));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void Setbutton(int k)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        String[] WpukePhoto &#x3D; new String[13];</span><br><span class="line">        WpukePhoto &#x3D; da.zuhe();</span><br><span class="line">        JButton[] ButtonPhoto &#x3D; new JButton[13];</span><br><span class="line">        ImageIcon PukePhoto &#x3D; new ImageIcon(&quot;img&#x2F;fang1.jpg&quot;);</span><br><span class="line">        int pw &#x3D; PukePhoto.getIconWidth();</span><br><span class="line">        int ph &#x3D; PukePhoto.getIconHeight();</span><br><span class="line">        int x1 &#x3D; 70; &#x2F;&#x2F; 表示2个扑克牌按钮叠加在一起的宽度</span><br><span class="line">        int y1 &#x3D; 150; &#x2F;&#x2F; 表示扑克牌按钮底边距离neibuchuangti底边的位置</span><br><span class="line">        int kuan &#x3D; pw - x1;</span><br><span class="line">        int firstPositionx &#x3D; (w - kuan * 13) &#x2F; 2 - 35;</span><br><span class="line">        int firstPositiony &#x3D; (h - ph - y1);</span><br><span class="line">        for (int i &#x3D; 0; i &lt;&#x3D; 12; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            PukePhoto &#x3D; new ImageIcon(&quot;img&#x2F;&quot; + WpukePhoto[i]);</span><br><span class="line">            ButtonPhoto[i] &#x3D; new JButton(PukePhoto);</span><br><span class="line">            ButtonPhoto[i].setBounds(firstPositionx + kuan * i, firstPositiony, pw, ph);</span><br><span class="line">            jp.add(ButtonPhoto[i], new Integer(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-                             &#125;
-        );
-        b1.setFont(font);
-        jf.add(b1,Component.CENTER_ALIGNMENT);
-        JButton b2 = new JButton(&quot;Play 4&quot;);
-        b2.addActionListener(new ActionListener()
-        &#123;
-            @Override
-            public void actionPerformed(ActionEvent e)
-            &#123;
-                JFrame jf2 = new JFrame(&quot;Play2&quot;);
 
-                jf2.setLayout(new GridLayout(2, 2));
-                //外窗口
-                JInternalFrame jif[] = new JInternalFrame[4];
-                for (int i = 0; i &lt;= 3; i++)
-                &#123;
-                    jif[i] = new createChuangkou(i + 1);
-                    jif[i].setVisible(true);
-                    jf2.add(jif[i]);
-                &#125;
-
-                jf2.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                jf2.setVisible(true);
-                jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-            &#125;
-        &#125;);
-        b2.setFont(font);
-        jf.add(b2);
-
-        jf.setBounds(500, 500, 400, 135);
-        jf.setVisible(true);
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    &#125;
-
-    public static void main(String[] args)
-    &#123;
-        new test();
-    &#125;
-
-    @Override
-    public void actionPerformed(ActionEvent e)
-    &#123;
-
-
-    &#125;
-&#125;
-
-class createChuangkou extends JInternalFrame
-&#123;
-    JLayeredPane jp;
-    int n = 0;
-    dapai da = new dapai();
-    Toolkit tk = Toolkit.getDefaultToolkit();
-    //工具包
-    int w = (tk.getScreenSize().width) / 2;
-    int h = (tk.getScreenSize().height) / 2;
-
-    public createChuangkou(int n)
-    &#123;
-        super(&quot;Player&quot; + n);
-        this.n = n;
-        this.setLayout(null);
-        jp = this.getLayeredPane();
-        Setbg();
-        Setbutton(n);
-    &#125;
-
-    void Setbg()
-    &#123;
-        ImageIcon bj = new ImageIcon(&quot;img/bj.jpg&quot;);
-        JLabel jl = new JLabel(bj);
-        jl.setSize(w, h);
-        jp.add(jl, new Integer(-100));
-    &#125;
-
-    void Setbutton(int k)
-    &#123;
-
-        String[] WpukePhoto = new String[13];
-        WpukePhoto = da.zuhe();
-        JButton[] ButtonPhoto = new JButton[13];
-        ImageIcon PukePhoto = new ImageIcon(&quot;img/fang1.jpg&quot;);
-        int pw = PukePhoto.getIconWidth();
-        int ph = PukePhoto.getIconHeight();
-        int x1 = 70; // 表示2个扑克牌按钮叠加在一起的宽度
-        int y1 = 150; // 表示扑克牌按钮底边距离neibuchuangti底边的位置
-        int kuan = pw - x1;
-        int firstPositionx = (w - kuan * 13) / 2 - 35;
-        int firstPositiony = (h - ph - y1);
-        for (int i = 0; i &lt;= 12; i++)
-        &#123;
-            PukePhoto = new ImageIcon(&quot;img/&quot; + WpukePhoto[i]);
-            ButtonPhoto[i] = new JButton(PukePhoto);
-            ButtonPhoto[i].setBounds(firstPositionx + kuan * i, firstPositiony, pw, ph);
-            jp.add(ButtonPhoto[i], new Integer(i));
-        &#125;
-    &#125;
-
-&#125;
-class createChuangkou1 extends JInternalFrame
-&#123;
-    JLayeredPane jp;
-    int n = 0;
-    dapai da = new dapai();
-    Toolkit tk = Toolkit.getDefaultToolkit();
-    //工具包
-    int w = (tk.getScreenSize().width) ;
-    int h = (tk.getScreenSize().height) ;
-
-    public createChuangkou1(int n)
-    &#123;
-        super(&quot;Player&quot; + n);
-        this.n = n;
-        this.setLayout(null);
-        jp = this.getLayeredPane();
-        Setbg();
-        Setbutton(n);
-    &#125;
-
-    void Setbg()
-    &#123;
-        ImageIcon bj = new ImageIcon(&quot;img/bj.jpg&quot;);
-        JLabel jl = new JLabel(bj);
-        jl.setSize(w, h);
-        jp.add(jl, new Integer(-100));
-    &#125;
-
-    void Setbutton(int k)
-    &#123;
-
-        String[] WpukePhoto = new String[13];
-        WpukePhoto = da.zuhe();
-        JButton[] ButtonPhoto = new JButton[13];
-        ImageIcon PukePhoto = new ImageIcon(&quot;img/fang1.jpg&quot;);
-        int pw = PukePhoto.getIconWidth();
-        int ph = PukePhoto.getIconHeight();
-        int x1 = 70; // 表示2个扑克牌按钮叠加在一起的宽度
-        int y1 = 150; // 表示扑克牌按钮底边距离neibuchuangti底边的位置
-        int kuan = pw - x1;
-        int firstPositionx = (w - kuan * 13) / 2 - 35;
-        int firstPositiony = (h - ph - y1);
-        for (int i = 0; i &lt;= 12; i++)
-        &#123;
-            PukePhoto = new ImageIcon(&quot;img/&quot; + WpukePhoto[i]);
-            ButtonPhoto[i] = new JButton(PukePhoto);
-            ButtonPhoto[i].setBounds(firstPositionx + kuan * i, firstPositiony, pw, ph);
-            jp.add(ButtonPhoto[i], new Integer(i));
-        &#125;
-    &#125;
-
-&#125;
-
-
-``</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">package pukepai;</span><br><span class="line"></span><br><span class="line">public class dapai</span><br><span class="line">&#123;</span><br><span class="line">    public String[] puke1&#x3D;new String[53];</span><br><span class="line">    public String[] puke2&#x3D;new String[puke1.length];</span><br><span class="line">    public String[] puke3&#x3D;new String[13];</span><br><span class="line">    &#x2F;&#x2F;没排好序的牌</span><br><span class="line">    public String[] puke4&#x3D;new String[53];</span><br><span class="line">    &#x2F;&#x2F;计算重复的牌</span><br><span class="line">    public String[] puke5&#x3D;new String[53];</span><br><span class="line">    &#x2F;&#x2F;排好序的牌</span><br><span class="line">    int k&#x3D;0;</span><br><span class="line">    &#x2F;&#x2F;取出牌的数量</span><br><span class="line"></span><br><span class="line">    public dapai()</span><br><span class="line">    &#123;</span><br><span class="line">        int count&#x3D;0;</span><br><span class="line">        String[] puke&#x3D; &#123;&quot;fang&quot;,&quot;hong&quot;,&quot;mei&quot;,&quot;hei&quot;&#125;;</span><br><span class="line">        int i,j,k;</span><br><span class="line">        for(i&#x3D;0;i&lt;4;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            String name&#x3D;puke[i];</span><br><span class="line">            for(j&#x3D;0;j&lt;13;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                puke1[count]&#x3D;</span><br><span class="line">                        name&#x3D;puke[i]+(int)(j+1)+&quot;.jpg&quot;;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        daluan();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void  daluan()</span><br><span class="line">    &#123;</span><br><span class="line">        System.arraycopy(puke1, 0, puke2, 0, puke1.length);</span><br><span class="line">        int i,j,m;</span><br><span class="line">        for(m&#x3D;0;m&lt;puke1.length;m++) &#123;</span><br><span class="line">            i&#x3D;(int)(Math.random()*100)%52;</span><br><span class="line">            j&#x3D;(int)(Math.random()*100)%52;</span><br><span class="line">            String t;</span><br><span class="line">            t&#x3D;puke2[i];</span><br><span class="line">            puke2[i]&#x3D;puke2[j];</span><br><span class="line">            puke2[j]&#x3D;t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public void chouqu()</span><br><span class="line">    &#123;</span><br><span class="line">        int i;</span><br><span class="line">        for(i&#x3D;0;i&lt;13;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            puke3[i]&#x3D;puke2[i];</span><br><span class="line">            System.out.println(puke3[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public  String[] zuhe()</span><br><span class="line">    &#123;</span><br><span class="line">        int i;</span><br><span class="line">        int j;</span><br><span class="line">        int f&#x3D;1;</span><br><span class="line">        int k3&#x3D;0;&#x2F;&#x2F;puke3</span><br><span class="line">        int k4&#x3D;0;&#x2F;&#x2F;puke4</span><br><span class="line">        for(i&#x3D;0;i&lt;13;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(j&#x3D;0;j&lt;52;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(puke2[i]&#x3D;&#x3D;puke4[j])</span><br><span class="line">                &#123;</span><br><span class="line">                    f &#x3D; 0;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(f&#x3D;&#x3D;1)</span><br><span class="line">            &#123;</span><br><span class="line">                puke3[k3++]&#x3D;puke2[i];</span><br><span class="line">                puke4[k4++]&#x3D;puke2[i];</span><br><span class="line">            &#125;</span><br><span class="line">            f&#x3D;1;</span><br><span class="line">        &#125;</span><br><span class="line">        int k&#x3D;0;</span><br><span class="line">        &#x2F;&#x2F;puke5的计数</span><br><span class="line">        for(i&#x3D;0;i&lt;52;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(j&#x3D;0;j&lt;13;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(puke1[i]&#x3D;&#x3D;puke3[j])</span><br><span class="line">                &#123;</span><br><span class="line">                    puke5[k++]&#x3D;puke3[j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return puke5;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[]args)</span><br><span class="line">    &#123;</span><br><span class="line">        dapai da&#x3D;new dapai();</span><br><span class="line">        String s1[]&#x3D;new String[13];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        s1&#x3D;da.zuhe();</span><br><span class="line"></span><br><span class="line">        for(int i&#x3D;0;i&lt;13;i++)</span><br><span class="line">            System.out.println(s1[i]);</span><br><span class="line">        System.out.println(&quot;---------------------------&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
       
