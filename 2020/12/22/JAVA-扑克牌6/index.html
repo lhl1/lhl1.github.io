@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2010/10 | LHL&#39; s Network Station</title>
+  <title>JAVA 扑克牌6 | LHL&#39; s Network Station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LHL&#39; s Network Station">
-<meta property="og:url" content="http://example.com/archives/2010/10/index.html">
+  <meta name="description" content="JAVA 扑克牌6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA 扑克牌6">
+<meta property="og:url" content="http://example.com/2020/12/22/JAVA-%E6%89%91%E5%85%8B%E7%89%8C6/index.html">
 <meta property="og:site_name" content="LHL&#39; s Network Station">
+<meta property="og:description" content="JAVA 扑克牌6">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/photo/sy6-1.png">
+<meta property="og:image" content="http://example.com/photo/sy6-2.png">
+<meta property="article:published_time" content="2020-12-22T04:59:23.000Z">
+<meta property="article:modified_time" content="2020-12-22T05:10:13.402Z">
 <meta property="article:author" content="LHL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/photo/sy6-1.png">
   
     <link rel="alternative" href="/atom.xml" title="LHL&#39; s Network Station" type="application/atom+xml">
   
@@ -172,48 +179,391 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-JAVA-扑克牌6" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2010" class="archive-year">2010</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2010/10/12/%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2010-10-12T06:14:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2010-10-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2010/10/12/%E5%91%BD%E4%BB%A4/">CMD</a>
+    <h1 class="article-title" itemprop="name">
+      JAVA 扑克牌6
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        <!--显示阅读次数-->
 
+  <br/>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+  
+        
+        <a href="/2020/12/22/JAVA-%E6%89%91%E5%85%8B%E7%89%8C6/" class="archive-article-date">
+  	<time datetime="2020-12-22T04:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+     
+      
+        <p>JAVA 扑克牌6</p>
+<a id="more"></a>
+
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://lhl1.lanzous.com/iP3SMjlfp2h">sy6源码 </a></li>
+</ul>
+</blockquote>
+<p><img src="/photo/sy6-1.png" alt="sy6源码"><br><img src="/photo/sy6-2.png" alt="sy6源码"></p>
+<blockquote>
+<ul>
+<li></li>
+</ul>
+</blockquote>
+<pre><code>package pukepai;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class test implements ActionListener
+&#123;
+    JFrame jf;
+    JButton b1;
+    JButton b2;
+
+    public test()
+    &#123;
+        dapai da = new dapai();
+        //抽取程序
+        Font font = new Font(&quot;黑体&quot;, Font.BOLD, 36);
+        JFrame jf = new JFrame(&quot;LHL&#39;s Java&quot;);
+        jf.setLayout(new FlowLayout(FlowLayout.CENTER));
+        JButton b1 = new JButton(&quot;Play 1&quot;);
+        b1.addActionListener(new ActionListener()
+                             &#123;
+                                 @Override
+                                 public void actionPerformed(ActionEvent e)
+                                 &#123;
+                                     JFrame jf2 = new JFrame(&quot;Play1&quot;);
+
+                                     jf2.setLayout(new GridLayout(1,1));
+                                     //外窗口
+                                     JInternalFrame jif = new JInternalFrame();
+                                     jif = new createChuangkou1(1);
+                                     jif.setVisible(true);
+                                     jf2.add(jif);
+                                     jf2.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                                     jf2.setVisible(true);
+                                     jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                 &#125;
+
+
+                             &#125;
+        );
+        b1.setFont(font);
+        jf.add(b1,Component.CENTER_ALIGNMENT);
+        JButton b2 = new JButton(&quot;Play 4&quot;);
+        b2.addActionListener(new ActionListener()
+        &#123;
+            @Override
+            public void actionPerformed(ActionEvent e)
+            &#123;
+                JFrame jf2 = new JFrame(&quot;Play2&quot;);
+
+                jf2.setLayout(new GridLayout(2, 2));
+                //外窗口
+                JInternalFrame jif[] = new JInternalFrame[4];
+                for (int i = 0; i &lt;= 3; i++)
+                &#123;
+                    jif[i] = new createChuangkou(i + 1);
+                    jif[i].setVisible(true);
+                    jf2.add(jif[i]);
+                &#125;
+
+                jf2.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                jf2.setVisible(true);
+                jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            &#125;
+        &#125;);
+        b2.setFont(font);
+        jf.add(b2);
+
+        jf.setBounds(500, 500, 400, 135);
+        jf.setVisible(true);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    &#125;
+
+    public static void main(String[] args)
+    &#123;
+        new test();
+    &#125;
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    &#123;
+
+
+    &#125;
+&#125;
+
+class createChuangkou extends JInternalFrame
+&#123;
+    JLayeredPane jp;
+    int n = 0;
+    dapai da = new dapai();
+    Toolkit tk = Toolkit.getDefaultToolkit();
+    //工具包
+    int w = (tk.getScreenSize().width) / 2;
+    int h = (tk.getScreenSize().height) / 2;
+
+    public createChuangkou(int n)
+    &#123;
+        super(&quot;Player&quot; + n);
+        this.n = n;
+        this.setLayout(null);
+        jp = this.getLayeredPane();
+        Setbg();
+        Setbutton(n);
+    &#125;
+
+    void Setbg()
+    &#123;
+        ImageIcon bj = new ImageIcon(&quot;img/bj.jpg&quot;);
+        JLabel jl = new JLabel(bj);
+        jl.setSize(w, h);
+        jp.add(jl, new Integer(-100));
+    &#125;
+
+    void Setbutton(int k)
+    &#123;
+
+        String[] WpukePhoto = new String[13];
+        WpukePhoto = da.zuhe();
+        JButton[] ButtonPhoto = new JButton[13];
+        ImageIcon PukePhoto = new ImageIcon(&quot;img/fang1.jpg&quot;);
+        int pw = PukePhoto.getIconWidth();
+        int ph = PukePhoto.getIconHeight();
+        int x1 = 70; // 表示2个扑克牌按钮叠加在一起的宽度
+        int y1 = 150; // 表示扑克牌按钮底边距离neibuchuangti底边的位置
+        int kuan = pw - x1;
+        int firstPositionx = (w - kuan * 13) / 2 - 35;
+        int firstPositiony = (h - ph - y1);
+        for (int i = 0; i &lt;= 12; i++)
+        &#123;
+            PukePhoto = new ImageIcon(&quot;img/&quot; + WpukePhoto[i]);
+            ButtonPhoto[i] = new JButton(PukePhoto);
+            ButtonPhoto[i].setBounds(firstPositionx + kuan * i, firstPositiony, pw, ph);
+            jp.add(ButtonPhoto[i], new Integer(i));
+        &#125;
+    &#125;
+
+&#125;
+class createChuangkou1 extends JInternalFrame
+&#123;
+    JLayeredPane jp;
+    int n = 0;
+    dapai da = new dapai();
+    Toolkit tk = Toolkit.getDefaultToolkit();
+    //工具包
+    int w = (tk.getScreenSize().width) ;
+    int h = (tk.getScreenSize().height) ;
+
+    public createChuangkou1(int n)
+    &#123;
+        super(&quot;Player&quot; + n);
+        this.n = n;
+        this.setLayout(null);
+        jp = this.getLayeredPane();
+        Setbg();
+        Setbutton(n);
+    &#125;
+
+    void Setbg()
+    &#123;
+        ImageIcon bj = new ImageIcon(&quot;img/bj.jpg&quot;);
+        JLabel jl = new JLabel(bj);
+        jl.setSize(w, h);
+        jp.add(jl, new Integer(-100));
+    &#125;
+
+    void Setbutton(int k)
+    &#123;
+
+        String[] WpukePhoto = new String[13];
+        WpukePhoto = da.zuhe();
+        JButton[] ButtonPhoto = new JButton[13];
+        ImageIcon PukePhoto = new ImageIcon(&quot;img/fang1.jpg&quot;);
+        int pw = PukePhoto.getIconWidth();
+        int ph = PukePhoto.getIconHeight();
+        int x1 = 70; // 表示2个扑克牌按钮叠加在一起的宽度
+        int y1 = 150; // 表示扑克牌按钮底边距离neibuchuangti底边的位置
+        int kuan = pw - x1;
+        int firstPositionx = (w - kuan * 13) / 2 - 35;
+        int firstPositiony = (h - ph - y1);
+        for (int i = 0; i &lt;= 12; i++)
+        &#123;
+            PukePhoto = new ImageIcon(&quot;img/&quot; + WpukePhoto[i]);
+            ButtonPhoto[i] = new JButton(PukePhoto);
+            ButtonPhoto[i].setBounds(firstPositionx + kuan * i, firstPositiony, pw, ph);
+            jp.add(ButtonPhoto[i], new Integer(i));
+        &#125;
+    &#125;
+
+&#125;
+
+
+``</code></pre>
+
+      
+      
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixinZF.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lhl1.github.io/com/2020/12/22/JAVA-%E6%89%91%E5%85%8B%E7%89%8C6/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/12/21/%E7%BA%AA%E5%BD%95%E7%89%87-%E4%BA%BA%E7%94%9F%E4%B8%83%E5%B9%B4%E8%AE%BA%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">纪录片-人生七年论文</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  z
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="JAVA-扑克牌6" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyv6dTua3",
+        conf: "9d045ad21c0c7c660edc52a3668b65ee"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -236,8 +586,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
