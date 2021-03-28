@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>剑指OFFER 14.数值的整数次方 | LHL&#39; s NetWork Station</title>
+  <title>剑指OFFER 18.表示数值的字符串 | LHL&#39; s NetWork Station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数值的整数次方">
+  <meta name="description" content="表示数值的字符串">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指OFFER 14.数值的整数次方">
-<meta property="og:url" content="http://example.com/2021/03/19/%E5%89%91%E6%8C%87OFFER-27-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/index.html">
+<meta property="og:title" content="剑指OFFER 18.表示数值的字符串">
+<meta property="og:url" content="http://example.com/2021/03/28/%E5%89%91%E6%8C%87OFFER-18-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="LHL&#39; s NetWork Station">
-<meta property="og:description" content="数值的整数次方">
+<meta property="og:description" content="表示数值的字符串">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-03-19T03:52:33.000Z">
-<meta property="article:modified_time" content="2021-03-19T06:33:41.567Z">
+<meta property="article:published_time" content="2021-03-28T01:11:23.000Z">
+<meta property="article:modified_time" content="2021-03-28T01:12:18.123Z">
 <meta property="article:author" content="LHL">
 <meta name="twitter:card" content="summary">
   
@@ -75,7 +75,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 75
+			总文章数 78
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -176,14 +176,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-剑指OFFER-27-数值的整数次方" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-剑指OFFER-18-表示数值的字符串" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      剑指OFFER 14.数值的整数次方
+      剑指OFFER 18.表示数值的字符串
     </h1>
   
 
@@ -201,8 +201,8 @@
   <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279589368'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279589368' type='text/javascript'%3E%3C/script%3E"));</script>
  
         
-        <a href="/2021/03/19/%E5%89%91%E6%8C%87OFFER-27-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/" class="archive-article-date">
-  	<time datetime="2021-03-19T03:52:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
+        <a href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-18-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
+  	<time datetime="2021-03-28T01:11:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-28</time>
 </a>
         
       </header>
@@ -211,20 +211,14 @@
     <div class="article-entry" itemprop="articleBody">
      
       
-        <p>数值的整数次方</p>
+        <p>表示数值的字符串</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">实现函数double Power(double base, int exponent)，求base的 exponent次方。</span><br><span class="line"></span><br><span class="line">不得使用库函数，同时不需要考虑大数问题。</span><br><span class="line"></span><br><span class="line">只要输出结果与答案的绝对误差不超过 10−2 即视为正确。</span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line"></span><br><span class="line">不会出现底数和指数同为0的情况</span><br><span class="line">当底数为0时，指数一定为正</span><br><span class="line">样例1</span><br><span class="line">输入：10 ，2</span><br><span class="line"></span><br><span class="line">输出：100</span><br><span class="line">样例2</span><br><span class="line">输入：10 ，-2  </span><br><span class="line"></span><br><span class="line">输出：0.01</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>完美解法，普通的幂的运算，速度太慢，无法通过，这一题运用了二进制的运算思想<br>你比如说，3的10次方<br>10==10010</li>
-</ul>
-<p>1.首先判断最末尾是否为1，如果不为1，<br>则，x=3<em>3，记录x<br>10010整体右移一位<br>则为01001<br>2.继续判断最末尾是否为1，<br>为一,则最终的结果</em>x</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    double Power(double x, int n) &#123;</span><br><span class="line">        typedef long long LL;</span><br><span class="line">        bool is_minus&#x3D; n&lt;0;</span><br><span class="line">        double res&#x3D;1;</span><br><span class="line">        for(LL k&#x3D;abs(LL(n));k;k&gt;&gt;&#x3D;1)</span><br><span class="line">        &#123;</span><br><span class="line">            if(k&amp;1)</span><br><span class="line">                res*&#x3D;x;</span><br><span class="line">                x*&#x3D;x;</span><br><span class="line">        &#125;</span><br><span class="line">        if(is_minus) res&#x3D;1&#x2F;res;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    double Power(double x, int n) &#123;</span><br><span class="line">        double res&#x3D;1;</span><br><span class="line">        for(long long k&#x3D;abs((long long) (n));k;k&gt;&gt;&#x3D;1)</span><br><span class="line">        &#123;</span><br><span class="line">            if(k&amp;1)</span><br><span class="line">                res*&#x3D;x;</span><br><span class="line">                x*&#x3D;x;</span><br><span class="line">        &#125;</span><br><span class="line">        if(n&lt;0) res&#x3D;1&#x2F;res;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    double Power(double x, int n) </span><br><span class="line">    &#123;</span><br><span class="line">        double res&#x3D;1;</span><br><span class="line">        for(long long i&#x3D;abs((long long)n);i;i&gt;&gt;&#x3D;1)</span><br><span class="line">        &#123;</span><br><span class="line">        	if(i&amp;1)</span><br><span class="line">        		res*&#x3D;x;</span><br><span class="line">        	x*&#x3D;x;</span><br><span class="line">        &#125;</span><br><span class="line">        return n&lt;0?1&#x2F;res:res;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">判断一个字符串是否可以表示成一个合法的数字，中间可以包含正负号，小数点以及e或E</span><br><span class="line"></span><br><span class="line">使用指针巧解表示数值的字符串</span><br><span class="line">核心思想为使用一个指针从前往后逐个检查字符串中的字符是否合法，如果合法，则指针后移，否则指针停止移动，显然如果字符串是合法的，这个指针应该移动到字符串的最末尾</span><br><span class="line"></span><br><span class="line">同时在移动指针的过程中判断从字符串开始到当前位置的字符子串是否是合法的数值，并将它存储在isNum中，显然isNum记录了指针所指位置的字符子串是否能表示为数值的信息</span><br><span class="line"></span><br><span class="line">指针的最终位置和isNum的值决定最终的结果</span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isNumber(string s) &#123;</span><br><span class="line">        s +&#x3D; &#39;\0&#39;;   &#x2F;&#x2F;指针移动过程中，最后会有一位的溢出，加上一位空字符防止字符串下标越界</span><br><span class="line">        bool isNum &#x3D; false; &#x2F;&#x2F;该变量表示从0开始，到i位置的字符串是否构成合法数字，初始化为false</span><br><span class="line"></span><br><span class="line">        int i &#x3D; 0;  &#x2F;&#x2F;检测指针初始化为0</span><br><span class="line"></span><br><span class="line">        while(s[i] &#x3D;&#x3D; &#39; &#39;) ++i; &#x2F;&#x2F;滤除最前面的空格，指针后移</span><br><span class="line"></span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;+&#39; || s[i] &#x3D;&#x3D; &#39;-&#39;) ++i; &#x2F;&#x2F;一个‘-’或‘+’为合法输入，指针后移</span><br><span class="line"></span><br><span class="line">        while(s[i] &gt;&#x3D; &#39;0&#39; &amp;&amp; s[i] &lt;&#x3D; &#39;9&#39;)&#123;  &#x2F;&#x2F;此处如果出现数字，为合法输入，指针后移，同时isNum置为true</span><br><span class="line">            isNum &#x3D; true;  &#x2F;&#x2F;显然,在此处，前面的所有字符是可以构成合法数字的</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;.&#39;) ++i;    &#x2F;&#x2F;按照前面的顺序，在此处出现小数点也是合法的，指针后移（此处能否构成合法字符取决于isNum）</span><br><span class="line"></span><br><span class="line">        while(s[i] &gt;&#x3D; &#39;0&#39; &amp;&amp; s[i] &lt;&#x3D; &#39;9&#39;)&#123;  &#x2F;&#x2F;小数点后出现数字也是合法的，指针后移</span><br><span class="line">            isNum &#x3D; true;   &#x2F;&#x2F;无论前面是什么，此处应当是合法数字</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;上面的部分已经把所有只包含小数点和正负号以及数字的情况包括进去了，如果只判断不含E或e的合法数字，到此处就可以停止了</span><br><span class="line"></span><br><span class="line">        if(isNum &amp;&amp; (s[i] &#x3D;&#x3D; &#39;e&#39; || s[i] &#x3D;&#x3D; &#39;E&#39;))&#123; &#x2F;&#x2F;当前面的数字组成一个合法数字时（isNum &#x3D; true），此处出现e或E也是合法的</span><br><span class="line">            ++i;</span><br><span class="line">            isNum &#x3D; false; &#x2F;&#x2F;但到此处，E后面还没有数字，根据isNum的定义，此处的isNum应等于false;</span><br><span class="line"></span><br><span class="line">            if(s[i] &#x3D;&#x3D; &#39;-&#39; || s[i] &#x3D;&#x3D; &#39;+&#39;) ++i; &#x2F;&#x2F;E或e后面可以出现一个‘-’或‘+’，指针后移</span><br><span class="line"></span><br><span class="line">            while(s[i] &gt;&#x3D; &#39;0&#39; &amp; s[i] &lt;&#x3D; &#39;9&#39;) &#123;</span><br><span class="line">                ++i;</span><br><span class="line">                isNum &#x3D; true; &#x2F;&#x2F;E后面接上数字后也就成了合法数字</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;如果字符串为合法数字，指针应当移到最后，即是s[i] &#x3D;&#x3D; &#39;\0&#39; 同时根据isNum判断数字是否合法</span><br><span class="line">        &#x2F;&#x2F;整个过程中只有当i位置处的输入合法时，指针才会移动</span><br><span class="line">        return (s[i] &#x3D;&#x3D; &#39;\0&#39; &amp;&amp; isNum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
       
@@ -309,7 +303,7 @@
   <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
   <p>扫一扫，分享到微信</p>
   <div class="wx-qrcode">
-    <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lhl1.github.io/com/2021/03/19/%E5%89%91%E6%8C%87OFFER-27-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lhl1.github.io/com/2021/03/28/%E5%89%91%E6%8C%87OFFER-18-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/" alt="微信分享二维码">
   </div>
 </div>
 
@@ -323,18 +317,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/19/%E5%89%91%E6%8C%87OFFER-15-%E5%9C%A8O-1-%E6%97%B6%E9%97%B4%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%BB%93%E7%82%B9/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/28/Leetcode-1588-%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          剑指OFFER 15. 在O(1)时间删除链表结点
+          Leetcode 1588. 所有奇数长度子数组的和
         
       </div>
     </a>
   
   
-    <a href="/2021/03/18/%E5%89%91%E6%8C%87OFFER-13-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">剑指OFFER 13.二进制中1的个数</div>
+    <a href="/2021/03/23/%E5%89%91%E6%8C%87OFFER-17-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指OFFER 17.正则表达式匹配</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -363,7 +357,7 @@
   
 
   
-  <div id="SOHUCS" sid="剑指OFFER-27-数值的整数次方" ></div> 
+  <div id="SOHUCS" sid="剑指OFFER-18-表示数值的字符串" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
