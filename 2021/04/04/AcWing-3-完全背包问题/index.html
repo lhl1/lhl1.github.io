@@ -6,21 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Leetcode 背包问题 | LHL&#39; s NetWork Station</title>
+  <title>AcWing 3.完全背包问题 | LHL&#39; s Network Station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背包问题">
+  <meta name="description" content="3.完全背包问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode 背包问题">
-<meta property="og:url" content="http://example.com/2021/04/01/Leetcode-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.html">
-<meta property="og:site_name" content="LHL&#39; s NetWork Station">
-<meta property="og:description" content="背包问题">
+<meta property="og:title" content="AcWing 3.完全背包问题">
+<meta property="og:url" content="http://example.com/2021/04/04/AcWing-3-%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="LHL&#39; s Network Station">
+<meta property="og:description" content="3.完全背包问题">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-04-01T00:57:12.000Z">
-<meta property="article:modified_time" content="2021-04-01T00:59:35.849Z">
+<meta property="og:image" content="https://gitee.com/chzarles/images/raw/master/imgs/006eb5E0gy1g7yyd0jjcyj30wk0fpdhc.jpg">
+<meta property="article:published_time" content="2021-04-03T23:59:31.000Z">
+<meta property="article:modified_time" content="2021-04-04T00:03:36.243Z">
 <meta property="article:author" content="LHL">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/chzarles/images/raw/master/imgs/006eb5E0gy1g7yyd0jjcyj30wk0fpdhc.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="LHL&#39; s NetWork Station" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="LHL&#39; s Network Station" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/favicon.ico">
@@ -75,7 +78,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 87
+			总文章数 89
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -176,14 +179,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-Leetcode-背包问题" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-AcWing-3-完全背包问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode 背包问题
+      AcWing 3.完全背包问题
     </h1>
   
 
@@ -201,8 +204,8 @@
   <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279589368'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279589368' type='text/javascript'%3E%3C/script%3E"));</script>
  
         
-        <a href="/2021/04/01/Leetcode-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-04-01T00:57:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-01</time>
+        <a href="/2021/04/04/AcWing-3-%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-04-03T23:59:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-04</time>
 </a>
         
       </header>
@@ -211,64 +214,42 @@
     <div class="article-entry" itemprop="articleBody">
      
       
-        <p>背包问题</p>
+        <p>3.完全背包问题</p>
 <a id="more"></a>
-
-
-<p>有 NN 件物品和一个容量是 VV 的背包。每件物品只能使用一次。</p>
-<p>第 ii 件物品的体积是 vivi，价值是 wiwi。</p>
+<p>有 NN 种物品和一个容量是 VV 的背包，每种物品都有无限件可用。</p>
+<p>第 ii 种物品的体积是 vivi，价值是 wiwi。</p>
 <p>求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。<br>输出最大价值。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行两个整数，N，VN，V，用空格隔开，分别表示物品数量和背包容积。</p>
-<p>接下来有 NN 行，每行两个整数 vi,wivi,wi，用空格隔开，分别表示第 ii 件物品的体积和价值。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行两个整数，N，VN，V，用空格隔开，分别表示物品种数和背包容积。</p>
+<p>接下来有 NN 行，每行两个整数 vi,wivi,wi，用空格隔开，分别表示第 ii 种物品的体积和价值。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一个整数，表示最大价值。</p>
 <h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>0&lt;N,V≤10000&lt;N,V≤1000<br>0&lt;vi,wi≤10000&lt;vi,wi≤1000</p>
 <h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">1 2</span><br><span class="line">2 4</span><br><span class="line">3 4</span><br><span class="line">4 5</span><br></pre></td></tr></table></figure>
 
-<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
 
+<p><img src="https://gitee.com/chzarles/images/raw/master/imgs/006eb5E0gy1g7yyd0jjcyj30wk0fpdhc.jpg" alt="image.png"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> f[N][N];</span><br><span class="line"><span class="keyword">int</span> v[N],w[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ;i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;v[i]&gt;&gt;w[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i&lt;=n ;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j&lt;=m ;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span> ; k*v[i]&lt;=j ; k++)</span><br><span class="line">            f[i][j] = max(f[i][j],f[i<span class="number">-1</span>][j-k*v[i]]+k*w[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;f[n][m]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p>优化思路<br>我们列举一下更新次序的内部关系：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f[i , j ] = max( f[i<span class="number">-1</span>,j] , f[i<span class="number">-1</span>,j-v]+w ,  f[i<span class="number">-1</span>,j<span class="number">-2</span>*v]+<span class="number">2</span>*w , f[i<span class="number">-1</span>,j<span class="number">-3</span>*v]+<span class="number">3</span>*w , .....)</span><br><span class="line">f[i , j-v]= max(            f[i<span class="number">-1</span>,j-v]   ,  f[i<span class="number">-1</span>,j<span class="number">-2</span>*v] + w , f[i<span class="number">-1</span>,j<span class="number">-2</span>*v]+<span class="number">2</span>*w , .....)</span><br></pre></td></tr></table></figure>
 
+<p>由上两式，可得出如下递推关系： </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f[i][j]=max(f[i,j-v]+w , f[i<span class="number">-1</span>][j]) </span><br></pre></td></tr></table></figure>
 
+<p>有了上面的关系，那么其实k循环可以不要了，核心代码优化成这样：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;=n ;i++)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;=m ;j++)</span><br><span class="line">&#123;</span><br><span class="line">    f[i][j] = f[i<span class="number">-1</span>][j];</span><br><span class="line">    <span class="keyword">if</span>(j-v[i]&gt;=<span class="number">0</span>)</span><br><span class="line">        f[i][j]=max(f[i][j],f[i][j-v[i]]+w[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>21.2.10更新：</p>
-<p>代码变量命名与题目一致<br>题解思路变得更详细了<br>加入了不断优化版本的解法</p>
-<ol>
-<li>题目介绍<br>有 NN 件物品和一个容量为 VV 的背包，每件物品有各自的价值且只能被选择一次，要求在有限的背包容量下，装入的物品总价值最大。</li>
-</ol>
-<p>「0-1 背包」是较为简单的动态规划问题，也是其余背包问题的基础。</p>
-<p>动态规划是不断决策求最优解的过程，「0-1 背包」即是不断对第 ii 个物品的做出决策，「0-1」正好代表不选与选两种决定。</p>
-<ol start="2">
-<li>题解代码（C++）<br>2.1 版本1 二维<br>（1）状态f[i][j]定义：前 ii 个物品，背包容量 jj 下的最优解（最大价值）：</li>
-</ol>
-<p>当前的状态依赖于之前的状态，可以理解为从初始状态f[0][0] = 0开始决策，有 NN 件物品，则需要 NN 次决 策，每一次对第 ii 件物品的决策，状态f[i][j]不断由之前的状态更新而来。<br>（2）当前背包容量不够（j &lt; v[i]），没得选，因此前 ii 个物品最优解即为前 i−1i−1 个物品最优解：</p>
-<p>对应代码：f[i][j] = f[i - 1][j]。<br>（3）当前背包容量够，可以选，因此需要决策选与不选第 ii 个物品：</p>
-<p>选：f[i][j] = f[i - 1][j - v[i]] + w[i]。<br>不选：f[i][j] = f[i - 1][j] 。<br>我们的决策是如何取到最大价值，因此以上两种情况取 max() 。<br>代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1005</span>;</span><br><span class="line"><span class="keyword">int</span> v[MAXN];    <span class="comment">// 体积</span></span><br><span class="line"><span class="keyword">int</span> w[MAXN];    <span class="comment">// 价值 </span></span><br><span class="line"><span class="keyword">int</span> f[MAXN][MAXN];  <span class="comment">// f[i][j], j体积下前i个物品的最大价值 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;   </span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) </span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; v[i] &gt;&gt; w[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//  当前背包容量装不进第i个物品，则价值等于前i-1个物品</span></span><br><span class="line">            <span class="keyword">if</span>(j &lt; v[i]) </span><br><span class="line">                f[i][j] = f[i - <span class="number">1</span>][j];</span><br><span class="line">            <span class="comment">// 能装，需进行决策是否选择第i个物品</span></span><br><span class="line">            <span class="keyword">else</span>    </span><br><span class="line">                f[i][j] = max(f[i - <span class="number">1</span>][j], f[i - <span class="number">1</span>][j - v[i]] + w[i]);</span><br><span class="line">        &#125;           </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[n][m] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个代码和01背包的非优化写法很像啊!!!我们对比一下，下面是01背包的核心代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i++)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= m ; j ++)</span><br><span class="line">&#123;</span><br><span class="line">    f[i][j] = f[i<span class="number">-1</span>][j];</span><br><span class="line">    <span class="keyword">if</span>(j-v[i]&gt;=<span class="number">0</span>)</span><br><span class="line">        f[i][j] = max(f[i][j],f[i<span class="number">-1</span>][j-v[i]]+w[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>2.2 版本2 一维<br>将状态f[i][j]优化到一维f[j]，实际上只需要做一个等价变形。</p>
-<p>为什么可以这样变形呢？我们定义的状态f[i][j]可以求得任意合法的i与j最优解，但题目只需要求得最终状态f[n][m]，因此我们只需要一维的空间来更新状态。</p>
-<p>（1）状态f[j]定义：NN 件物品，背包容量j下的最优解。</p>
-<p>（2）注意枚举背包容量j必须从m开始。</p>
-<p>（3）为什么一维情况下枚举背包容量需要逆序？在二维情况下，状态f[i][j]是由上一轮i - 1的状态得来的，f[i][j]与f[i - 1][j]是独立的。而优化到一维后，如果我们还是正序，则有f[较小体积]更新到f[较大体积]，则有可能本应该用第i-1轮的状态却用的是第i轮的状态。</p>
-<p>（4）例如，一维状态第i轮对体积为 33 的物品进行决策，则f[7]由f[4]更新而来，这里的f[4]正确应该是f[i - 1][4]，但从小到大枚举j这里的f[4]在第i轮计算却变成了f[i][4]。当逆序枚举背包容量j时，我们求f[7]同样由f[4]更新，但由于是逆序，这里的f[4]还没有在第i轮计算，所以此时实际计算的f[4]仍然是f[i - 1][4]。</p>
-<p>（5）简单来说，一维情况正序更新状态f[j]需要用到前面计算的状态已经被「污染」，逆序则不会有这样的问题。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">状态转移方程为：f[j] = max(f[j], f[j - v[i]] + w[i] 。</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = m; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(j &lt; v[i]) </span><br><span class="line">            f[i][j] = f[i - <span class="number">1</span>][j];  <span class="comment">// 优化前</span></span><br><span class="line">            f[j] = f[j];            <span class="comment">// 优化后，该行自动成立，可省略。</span></span><br><span class="line">        <span class="keyword">else</span>    </span><br><span class="line">            f[i][j] = max(f[i - <span class="number">1</span>][j], f[i - <span class="number">1</span>][j - v[i]] + w[i]);  <span class="comment">// 优化前</span></span><br><span class="line">            f[j] = max(f[j], f[j - v[i]] + w[i]);                   <span class="comment">// 优化后</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>两个代码其实只有一句不同（注意下标）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f[i][j] = max(f[i][j],f[i<span class="number">-1</span>][j-v[i]]+w[i]);<span class="comment">//01背包</span></span><br><span class="line"></span><br><span class="line">f[i][j] = max(f[i][j],f[i][j-v[i]]+w[i]);<span class="comment">//完全背包问题</span></span><br></pre></td></tr></table></figure>
 
-<p>实际上，只有当枚举的背包容量 &gt;= v[i] 时才会更新状态，因此我们可以修改循环终止条件进一步优化。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = m; j &gt;= v[i]; j--)  </span><br><span class="line">        f[j] = max(f[j], f[j - v[i]] + w[i]);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>因为和01背包代码很相像，我们很容易想到进一步优化。核心代码可以改成下面这样</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i&lt;=n ;i++)</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> j = v[i] ; j&lt;=m ;j++)<span class="comment">//注意了，这里的j是从小到大枚举，和01背包不一样</span></span><br><span class="line">   &#123;</span><br><span class="line">           f[j] = max(f[j],f[j-v[i]]+w[i]);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-<p>关于状态f[j]的补充说明<br>二维下的状态定义f[i][j]是前 ii 件物品，背包容量 jj 下的最大价值。一维下，少了前 ii 件物品这个维度，我们的代码中决策到第 ii 件物品（循环到第i轮），f[j]就是前i轮已经决策的物品且背包容量 jj 下的最大价值。</p>
-<p>因此当执行完循环结构后，由于已经决策了所有物品，f[j]就是所有物品背包容量 jj 下的最大价值。即一维f[j]等价于二维f[n][j]。</p>
-<p>2.3 版本3 优化输入<br>我们注意到在处理数据时，我们是一个物品一个物品，一个一个体积的枚举。</p>
-<p>因此我们可以不必开两个数组记录体积和价值，而是边输入边处理。</p>
-<p>#include&lt;bits/stdc++.h&gt;</p>
-<p>using namespace std;</p>
-<p>const int MAXN = 1005;<br>int f[MAXN];  // </p>
-<p>int main()<br>{<br>    int n, m;<br>    cin &gt;&gt; n &gt;&gt; m;</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> v, w;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; v &gt;&gt; w;      <span class="comment">// 边输入边处理</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = m; j &gt;= v; j--)</span><br><span class="line">        f[j] = max(f[j], f[j - v] + w);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; f[m] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p>}</p>
-
+<p>综上所述，完全背包的最终写法如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> f[N];</span><br><span class="line"><span class="keyword">int</span> v[N],w[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ;i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;v[i]&gt;&gt;w[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i&lt;=n ;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = v[i] ; j&lt;=m ;j++)</span><br><span class="line">    &#123;</span><br><span class="line">            f[j] = max(f[j],f[j-v[i]]+w[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;f[m]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
       
       
@@ -302,6 +283,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -352,7 +344,7 @@
   <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
   <p>扫一扫，分享到微信</p>
   <div class="wx-qrcode">
-    <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lhl1.github.io/com/2021/04/01/Leetcode-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lhl1.github.io/com/2021/04/04/AcWing-3-%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
   </div>
 </div>
 
@@ -366,9 +358,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2021/04/05/AcWing%20%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          AcWing 多重背包
+        
+      </div>
+    </a>
   
-    <a href="/2021/03/29/Leetcode-2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode 2.两数相加</div>
+  
+    <a href="/2021/04/01/AcWing-1.01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AcWing 背包问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -397,7 +398,7 @@
   
 
   
-  <div id="SOHUCS" sid="Leetcode-背包问题" ></div> 
+  <div id="SOHUCS" sid="AcWing-3-完全背包问题" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -503,6 +504,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
