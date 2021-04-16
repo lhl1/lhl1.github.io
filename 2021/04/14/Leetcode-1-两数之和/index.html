@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Leetcode 1.两数之和 | LHL&#39; s NetWork Station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 两数之和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode 1.两数之和">
+<meta property="og:url" content="http://example.com/2021/04/14/Leetcode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/index.html">
+<meta property="og:site_name" content="LHL&#39; s NetWork Station">
+<meta property="og:description" content="1. 两数之和">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-04-14T02:07:19.000Z">
+<meta property="article:modified_time" content="2021-04-14T02:09:10.768Z">
+<meta property="article:author" content="LHL">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="LHL&#39; s NetWork Station" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/assets/favicon.ico">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/assets/tasla.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/">HOMEPAGE/主页</a></li>
+                        
+                            <li><a  href="/archives/">ARCHIVES/所有文章</a></li>
+                        
+                            <li><a  href="/sdafasdfasdfasdf">About me/关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/lhl1/" title="github">github</a>
+                            
+                                <a class="fl mail"  target="_blank" href="mailto:975237535@qq.com" title="mail">mail</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">LHL&#39;s CSDN</a>
+                    
+                    </div>
+                </section>
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/assets/tasla.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">HOMEPAGE/主页</a></li>
+                
+                    <li><a href="/archives/">ARCHIVES/所有文章</a></li>
+                
+                    <li><a href="/sdafasdfasdfasdf">About me/关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/lhl1/" title="github">github</a>
+                    
+                        <a class="mail" target="_blank" href="mailto:975237535@qq.com" title="mail">mail</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Leetcode-1-两数之和" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/14/Leetcode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="article-date">
+      <time datetime="2021-04-14T02:07:19.000Z" itemprop="datePublished">2021-04-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Leetcode 1.两数之和
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1. 两数之和"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum/">1. 两数之和</a></h4><a id="more"></a>
+
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [2,7,11,15], target &#x3D; 9</span><br><span class="line">输出：[0,1]</span><br><span class="line">解释：因为 nums[0] + nums[1] &#x3D;&#x3D; 9 ，返回 [0, 1] 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [3,2,4], target &#x3D; 6</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [3,3], target &#x3D; 6</span><br><span class="line">输出：[0,1]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 103</code></li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
+<li><code>-109 &lt;= target &lt;= 109</code></li>
+<li><strong>只会存在一个有效答案</strong></li>
+</ul>
+<blockquote>
+<p>思路及算法</p>
+</blockquote>
+<ul>
+<li><p>注意到方法一的时间复杂度较高的原因是寻找 target - x 的时间复杂度过高。因此，我们需要一种更优秀的方法，能够快速寻找数组中是否存在目标元素。如果存在，我们需要找出它的索引。</p>
+</li>
+<li><p>使用哈希表，可以将寻找 target - x 的时间复杂度降低到从 O(N) 降低到 O(1)。</p>
+</li>
+<li><p>这样我们创建一个哈希表，对于每一个 x，我们首先查询哈希表中是否存在 target - x，然后将 x 插入到哈希表中，即可保证不会让 x 和自己匹配。</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; hashtable;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            <span class="keyword">auto</span> it = hashtable.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span> (it != hashtable.end()) &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;it-&gt;second, i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            hashtable[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2021/04/14/Leetcode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">Leetcode 1.两数之和</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2021年04月14日 - 10时07分</p>
+        <p><span>最后更新:</span>2021年04月14日 - 10时09分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2021/04/14/Leetcode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" title="Leetcode 1.两数之和">http://example.com/2021/04/14/Leetcode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2021/04/14/Leetcode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/　　作者: " title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2021/04/11/Leetcode-142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-II/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 142. 环形链表 II</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-number">1.</span> <span class="toc-text">1. 两数之和</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+<link rel="stylesheet" href="/css/gitment.min.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Leetcode 1.两数之和', // 可选。默认为 location.href
+  owner: 'lhl1',
+  repo: 'comment',
+  oauth: {
+    client_id: '65c6c8089a7ac2e120d1',
+    client_secret: '98cbe784912c730c24ddb1904b34205d85757919',
+  },
+})
+gitment.render('comments')
+</script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2021/04/11/Leetcode-142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-II/" title="下一篇: Leetcode 142. 环形链表 II">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/04/14/Leetcode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">Leetcode 1.两数之和</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Leetcode-142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-II/">Leetcode 142. 环形链表 II</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Leetcode-88-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">Leetcode 88. 合并两个有序数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Leetcode-263-%E4%B8%91%E6%95%B0/">Leetcode 263. 丑数</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Leetcode-167-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-II-%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">Leetcode 167. 两数之和 II - 输入有序数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Leetcode-665-%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E5%88%97/">Leetcode 665. 非递减数列</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Leetcode-406-%E6%A0%B9%E6%8D%AE%E8%BA%AB%E9%AB%98%E9%87%8D%E5%BB%BA%E9%98%9F%E5%88%97/">Leetcode 406. 根据身高重建队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Leetcode-122-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-II/">Leetcode 122. 买卖股票的最佳时机 II</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Leetcode-763-%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/">Leetcode 763. 划分字母区间</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/10/Leetcode-452-%E7%94%A8%E6%9C%80%E5%B0%91%E6%95%B0%E9%87%8F%E7%9A%84%E7%AE%AD%E5%BC%95%E7%88%86%E6%B0%94%E7%90%83/">Leetcode 452. 用最少数量的箭引爆气球</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/10/Leetcode-605-%E7%A7%8D%E8%8A%B1%E9%97%AE%E9%A2%98/">Leetcode 605. 种花问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/10/Leetcode-435-%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/">Leetcode 435. 无重叠区间</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/10/Leetcode-135-%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C/">Leetcode 135. 分发糖果</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/10/Leetcode-455-%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/">Leetcode 455. 分发饼干</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/10/Leetcode-3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/">Leetcode 3. 无重复字符的最长子串</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/10/10%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">10大排序算法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/10/AcWing-785-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">AcWing 785. 快速排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/05/%E7%BB%8F%E5%85%B8%E6%B1%89%E8%AF%BA%E5%A1%94/">经典汉诺塔</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/05/Leetcode-239-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/">Leetcode 239. 滑动窗口最大值</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/05/AcWing%20%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/">AcWing 多重背包</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/04/AcWing-3-%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">AcWing 3.完全背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/01/AcWing-1.01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">AcWing 背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/29/Leetcode-2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">Leetcode 2.两数相加</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-26-%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/">剑指OFFER 26. 对称的二叉树</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-25-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/">剑指OFFER 25.二叉树的镜像</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-24-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/">剑指OFFER 24.树的子结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-23-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/">剑指OFFER 23.合并两个排序的链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-22-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">剑指OFFER 22.反转链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-21-%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9/">剑指OFFER 21.链表中环的入口结点</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-20-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/">剑指OFFER 20.链表中倒数第k个节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-19-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2/">剑指OFFER 19.调整数组顺序使奇数位于偶数前面</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/Leetcode-1588-%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/">Leetcode 1588. 所有奇数长度子数组的和</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/28/%E5%89%91%E6%8C%87OFFER-18-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/">剑指OFFER 18.表示数值的字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/23/%E5%89%91%E6%8C%87OFFER-17-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/">剑指OFFER 17.正则表达式匹配</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/19/%E5%89%91%E6%8C%87OFFER-16/">剑指OFFER 16.删除链表中重复的节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/19/%E5%89%91%E6%8C%87OFFER-15-%E5%9C%A8O-1-%E6%97%B6%E9%97%B4%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%BB%93%E7%82%B9/">剑指OFFER 15. 在O(1)时间删除链表结点</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/19/%E5%89%91%E6%8C%87OFFER-14-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/">剑指OFFER 14.数值的整数次方</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/18/%E5%89%91%E6%8C%87OFFER-13-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/">剑指OFFER 13.二进制中1的个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/18/%E5%89%91%E6%8C%87OFFER-12-%E5%89%AA%E7%BB%B3%E5%AD%90/">剑指OFFER 12.剪绳子</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/16/LeetCode-507-%E5%AE%8C%E7%BE%8E%E6%95%B0/">LeetCode 507. 完美数</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/16/12-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/">剑指offer 12.机器人的运动范围</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/14/LeetCode-231-2%E7%9A%84%E5%B9%82/">LeedCode 231. 2的幂</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/12/%E5%89%91%E6%8C%87OFFER-11-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/">剑指OFFER 11.矩阵中的路径</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/12/%E5%89%91%E6%8C%87OFFER-10-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/">剑指OFFER 10.旋转数组的最小数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/12/%E5%89%91%E6%8C%87OFFER-9-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">剑指OFFER 9.斐波那契数列</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/12/%E5%89%91%E6%8C%87OFFER-8-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">剑指OFFER 8.用两个栈实现队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/12/%E5%89%91%E6%8C%87OFFER-7-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9/">剑指OFFER 7.二叉树的下一个节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/12/%E5%89%91%E6%8C%87OFFER-6-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/">剑指OFFER 6.重建二叉树</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/10/%E5%89%91%E6%8C%87OFFER-5-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">剑指OFFER 5. 从尾到头打印链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/10/%E5%89%91%E6%8C%87OFFER-4-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/">剑指OFFER 4.替换空格</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/10/%E5%89%91%E6%8C%87OFFER-3-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">剑指OFFER 3.二维数组中的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/10/%E5%89%91%E6%8C%87OFFER-2-%E4%B8%8D%E4%BF%AE%E6%94%B9%E6%95%B0%E7%BB%84%E6%89%BE%E5%87%BA%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">剑指OFFER 2.不修改数组找出重复的数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/09/16%E8%BF%9B%E5%88%B6%E7%9A%84%E5%BF%AB%E9%80%9F%E8%BD%AC%E6%8D%A2/">16进制的快速转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/09/Words-Day1/">Words Day6,7</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/08/%E5%89%91%E6%8C%87OFFER-1-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">剑指OFFER 1.二维数组中的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/08/%E4%B8%8E%E5%88%9A%E5%93%A5%E7%9A%84%E4%B8%AD%E8%B7%AF%E5%AF%B9%E7%8B%99-%E4%B8%8D%E6%98%AF%E7%97%85%E6%AF%92%E7%9A%84%E7%97%85%E6%AF%92/">与刚哥的中路对狙(不是病毒的病毒)</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E8%AE%BA%E6%96%87/">计算机网络课程设计论文</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/06/Java-%E6%89%93%E5%AD%97%E7%AB%9E%E8%B5%9Ba-z/">Java 打字竞赛a-z</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/05/LeetoCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">LeetoCode 1. 两数之和</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/03/Java-%E5%8F%91%E7%89%8C/">Java 发牌</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/03/Java%E5%AD%98%E9%92%B1%E4%B8%8E%E5%8F%96%E9%92%B1/">Java存钱与取钱</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/03/Java-%E8%80%81%E5%B8%88%E5%90%B5%E5%88%B0%E5%90%8C%E5%AD%A6%E7%9D%A1%E8%A7%89/">Java 老师吵到同学睡觉</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/03/Java-%E6%97%B6%E9%97%B4%E6%98%BE%E7%A4%BA/">Java 时间显示</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/03/Java%E7%8C%AB%E7%8B%97%E5%85%B1%E9%A5%AE%E4%B8%80%E6%B3%89%E9%97%AE%E9%A2%98/">Java猫狗共饮一泉问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/28/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0/">Microeconomics 微观经济学原理笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">计算机网络 持续更新</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%8E%92%E5%BA%8F/">数据结构-排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/22/JAVA-%E6%89%91%E5%85%8B%E7%89%8C6/">JAVA 扑克牌6-2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/21/%E7%BA%AA%E5%BD%95%E7%89%87-%E4%BA%BA%E7%94%9F%E4%B8%83%E5%B9%B4%E8%AE%BA%E6%96%87/">纪录片-人生七年论文</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/">数据结构 图</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/">数据结构-二叉树</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/06/Java-PokeFrame22/">Java PokeFrame22</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/01/Java-AWT-Swing-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/">Java_AWT_Swing 学习过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-BF%E7%AE%97%E6%B3%95/">数据结构 查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%8E%92%E9%98%9F/">数据结构 排队</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%B2%BE%E7%AE%80%E9%93%BE%E8%A1%A8/">数据结构 精简链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E5%85%B6%E8%AE%A1%E7%AE%97/">数据结构 中缀表达式转后缀表达式及其计算 V3.1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97/">数据结构 中缀表达式计算 V2.1.4</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/18/Java-%E4%BD%9C%E4%B8%9A3/">Java 作业3</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/16/java%20%E8%AF%BE%E7%A8%8B%E8%A1%A8/">Java 实现课程表</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/16/Java-%E8%87%AA%E5%8A%A8%E7%BB%86%E8%83%9E%E6%9C%BA/">Java 自动细胞机</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/12/One-more-thing/">One more thing...</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%AE%9E%E9%AA%8C1/">数据结构 实验1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/09/204%E5%AE%9E%E9%AA%8C/">204实验</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/06/%E4%BD%9C%E4%B8%9A2%E2%80%94%E2%80%94%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81/">作业2——类的继承与多态</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/24/java-%E4%BD%9C%E4%B8%9A1%EF%BC%9A%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">JAVA 作业1：类和对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/22/7-2-%E4%B8%80%E5%85%83%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E4%B9%98%E6%B3%95%E4%B8%8E%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97-20%E5%88%86/">7-2 一元多项式的乘法与加法运算 (20分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/19/6-1-%E5%8D%95%E9%93%BE%E8%A1%A8%E9%80%86%E8%BD%AC-20%E5%88%86/">6-1 单链表逆转 (20分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/19/6-2-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E6%93%8D%E4%BD%9C%E9%9B%86-20%E5%88%86/">6-2 顺序表操作集 (20分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/17/%E7%A4%BA%E6%B3%A2%E5%99%A8%E5%AE%9E%E9%AA%8C/">示波器实验</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/17/%E5%B9%BF%E4%B9%89%E8%A1%A8%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%85%B6%E5%AE%9E%E7%8E%B0/">广义表定义及其实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/15/7-11-%E7%8E%A9%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91-25%E5%88%86/">7-11 玩转二叉树 (25分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/15/7-5-%E6%8E%92%E5%BA%A7%E4%BD%8D%EF%BC%8825-%E5%88%86%EF%BC%89/">7-5 排座位（25 分）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/14/40%E5%91%A8%E5%B9%B4%E5%A4%A7%E4%BC%9A%E5%BF%83%E5%BE%97/">40周年大会心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/13/2016%E5%B9%B4%E5%A4%A9%E6%A2%AF%E8%B5%9B%E5%88%9D%E8%B5%9B%E9%A2%98%E9%9B%86-7-1-%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E4%BA%8C-15%E5%88%86/">2016年天梯赛初赛题集 7-1 到底有多二 (15分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/12/Bilibili-%E6%B5%8B%E8%AF%95/">Bilibili 测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/12/LHL%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99/">第一篇搭建网站的文章</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/12/Gitee%E4%B8%8EGitHub%E7%BD%91%E7%AB%99%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%88%87%E6%8D%A2-C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/">Gitee与GitHub网站上传的切换(C语言实现)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">数据结构-两个栈实现队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/11/%E7%9F%A9%E9%98%B5%E5%8E%8B%E7%BC%A9%E9%A2%98/">矩阵压缩题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/11/KMP%E7%AE%97%E6%B3%95/">KMP算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/11/%E5%87%86%E5%A4%87%E6%9B%B4%E6%96%B0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/">准备更新评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/10/%E6%B5%8B%E8%AF%95%E9%9F%B3%E4%B9%90-%E5%A4%B4%E5%8F%B7%E7%8E%A9%E5%AE%B6%E4%B8%BB%E9%A2%98%E6%AD%8C/">测试音乐-头号玩家主题歌</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/10/%E5%AE%8C%E5%96%84%E6%90%AD%E5%BB%BA/">完善搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/10/%E6%BA%90%E4%BB%A3%E7%A0%81/">源代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/10/%E5%92%8B%E8%BF%99%E6%85%A2%EF%BC%9F%EF%BC%9F%EF%BC%9F/">咋这慢？？？</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/13/%E6%96%87%E6%A1%A3/">Document</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/10/12/%E5%91%BD%E4%BB%A4/">CMD</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2021 LHL
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">&lt;script async src=&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;&gt;&lt;/script&gt; &lt;span id=&#34;busuanzi_container_site_pv&#34;&gt;本站总访问量&lt;span id=&#34;busuanzi_value_site_pv&#34;&gt;&lt;/span&gt;次&lt;/span&gt;: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
