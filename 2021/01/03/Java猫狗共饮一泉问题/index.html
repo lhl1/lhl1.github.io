@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Java猫狗共饮一泉问题, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Java猫狗共饮一泉问题, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java猫狗共饮一泉问题 | LHL&#39; s NetWork Station</title>
+    <title>Java猫狗共饮一泉问题 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,81 +504,7 @@
             <div id="articleContent">
                 <p>Java猫狗共饮一泉问题</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">package pukepai;
-
-import java.lang.annotation.Target;
-
-public class test1
-&#123;
-
-    public static void main(String args[])
-    &#123;
-
-        Thread dog, cat;
-        Water water &#x3D; new Water(10);
-        dog &#x3D; new Thread(water);
-        cat &#x3D; new Thread(water);
-        dog.setName(&quot;dog&quot;);
-        cat.setName(&quot;cat&quot;);
-        dog.start();
-        cat.start();
-
-    &#125;
-&#125;
-
-class Water implements Runnable
-&#123;
-    int Water;
-
-    public Water(int waternumber)
-    &#123;
-        Water &#x3D; waternumber;
-    &#125;
-
-    public void run()
-    &#123;
-        String name &#x3D; Thread.currentThread().getName();
-        while (true)
-        &#123;
-            if (name.equals(&quot;dog&quot;))
-            &#123;
-                if (Water &gt;&#x3D; 2)
-                &#123;
-                    System.out.println(&quot;狗喝了2口&quot;);
-                    Water -&#x3D; 2;
-                    System.out.println(&quot;还剩&quot; + Water + &quot;口&quot;);
-                &#125; else
-                &#123;
-                    System.out.println(&quot;狗不够喝了，还剩&quot; + Water + &quot;口&quot;);
-                    return;
-                &#125;
-
-
-            &#125; else if (name.equals(&quot;cat&quot;))
-            &#123;
-                if (Water &gt;&#x3D; 1)
-                &#123;
-                    System.out.println(&quot;猫喝了1口&quot;);
-                    Water -&#x3D; 1;
-                    System.out.println(&quot;还剩&quot; + Water + &quot;口&quot;);
-                &#125; else
-                &#123;
-                    System.out.println(&quot;猫不够喝了，还剩&quot; + Water + &quot;口&quot;);
-                    return;
-                &#125;
-
-            &#125;
-            try
-            &#123;
-                Thread.sleep(2000);
-            &#125; catch (Exception e)
-            &#123;
-            &#125;
-
-        &#125;
-    &#125;
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">package pukepai;</span><br><span class="line"></span><br><span class="line">import java.lang.annotation.Target;</span><br><span class="line"></span><br><span class="line">public class test1</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String args[])</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        Thread dog, cat;</span><br><span class="line">        Water water &#x3D; new Water(10);</span><br><span class="line">        dog &#x3D; new Thread(water);</span><br><span class="line">        cat &#x3D; new Thread(water);</span><br><span class="line">        dog.setName(&quot;dog&quot;);</span><br><span class="line">        cat.setName(&quot;cat&quot;);</span><br><span class="line">        dog.start();</span><br><span class="line">        cat.start();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Water implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    int Water;</span><br><span class="line"></span><br><span class="line">    public Water(int waternumber)</span><br><span class="line">    &#123;</span><br><span class="line">        Water &#x3D; waternumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        String name &#x3D; Thread.currentThread().getName();</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            if (name.equals(&quot;dog&quot;))</span><br><span class="line">            &#123;</span><br><span class="line">                if (Water &gt;&#x3D; 2)</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(&quot;狗喝了2口&quot;);</span><br><span class="line">                    Water -&#x3D; 2;</span><br><span class="line">                    System.out.println(&quot;还剩&quot; + Water + &quot;口&quot;);</span><br><span class="line">                &#125; else</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(&quot;狗不够喝了，还剩&quot; + Water + &quot;口&quot;);</span><br><span class="line">                    return;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#125; else if (name.equals(&quot;cat&quot;))</span><br><span class="line">            &#123;</span><br><span class="line">                if (Water &gt;&#x3D; 1)</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(&quot;猫喝了1口&quot;);</span><br><span class="line">                    Water -&#x3D; 1;</span><br><span class="line">                    System.out.println(&quot;还剩&quot; + Water + &quot;口&quot;);</span><br><span class="line">                &#125; else</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(&quot;猫不够喝了，还剩&quot; + Water + &quot;口&quot;);</span><br><span class="line">                    return;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            try</span><br><span class="line">            &#123;</span><br><span class="line">                Thread.sleep(2000);</span><br><span class="line">            &#125; catch (Exception e)</span><br><span class="line">            &#123;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1079,7 +1002,7 @@ class Water implements Runnable
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

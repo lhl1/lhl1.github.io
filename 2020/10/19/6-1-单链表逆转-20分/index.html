@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="6-1 单链表逆转 (20分), LHL&#39; s NetWork Station">
+    <meta name="keywords" content="6-1 单链表逆转 (20分), LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>6-1 单链表逆转 (20分) | LHL&#39; s NetWork Station</title>
+    <title>6-1 单链表逆转 (20分) | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    260
+                    259
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,67 +504,9 @@
             <div id="articleContent">
                 <p>6-1 单链表逆转 (20分)<br>本题要求实现一个函数，将给定的单链表逆转。</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">函数接口定义：
-List Reverse( List L );
-其中List结构定义如下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">函数接口定义：</span><br><span class="line">List Reverse( List L );</span><br><span class="line">其中List结构定义如下：</span><br><span class="line"></span><br><span class="line">typedef struct Node *PtrToNode;</span><br><span class="line">struct Node &#123;</span><br><span class="line">    ElementType Data; &#x2F;* 存储结点数据 *&#x2F;</span><br><span class="line">    PtrToNode   Next; &#x2F;* 指向下一个结点的指针 *&#x2F;</span><br><span class="line">&#125;;</span><br><span class="line">typedef PtrToNode List; &#x2F;* 定义单链表类型 *&#x2F;</span><br><span class="line">L是给定单链表，函数Reverse要返回被逆转后的链表。</span><br><span class="line"></span><br><span class="line">裁判测试程序样例：</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">typedef int ElementType;</span><br><span class="line">typedef struct Node *PtrToNode;</span><br><span class="line">struct Node &#123;</span><br><span class="line">    ElementType Data;</span><br><span class="line">    PtrToNode   Next;</span><br><span class="line">&#125;;</span><br><span class="line">typedef PtrToNode List;</span><br><span class="line"></span><br><span class="line">List Read(); &#x2F;* 细节在此不表 *&#x2F;</span><br><span class="line">void Print( List L ); &#x2F;* 细节在此不表 *&#x2F;</span><br><span class="line"></span><br><span class="line">List Reverse( List L );</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    List L1, L2;</span><br><span class="line">    L1 &#x3D; Read();</span><br><span class="line">    L2 &#x3D; Reverse(L1);</span><br><span class="line">    Print(L1);</span><br><span class="line">    Print(L2);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* 你的代码将被嵌在这里 *&#x2F;</span><br><span class="line">输入样例：</span><br><span class="line">5</span><br><span class="line">1 3 4 5 2</span><br><span class="line">输出样例：</span><br><span class="line">1</span><br><span class="line">2 5 4 3 1</span><br></pre></td></tr></table></figure>
 
-typedef struct Node *PtrToNode;
-struct Node &#123;
-    ElementType Data; &#x2F;* 存储结点数据 *&#x2F;
-    PtrToNode   Next; &#x2F;* 指向下一个结点的指针 *&#x2F;
-&#125;;
-typedef PtrToNode List; &#x2F;* 定义单链表类型 *&#x2F;
-L是给定单链表，函数Reverse要返回被逆转后的链表。
-
-裁判测试程序样例：
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-typedef int ElementType;
-typedef struct Node *PtrToNode;
-struct Node &#123;
-    ElementType Data;
-    PtrToNode   Next;
-&#125;;
-typedef PtrToNode List;
-
-List Read(); &#x2F;* 细节在此不表 *&#x2F;
-void Print( List L ); &#x2F;* 细节在此不表 *&#x2F;
-
-List Reverse( List L );
-
-int main()
-&#123;
-    List L1, L2;
-    L1 &#x3D; Read();
-    L2 &#x3D; Reverse(L1);
-    Print(L1);
-    Print(L2);
-    return 0;
-&#125;
-
-&#x2F;* 你的代码将被嵌在这里 *&#x2F;
-输入样例：
-5
-1 3 4 5 2
-输出样例：
-1
-2 5 4 3 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">List Reverse( List L )
-&#123;
-    List p1&#x3D;NULL,p2&#x3D;NULL;
-    while(L)
-    &#123;
-        p2&#x3D;L-&gt;Next;
-        L-&gt;Next&#x3D;p1;
-        p1&#x3D;L;
-        L&#x3D;p2;
-    &#125;
-    return p1;
-&#125;
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">List Reverse( List L )</span><br><span class="line">&#123;</span><br><span class="line">    List p1&#x3D;NULL,p2&#x3D;NULL;</span><br><span class="line">    while(L)</span><br><span class="line">    &#123;</span><br><span class="line">        p2&#x3D;L-&gt;Next;</span><br><span class="line">        L-&gt;Next&#x3D;p1;</span><br><span class="line">        p1&#x3D;L;</span><br><span class="line">        L&#x3D;p2;</span><br><span class="line">    &#125;</span><br><span class="line">    return p1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1069,7 +1008,7 @@ int main()
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

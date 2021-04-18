@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="KMP算法, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="KMP算法, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>KMP算法 | LHL&#39; s NetWork Station</title>
+    <title>KMP算法 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    198
+                    199
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -510,59 +507,7 @@
 <li>第三次更新</li>
 </ul>
 </blockquote>
-<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;stdlib.h&gt;
-using namespace std;
-int next[15]&#x3D;&#123;-1&#125;;
-void getnext(char t[])
-&#123;
-	int j,i,k,n,m;
-	m&#x3D;strlen(t);
-	j&#x3D;0;k&#x3D;-1;
-	while(j&lt;m-1)
-	&#123;
-		if(k&#x3D;&#x3D;-1||t[j]&#x3D;&#x3D;t[k])
-		&#123;
-			j++;
-			k++;
-			next[j]&#x3D;k;
-		&#125;
-		else k&#x3D;next[k];
-	&#125;
-	for(i&#x3D;0;i&lt;m;i++)
-	cout&lt;&lt;next[i]&lt;&lt;&#39; &#39;;
-	cout&lt;&lt;endl;
-&#125;
-int KMPmatching(char *s,char *t)
-&#123;
-	int i,j;
-	i&#x3D;0;
-	j&#x3D;0;
-	int m,n;
-	m&#x3D;strlen(s);
-	n&#x3D;strlen(t);
-	while(i&lt;m&amp;&amp;j&lt;n)
-	&#123;
-		if(j&#x3D;&#x3D;-1||s[i]&#x3D;&#x3D;t[j])
-		&#123;
-			i++;
-			j++;
-		&#125;
-		else j&#x3D;next[j];
-	&#125;
-	if(j&gt;&#x3D;n) return i-n;
-	else return -1;
-&#125;
-
-
-int main()
-&#123;
-	char a[20]&#x3D;&quot;abcaababc&quot;;
-	char b[20]&#x3D;&quot;aba&quot;;
-	getnext(b);
-	cout&lt;&lt;KMPmatching(a,b);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int next[15]&#x3D;&#123;-1&#125;;</span><br><span class="line">void getnext(char t[])</span><br><span class="line">&#123;</span><br><span class="line">	int j,i,k,n,m;</span><br><span class="line">	m&#x3D;strlen(t);</span><br><span class="line">	j&#x3D;0;k&#x3D;-1;</span><br><span class="line">	while(j&lt;m-1)</span><br><span class="line">	&#123;</span><br><span class="line">		if(k&#x3D;&#x3D;-1||t[j]&#x3D;&#x3D;t[k])</span><br><span class="line">		&#123;</span><br><span class="line">			j++;</span><br><span class="line">			k++;</span><br><span class="line">			next[j]&#x3D;k;</span><br><span class="line">		&#125;</span><br><span class="line">		else k&#x3D;next[k];</span><br><span class="line">	&#125;</span><br><span class="line">	for(i&#x3D;0;i&lt;m;i++)</span><br><span class="line">	cout&lt;&lt;next[i]&lt;&lt;&#39; &#39;;</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int KMPmatching(char *s,char *t)</span><br><span class="line">&#123;</span><br><span class="line">	int i,j;</span><br><span class="line">	i&#x3D;0;</span><br><span class="line">	j&#x3D;0;</span><br><span class="line">	int m,n;</span><br><span class="line">	m&#x3D;strlen(s);</span><br><span class="line">	n&#x3D;strlen(t);</span><br><span class="line">	while(i&lt;m&amp;&amp;j&lt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		if(j&#x3D;&#x3D;-1||s[i]&#x3D;&#x3D;t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;</span><br><span class="line">		else j&#x3D;next[j];</span><br><span class="line">	&#125;</span><br><span class="line">	if(j&gt;&#x3D;n) return i-n;</span><br><span class="line">	else return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[20]&#x3D;&quot;abcaababc&quot;;</span><br><span class="line">	char b[20]&#x3D;&quot;aba&quot;;</span><br><span class="line">	getnext(b);</span><br><span class="line">	cout&lt;&lt;KMPmatching(a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1060,7 +1005,7 @@ int main()
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

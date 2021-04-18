@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 135. 分发糖果, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Leetcode 135. 分发糖果, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 135. 分发糖果 | LHL&#39; s NetWork Station</title>
+    <title>Leetcode 135. 分发糖果 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    614
+                    609
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -515,46 +512,17 @@
 </ul>
 <p>那么这样下来，老师至少需要准备多少颗糖果呢？</p>
 <p><strong>示例 1：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：[1,0,2]
-输出：5
-解释：你可以分别给这三个孩子分发 2、1、2 颗糖果。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：[1,0,2]</span><br><span class="line">输出：5</span><br><span class="line">解释：你可以分别给这三个孩子分发 2、1、2 颗糖果。</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：[1,2,2]
-输出：4
-解释：你可以分别给这三个孩子分发 1、2、1 颗糖果。
-     第三个孩子只得到 1 颗糖果，这已满足上述两个条件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：[1,2,2]</span><br><span class="line">输出：4</span><br><span class="line">解释：你可以分别给这三个孩子分发 1、2、1 颗糖果。</span><br><span class="line">     第三个孩子只得到 1 颗糖果，这已满足上述两个条件。</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ul>
 <li>题解<br>做完了题目 455，你会不会认为存在比较关系的贪心策略一定需要排序或是选择？虽然这一<br>道题也是运用贪心策略，但我们只需要简单的两次遍历即可：把所有孩子的糖果数初始化为 1；<br>先从左往右遍历一遍，如果右边孩子的评分比左边的高，则右边孩子的糖果数更新为左边孩子的<br>糖果数加 1；再从右往左遍历一遍，如果左边孩子的评分比右边的高，且左边孩子当前的糖果数<br>不大于右边孩子的糖果数，则左边孩子的糖果数更新为右边孩子的糖果数加 1。通过这两次遍历，<br>分配的糖果就可以满足题目要求了。这里的贪心策略即为，在每次遍历中，只考虑并更新相邻一<br>侧的大小关系。<br>在样例中，我们初始化糖果分配为 [1,1,1]，第一次遍历更新后的结果为 [1,1,2]，第二次遍历<br>更新后的结果为 [2,1,2]。</li>
 </ul>
 </blockquote>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int candy(vector&lt;int&gt; &amp;ratings)
-&#123;
-    int size &#x3D; ratings.size();
-    if (size &lt; 2)
-    &#123;
-        return size;
-    &#125;
-    vector&lt;int&gt; num(size, 1);
-    for (int i &#x3D; 1; i &lt; size; ++i)
-    &#123;
-        if (ratings[i] &gt; ratings[i - 1])
-        &#123;
-            num[i] &#x3D; num[i - 1] + 1;
-        &#125;
-    &#125;
-    for (int i &#x3D; size - 1; i &gt; 0; --i)
-    &#123;
-        if (ratings[i] &lt; ratings[i - 1])
-        &#123;
-            num[i - 1] &#x3D; max(num[i - 1], num[i] + 1);
-        &#125;
-    &#125;
-    return accumulate(num.begin(), num.end(), 0); &#x2F;&#x2F; std::accumulate 可以很方便
-    地求和
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">candy</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;ratings)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> size = ratings.size();</span><br><span class="line">    <span class="keyword">if</span> (size &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">num</span><span class="params">(size, <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; size; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (ratings[i] &gt; ratings[i - <span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            num[i] = num[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = size - <span class="number">1</span>; i &gt; <span class="number">0</span>; --i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (ratings[i] &lt; ratings[i - <span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            num[i - <span class="number">1</span>] = max(num[i - <span class="number">1</span>], num[i] + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> accumulate(num.begin(), num.end(), <span class="number">0</span>); <span class="comment">// std::accumulate 可以很方便</span></span><br><span class="line">    地求和</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -1053,7 +1021,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

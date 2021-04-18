@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 4.替换空格, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="剑指OFFER 4.替换空格, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 4.替换空格 | LHL&#39; s NetWork Station</title>
+    <title>剑指OFFER 4.替换空格 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    110
+                    111
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,36 +504,12 @@
             <div id="articleContent">
                 <p>替换空格</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">请实现一个函数，把字符串中的每个空格替换成&quot;%20&quot;。
-
-你可以假定输入字符串的长度最大是 1000。
-
-注意输出字符串的长度可能大于 1000。
-
-样例
-输入：&quot;We are happy.&quot;
-
-输出：&quot;We%20are%20happy.&quot;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">请实现一个函数，把字符串中的每个空格替换成&quot;%20&quot;。</span><br><span class="line"></span><br><span class="line">你可以假定输入字符串的长度最大是 1000。</span><br><span class="line"></span><br><span class="line">注意输出字符串的长度可能大于 1000。</span><br><span class="line"></span><br><span class="line">样例</span><br><span class="line">输入：&quot;We are happy.&quot;</span><br><span class="line"></span><br><span class="line">输出：&quot;We%20are%20happy.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
-public:
-    string replaceSpaces(string &amp;str) &#123;
-        string n;
-        for(auto x:str)
-            if(x&#x3D;&#x3D;&#39; &#39;)
-                n+&#x3D;&quot;%20&quot;;
-            else
-                n+&#x3D;x;
-        return n;
-    &#125;
-&#125;;
-
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string replaceSpaces(string &amp;str) &#123;</span><br><span class="line">        string n;</span><br><span class="line">        for(auto x:str)</span><br><span class="line">            if(x&#x3D;&#x3D;&#39; &#39;)</span><br><span class="line">                n+&#x3D;&quot;%20&quot;;</span><br><span class="line">            else</span><br><span class="line">                n+&#x3D;x;</span><br><span class="line">        return n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1034,7 +1007,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

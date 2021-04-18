@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="AcWing 多重背包, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="AcWing 多重背包, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>AcWing 多重背包 | LHL&#39; s NetWork Station</title>
+    <title>AcWing 多重背包 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    7 分
                 </div>
                 
 
@@ -495,9 +495,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -519,46 +516,12 @@
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一个整数，表示最大价值。</p>
 <h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>0&lt;N≤10000&lt;N≤1000<br>0&lt;V≤20000&lt;V≤2000<br>0&lt;vi,wi,si≤20000&lt;vi,wi,si≤2000</p>
 <h5 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h5><p>本题考查多重背包的二进制优化方法。</p>
-<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><pre class="line-numbers language-none"><code class="language-none">4 5
-1 2 3
-2 4 1
-3 4 3
-4 5 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">1 2 3</span><br><span class="line">2 4 1</span><br><span class="line">3 4 3</span><br><span class="line">4 5 2</span><br></pre></td></tr></table></figure>
 
-<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://gitee.com/chzarles/images/raw/master/imgs/006eb5E0gy1g7z0e5ghloj31150fw0ub.jpg" alt="image.png"></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-using namespace std;
-int main()
-&#123;
-   int N, V;
-   cin &gt;&gt; N &gt;&gt; V;
-   int k &#x3D; 1;
-   int v[30000], w[30000], bag[30000];
-   for (int i &#x3D; 0; i &lt; N; i++)
-   &#123;
-      int v1, w1, s1;
-      cin &gt;&gt; v1 &gt;&gt; w1 &gt;&gt; s1;
-
-      for (int j &#x3D; 1; j &lt;&#x3D; s1; j &lt;&lt;&#x3D; 1)
-      &#123;
-         v[k] &#x3D; v1 * j;
-         w[k++] &#x3D; w1 * j;
-         s1 -&#x3D; j;
-      &#125;
-      if (s1 &gt; 0)
-      &#123;
-         v[k] &#x3D; s1 * v1;
-         w[k++] &#x3D; s1 * w1;
-      &#125;
-   &#125;
-   for (int i &#x3D; 1; i &lt;&#x3D; k; i++)
-      for (int j &#x3D; V; j &gt;&#x3D; v[i]; j--)
-         bag[j] &#x3D; max(bag[j], bag[j - v[i]] + w[i]);
-   cout &lt;&lt; bag[V]&lt;&lt;endl;
-   return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> N, V;</span><br><span class="line">   <span class="built_in">cin</span> &gt;&gt; N &gt;&gt; V;</span><br><span class="line">   <span class="keyword">int</span> k = <span class="number">1</span>;</span><br><span class="line">   <span class="keyword">int</span> v[<span class="number">30000</span>], w[<span class="number">30000</span>], bag[<span class="number">30000</span>];</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">int</span> v1, w1, s1;</span><br><span class="line">      <span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; w1 &gt;&gt; s1;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= s1; j &lt;&lt;= <span class="number">1</span>)</span><br><span class="line">      &#123;</span><br><span class="line">         v[k] = v1 * j;</span><br><span class="line">         w[k++] = w1 * j;</span><br><span class="line">         s1 -= j;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (s1 &gt; <span class="number">0</span>)</span><br><span class="line">      &#123;</span><br><span class="line">         v[k] = s1 * v1;</span><br><span class="line">         w[k++] = s1 * w1;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++)</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = V; j &gt;= v[i]; j--)</span><br><span class="line">         bag[j] = max(bag[j], bag[j - v[i]] + w[i]);</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; bag[V]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -567,19 +530,10 @@ int main()
 <p>前言<br>一开始看了3次视频还是一头雾水，看了前面大佬们的题解也还是一脸懵逼，最后十分感谢一篇 博客 的讲解出多重背包的二进制优化的三个要点，最后去看视频。<br>我才完全解决我最重要的疑惑：二进制优化，它为什么正确，为什么合理，凭什么可以这样分？？</p>
 <p>题目<br>完全背包的二进制优化</p>
 <p>样例<br>4 5<br>1 2 3<br>2 4 1<br>3 4 3<br>4 5 2<br>数据范围</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">0 &lt; N ≤ 1000
-0 &lt; V ≤ 2000
-0 &lt; vi,wi,si ≤ 2000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> &lt; N ≤ <span class="number">1000</span></span><br><span class="line"><span class="number">0</span> &lt; V ≤ <span class="number">2000</span></span><br><span class="line"><span class="number">0</span> &lt; vi,wi,si ≤ <span class="number">2000</span></span><br></pre></td></tr></table></figure>
 
 <p>疑惑1：为什么最后一项会是f[i-1,j-(S+1)v]+Sw??<br>在完全背包中,通过两个状态转移方程：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">f[i , j ] &#x3D; max( f[i-1,j] , f[i-1,j-v]+w , f[i-1,j-2v]+2w , f[i-1,j-3v]+3w, .....)
-f[i , j-v]&#x3D; max( f[i-1,j-v] , f[i-1,j-2v] + w, f[i-1,j-2v]+2w , .....)
-
-通过上述比较，可以得到 f[ i ][ j ] &#x3D; max(f[ i - 1 ][ j ],f[ i ][ j - v ] + w)。
-
-再来看下多重背包,
-f[i , j ] &#x3D; max( f[i-1,j] ,f[i-1,j-v]+w ,f[i-1,j-2v]+2w ,..... f[i-1,j-Sv]+Sw, )
-f[i , j-v]&#x3D; max( f[i-1,j-v] ,f[i-1,j-2v]+w, ..... f[i-1,j-Sv]+(S-1)w, f[i-1,j-(S+1)v]+Sw )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f[i , j ] = max( f[i<span class="number">-1</span>,j] , f[i<span class="number">-1</span>,j-v]+w , f[i<span class="number">-1</span>,j<span class="number">-2</span>v]+<span class="number">2</span>w , f[i<span class="number">-1</span>,j<span class="number">-3</span>v]+<span class="number">3</span>w, .....)</span><br><span class="line">f[i , j-v]= max( f[i<span class="number">-1</span>,j-v] , f[i<span class="number">-1</span>,j<span class="number">-2</span>v] + w, f[i<span class="number">-1</span>,j<span class="number">-2</span>v]+<span class="number">2</span>w , .....)</span><br><span class="line"></span><br><span class="line">通过上述比较，可以得到 f[ i ][ j ] = max(f[ i - <span class="number">1</span> ][ j ],f[ i ][ j - v ] + w)。</span><br><span class="line"></span><br><span class="line">再来看下多重背包,</span><br><span class="line">f[i , j ] = max( f[i<span class="number">-1</span>,j] ,f[i<span class="number">-1</span>,j-v]+w ,f[i<span class="number">-1</span>,j<span class="number">-2</span>v]+<span class="number">2</span>w ,..... f[i<span class="number">-1</span>,j-Sv]+Sw, )</span><br><span class="line">f[i , j-v]= max( f[i<span class="number">-1</span>,j-v] ,f[i<span class="number">-1</span>,j<span class="number">-2</span>v]+w, ..... f[i<span class="number">-1</span>,j-Sv]+(S<span class="number">-1</span>)w, f[i<span class="number">-1</span>,j-(S+<span class="number">1</span>)v]+Sw )</span><br></pre></td></tr></table></figure>
 
 <p>怎么比完全背包方程比较就多出了一项?<br>其实，一般从实际含义出发来考虑即可，这里是在分析f[i,j-w]这个状态的表达式，首先这个状态的含义是 从前i个物品中选，且总体积不超过j-w的最大价值， 我们现在最多只能选s个物品，因此如果我们选s个第i个物品，那么体积上就要减去 s * v,价值上就要加上s * w，那更新到状态中去就是 f[i - 1, j - v - s * v] + s * w。</p>
 <p>那为什么完全背包不会有最后一项？<br>完全背包由于对每种物品没有选择个数的限制，所以只要体积够用就可以一直选，没有最后一项。</p>
@@ -595,52 +549,7 @@ f[i , j-v]&#x3D; max( f[i-1,j-v] ,f[i-1,j-2v]+w, ..... f[i-1,j-Sv]+(S-1)w, f[i-1
 <p>如果仍然不是很能理解的话，取这样一个例子:要求在一堆苹果选出n个苹果。我们传统的思维是一个一个地去选，选够n个苹果就停止。这样选择的次数就是n次</p>
 <p>二进制优化思维就是：现在给出一堆苹果和10个箱子，选出n个苹果。将这一堆苹果分别按照1,2,4,8,16,…..512分到10个箱子里，那么由于任何一个数字x ∈[1,1024]<br>都可以从这10个箱子里的苹果数量表示出来，但是这样选择的次数就是 ≤10次 。</p>
 <p>这样利用二进制优化，时间复杂度就从O(n^3)降到O(n^2logS),从4<em>10^9降到了2</em>10^7。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">代码
-#include&lt;iostream&gt;
-using namespace std;
-
-const int N &#x3D; 12010, M &#x3D; 2010;
-
-int n, m;
-int v[N], w[N]; &#x2F;&#x2F;逐一枚举最大是N*logS
-int f[M]; &#x2F;&#x2F; 体积&lt;M
-
-int main()
-&#123;
-    cin &gt;&gt; n &gt;&gt; m;
-    int cnt &#x3D; 0; &#x2F;&#x2F;分组的组别
-    for(int i &#x3D; 1;i &lt;&#x3D; n;i ++)
-    &#123;
-        int a,b,s;
-        cin &gt;&gt; a &gt;&gt; b &gt;&gt; s;
-        int k &#x3D; 1; &#x2F;&#x2F; 组别里面的个数
-        while(k&lt;&#x3D;s)
-        &#123;
-            cnt ++ ; &#x2F;&#x2F;组别先增加
-            v[cnt] &#x3D; a * k ; &#x2F;&#x2F;整体体积
-            w[cnt] &#x3D; b * k; &#x2F;&#x2F; 整体价值
-            s -&#x3D; k; &#x2F;&#x2F; s要减小
-            k *&#x3D; 2; &#x2F;&#x2F; 组别里的个数增加
-        &#125;
-        &#x2F;&#x2F;剩余的一组
-        if(s&gt;0)
-        &#123;
-            cnt ++ ;
-            v[cnt] &#x3D; a*s; 
-            w[cnt] &#x3D; b*s;
-        &#125;
-    &#125;
-
-    n &#x3D; cnt ; &#x2F;&#x2F;枚举次数正式由个数变成组别数
-    
-    &#x2F;&#x2F;01背包一维优化
-    for(int i &#x3D; 1;i &lt;&#x3D; n ;i ++)
-        for(int j &#x3D; m ;j &gt;&#x3D; v[i];j --)
-            f[j] &#x3D; max(f[j],f[j-v[i]] + w[i]);
-    
-    cout &lt;&lt; f[m] &lt;&lt; endl;
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">代码</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">12010</span>, M = <span class="number">2010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> v[N], w[N]; <span class="comment">//逐一枚举最大是N*logS</span></span><br><span class="line"><span class="keyword">int</span> f[M]; <span class="comment">// 体积&lt;M</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>; <span class="comment">//分组的组别</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> a,b,s;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; s;</span><br><span class="line">        <span class="keyword">int</span> k = <span class="number">1</span>; <span class="comment">// 组别里面的个数</span></span><br><span class="line">        <span class="keyword">while</span>(k&lt;=s)</span><br><span class="line">        &#123;</span><br><span class="line">            cnt ++ ; <span class="comment">//组别先增加</span></span><br><span class="line">            v[cnt] = a * k ; <span class="comment">//整体体积</span></span><br><span class="line">            w[cnt] = b * k; <span class="comment">// 整体价值</span></span><br><span class="line">            s -= k; <span class="comment">// s要减小</span></span><br><span class="line">            k *= <span class="number">2</span>; <span class="comment">// 组别里的个数增加</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//剩余的一组</span></span><br><span class="line">        <span class="keyword">if</span>(s&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            cnt ++ ;</span><br><span class="line">            v[cnt] = a*s; </span><br><span class="line">            w[cnt] = b*s;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    n = cnt ; <span class="comment">//枚举次数正式由个数变成组别数</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//01背包一维优化</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n ;i ++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = m ;j &gt;= v[i];j --)</span><br><span class="line">            f[j] = max(f[j],f[j-v[i]] + w[i]);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[m] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1150,7 +1059,7 @@ int main()
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

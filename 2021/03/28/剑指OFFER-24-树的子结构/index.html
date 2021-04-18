@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 24.树的子结构, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="剑指OFFER 24.树的子结构, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 24.树的子结构 | LHL&#39; s NetWork Station</title>
+    <title>剑指OFFER 24.树的子结构 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    505
+                    508
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -513,66 +510,15 @@
 <p>输入两棵二叉树 A，BA，B，判断 BB 是不是 AA 的子结构。</p>
 <p>我们规定空树不是任何树的子结构。</p>
 <h4 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h4><p>树 AA：</p>
-<pre class="line-numbers language-none"><code class="language-none">    8
-   &#x2F; \
-  8   7
- &#x2F; \
-9   2
-   &#x2F; \
-  4   7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    8</span><br><span class="line">   &#x2F; \</span><br><span class="line">  8   7</span><br><span class="line"> &#x2F; \</span><br><span class="line">9   2</span><br><span class="line">   &#x2F; \</span><br><span class="line">  4   7</span><br></pre></td></tr></table></figure>
 
 <p>树 BB：</p>
-<pre class="line-numbers language-none"><code class="language-none">  8
- &#x2F; \
-9   2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  8</span><br><span class="line"> &#x2F; \</span><br><span class="line">9   2</span><br></pre></td></tr></table></figure>
 
 <p>返回 <strong>true</strong>，因为 BB 是 AA 的子结构。</p>
-<pre class="line-numbers language-none"><code class="language-none">算法
-(二叉树，递归) O(nm)O(nm)
-代码分为两个部分：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">算法</span><br><span class="line">(二叉树，递归) O(nm)O(nm)</span><br><span class="line">代码分为两个部分：</span><br><span class="line"></span><br><span class="line">遍历树A中的所有非空节点R；</span><br><span class="line">判断树A中以R为根节点的子树是不是包含和树B一样的结构，且我们从根节点开始匹配；</span><br><span class="line">对于第一部分，我们直接递归遍历树A即可，遇到非空节点后，就进行第二部分的判断。</span><br><span class="line"></span><br><span class="line">对于第二部分，我们同时从根节点开始遍历两棵子树：</span><br><span class="line"></span><br><span class="line">如果树B中的节点为空，则表示当前分支是匹配的，返回true；</span><br><span class="line">如果树A中的节点为空，但树B中的节点不为空，则说明不匹配，返回false；</span><br><span class="line">如果两个节点都不为空，但数值不同，则说明不匹配，返回false；</span><br><span class="line">否则说明当前这个点是匹配的，然后递归判断左子树和右子树是否分别匹配即可；</span><br><span class="line">时间复杂度</span><br><span class="line">最坏情况下，我们对于树A中的每个节点都要递归判断一遍，每次判断在最坏情况下需要遍历完树B中的所有节点。</span><br><span class="line">所以时间复杂度是 O(nm)O(nm)，其中 nn 是树A中的节点数， mm 是树B中的节点数。</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-遍历树A中的所有非空节点R；
-判断树A中以R为根节点的子树是不是包含和树B一样的结构，且我们从根节点开始匹配；
-对于第一部分，我们直接递归遍历树A即可，遇到非空节点后，就进行第二部分的判断。
-
-对于第二部分，我们同时从根节点开始遍历两棵子树：
-
-如果树B中的节点为空，则表示当前分支是匹配的，返回true；
-如果树A中的节点为空，但树B中的节点不为空，则说明不匹配，返回false；
-如果两个节点都不为空，但数值不同，则说明不匹配，返回false；
-否则说明当前这个点是匹配的，然后递归判断左子树和右子树是否分别匹配即可；
-时间复杂度
-最坏情况下，我们对于树A中的每个节点都要递归判断一遍，每次判断在最坏情况下需要遍历完树B中的所有节点。
-所以时间复杂度是 O(nm)O(nm)，其中 nn 是树A中的节点数， mm 是树B中的节点数。
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">C++ 代码
-&#x2F;**
- * Definition for a binary tree node.
- * struct TreeNode &#123;
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;
- * &#125;;
- *&#x2F;
-class Solution &#123;
-public:
-    bool hasSubtree(TreeNode* pRoot1, TreeNode* pRoot2) &#123;
-        if (!pRoot1 || !pRoot2) return false;
-        if (isSame(pRoot1, pRoot2)) return true;
-        return hasSubtree(pRoot1-&gt;left, pRoot2) || hasSubtree(pRoot1-&gt;right, pRoot2);
-    &#125;
-
-    bool isSame(TreeNode* pRoot1, TreeNode* pRoot2) &#123;
-        if (!pRoot2) return true;
-        if (!pRoot1 || pRoot1-&gt;val !&#x3D; pRoot2-&gt;val) return false;
-        return isSame(pRoot1-&gt;left, pRoot2-&gt;left) &amp;&amp; isSame(pRoot1-&gt;right, pRoot2-&gt;right);
-    &#125;
-&#125;;
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">C++ 代码</span><br><span class="line">&#x2F;**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> *&#x2F;</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool hasSubtree(TreeNode* pRoot1, TreeNode* pRoot2) &#123;</span><br><span class="line">        if (!pRoot1 || !pRoot2) return false;</span><br><span class="line">        if (isSame(pRoot1, pRoot2)) return true;</span><br><span class="line">        return hasSubtree(pRoot1-&gt;left, pRoot2) || hasSubtree(pRoot1-&gt;right, pRoot2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    bool isSame(TreeNode* pRoot1, TreeNode* pRoot2) &#123;</span><br><span class="line">        if (!pRoot2) return true;</span><br><span class="line">        if (!pRoot1 || pRoot1-&gt;val !&#x3D; pRoot2-&gt;val) return false;</span><br><span class="line">        return isSame(pRoot1-&gt;left, pRoot2-&gt;left) &amp;&amp; isSame(pRoot1-&gt;right, pRoot2-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
@@ -1075,7 +1021,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

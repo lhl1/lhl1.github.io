@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Java PokeFrame22, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Java PokeFrame22, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java PokeFrame22 | LHL&#39; s NetWork Station</title>
+    <title>Java PokeFrame22 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,213 +504,9 @@
             <div id="articleContent">
                 <p>Java PokeFrame22</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">MY:
-package pukepai;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">MY:</span><br><span class="line">package pukepai;</span><br><span class="line"></span><br><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line"></span><br><span class="line">public class test</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        dapai da &#x3D; new dapai();</span><br><span class="line">        &#x2F;&#x2F;抽取程序</span><br><span class="line">        JFrame jf &#x3D; new JFrame(&quot;LHL&#39;s Java&quot;);</span><br><span class="line">        jf.setLayout(new GridLayout(2, 2));</span><br><span class="line">        &#x2F;&#x2F;外窗口</span><br><span class="line">        JInternalFrame jif[] &#x3D; new JInternalFrame[4];</span><br><span class="line">        for(int i&#x3D;0;i&lt;&#x3D;3;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            jif[i]&#x3D;new createChuangkou(i+1);</span><br><span class="line">            jif[i].setVisible(true);</span><br><span class="line">            jf.add(jif[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        jf.setExtendedState(JFrame.MAXIMIZED_BOTH);</span><br><span class="line">        jf.setVisible(true);</span><br><span class="line">        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class createChuangkou extends JInternalFrame</span><br><span class="line">&#123;</span><br><span class="line">    JLayeredPane jp;</span><br><span class="line">    int n &#x3D; 0;</span><br><span class="line">    dapai da &#x3D; new dapai();</span><br><span class="line">    Toolkit tk &#x3D; Toolkit.getDefaultToolkit();</span><br><span class="line">    &#x2F;&#x2F;工具包</span><br><span class="line">    int w &#x3D; (tk.getScreenSize().width)&#x2F;2;</span><br><span class="line">    int h &#x3D; (tk.getScreenSize().height)&#x2F;2;</span><br><span class="line"></span><br><span class="line">    public createChuangkou(int n)</span><br><span class="line">    &#123;</span><br><span class="line">        super(&quot;玩家&quot; + n);</span><br><span class="line">        this.n &#x3D; n;</span><br><span class="line">        this.setLayout(null);</span><br><span class="line">        jp &#x3D; this.getLayeredPane();</span><br><span class="line">        Setbg();</span><br><span class="line">        Setbutton(n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void Setbg()</span><br><span class="line">    &#123;</span><br><span class="line">        ImageIcon bj &#x3D; new ImageIcon(&quot;img&#x2F;bj.jpg&quot;);</span><br><span class="line">        JLabel jl &#x3D; new JLabel(bj);</span><br><span class="line">        jl.setSize(w, h);</span><br><span class="line">        jp.add(jl, new Integer(-100));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void Setbutton(int k)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        String[] WpukePhoto &#x3D; new String[13];</span><br><span class="line">        WpukePhoto &#x3D; da.zuhe();</span><br><span class="line">        JButton[] ButtonPhoto &#x3D; new JButton[13];</span><br><span class="line">        ImageIcon PukePhoto &#x3D; new ImageIcon(&quot;img&#x2F;fang1.jpg&quot;);</span><br><span class="line">        int pw &#x3D; PukePhoto.getIconWidth();</span><br><span class="line">        int ph &#x3D; PukePhoto.getIconHeight();</span><br><span class="line">        int x1 &#x3D; 70; &#x2F;&#x2F; 表示2个扑克牌按钮叠加在一起的宽度</span><br><span class="line">        int y1 &#x3D; 150; &#x2F;&#x2F; 表示扑克牌按钮底边距离neibuchuangti底边的位置</span><br><span class="line">        int kuan &#x3D; pw - x1;</span><br><span class="line">        int firstPositionx &#x3D; (w - kuan * 13) &#x2F; 2-35;</span><br><span class="line">        int firstPositiony &#x3D; (h - ph - y1);</span><br><span class="line">        for (int i &#x3D; 0; i &lt;&#x3D; 12; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            PukePhoto &#x3D; new ImageIcon(&quot;img&#x2F;&quot; + WpukePhoto[i]);</span><br><span class="line">            ButtonPhoto[i] &#x3D; new JButton(PukePhoto);</span><br><span class="line">            ButtonPhoto[i].setBounds(firstPositionx + kuan * i, firstPositiony, pw, ph);</span><br><span class="line">            jp.add(ButtonPhoto[i], new Integer(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-import javax.swing.*;
-import java.awt.*;
-
-public class test
-&#123;
-    public static void main(String[] args)
-    &#123;
-        dapai da &#x3D; new dapai();
-        &#x2F;&#x2F;抽取程序
-        JFrame jf &#x3D; new JFrame(&quot;LHL&#39;s Java&quot;);
-        jf.setLayout(new GridLayout(2, 2));
-        &#x2F;&#x2F;外窗口
-        JInternalFrame jif[] &#x3D; new JInternalFrame[4];
-        for(int i&#x3D;0;i&lt;&#x3D;3;i++)
-        &#123;
-            jif[i]&#x3D;new createChuangkou(i+1);
-            jif[i].setVisible(true);
-            jf.add(jif[i]);
-        &#125;
-
-        jf.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        jf.setVisible(true);
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    &#125;
-&#125;
-
-class createChuangkou extends JInternalFrame
-&#123;
-    JLayeredPane jp;
-    int n &#x3D; 0;
-    dapai da &#x3D; new dapai();
-    Toolkit tk &#x3D; Toolkit.getDefaultToolkit();
-    &#x2F;&#x2F;工具包
-    int w &#x3D; (tk.getScreenSize().width)&#x2F;2;
-    int h &#x3D; (tk.getScreenSize().height)&#x2F;2;
-
-    public createChuangkou(int n)
-    &#123;
-        super(&quot;玩家&quot; + n);
-        this.n &#x3D; n;
-        this.setLayout(null);
-        jp &#x3D; this.getLayeredPane();
-        Setbg();
-        Setbutton(n);
-    &#125;
-
-    void Setbg()
-    &#123;
-        ImageIcon bj &#x3D; new ImageIcon(&quot;img&#x2F;bj.jpg&quot;);
-        JLabel jl &#x3D; new JLabel(bj);
-        jl.setSize(w, h);
-        jp.add(jl, new Integer(-100));
-    &#125;
-
-    void Setbutton(int k)
-    &#123;
-
-        String[] WpukePhoto &#x3D; new String[13];
-        WpukePhoto &#x3D; da.zuhe();
-        JButton[] ButtonPhoto &#x3D; new JButton[13];
-        ImageIcon PukePhoto &#x3D; new ImageIcon(&quot;img&#x2F;fang1.jpg&quot;);
-        int pw &#x3D; PukePhoto.getIconWidth();
-        int ph &#x3D; PukePhoto.getIconHeight();
-        int x1 &#x3D; 70; &#x2F;&#x2F; 表示2个扑克牌按钮叠加在一起的宽度
-        int y1 &#x3D; 150; &#x2F;&#x2F; 表示扑克牌按钮底边距离neibuchuangti底边的位置
-        int kuan &#x3D; pw - x1;
-        int firstPositionx &#x3D; (w - kuan * 13) &#x2F; 2-35;
-        int firstPositiony &#x3D; (h - ph - y1);
-        for (int i &#x3D; 0; i &lt;&#x3D; 12; i++)
-        &#123;
-            PukePhoto &#x3D; new ImageIcon(&quot;img&#x2F;&quot; + WpukePhoto[i]);
-            ButtonPhoto[i] &#x3D; new JButton(PukePhoto);
-            ButtonPhoto[i].setBounds(firstPositionx + kuan * i, firstPositiony, pw, ph);
-            jp.add(ButtonPhoto[i], new Integer(i));
-        &#125;
-    &#125;
-
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">package pukepai;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-public class PokeFrame22
-&#123;
-
-    String[] pk &#x3D; new String[52]; &#x2F;&#x2F; 存放52张扑克牌文件名
-    Poke poke &#x3D; new Poke();
-    JInternalFrame jif[] &#x3D; new JInternalFrame[4];
-    JFrame jf;
-    Toolkit tk;
-    int w, h; &#x2F;&#x2F; 窗体的宽和高
-    int jw, jh; &#x2F;&#x2F; neibuchuangti的宽和高
-    JButton[] jb &#x3D; new JButton[13];
-    int x1 &#x3D; 40; &#x2F;&#x2F; 表示2个扑克牌按钮叠加在一起的宽度
-    int y1 &#x3D; 150; &#x2F;&#x2F; 表示扑克牌按钮底边距离neibuchuangti底边的位置
-
-    public PokeFrame22()
-    &#123;
-        jf &#x3D; new JFrame(&quot;包含4个neibuchuangti且每个neibuchuangti包含13张牌按钮的窗体&quot;);
-        jf.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        tk &#x3D; Toolkit.getDefaultToolkit();
-        w &#x3D; tk.getScreenSize().width;
-        h &#x3D; tk.getScreenSize().height;
-        dedaopai();
-        tianjianeibuchuangti();
-        jf.setVisible(true);
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    &#125;
-
-    public static void main(String[] args)
-    &#123;
-        try
-        &#123;
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        &#125; catch (ClassNotFoundException ex)
-        &#123;
-            Logger.getLogger(PokeFrame21.class.getName()).log(Level.SEVERE, null, ex);
-        &#125; catch (InstantiationException ex)
-        &#123;
-            Logger.getLogger(PokeFrame21.class.getName()).log(Level.SEVERE, null, ex);
-        &#125; catch (IllegalAccessException ex)
-        &#123;
-            Logger.getLogger(PokeFrame21.class.getName()).log(Level.SEVERE, null, ex);
-        &#125; catch (UnsupportedLookAndFeelException ex)
-        &#123;
-            Logger.getLogger(PokeFrame21.class.getName()).log(Level.SEVERE, null, ex);
-        &#125;
-        PokeFrame22 pf &#x3D; new PokeFrame22();
-    &#125;
-
-    public void dedaopai()
-    &#123;
-        pk &#x3D; poke.zuhepai();
-    &#125;
-
-    public void tianjianeibuchuangti()
-    &#123;
-        jw &#x3D; w &#x2F; 2; &#x2F;&#x2F; neibuchuangti的宽等于屏幕的宽&#x2F;2
-        jh &#x3D; h &#x2F; 2; &#x2F;&#x2F; neibuchuangti的高等于屏幕的高&#x2F;2
-        jf.setLayout(new GridLayout(2, 2));
-        for (int i &#x3D; 0; i &lt;&#x3D; 3; i++)
-        &#123;
-            jif[i] &#x3D; new neibuchuangti(i + 1);
-            jif[i].setVisible(true);
-            jf.add(jif[i]);
-        &#125;
-    &#125;
-
-    class neibuchuangti extends JInternalFrame
-    &#123;
-
-        JLayeredPane jp;
-        int n;
-
-        public neibuchuangti(int n)
-        &#123;
-            super(&quot;玩家&quot; + n);
-            this.n &#x3D; n;
-            this.setLayout(null);
-            jp &#x3D; this.getLayeredPane();
-            tianjiabeijing();
-            tianjiapaianniu(n);
-        &#125;
-
-        public void tianjiabeijing()
-        &#123;
-            ImageIcon bj &#x3D; new ImageIcon(&quot;img&#x2F;bj.jpg&quot;);
-            JLabel jl &#x3D; new JLabel(bj);
-            jl.setSize(jw, jh);
-            jp.add(jl, new Integer(-100));
-        &#125;
-
-        public void tianjiapaianniu(int k)
-        &#123;
-            &#x2F;&#x2F; 参数x1表示扑克牌重叠的宽度,y1表示扑克牌y方向的起始位置
-            String pName;
-            ImageIcon img;
-            jp &#x3D; this.getLayeredPane();
-            pName &#x3D; &quot;img&#x2F;&quot; + pk[0];
-            img &#x3D; new ImageIcon(pName);
-            int tw &#x3D; img.getIconWidth();
-            int th &#x3D; img.getIconHeight();
-            int a &#x3D; tw - x1-30; &#x2F;&#x2F; 表示每张牌按钮实际占有的宽度（后一张牌和前一张牌叠加40px)
-            int xs &#x3D; (jw - a * 13) &#x2F; 2; &#x2F;&#x2F; 表示第一张牌按钮在neibuchuangti中x方向的起始位置
-            int ys &#x3D; jh - th - y1; &#x2F;&#x2F; 表示牌按钮在neibuchuangti中y方向的起始位置
-            int b &#x3D; 13 * (k - 1); &#x2F;&#x2F; 根据不同的k值从pk数组的不同位置取数
-            for (int i &#x3D; 0; i &lt;&#x3D; 12; i++)
-            &#123;
-                pName &#x3D; &quot;img&#x2F;&quot; + pk[i + b];
-                img &#x3D; new ImageIcon(pName);
-                jb[i] &#x3D; new JButton(img);
-                jb[i].setBounds(xs + a * i, ys, tw, th);
-                jp.add(jb[i], new Integer(i));
-            &#125;
-        &#125;
-
-    &#125;
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">package pukepai;</span><br><span class="line"></span><br><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.util.logging.Level;</span><br><span class="line">import java.util.logging.Logger;</span><br><span class="line"></span><br><span class="line">public class PokeFrame22</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    String[] pk &#x3D; new String[52]; &#x2F;&#x2F; 存放52张扑克牌文件名</span><br><span class="line">    Poke poke &#x3D; new Poke();</span><br><span class="line">    JInternalFrame jif[] &#x3D; new JInternalFrame[4];</span><br><span class="line">    JFrame jf;</span><br><span class="line">    Toolkit tk;</span><br><span class="line">    int w, h; &#x2F;&#x2F; 窗体的宽和高</span><br><span class="line">    int jw, jh; &#x2F;&#x2F; neibuchuangti的宽和高</span><br><span class="line">    JButton[] jb &#x3D; new JButton[13];</span><br><span class="line">    int x1 &#x3D; 40; &#x2F;&#x2F; 表示2个扑克牌按钮叠加在一起的宽度</span><br><span class="line">    int y1 &#x3D; 150; &#x2F;&#x2F; 表示扑克牌按钮底边距离neibuchuangti底边的位置</span><br><span class="line"></span><br><span class="line">    public PokeFrame22()</span><br><span class="line">    &#123;</span><br><span class="line">        jf &#x3D; new JFrame(&quot;包含4个neibuchuangti且每个neibuchuangti包含13张牌按钮的窗体&quot;);</span><br><span class="line">        jf.setExtendedState(JFrame.MAXIMIZED_BOTH);</span><br><span class="line">        tk &#x3D; Toolkit.getDefaultToolkit();</span><br><span class="line">        w &#x3D; tk.getScreenSize().width;</span><br><span class="line">        h &#x3D; tk.getScreenSize().height;</span><br><span class="line">        dedaopai();</span><br><span class="line">        tianjianeibuchuangti();</span><br><span class="line">        jf.setVisible(true);</span><br><span class="line">        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());</span><br><span class="line">        &#125; catch (ClassNotFoundException ex)</span><br><span class="line">        &#123;</span><br><span class="line">            Logger.getLogger(PokeFrame21.class.getName()).log(Level.SEVERE, null, ex);</span><br><span class="line">        &#125; catch (InstantiationException ex)</span><br><span class="line">        &#123;</span><br><span class="line">            Logger.getLogger(PokeFrame21.class.getName()).log(Level.SEVERE, null, ex);</span><br><span class="line">        &#125; catch (IllegalAccessException ex)</span><br><span class="line">        &#123;</span><br><span class="line">            Logger.getLogger(PokeFrame21.class.getName()).log(Level.SEVERE, null, ex);</span><br><span class="line">        &#125; catch (UnsupportedLookAndFeelException ex)</span><br><span class="line">        &#123;</span><br><span class="line">            Logger.getLogger(PokeFrame21.class.getName()).log(Level.SEVERE, null, ex);</span><br><span class="line">        &#125;</span><br><span class="line">        PokeFrame22 pf &#x3D; new PokeFrame22();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void dedaopai()</span><br><span class="line">    &#123;</span><br><span class="line">        pk &#x3D; poke.zuhepai();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void tianjianeibuchuangti()</span><br><span class="line">    &#123;</span><br><span class="line">        jw &#x3D; w &#x2F; 2; &#x2F;&#x2F; neibuchuangti的宽等于屏幕的宽&#x2F;2</span><br><span class="line">        jh &#x3D; h &#x2F; 2; &#x2F;&#x2F; neibuchuangti的高等于屏幕的高&#x2F;2</span><br><span class="line">        jf.setLayout(new GridLayout(2, 2));</span><br><span class="line">        for (int i &#x3D; 0; i &lt;&#x3D; 3; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            jif[i] &#x3D; new neibuchuangti(i + 1);</span><br><span class="line">            jif[i].setVisible(true);</span><br><span class="line">            jf.add(jif[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class neibuchuangti extends JInternalFrame</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        JLayeredPane jp;</span><br><span class="line">        int n;</span><br><span class="line"></span><br><span class="line">        public neibuchuangti(int n)</span><br><span class="line">        &#123;</span><br><span class="line">            super(&quot;玩家&quot; + n);</span><br><span class="line">            this.n &#x3D; n;</span><br><span class="line">            this.setLayout(null);</span><br><span class="line">            jp &#x3D; this.getLayeredPane();</span><br><span class="line">            tianjiabeijing();</span><br><span class="line">            tianjiapaianniu(n);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void tianjiabeijing()</span><br><span class="line">        &#123;</span><br><span class="line">            ImageIcon bj &#x3D; new ImageIcon(&quot;img&#x2F;bj.jpg&quot;);</span><br><span class="line">            JLabel jl &#x3D; new JLabel(bj);</span><br><span class="line">            jl.setSize(jw, jh);</span><br><span class="line">            jp.add(jl, new Integer(-100));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void tianjiapaianniu(int k)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F; 参数x1表示扑克牌重叠的宽度,y1表示扑克牌y方向的起始位置</span><br><span class="line">            String pName;</span><br><span class="line">            ImageIcon img;</span><br><span class="line">            jp &#x3D; this.getLayeredPane();</span><br><span class="line">            pName &#x3D; &quot;img&#x2F;&quot; + pk[0];</span><br><span class="line">            img &#x3D; new ImageIcon(pName);</span><br><span class="line">            int tw &#x3D; img.getIconWidth();</span><br><span class="line">            int th &#x3D; img.getIconHeight();</span><br><span class="line">            int a &#x3D; tw - x1-30; &#x2F;&#x2F; 表示每张牌按钮实际占有的宽度（后一张牌和前一张牌叠加40px)</span><br><span class="line">            int xs &#x3D; (jw - a * 13) &#x2F; 2; &#x2F;&#x2F; 表示第一张牌按钮在neibuchuangti中x方向的起始位置</span><br><span class="line">            int ys &#x3D; jh - th - y1; &#x2F;&#x2F; 表示牌按钮在neibuchuangti中y方向的起始位置</span><br><span class="line">            int b &#x3D; 13 * (k - 1); &#x2F;&#x2F; 根据不同的k值从pk数组的不同位置取数</span><br><span class="line">            for (int i &#x3D; 0; i &lt;&#x3D; 12; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                pName &#x3D; &quot;img&#x2F;&quot; + pk[i + b];</span><br><span class="line">                img &#x3D; new ImageIcon(pName);</span><br><span class="line">                jb[i] &#x3D; new JButton(img);</span><br><span class="line">                jb[i].setBounds(xs + a * i, ys, tw, th);</span><br><span class="line">                jp.add(jb[i], new Integer(i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -1212,7 +1005,7 @@ public class PokeFrame22
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

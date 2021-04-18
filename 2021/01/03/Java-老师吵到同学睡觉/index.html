@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Java 老师吵到同学睡觉, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Java 老师吵到同学睡觉, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java 老师吵到同学睡觉 | LHL&#39; s NetWork Station</title>
+    <title>Java 老师吵到同学睡觉 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,63 +504,7 @@
             <div id="articleContent">
                 <p>Java 老师吵到同学睡觉</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">package pukepai;
-
-public class test1
-&#123;
-    public static void main(String args[])
-    &#123;
-        Classroom c1 &#x3D; new Classroom();
-        c1.student.start();
-        c1.teacher.start();
-    &#125;
-&#125;
-
-class Classroom implements Runnable
-&#123;
-    Thread teacher, student;
-    int sleepNumber&#x3D;0;
-    public Classroom()
-    &#123;
-        teacher &#x3D; new Thread(this);
-        student &#x3D; new Thread(this);
-        teacher.setName(&quot;teacher&quot;);
-        student.setName(&quot;student&quot;);
-
-    &#125;
-
-    public void run()
-    &#123;
-        while (true)
-        &#123;
-            if (Thread.currentThread() &#x3D;&#x3D; student)
-            &#123;
-                try
-                &#123;
-                    sleepNumber++;
-                    System.out.println( &quot;同学：老子正在睡&quot;+&quot;第&quot;+sleepNumber+&quot;次觉&quot;);
-                    Thread.sleep(1000 * 60);
-
-                &#125; catch (InterruptedException e)
-                &#123;
-                    System.out.println(&quot;同学：wdnmd&quot;);
-                &#125;
-            &#125; else if (Thread.currentThread() &#x3D;&#x3D; teacher)
-            &#123;
-                System.out.println(&quot;老师：上课！！&quot;);
-                try
-                &#123;
-                    Thread.sleep(2000);
-                &#125; catch (InterruptedException e)
-                &#123;
-
-                &#125;
-                student.interrupt();
-            &#125;
-        &#125;
-
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">package pukepai;</span><br><span class="line"></span><br><span class="line">public class test1</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String args[])</span><br><span class="line">    &#123;</span><br><span class="line">        Classroom c1 &#x3D; new Classroom();</span><br><span class="line">        c1.student.start();</span><br><span class="line">        c1.teacher.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Classroom implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    Thread teacher, student;</span><br><span class="line">    int sleepNumber&#x3D;0;</span><br><span class="line">    public Classroom()</span><br><span class="line">    &#123;</span><br><span class="line">        teacher &#x3D; new Thread(this);</span><br><span class="line">        student &#x3D; new Thread(this);</span><br><span class="line">        teacher.setName(&quot;teacher&quot;);</span><br><span class="line">        student.setName(&quot;student&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            if (Thread.currentThread() &#x3D;&#x3D; student)</span><br><span class="line">            &#123;</span><br><span class="line">                try</span><br><span class="line">                &#123;</span><br><span class="line">                    sleepNumber++;</span><br><span class="line">                    System.out.println( &quot;同学：老子正在睡&quot;+&quot;第&quot;+sleepNumber+&quot;次觉&quot;);</span><br><span class="line">                    Thread.sleep(1000 * 60);</span><br><span class="line"></span><br><span class="line">                &#125; catch (InterruptedException e)</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(&quot;同学：wdnmd&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else if (Thread.currentThread() &#x3D;&#x3D; teacher)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(&quot;老师：上课！！&quot;);</span><br><span class="line">                try</span><br><span class="line">                &#123;</span><br><span class="line">                    Thread.sleep(2000);</span><br><span class="line">                &#125; catch (InterruptedException e)</span><br><span class="line">                &#123;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                student.interrupt();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -1062,7 +1003,7 @@ class Classroom implements Runnable
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

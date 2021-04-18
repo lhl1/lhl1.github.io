@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 14.数值的整数次方, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="剑指OFFER 14.数值的整数次方, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 14.数值的整数次方 | LHL&#39; s NetWork Station</title>
+    <title>剑指OFFER 14.数值的整数次方 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    376
+                    374
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,79 +504,17 @@
             <div id="articleContent">
                 <p>数值的整数次方</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">
-实现函数double Power(double base, int exponent)，求base的 exponent次方。
-
-不得使用库函数，同时不需要考虑大数问题。
-
-只要输出结果与答案的绝对误差不超过 10−2 即视为正确。
-
-注意：
-
-不会出现底数和指数同为0的情况
-当底数为0时，指数一定为正
-样例1
-输入：10 ，2
-
-输出：100
-样例2
-输入：10 ，-2  
-
-输出：0.01
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">实现函数double Power(double base, int exponent)，求base的 exponent次方。</span><br><span class="line"></span><br><span class="line">不得使用库函数，同时不需要考虑大数问题。</span><br><span class="line"></span><br><span class="line">只要输出结果与答案的绝对误差不超过 10−2 即视为正确。</span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line"></span><br><span class="line">不会出现底数和指数同为0的情况</span><br><span class="line">当底数为0时，指数一定为正</span><br><span class="line">样例1</span><br><span class="line">输入：10 ，2</span><br><span class="line"></span><br><span class="line">输出：100</span><br><span class="line">样例2</span><br><span class="line">输入：10 ，-2  </span><br><span class="line"></span><br><span class="line">输出：0.01</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li>完美解法，普通的幂的运算，速度太慢，无法通过，这一题运用了二进制的运算思想<br>你比如说，3的10次方<br>10==10010</li>
 </ul>
 <p>1.首先判断最末尾是否为1，如果不为1，<br>则，x=3<em>3，记录x<br>10010整体右移一位<br>则为01001<br>2.继续判断最末尾是否为1，<br>为一,则最终的结果</em>x</p>
 </blockquote>
-<pre class="line-numbers language-none"><code class="language-none">
-class Solution &#123;
-public:
-    double Power(double x, int n) &#123;
-        typedef long long LL;
-        bool is_minus&#x3D; n&lt;0;
-        double res&#x3D;1;
-        for(LL k&#x3D;abs(LL(n));k;k&gt;&gt;&#x3D;1)
-        &#123;
-            if(k&amp;1)
-                res*&#x3D;x;
-                x*&#x3D;x;
-        &#125;
-        if(is_minus) res&#x3D;1&#x2F;res;
-        return res;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    double Power(double x, int n) &#123;</span><br><span class="line">        typedef long long LL;</span><br><span class="line">        bool is_minus&#x3D; n&lt;0;</span><br><span class="line">        double res&#x3D;1;</span><br><span class="line">        for(LL k&#x3D;abs(LL(n));k;k&gt;&gt;&#x3D;1)</span><br><span class="line">        &#123;</span><br><span class="line">            if(k&amp;1)</span><br><span class="line">                res*&#x3D;x;</span><br><span class="line">                x*&#x3D;x;</span><br><span class="line">        &#125;</span><br><span class="line">        if(is_minus) res&#x3D;1&#x2F;res;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
-public:
-    double Power(double x, int n) &#123;
-        double res&#x3D;1;
-        for(long long k&#x3D;abs((long long) (n));k;k&gt;&gt;&#x3D;1)
-        &#123;
-            if(k&amp;1)
-                res*&#x3D;x;
-                x*&#x3D;x;
-        &#125;
-        if(n&lt;0) res&#x3D;1&#x2F;res;
-        return res;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
-public:
-    double Power(double x, int n) 
-    &#123;
-        double res&#x3D;1;
-        for(long long i&#x3D;abs((long long)n);i;i&gt;&gt;&#x3D;1)
-        &#123;
-        	if(i&amp;1)
-        		res*&#x3D;x;
-        	x*&#x3D;x;
-        &#125;
-        return n&lt;0?1&#x2F;res:res;
-        
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    double Power(double x, int n) &#123;</span><br><span class="line">        double res&#x3D;1;</span><br><span class="line">        for(long long k&#x3D;abs((long long) (n));k;k&gt;&gt;&#x3D;1)</span><br><span class="line">        &#123;</span><br><span class="line">            if(k&amp;1)</span><br><span class="line">                res*&#x3D;x;</span><br><span class="line">                x*&#x3D;x;</span><br><span class="line">        &#125;</span><br><span class="line">        if(n&lt;0) res&#x3D;1&#x2F;res;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    double Power(double x, int n) </span><br><span class="line">    &#123;</span><br><span class="line">        double res&#x3D;1;</span><br><span class="line">        for(long long i&#x3D;abs((long long)n);i;i&gt;&gt;&#x3D;1)</span><br><span class="line">        &#123;</span><br><span class="line">        	if(i&amp;1)</span><br><span class="line">        		res*&#x3D;x;</span><br><span class="line">        	x*&#x3D;x;</span><br><span class="line">        &#125;</span><br><span class="line">        return n&lt;0?1&#x2F;res:res;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -1080,7 +1015,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

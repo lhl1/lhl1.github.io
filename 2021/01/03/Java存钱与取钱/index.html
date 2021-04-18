@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Java存钱与取钱, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Java存钱与取钱, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java存钱与取钱 | LHL&#39; s NetWork Station</title>
+    <title>Java存钱与取钱 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,76 +504,7 @@
             <div id="articleContent">
                 <p>Java存钱与取钱</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">
-package pukepai;
-
-public class test1
-&#123;
-    public static void main(String  agrs[])
-    &#123;
-        Bank s1&#x3D;new Bank();
-        Thread accountant,cashier;
-        accountant &#x3D;new Thread(s1);
-        cashier&#x3D;new Thread(s1);
-        accountant.setName(&quot;accountant&quot;);
-        cashier.setName(&quot;cashier&quot;);
-        accountant.start();
-        cashier.start();
-    &#125;
-&#125;
-class Bank implements Runnable
-&#123;
-    int money;
-    public Bank()
-    &#123;
-        money&#x3D;0;
-    &#125;
-    public void run()
-    &#123;
-        while(true)
-        &#123;
-            if(Thread.currentThread().getName().equals(&quot;accountant&quot;))
-            &#123;
-                saveOrTake(100);
-            &#125;
-            else if(Thread.currentThread().getName().equals(&quot;cashier&quot;))
-            &#123;
-                saveOrTake(100);
-            &#125;
-        &#125;
-
-
-    &#125;
-    public synchronized void saveOrTake(int amount)
-    &#123;
-        if(Thread.currentThread().getName().equals(&quot;accountant&quot;))
-        &#123;
-            money&#x3D;money+amount;
-            System.out.println(&quot;会计存入&quot;+amount+&quot;万元，账上还有&quot;+money+&quot;万元&quot;);
-            try
-            &#123;
-                Thread.sleep(800);
-            &#125; catch (InterruptedException e)
-            &#123;
-
-            &#125;
-        &#125;
-        else if(Thread.currentThread().getName().equals(&quot;cashier&quot;))
-        &#123;
-            money&#x3D;money-amount;
-            System.out.println(&quot;出纳取出&quot;+amount+&quot;万元，账上还有&quot;+money+&quot;万元&quot;);
-            try
-            &#123;
-                Thread.sleep(800);
-            &#125; catch (InterruptedException e)
-            &#123;
-
-            &#125;
-        &#125;
-    &#125;
-&#125;
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package pukepai;</span><br><span class="line"></span><br><span class="line">public class test1</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String  agrs[])</span><br><span class="line">    &#123;</span><br><span class="line">        Bank s1&#x3D;new Bank();</span><br><span class="line">        Thread accountant,cashier;</span><br><span class="line">        accountant &#x3D;new Thread(s1);</span><br><span class="line">        cashier&#x3D;new Thread(s1);</span><br><span class="line">        accountant.setName(&quot;accountant&quot;);</span><br><span class="line">        cashier.setName(&quot;cashier&quot;);</span><br><span class="line">        accountant.start();</span><br><span class="line">        cashier.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Bank implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    int money;</span><br><span class="line">    public Bank()</span><br><span class="line">    &#123;</span><br><span class="line">        money&#x3D;0;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        while(true)</span><br><span class="line">        &#123;</span><br><span class="line">            if(Thread.currentThread().getName().equals(&quot;accountant&quot;))</span><br><span class="line">            &#123;</span><br><span class="line">                saveOrTake(100);</span><br><span class="line">            &#125;</span><br><span class="line">            else if(Thread.currentThread().getName().equals(&quot;cashier&quot;))</span><br><span class="line">            &#123;</span><br><span class="line">                saveOrTake(100);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public synchronized void saveOrTake(int amount)</span><br><span class="line">    &#123;</span><br><span class="line">        if(Thread.currentThread().getName().equals(&quot;accountant&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            money&#x3D;money+amount;</span><br><span class="line">            System.out.println(&quot;会计存入&quot;+amount+&quot;万元，账上还有&quot;+money+&quot;万元&quot;);</span><br><span class="line">            try</span><br><span class="line">            &#123;</span><br><span class="line">                Thread.sleep(800);</span><br><span class="line">            &#125; catch (InterruptedException e)</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(Thread.currentThread().getName().equals(&quot;cashier&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            money&#x3D;money-amount;</span><br><span class="line">            System.out.println(&quot;出纳取出&quot;+amount+&quot;万元，账上还有&quot;+money+&quot;万元&quot;);</span><br><span class="line">            try</span><br><span class="line">            &#123;</span><br><span class="line">                Thread.sleep(800);</span><br><span class="line">            &#125; catch (InterruptedException e)</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1074,7 +1002,7 @@ class Bank implements Runnable
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

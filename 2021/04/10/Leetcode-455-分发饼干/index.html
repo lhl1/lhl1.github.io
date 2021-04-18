@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 455. 分发饼干, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Leetcode 455. 分发饼干, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 455. 分发饼干 | LHL&#39; s NetWork Station</title>
+    <title>Leetcode 455. 分发饼干 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    751
+                    750
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -509,20 +506,10 @@
 <a id="more"></a>
 <p>对每个孩子 <code>i</code>，都有一个胃口值 <code>g[i]</code>，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 <code>j</code>，都有一个尺寸 <code>s[j]</code> 。如果 <code>s[j] &gt;= g[i]</code>，我们可以将这个饼干 <code>j</code> 分配给孩子 <code>i</code> ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值。</p>
 <p><strong>示例 1:</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入: g &#x3D; [1,2,3], s &#x3D; [1,1]
-输出: 1
-解释: 
-你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。
-虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。
-所以你应该输出1。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入: g &#x3D; [1,2,3], s &#x3D; [1,1]</span><br><span class="line">输出: 1</span><br><span class="line">解释: </span><br><span class="line">你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。</span><br><span class="line">虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。</span><br><span class="line">所以你应该输出1。</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2:</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入: g &#x3D; [1,2], s &#x3D; [1,2,3]
-输出: 2
-解释: 
-你有两个孩子和三块小饼干，2个孩子的胃口值分别是1,2。
-你拥有的饼干数量和尺寸都足以让所有孩子满足。
-所以你应该输出2.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入: g &#x3D; [1,2], s &#x3D; [1,2,3]</span><br><span class="line">输出: 2</span><br><span class="line">解释: </span><br><span class="line">你有两个孩子和三块小饼干，2个孩子的胃口值分别是1,2。</span><br><span class="line">你拥有的饼干数量和尺寸都足以让所有孩子满足。</span><br><span class="line">所以你应该输出2.</span><br></pre></td></tr></table></figure>
 
 
 
@@ -538,23 +525,7 @@
 </ul>
 <p>2.2 分配问题<br>– 4/143 –<br>简而言之，这里的贪心策略是，给剩余孩子里最小饥饿度的孩子分配最小的能饱腹的饼干。<br>至于具体实现，因为我们需要获得大小关系，一个便捷的方法就是把孩子和饼干分别排序。<br>这样我们就可以从饥饿度最小的孩子和大小最小的饼干出发，计算有多少个对子可以满足条件。<br> 注意 对数组或字符串排序是常见的操作，方便之后的大小比较。<br>注意 在之后的讲解中，若我们谈论的是对连续空间的变量进行操作，我们并不会明确区分数组<br>和字符串，因为他们本质上都是在连续空间上的有序变量集合。一个字符串“abc”可以被看作一<br>个数组 [‘a’,‘b’,‘c’]。</p>
 </blockquote>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">
-class Solution &#123;
-public:
-    int findContentChildren(vector&lt;int&gt;&amp; g, vector&lt;int&gt;&amp; s) 
-	&#123;
-		sort(g.begin(),g.end());
-		sort(s.begin(),s.end());
-		int child&#x3D;0,cookie&#x3D;0;
-		while(child&lt;g.size() &amp;&amp; cookie&lt;s.size())
-		&#123;
-			if(g[child] &lt;&#x3D; s[cookie])
-				++child;
-				++cookie;
-		&#125;
-		return child;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findContentChildren</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; g, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; s)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		sort(g.begin(),g.end());</span><br><span class="line">		sort(s.begin(),s.end());</span><br><span class="line">		<span class="keyword">int</span> child=<span class="number">0</span>,cookie=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(child&lt;g.size() &amp;&amp; cookie&lt;s.size())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(g[child] &lt;= s[cookie])</span><br><span class="line">				++child;</span><br><span class="line">				++cookie;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> child;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1052,7 +1023,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

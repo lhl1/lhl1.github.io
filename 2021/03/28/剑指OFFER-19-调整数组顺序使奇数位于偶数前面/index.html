@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 19.调整数组顺序使奇数位于偶数前面, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="剑指OFFER 19.调整数组顺序使奇数位于偶数前面, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 19.调整数组顺序使奇数位于偶数前面 | LHL&#39; s NetWork Station</title>
+    <title>剑指OFFER 19.调整数组顺序使奇数位于偶数前面 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    152
+                    147
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -506,29 +503,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>调整数组顺序使奇数位于偶数前面</p>
-<pre class="line-numbers language-none"><code class="language-none">输入一个整数数组，实现一个函数来调整该数组中数字的顺序。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入一个整数数组，实现一个函数来调整该数组中数字的顺序。</span><br><span class="line"></span><br><span class="line">使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分。</span><br><span class="line"></span><br><span class="line">样例</span><br><span class="line">输入：[1,2,3,4,5]</span><br><span class="line"></span><br><span class="line">输出: [1,3,5,2,4]</span><br></pre></td></tr></table></figure>
 
-使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分。
-
-样例
-输入：[1,2,3,4,5]
-
-输出: [1,3,5,2,4]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">
-class Solution &#123;
-public:
-    void reOrderArray(vector&lt;int&gt; &amp;array) 
-    &#123;
-    	int i&#x3D;0,j&#x3D;array.size()-1;
-    	while(i&lt;j)
-    	&#123;
-    		while(i&lt;j &amp;&amp; array[i]%2&#x3D;&#x3D;1) i++;
-    		while(i&lt;j &amp;&amp; array[j]%2&#x3D;&#x3D;0) j--;
-    		if(i&lt;j) swap(array[i],array[j]);
-    	&#125;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">reOrderArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;<span class="built_in">array</span>)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="built_in">array</span>.size()<span class="number">-1</span>;</span><br><span class="line">    	<span class="keyword">while</span>(i&lt;j)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">while</span>(i&lt;j &amp;&amp; <span class="built_in">array</span>[i]%<span class="number">2</span>==<span class="number">1</span>) i++;</span><br><span class="line">    		<span class="keyword">while</span>(i&lt;j &amp;&amp; <span class="built_in">array</span>[j]%<span class="number">2</span>==<span class="number">0</span>) j--;</span><br><span class="line">    		<span class="keyword">if</span>(i&lt;j) swap(<span class="built_in">array</span>[i],<span class="built_in">array</span>[j]);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -1028,7 +1005,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

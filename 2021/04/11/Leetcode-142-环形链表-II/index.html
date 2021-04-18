@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 142. 环形链表 II, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Leetcode 142. 环形链表 II, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 142. 环形链表 II | LHL&#39; s NetWork Station</title>
+    <title>Leetcode 142. 环形链表 II | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    585
+                    574
                 </div>
                 
 
@@ -491,9 +491,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -516,21 +513,15 @@
 </ul>
 <p><strong>示例 1：</strong></p>
 <p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png" alt="img"></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：head &#x3D; [3,2,0,-4], pos &#x3D; 1
-输出：返回索引为 1 的链表节点
-解释：链表中有一个环，其尾部连接到第二个节点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head &#x3D; [3,2,0,-4], pos &#x3D; 1</span><br><span class="line">输出：返回索引为 1 的链表节点</span><br><span class="line">解释：链表中有一个环，其尾部连接到第二个节点。</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
 <p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png" alt="img"></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：head &#x3D; [1,2], pos &#x3D; 0
-输出：返回索引为 0 的链表节点
-解释：链表中有一个环，其尾部连接到第一个节点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head &#x3D; [1,2], pos &#x3D; 0</span><br><span class="line">输出：返回索引为 0 的链表节点</span><br><span class="line">解释：链表中有一个环，其尾部连接到第一个节点。</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 3：</strong></p>
 <p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png" alt="img"></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：head &#x3D; [1], pos &#x3D; -1
-输出：返回 null
-解释：链表中没有环。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head &#x3D; [1], pos &#x3D; -1</span><br><span class="line">输出：返回 null</span><br><span class="line">解释：链表中没有环。</span><br></pre></td></tr></table></figure>
 
 
 
@@ -543,36 +534,7 @@
 <blockquote>
 <p> 题解<br>对于链表找环路的问题，有一个通用的解法——快慢指针（Floyd 判圈法）。给定两个指针，<br>分别命名为 slow 和 fast，起始位置在链表的开头。每次 fast 前进两步，slow 前进一步。如果 fast<br>可以走到尽头，那么说明没有环路；如果 fast 可以无限走下去，那么说明一定有环路，且一定存<br>在一个时刻 slow 和 fast 相遇。当 slow 和 fast 第一次相遇时，我们将 fast 重新移动到链表开头，并<br>让 slow 和 fast 每次都前进一步。当 slow 和 fast 第二次相遇时，相遇的节点即为环路的开始点。</p>
 </blockquote>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
- * Definition for singly-linked list.
- * struct ListNode &#123;
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) &#123;&#125;
- * &#125;;
- *&#x2F;
-class Solution &#123;
-public:
-    ListNode *detectCycle(ListNode *head) 
-    &#123;
-        ListNode *slow&#x3D;head,*fast&#x3D;head;
-        &#x2F;&#x2F; 判断是否存在环路
-        do
-        &#123;
-            if(!fast || !fast-&gt;next) return NULL;
-            fast&#x3D;fast-&gt;next-&gt;next;
-            slow&#x3D;slow-&gt;next;
-        &#125;while(fast !&#x3D;slow);
-        &#x2F;&#x2F; 如果存在，查找环路节点
-        fast&#x3D;head;
-        while(fast !&#x3D;slow)
-        &#123;
-            fast&#x3D;fast-&gt;next;
-            slow&#x3D;slow-&gt;next;
-        &#125;
-        return fast;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">detectCycle</span><span class="params">(ListNode *head)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        ListNode *slow=head,*fast=head;</span><br><span class="line">        <span class="comment">// 判断是否存在环路</span></span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!fast || !fast-&gt;next) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">            fast=fast-&gt;next-&gt;next;</span><br><span class="line">            slow=slow-&gt;next;</span><br><span class="line">        &#125;<span class="keyword">while</span>(fast !=slow);</span><br><span class="line">        <span class="comment">// 如果存在，查找环路节点</span></span><br><span class="line">        fast=head;</span><br><span class="line">        <span class="keyword">while</span>(fast !=slow)</span><br><span class="line">        &#123;</span><br><span class="line">            fast=fast-&gt;next;</span><br><span class="line">            slow=slow-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fast;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1073,7 +1035,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

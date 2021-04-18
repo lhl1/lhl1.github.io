@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Java 自动细胞机, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Java 自动细胞机, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java 自动细胞机 | LHL&#39; s NetWork Station</title>
+    <title>Java 自动细胞机 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,186 +504,7 @@
             <div id="articleContent">
                 <p>Java 自动细胞机</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">
-import javax.print.attribute.standard.NumberUp;
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
-import java.lang.Thread;
-class View extends JPanel
-&#123;
-    private static final long serialVersionUID&#x3D;-313123123123L;
-    private static final int GRID_SIZE&#x3D;16;
-    private Field theField;
-    public View(Field field)
-    &#123;
-        theField&#x3D;field;
-    &#125;
-    @Override
-    public void paint(Graphics g)
-    &#123;
-        super.paint(g);
-        for(int row&#x3D;0;row&lt;theField.getHeight();row++)
-            for(int col&#x3D;0;col&lt;theField.getWidth();col++)
-            &#123;
-                Cell cell&#x3D;theField.get(row,col);
-                if(cell!&#x3D; null)
-                    cell.draw(g,col*GRID_SIZE,row*GRID_SIZE,GRID_SIZE);
-            &#125;
-    &#125;
-    @Override
-    public Dimension getPreferredSize()
-    &#123;
-        return new Dimension(theField.getWidth()*GRID_SIZE+1,theField.getHeight()*GRID_SIZE+1);
-    &#125;
-&#125;
-
-class Cell
-&#123;
-    private boolean alive&#x3D;false;
-    public void die()
-    &#123;
-        alive&#x3D;false;
-    &#125;
-    public void reborn()
-    &#123;
-        alive&#x3D;true;
-    &#125;
-    public boolean isAlive()
-    &#123;
-        return alive;
-    &#125;
-    public void draw(Graphics g,int x,int y,int size)
-    &#123;
-        g.drawRect(x,y,size,size);
-        if(alive)
-        &#123;
-            g.fillRect(x,y,size,size);
-        &#125;
-    &#125;
-&#125;
-
-class Field
-&#123;
-    private int height;
-    private int width;
-    private Cell[][] field;
-    public Field(int width,int height)
-    &#123;
-        this.width&#x3D;width;
-        this.height&#x3D;height;
-        field&#x3D;new Cell[height][width];
-    &#125;
-    public int getWidth()&#123;return width;&#125;
-    public int getHeight()&#123;return height;&#125;
-    public Cell place(int row,int col,Cell o)
-    &#123;
-        Cell ret&#x3D;field[row][col];
-        field[row][col]&#x3D;o;
-        return ret;
-    &#125;
-    public Cell get(int row ,int col)
-    &#123;
-        return field[row][col];
-    &#125;
-    public Cell[] getNeighbour(int row,int col)
-    &#123;
-        ArrayList&lt;Cell&gt; list&#x3D;new ArrayList&lt;Cell&gt;();
-        for(int i&#x3D;-1;i&lt;2;i++)
-        &#123;
-            for(int j&#x3D;-1;j&lt;2;j++)
-            &#123;
-                int r&#x3D;row+i;
-                int c&#x3D;col+j;
-                if(r&gt;-1&amp;&amp;r&lt;height&amp;&amp;c&gt;-1&amp;&amp;c&lt;width&amp;&amp;!(r&#x3D;&#x3D;row&amp;&amp;c&#x3D;&#x3D;col))
-                    list.add(field[r][c]);
-            &#125;
-        &#125;
-        return list.toArray(new Cell[list.size()]);
-    &#125;
-&#125;
-
-
-
-public class CellMachine
-&#123;
-    public static void main(String[] args)
-    &#123;
-        Field field&#x3D;new Field(30,30);
-        for(int row&#x3D;0;row&lt;field.getHeight();row++)
-        &#123;
-            for(int col&#x3D;0;col&lt;field.getHeight();col++)
-            &#123;
-                field.place(row,col,new Cell());
-            &#125;
-        &#125;
-        for(int row&#x3D;0;row&lt;field.getHeight();row++)
-        &#123;
-            for(int col&#x3D;0;col&lt;field.getHeight();col++)
-            &#123;
-                Cell cell&#x3D;field.get(row,col);
-                if(Math.random()&lt;0.2)
-                    cell.reborn();
-            &#125;
-        &#125;
-        View view&#x3D;new View(field);
-        JFrame frame&#x3D;new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-        frame.setTitle(&quot;Cells&quot;);
-        frame.add(view);
-        frame.pack();
-        frame.setVisible(true);
-    for(int i&#x3D;0;i&lt;1000;i++)
-    &#123;
-        for(int row&#x3D;0;row&lt;field.getHeight();row++)
-        &#123;
-            for(int col&#x3D;0;col&lt;field.getWidth();col++)
-            &#123;
-                Cell cell&#x3D;field.get(row,col);
-                Cell[]neighbour&#x3D;field.getNeighbour(row,col);
-                int numOfLive&#x3D;0;
-                for(Cell c:neighbour)
-                &#123;
-                    if(c.isAlive())
-                        numOfLive++;
-                &#125;
-                System.out.print(&quot;[&quot;+row+&quot;][&quot;+col+&quot;]:&quot;);
-                System.out.print(cell.isAlive()?&quot;live&quot;:&quot;dead&quot;);
-                System.out.print(&quot;:&quot;+numOfLive+&quot;--&gt;&quot;);
-                if(cell.isAlive())
-                &#123;
-                    if (numOfLive &lt; 2 || numOfLive &gt; 3) &#123;
-                        cell.die();
-                        System.out.print(&quot;die&quot;);
-                    &#125;
-                &#125;
-                    else if(numOfLive&#x3D;&#x3D;3)
-                    &#123;
-                        cell.reborn();
-                        System.out.print(&quot;reborn&quot;);
-                    &#125;
-                    System.out.println();
-                &#125;
-            &#125;
-        System.out.println(&quot;UPDATA&quot;);
-        frame.repaint();
-        try
-        &#123;
-            Thread.sleep(80);
-        &#125;
-        catch (InterruptedException e)
-        &#123;
-            e.printStackTrace();
-        &#125;
-
-    &#125;
-
-
-    &#125;
-&#125;
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import javax.print.attribute.standard.NumberUp;</span><br><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.lang.Thread;</span><br><span class="line">class View extends JPanel</span><br><span class="line">&#123;</span><br><span class="line">    private static final long serialVersionUID&#x3D;-313123123123L;</span><br><span class="line">    private static final int GRID_SIZE&#x3D;16;</span><br><span class="line">    private Field theField;</span><br><span class="line">    public View(Field field)</span><br><span class="line">    &#123;</span><br><span class="line">        theField&#x3D;field;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void paint(Graphics g)</span><br><span class="line">    &#123;</span><br><span class="line">        super.paint(g);</span><br><span class="line">        for(int row&#x3D;0;row&lt;theField.getHeight();row++)</span><br><span class="line">            for(int col&#x3D;0;col&lt;theField.getWidth();col++)</span><br><span class="line">            &#123;</span><br><span class="line">                Cell cell&#x3D;theField.get(row,col);</span><br><span class="line">                if(cell!&#x3D; null)</span><br><span class="line">                    cell.draw(g,col*GRID_SIZE,row*GRID_SIZE,GRID_SIZE);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public Dimension getPreferredSize()</span><br><span class="line">    &#123;</span><br><span class="line">        return new Dimension(theField.getWidth()*GRID_SIZE+1,theField.getHeight()*GRID_SIZE+1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Cell</span><br><span class="line">&#123;</span><br><span class="line">    private boolean alive&#x3D;false;</span><br><span class="line">    public void die()</span><br><span class="line">    &#123;</span><br><span class="line">        alive&#x3D;false;</span><br><span class="line">    &#125;</span><br><span class="line">    public void reborn()</span><br><span class="line">    &#123;</span><br><span class="line">        alive&#x3D;true;</span><br><span class="line">    &#125;</span><br><span class="line">    public boolean isAlive()</span><br><span class="line">    &#123;</span><br><span class="line">        return alive;</span><br><span class="line">    &#125;</span><br><span class="line">    public void draw(Graphics g,int x,int y,int size)</span><br><span class="line">    &#123;</span><br><span class="line">        g.drawRect(x,y,size,size);</span><br><span class="line">        if(alive)</span><br><span class="line">        &#123;</span><br><span class="line">            g.fillRect(x,y,size,size);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Field</span><br><span class="line">&#123;</span><br><span class="line">    private int height;</span><br><span class="line">    private int width;</span><br><span class="line">    private Cell[][] field;</span><br><span class="line">    public Field(int width,int height)</span><br><span class="line">    &#123;</span><br><span class="line">        this.width&#x3D;width;</span><br><span class="line">        this.height&#x3D;height;</span><br><span class="line">        field&#x3D;new Cell[height][width];</span><br><span class="line">    &#125;</span><br><span class="line">    public int getWidth()&#123;return width;&#125;</span><br><span class="line">    public int getHeight()&#123;return height;&#125;</span><br><span class="line">    public Cell place(int row,int col,Cell o)</span><br><span class="line">    &#123;</span><br><span class="line">        Cell ret&#x3D;field[row][col];</span><br><span class="line">        field[row][col]&#x3D;o;</span><br><span class="line">        return ret;</span><br><span class="line">    &#125;</span><br><span class="line">    public Cell get(int row ,int col)</span><br><span class="line">    &#123;</span><br><span class="line">        return field[row][col];</span><br><span class="line">    &#125;</span><br><span class="line">    public Cell[] getNeighbour(int row,int col)</span><br><span class="line">    &#123;</span><br><span class="line">        ArrayList&lt;Cell&gt; list&#x3D;new ArrayList&lt;Cell&gt;();</span><br><span class="line">        for(int i&#x3D;-1;i&lt;2;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j&#x3D;-1;j&lt;2;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                int r&#x3D;row+i;</span><br><span class="line">                int c&#x3D;col+j;</span><br><span class="line">                if(r&gt;-1&amp;&amp;r&lt;height&amp;&amp;c&gt;-1&amp;&amp;c&lt;width&amp;&amp;!(r&#x3D;&#x3D;row&amp;&amp;c&#x3D;&#x3D;col))</span><br><span class="line">                    list.add(field[r][c]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return list.toArray(new Cell[list.size()]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class CellMachine</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Field field&#x3D;new Field(30,30);</span><br><span class="line">        for(int row&#x3D;0;row&lt;field.getHeight();row++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int col&#x3D;0;col&lt;field.getHeight();col++)</span><br><span class="line">            &#123;</span><br><span class="line">                field.place(row,col,new Cell());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int row&#x3D;0;row&lt;field.getHeight();row++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int col&#x3D;0;col&lt;field.getHeight();col++)</span><br><span class="line">            &#123;</span><br><span class="line">                Cell cell&#x3D;field.get(row,col);</span><br><span class="line">                if(Math.random()&lt;0.2)</span><br><span class="line">                    cell.reborn();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        View view&#x3D;new View(field);</span><br><span class="line">        JFrame frame&#x3D;new JFrame();</span><br><span class="line">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">        frame.setResizable(false);</span><br><span class="line">        frame.setTitle(&quot;Cells&quot;);</span><br><span class="line">        frame.add(view);</span><br><span class="line">        frame.pack();</span><br><span class="line">        frame.setVisible(true);</span><br><span class="line">    for(int i&#x3D;0;i&lt;1000;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int row&#x3D;0;row&lt;field.getHeight();row++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int col&#x3D;0;col&lt;field.getWidth();col++)</span><br><span class="line">            &#123;</span><br><span class="line">                Cell cell&#x3D;field.get(row,col);</span><br><span class="line">                Cell[]neighbour&#x3D;field.getNeighbour(row,col);</span><br><span class="line">                int numOfLive&#x3D;0;</span><br><span class="line">                for(Cell c:neighbour)</span><br><span class="line">                &#123;</span><br><span class="line">                    if(c.isAlive())</span><br><span class="line">                        numOfLive++;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.print(&quot;[&quot;+row+&quot;][&quot;+col+&quot;]:&quot;);</span><br><span class="line">                System.out.print(cell.isAlive()?&quot;live&quot;:&quot;dead&quot;);</span><br><span class="line">                System.out.print(&quot;:&quot;+numOfLive+&quot;--&gt;&quot;);</span><br><span class="line">                if(cell.isAlive())</span><br><span class="line">                &#123;</span><br><span class="line">                    if (numOfLive &lt; 2 || numOfLive &gt; 3) &#123;</span><br><span class="line">                        cell.die();</span><br><span class="line">                        System.out.print(&quot;die&quot;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                    else if(numOfLive&#x3D;&#x3D;3)</span><br><span class="line">                    &#123;</span><br><span class="line">                        cell.reborn();</span><br><span class="line">                        System.out.print(&quot;reborn&quot;);</span><br><span class="line">                    &#125;</span><br><span class="line">                    System.out.println();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        System.out.println(&quot;UPDATA&quot;);</span><br><span class="line">        frame.repaint();</span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            Thread.sleep(80);</span><br><span class="line">        &#125;</span><br><span class="line">        catch (InterruptedException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1184,7 +1002,7 @@ public class CellMachine
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

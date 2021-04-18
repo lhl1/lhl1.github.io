@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="10大排序算法总结, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="10大排序算法总结, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>10大排序算法总结 | LHL&#39; s NetWork Station</title>
+    <title>10大排序算法总结 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    973
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    5 分
                 </div>
                 
 
@@ -491,9 +491,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -509,210 +506,34 @@
 <a id="more"></a>
 <p><img src="https://i.loli.net/2021/04/10/nHVYclxe41qkA5a.png" alt="sort.png"></p>
 <p>1插入排序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void insert_sort()
-&#123;
-    for (int i &#x3D; 1; i &lt; n; i ++ )
-    &#123;
-        int x &#x3D; a[i];
-        int j &#x3D; i-1;
-
-        while (j &gt;&#x3D; 0 &amp;&amp; x &lt; a[j])
-        &#123;
-            a[j+1] &#x3D; a[j];
-            j -- ;
-        &#125;
-        a[j+1] &#x3D; x;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert_sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x = a[i];</span><br><span class="line">        <span class="keyword">int</span> j = i<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; x &lt; a[j])</span><br><span class="line">        &#123;</span><br><span class="line">            a[j+<span class="number">1</span>] = a[j];</span><br><span class="line">            j -- ;</span><br><span class="line">        &#125;</span><br><span class="line">        a[j+<span class="number">1</span>] = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>2选择排序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void select_sort()
-&#123;
-    for (int i &#x3D; 0; i &lt; n; i ++ )
-    &#123;
-        int k &#x3D; i;
-        for (int j &#x3D; i+1; j &lt; n; j ++ )
-        &#123;
-            if (a[j] &lt; a[k])
-                k &#x3D; j;
-        &#125;
-        swap(a[i], a[k]);
-    &#125;
-
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">select_sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[j] &lt; a[k])</span><br><span class="line">                k = j;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(a[i], a[k]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>3冒泡排序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void bubble_sort()
-&#123;
-    for (int i &#x3D; n-1; i &gt;&#x3D; 1; i -- )
-    &#123;
-        bool flag &#x3D; true;
-        for (int j &#x3D; 1; j &lt;&#x3D; i; j ++ )
-            if (a[j-1] &gt; a[j])
-            &#123;
-                swap(a[j-1], a[j]);
-                flag &#x3D; false;
-            &#125;
-        if (flag) return;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n<span class="number">-1</span>; i &gt;= <span class="number">1</span>; i -- )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j ++ )</span><br><span class="line">            <span class="keyword">if</span> (a[j<span class="number">-1</span>] &gt; a[j])</span><br><span class="line">            &#123;</span><br><span class="line">                swap(a[j<span class="number">-1</span>], a[j]);</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag) <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>4希尔排序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void shell_sort()
-&#123;
-    for (int gap &#x3D; n &gt;&gt; 1; gap; gap &gt;&gt;&#x3D; 1)
-    &#123;
-        for (int i &#x3D; gap; i &lt; n; i ++ )
-        &#123;
-            int x &#x3D; a[i];
-            int j;
-            for (j &#x3D; i; j &gt;&#x3D; gap &amp;&amp; a[j-gap] &gt; x; j -&#x3D; gap)
-                a[j] &#x3D; a[j-gap];
-            a[j] &#x3D; x;
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> gap = n &gt;&gt; <span class="number">1</span>; gap; gap &gt;&gt;= <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = gap; i &lt; n; i ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x = a[i];</span><br><span class="line">            <span class="keyword">int</span> j;</span><br><span class="line">            <span class="keyword">for</span> (j = i; j &gt;= gap &amp;&amp; a[j-gap] &gt; x; j -= gap)</span><br><span class="line">                a[j] = a[j-gap];</span><br><span class="line">            a[j] = x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>5快速排序（最快）</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void quick_sort(int l, int r)
-&#123;
-    if (l &gt;&#x3D; r) return ;
-
-    int x &#x3D; a[l+r&gt;&gt;1], i &#x3D; l-1, j &#x3D; r+1;
-    while (i &lt; j)
-    &#123;
-        while (a[++ i] &lt; x);
-        while (a[-- j] &gt; x);
-        if (i &lt; j) swap(a[i], a[j]);
-    &#125;
-    sort(l, j), sort(j+1, r);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> x = a[l+r&gt;&gt;<span class="number">1</span>], i = l<span class="number">-1</span>, j = r+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (a[++ i] &lt; x);</span><br><span class="line">        <span class="keyword">while</span> (a[-- j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) swap(a[i], a[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(l, j), sort(j+<span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>6归并排序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void merge_sort(int l, int r)
-&#123;
-    if (l &gt;&#x3D; r) return;
-    int temp[N];
-    int mid &#x3D; l+r&gt;&gt;1;
-    merge_sort(l, mid), merge_sort(mid+1, r);
-    int k &#x3D; 0, i &#x3D; l, j &#x3D; mid+1;
-    while (i &lt;&#x3D; mid &amp;&amp; j &lt;&#x3D; r)
-    &#123;
-        if (a[i] &lt; a[j]) temp[k ++ ] &#x3D; a[i ++ ];
-        else temp[k ++ ] &#x3D; a[j ++ ];
-
-    &#125;
-    while (i &lt;&#x3D; mid) temp[k ++ ] &#x3D; a[i ++ ];
-    while (j &lt;&#x3D; r) temp[k ++ ] &#x3D; a[j ++ ];
-    for (int i &#x3D; l, j &#x3D; 0; i &lt;&#x3D; r; i ++ , j ++ ) a[i] &#x3D; temp[j];
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> temp[N];</span><br><span class="line">    <span class="keyword">int</span> mid = l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    merge_sort(l, mid), merge_sort(mid+<span class="number">1</span>, r);</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>, i = l, j = mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] &lt; a[j]) temp[k ++ ] = a[i ++ ];</span><br><span class="line">        <span class="keyword">else</span> temp[k ++ ] = a[j ++ ];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid) temp[k ++ ] = a[i ++ ];</span><br><span class="line">    <span class="keyword">while</span> (j &lt;= r) temp[k ++ ] = a[j ++ ];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l, j = <span class="number">0</span>; i &lt;= r; i ++ , j ++ ) a[i] = temp[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>7堆排序（须知此排序为使用了模拟堆，为了使最后一个非叶子节点的编号为n/2，数组编号从1开始）<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wanglei5205/p/8733524.html">https://www.cnblogs.com/wanglei5205/p/8733524.html</a></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void down(int u)
-&#123;
-    int t &#x3D; u;
-    if (u&lt;&lt;1 &lt;&#x3D; n &amp;&amp; h[u&lt;&lt;1] &lt; h[t]) t &#x3D; u&lt;&lt;1;
-    if ((u&lt;&lt;1|1) &lt;&#x3D; n &amp;&amp; h[u&lt;&lt;1|1] &lt; h[t]) t &#x3D; u&lt;&lt;1|1;
-    if (u !&#x3D; t)
-    &#123;
-        swap(h[u], h[t]);
-        down(t);
-    &#125;
-&#125;
-
-int main()
-&#123;
-    for (int i &#x3D; 1; i &lt;&#x3D; n; i ++ ) cin &gt;&gt; h[i];
-    for (int i &#x3D; n&#x2F;2; i; i -- ) down(i);
-    while (true)
-    &#123;
-        if (!n) break;
-        cout &lt;&lt; h[1] &lt;&lt; &#39; &#39;;
-        h[1] &#x3D; h[n];
-        n -- ;
-        down(1);
-    &#125;
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = u;</span><br><span class="line">    <span class="keyword">if</span> (u&lt;&lt;<span class="number">1</span> &lt;= n &amp;&amp; h[u&lt;&lt;<span class="number">1</span>] &lt; h[t]) t = u&lt;&lt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> ((u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>) &lt;= n &amp;&amp; h[u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>] &lt; h[t]) t = u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (u != t)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(h[u], h[t]);</span><br><span class="line">        down(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) <span class="built_in">cin</span> &gt;&gt; h[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n/<span class="number">2</span>; i; i -- ) down(i);</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!n) <span class="keyword">break</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; h[<span class="number">1</span>] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        h[<span class="number">1</span>] = h[n];</span><br><span class="line">        n -- ;</span><br><span class="line">        down(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>8基数排序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int maxbit()
-&#123;
-    int maxv &#x3D; a[0];
-    for (int i &#x3D; 1; i &lt; n; i ++ )
-        if (maxv &lt; a[i])
-            maxv &#x3D; a[i];
-    int cnt &#x3D; 1;
-    while (maxv &gt;&#x3D; 10) maxv &#x2F;&#x3D; 10, cnt ++ ;
-
-    return cnt;
-&#125;
-void radixsort()
-&#123;
-    int t &#x3D; maxbit();
-    int radix &#x3D; 1;
-
-    for (int i &#x3D; 1; i &lt;&#x3D; t; i ++ )
-    &#123;
-        for (int j &#x3D; 0; j &lt; 10; j ++ ) count[j] &#x3D; 0;
-        for (int j &#x3D; 0; j &lt; n; j ++ )
-        &#123;
-            int k &#x3D; (a[j] &#x2F; radix) % 10;
-            count[k] ++ ;
-        &#125;
-        for (int j &#x3D; 1; j &lt; 10; j ++ ) count[j] +&#x3D; count[j-1];
-        for (int j &#x3D; n-1; j &gt;&#x3D; 0; j -- )
-        &#123;
-            int k &#x3D; (a[j] &#x2F; radix) % 10;
-            temp[count[k]-1] &#x3D; a[j];
-            count[k] -- ;
-        &#125;
-        for (int j &#x3D; 0; j &lt; n; j ++ ) a[j] &#x3D; temp[j];
-        radix *&#x3D; 10;
-    &#125;
-
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxbit</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxv = a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i ++ )</span><br><span class="line">        <span class="keyword">if</span> (maxv &lt; a[i])</span><br><span class="line">            maxv = a[i];</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (maxv &gt;= <span class="number">10</span>) maxv /= <span class="number">10</span>, cnt ++ ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">radixsort</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = maxbit();</span><br><span class="line">    <span class="keyword">int</span> radix = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j ++ ) count[j] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> k = (a[j] / radix) % <span class="number">10</span>;</span><br><span class="line">            count[k] ++ ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; <span class="number">10</span>; j ++ ) count[j] += count[j<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = n<span class="number">-1</span>; j &gt;= <span class="number">0</span>; j -- )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> k = (a[j] / radix) % <span class="number">10</span>;</span><br><span class="line">            temp[count[k]<span class="number">-1</span>] = a[j];</span><br><span class="line">            count[k] -- ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j ++ ) a[j] = temp[j];</span><br><span class="line">        radix *= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>9计数排序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void counting_sort()
-&#123;
-    int sorted[N];
-    int maxv &#x3D; a[0];
-    for (int i &#x3D; 1; i &lt; n; i ++ )
-        if (maxv &lt; a[i])
-            maxv &#x3D; a[i];
-    int count[maxv+1];
-    for (int i &#x3D; 0; i &lt; n; i ++ ) count[a[i]] ++ ;
-    for (int i &#x3D; 1; i &lt;&#x3D; maxv; i ++ ) count[i] +&#x3D; count[i-1];
-    for (int i &#x3D; n-1; i &gt;&#x3D; 0; i -- )
-    &#123;
-        sorted[count[a[i]]-1] &#x3D; a[i];
-        count[a[i]] -- ;
-    &#125;
-    for (int i &#x3D; 0; i &lt; n; i ++ ) a[i] &#x3D; sorted[i];
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">counting_sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sorted[N];</span><br><span class="line">    <span class="keyword">int</span> maxv = a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i ++ )</span><br><span class="line">        <span class="keyword">if</span> (maxv &lt; a[i])</span><br><span class="line">            maxv = a[i];</span><br><span class="line">    <span class="keyword">int</span> count[maxv+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) count[a[i]] ++ ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxv; i ++ ) count[i] += count[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i -- )</span><br><span class="line">    &#123;</span><br><span class="line">        sorted[count[a[i]]<span class="number">-1</span>] = a[i];</span><br><span class="line">        count[a[i]] -- ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) a[i] = sorted[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>10桶排序（基数排序是桶排序的特例，优势是可以处理浮点数和负数，劣势是还要配合别的排序函数）</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; bucketSort(vector&lt;int&gt;&amp; nums) &#123;
-    int n &#x3D; nums.size();
-    int maxv &#x3D; *max_element(nums.begin(), nums.end());
-    int minv &#x3D; *min_element(nums.begin(), nums.end());
-    int bs &#x3D; 1000;
-    int m &#x3D; (maxv-minv)&#x2F;bs+1;
-    vector&lt;vector&lt;int&gt; &gt; bucket(m);
-    for (int i &#x3D; 0; i &lt; n; ++i) &#123;
-        bucket[(nums[i]-minv)&#x2F;bs].push_back(nums[i]);
-    &#125;
-    int idx &#x3D; 0;
-    for (int i &#x3D; 0; i &lt; m; ++i) &#123;
-        int sz &#x3D; bucket[i].size();
-        bucket[i] &#x3D; quickSort(bucket[i]);
-        for (int j &#x3D; 0; j &lt; sz; ++j) &#123;
-            nums[idx++] &#x3D; bucket[i][j];
-        &#125;
-    &#125;
-    return nums;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">bucketSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = nums.size();</span><br><span class="line">    <span class="keyword">int</span> maxv = *max_element(nums.begin(), nums.end());</span><br><span class="line">    <span class="keyword">int</span> minv = *min_element(nums.begin(), nums.end());</span><br><span class="line">    <span class="keyword">int</span> bs = <span class="number">1000</span>;</span><br><span class="line">    <span class="keyword">int</span> m = (maxv-minv)/bs+<span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; <span class="title">bucket</span><span class="params">(m)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        bucket[(nums[i]-minv)/bs].push_back(nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> idx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> sz = bucket[i].size();</span><br><span class="line">        bucket[i] = quickSort(bucket[i]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; sz; ++j) &#123;</span><br><span class="line">            nums[idx++] = bucket[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -1211,7 +1032,7 @@ void radixsort()
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

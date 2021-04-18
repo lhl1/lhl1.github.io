@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 763. 划分字母区间, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Leetcode 763. 划分字母区间, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 763. 划分字母区间 | LHL&#39; s NetWork Station</title>
+    <title>Leetcode 763. 划分字母区间 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    788
+                    751
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -509,12 +506,7 @@
 <a id="more"></a>
 <h4 id="763-划分字母区间"><a href="#763-划分字母区间" class="headerlink" title="763. 划分字母区间"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-labels/">763. 划分字母区间</a></h4><p>字符串 <code>S</code> 由小写字母组成。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。返回一个表示每个字符串片段的长度的列表。</p>
 <p><strong>示例：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：S &#x3D; &quot;ababcbacadefegdehijhklij&quot;
-输出：[9,7,8]
-解释：
-划分结果为 &quot;ababcbaca&quot;, &quot;defegde&quot;, &quot;hijhklij&quot;。
-每个字母最多出现在一个片段中。
-像 &quot;ababcbacadefegde&quot;, &quot;hijhklij&quot; 的划分是错误的，因为划分的片段数较少。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：S &#x3D; &quot;ababcbacadefegdehijhklij&quot;</span><br><span class="line">输出：[9,7,8]</span><br><span class="line">解释：</span><br><span class="line">划分结果为 &quot;ababcbaca&quot;, &quot;defegde&quot;, &quot;hijhklij&quot;。</span><br><span class="line">每个字母最多出现在一个片段中。</span><br><span class="line">像 &quot;ababcbacadefegde&quot;, &quot;hijhklij&quot; 的划分是错误的，因为划分的片段数较少。</span><br></pre></td></tr></table></figure>
 
 
 
@@ -523,30 +515,7 @@
 <li><code>S</code>的长度在<code>[1, 500]</code>之间。</li>
 <li><code>S</code>只包含小写字母 <code>&#39;a&#39;</code> 到 <code>&#39;z&#39;</code> 。</li>
 </ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-    vector&lt;int&gt; partitionLabels(string s) 
-	&#123;
-		int n&#x3D;s.size();
-		int alphbet[26];
-		for(int i&#x3D;0;i&lt;n;++i)
-		&#123;
-			alphbet[s[i]-&#39;a&#39;]&#x3D;i;
-		&#125;
-		vector&lt;int&gt; _return ;
-		int l&#x3D;0,r&#x3D;0,cnt&#x3D;0;
-		for(int i&#x3D;0;i&lt;n;++i)
-		&#123;
-			r&#x3D;max(r,alphbet[s[i]-&#39;a&#39;]);
-			if(i&#x3D;&#x3D;r) 
-			&#123;
-				_return.push_back(r-l+1);
-				l&#x3D;r+1;
-			&#125;
-		&#125;
-		return _return;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">partitionLabels</span><span class="params">(<span class="built_in">string</span> s)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n=s.size();</span><br><span class="line">		<span class="keyword">int</span> alphbet[<span class="number">26</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			alphbet[s[i]-<span class="string">&#x27;a&#x27;</span>]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; _return ;</span><br><span class="line">		<span class="keyword">int</span> l=<span class="number">0</span>,r=<span class="number">0</span>,cnt=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			r=max(r,alphbet[s[i]-<span class="string">&#x27;a&#x27;</span>]);</span><br><span class="line">			<span class="keyword">if</span>(i==r) </span><br><span class="line">			&#123;</span><br><span class="line">				_return.push_back(r-l+<span class="number">1</span>);</span><br><span class="line">				l=r+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> _return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>一想到分割字符串就想到了回溯，但本题其实不用回溯去暴力搜索。</p>
@@ -565,52 +534,9 @@ public:
 <li>统计每一个字符最后出现的位置</li>
 <li>从头遍历字符，并更新字符的最远出现下标，如果找到字符最远出现位置下标和当前下标相等了，则找到了分割点<br>如图：</li>
 </ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-    vector&lt;int&gt; partitionLabels(string S) &#123;
-        int hash[27] &#x3D; &#123;0&#125;; &#x2F;&#x2F; i为字符，hash[i]为字符出现的最后位置
-        for (int i &#x3D; 0; i &lt; S.size(); i++) &#123; &#x2F;&#x2F; 统计每一个字符最后出现的位置
-            hash[S[i] - &#39;a&#39;] &#x3D; i;
-        &#125;
-        vector&lt;int&gt; result;
-        int left &#x3D; 0;
-        int right &#x3D; 0;
-        for (int i &#x3D; 0; i &lt; S.size(); i++) &#123;
-            right &#x3D; max(right, hash[S[i] - &#39;a&#39;]); &#x2F;&#x2F; 找到字符出现的最远边界
-            if (i &#x3D;&#x3D; right) &#123;
-                result.push_back(right - left + 1);
-                left &#x3D; i + 1;
-            &#125;
-        &#125;
-        return result;
-    &#125;
-&#125;;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">partitionLabels</span><span class="params">(<span class="built_in">string</span> S)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hash[<span class="number">27</span>] = &#123;<span class="number">0</span>&#125;; <span class="comment">// i为字符，hash[i]为字符出现的最后位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; S.size(); i++) &#123; <span class="comment">// 统计每一个字符最后出现的位置</span></span><br><span class="line">            hash[S[i] - <span class="string">&#x27;a&#x27;</span>] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; S.size(); i++) &#123;</span><br><span class="line">            right = max(right, hash[S[i] - <span class="string">&#x27;a&#x27;</span>]); <span class="comment">// 找到字符出现的最远边界</span></span><br><span class="line">            <span class="keyword">if</span> (i == right) &#123;</span><br><span class="line">                result.push_back(right - left + <span class="number">1</span>);</span><br><span class="line">                left = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-    vector&lt;int&gt; partitionLabels(string s) 
-	&#123;
-		int n&#x3D;s.size();
-		int alphbet[26];
-		for(int i&#x3D;0;i&lt;n;++i)
-		&#123;
-			alphbet[s[i]-&#39;a&#39;]&#x3D;i;
-		&#125;
-		vector&lt;int&gt; _return ;
-		int l&#x3D;0,r&#x3D;0,cnt&#x3D;0;
-		for(int i&#x3D;0;i&lt;n;++i)
-		&#123;
-			r&#x3D;max(r,alphbet[s[i]-&#39;a&#39;]);
-			if(i&#x3D;&#x3D;r) 
-			&#123;
-				_return.push_back(r-l+1);
-				l&#x3D;r+1;
-			&#125;
-		&#125;
-		return _return;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">partitionLabels</span><span class="params">(<span class="built_in">string</span> s)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n=s.size();</span><br><span class="line">		<span class="keyword">int</span> alphbet[<span class="number">26</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			alphbet[s[i]-<span class="string">&#x27;a&#x27;</span>]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; _return ;</span><br><span class="line">		<span class="keyword">int</span> l=<span class="number">0</span>,r=<span class="number">0</span>,cnt=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			r=max(r,alphbet[s[i]-<span class="string">&#x27;a&#x27;</span>]);</span><br><span class="line">			<span class="keyword">if</span>(i==r) </span><br><span class="line">			&#123;</span><br><span class="line">				_return.push_back(r-l+<span class="number">1</span>);</span><br><span class="line">				l=r+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> _return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -1110,7 +1036,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

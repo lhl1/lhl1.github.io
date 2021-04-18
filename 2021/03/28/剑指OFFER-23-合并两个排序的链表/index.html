@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 23.合并两个排序的链表, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="剑指OFFER 23.合并两个排序的链表, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 23.合并两个排序的链表 | LHL&#39; s NetWork Station</title>
+    <title>剑指OFFER 23.合并两个排序的链表 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    331
+                    319
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,47 +504,11 @@
             <div id="articleContent">
                 <p>23.合并两个排序的链表</p>
 <a id="more"></a>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">36. 合并两个排序的链表
-
-输入两个递增排序的链表，合并这两个链表并使新链表中的结点仍然是按照递增排序的。
-
-样例
-输入：1-&gt;3-&gt;5 , 2-&gt;4-&gt;5
-
-输出：1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">36.</span> 合并两个排序的链表</span><br><span class="line"></span><br><span class="line">输入两个递增排序的链表，合并这两个链表并使新链表中的结点仍然是按照递增排序的。</span><br><span class="line"></span><br><span class="line">样例</span><br><span class="line">输入：<span class="number">1</span>-&gt;<span class="number">3</span>-&gt;<span class="number">5</span> , <span class="number">2</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span></span><br><span class="line"></span><br><span class="line">输出：<span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>-&gt;<span class="number">5</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>算法<br>(二路归并) O(n)O(n)<br>新建头部的保护结点dummy，设置cur指针指向dummy。<br>若当前l1指针指向的结点的值val比l2指针指向的结点的值val小，则令cur的next指针指向l1，且l1后移；否则指向l2，且l2后移。<br>然后cur指针按照上一部设置好的位置后移。<br>循环以上步骤直到l1或l2为空。<br>将剩余的l1或l2接到cur指针后边。<br>时间复杂度<br>两个链表各遍历一次，所以时间复杂度为O(n)</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
- * Definition for singly-linked list.
- * struct ListNode &#123;
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) &#123;&#125;
- * &#125;;
- *&#x2F;
-class Solution &#123;
-public:
-    ListNode* merge(ListNode* l1, ListNode* l2) &#123;
-        ListNode *dummy &#x3D; new ListNode(0);
-        ListNode *cur &#x3D; dummy;
-        while (l1 !&#x3D; NULL &amp;&amp; l2 !&#x3D; NULL) &#123;
-            if (l1 -&gt; val &lt; l2 -&gt; val) &#123;
-                cur -&gt; next &#x3D; l1;
-                l1 &#x3D; l1 -&gt; next;
-            &#125;
-            else &#123;
-                cur -&gt; next &#x3D; l2;
-                l2 &#x3D; l2 -&gt; next;
-            &#125;
-            cur &#x3D; cur -&gt; next;
-        &#125;
-        cur -&gt; next &#x3D; (l1 !&#x3D; NULL ? l1 : l2);
-        return dummy -&gt; next;
-    &#125;
-&#125;;
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">merge</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode *dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode *cur = dummy;</span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="literal">NULL</span> &amp;&amp; l2 != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (l1 -&gt; val &lt; l2 -&gt; val) &#123;</span><br><span class="line">                cur -&gt; next = l1;</span><br><span class="line">                l1 = l1 -&gt; next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                cur -&gt; next = l2;</span><br><span class="line">                l2 = l2 -&gt; next;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = cur -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        cur -&gt; next = (l1 != <span class="literal">NULL</span> ? l1 : l2);</span><br><span class="line">        <span class="keyword">return</span> dummy -&gt; next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 </li>
@@ -1053,7 +1014,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

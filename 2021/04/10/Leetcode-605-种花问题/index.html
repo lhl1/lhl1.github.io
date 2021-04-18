@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 605. 种花问题, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Leetcode 605. 种花问题, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 605. 种花问题 | LHL&#39; s NetWork Station</title>
+    <title>Leetcode 605. 种花问题 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    465
+                    452
                 </div>
                 
 
@@ -491,9 +491,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -518,13 +515,11 @@
 
  **示例 1：**
 
- <pre class="line-numbers language-none"><code class="language-none">输入：flowerbed &#x3D; [1,0,0,0,1], n &#x3D; 1
-输出：true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：flowerbed &#x3D; [1,0,0,0,1], n &#x3D; 1</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
 
  **示例 2：**
 
- <pre class="line-numbers language-none"><code class="language-none">输入：flowerbed &#x3D; [1,0,0,0,1], n &#x3D; 2
-输出：false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：flowerbed &#x3D; [1,0,0,0,1], n &#x3D; 2</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
 
 
 
@@ -546,24 +541,7 @@
 <li>最后判断n朵花是否有剩余，为了效率起见，可以在种花的过程中做判断，-一旦花被种完就返回true</li>
 </ul>
 <p>​     </p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-    bool canPlaceFlowers(vector&lt;int&gt;&amp; f, int n) 
-	&#123;
-		int num&#x3D;f.size();
-		for(int i&#x3D;0;i&lt;num;++i)
-		&#123;
-			if(f[i]&#x3D;&#x3D;0 &amp;&amp; (i&#x3D;&#x3D;0 || f[i-1]&#x3D;&#x3D; 0) &amp;&amp; (i&#x3D;&#x3D;num-1 || f[i+1]&#x3D;&#x3D;0))
-			&#123;
-				--n;
-				if(n&lt;&#x3D;0) return true;
-				f[i]&#x3D;1;
-			&#125;
-				
-		&#125;
-		return n&lt;&#x3D;0;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canPlaceFlowers</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; f, <span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> num=f.size();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(f[i]==<span class="number">0</span> &amp;&amp; (i==<span class="number">0</span> || f[i<span class="number">-1</span>]== <span class="number">0</span>) &amp;&amp; (i==num<span class="number">-1</span> || f[i+<span class="number">1</span>]==<span class="number">0</span>))</span><br><span class="line">			&#123;</span><br><span class="line">				--n;</span><br><span class="line">				<span class="keyword">if</span>(n&lt;=<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">				f[i]=<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> n&lt;=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -1063,7 +1041,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

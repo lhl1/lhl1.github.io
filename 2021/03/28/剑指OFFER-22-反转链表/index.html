@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 22.反转链表, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="剑指OFFER 22.反转链表, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 22.反转链表 | LHL&#39; s NetWork Station</title>
+    <title>剑指OFFER 22.反转链表 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    422
+                    415
                 </div>
                 
 
@@ -491,9 +491,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -516,9 +513,7 @@
 <p> <strong>思考题：</strong></p>
 <ul>
 <li><p>请同时实现迭代版本和递归版本。</p>
-<h4 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">输入:1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
-
-输出:5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入:<span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>-&gt;<span class="literal">NULL</span></span><br><span class="line"></span><br><span class="line">输出:<span class="number">5</span>-&gt;<span class="number">4</span>-&gt;<span class="number">3</span>-&gt;<span class="number">2</span>-&gt;<span class="number">1</span>-&gt;<span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -526,118 +521,9 @@
 </ul>
 <p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/RGIF2.gif" alt="img"></p>
 <p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/RGIF2.gif" alt="img"></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
- * Definition for singly-linked list.
- * struct ListNode &#123;
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) &#123;&#125;
- * &#125;;
- *&#x2F;
-class Solution &#123;
-public:
-    ListNode* reverseList(ListNode* head) &#123;
-        &#x2F;&#x2F; 记录前驱结点
-        ListNode* pre &#x3D; nullptr;
-        auto cur &#x3D; head;
-        while(cur)
-        &#123;
-            auto next &#x3D; cur-&gt;next;
-            cur-&gt;next &#x3D; pre;
-            pre &#x3D; cur;
-            cur &#x3D; next;
-        &#125;  
-        return pre;
-    &#125;
-&#125;;
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 记录前驱结点</span></span><br><span class="line">        ListNode* pre = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">auto</span> cur = head;</span><br><span class="line">        <span class="keyword">while</span>(cur)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> next = cur-&gt;next;</span><br><span class="line">            cur-&gt;next = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = next;</span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 迭代做法
-  &#x2F;&#x2F; Iterative C++ program to reverse 
-  &#x2F;&#x2F; a linked list 
-  #include &lt;iostream&gt; 
-  using namespace std; 
-
-  &#x2F;* Link list node *&#x2F;
-  struct Node &#123; 
-      int data; 
-      struct Node* next; 
-      Node(int data) 
-      &#123; 
-          this-&gt;data &#x3D; data; 
-          next &#x3D; NULL; 
-      &#125; 
-  &#125;; 
-
-  struct LinkedList &#123; 
-      Node* head; 
-      LinkedList() 
-      &#123; 
-          head &#x3D; NULL; 
-      &#125; 
-
-      &#x2F;* Function to reverse the linked list *&#x2F;
-      void reverse() 
-      &#123; 
-          &#x2F;&#x2F; Initialize current, previous and 
-          &#x2F;&#x2F; next pointers 
-          Node* current &#x3D; head; 
-          Node *prev &#x3D; NULL, *next &#x3D; NULL; 
-
-          while (current !&#x3D; NULL) &#123; 
-              &#x2F;&#x2F; Store next 
-              next &#x3D; current-&gt;next; 
-
-              &#x2F;&#x2F; Reverse current node&#39;s pointer 
-              current-&gt;next &#x3D; prev; 
-
-              &#x2F;&#x2F; Move pointers one position ahead. 
-              prev &#x3D; current; 
-              current &#x3D; next; 
-          &#125; 
-          head &#x3D; prev; 
-      &#125; 
-
-      &#x2F;* Function to print linked list *&#x2F;
-      void print() 
-      &#123; 
-          struct Node* temp &#x3D; head; 
-          while (temp !&#x3D; NULL) &#123; 
-              cout &lt;&lt; temp-&gt;data &lt;&lt; &quot; &quot;; 
-              temp &#x3D; temp-&gt;next; 
-          &#125; 
-      &#125; 
-
-      void push(int data) 
-      &#123; 
-          Node* temp &#x3D; new Node(data); 
-          temp-&gt;next &#x3D; head; 
-          head &#x3D; temp; 
-      &#125; 
-  &#125;; 
-
-  &#x2F;* Driver program to test above function*&#x2F;
-  int main() 
-  &#123; 
-      &#x2F;* Start with the empty list *&#x2F;
-      LinkedList ll; 
-      ll.push(20); 
-      ll.push(4); 
-      ll.push(15); 
-      ll.push(85); 
-
-      cout &lt;&lt; &quot;Given linked list\n&quot;; 
-      ll.print(); 
-
-      ll.reverse(); 
-
-      cout &lt;&lt; &quot;\nReversed Linked list \n&quot;; 
-      ll.print(); 
-      return 0; 
-  &#125; 
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 迭代做法</span><br><span class="line">  &#x2F;&#x2F; Iterative C++ program to reverse </span><br><span class="line">  &#x2F;&#x2F; a linked list </span><br><span class="line">  #include &lt;iostream&gt; </span><br><span class="line">  using namespace std; </span><br><span class="line"></span><br><span class="line">  &#x2F;* Link list node *&#x2F;</span><br><span class="line">  struct Node &#123; </span><br><span class="line">      int data; </span><br><span class="line">      struct Node* next; </span><br><span class="line">      Node(int data) </span><br><span class="line">      &#123; </span><br><span class="line">          this-&gt;data &#x3D; data; </span><br><span class="line">          next &#x3D; NULL; </span><br><span class="line">      &#125; </span><br><span class="line">  &#125;; </span><br><span class="line"></span><br><span class="line">  struct LinkedList &#123; </span><br><span class="line">      Node* head; </span><br><span class="line">      LinkedList() </span><br><span class="line">      &#123; </span><br><span class="line">          head &#x3D; NULL; </span><br><span class="line">      &#125; </span><br><span class="line"></span><br><span class="line">      &#x2F;* Function to reverse the linked list *&#x2F;</span><br><span class="line">      void reverse() </span><br><span class="line">      &#123; </span><br><span class="line">          &#x2F;&#x2F; Initialize current, previous and </span><br><span class="line">          &#x2F;&#x2F; next pointers </span><br><span class="line">          Node* current &#x3D; head; </span><br><span class="line">          Node *prev &#x3D; NULL, *next &#x3D; NULL; </span><br><span class="line"></span><br><span class="line">          while (current !&#x3D; NULL) &#123; </span><br><span class="line">              &#x2F;&#x2F; Store next </span><br><span class="line">              next &#x3D; current-&gt;next; </span><br><span class="line"></span><br><span class="line">              &#x2F;&#x2F; Reverse current node&#39;s pointer </span><br><span class="line">              current-&gt;next &#x3D; prev; </span><br><span class="line"></span><br><span class="line">              &#x2F;&#x2F; Move pointers one position ahead. </span><br><span class="line">              prev &#x3D; current; </span><br><span class="line">              current &#x3D; next; </span><br><span class="line">          &#125; </span><br><span class="line">          head &#x3D; prev; </span><br><span class="line">      &#125; </span><br><span class="line"></span><br><span class="line">      &#x2F;* Function to print linked list *&#x2F;</span><br><span class="line">      void print() </span><br><span class="line">      &#123; </span><br><span class="line">          struct Node* temp &#x3D; head; </span><br><span class="line">          while (temp !&#x3D; NULL) &#123; </span><br><span class="line">              cout &lt;&lt; temp-&gt;data &lt;&lt; &quot; &quot;; </span><br><span class="line">              temp &#x3D; temp-&gt;next; </span><br><span class="line">          &#125; </span><br><span class="line">      &#125; </span><br><span class="line"></span><br><span class="line">      void push(int data) </span><br><span class="line">      &#123; </span><br><span class="line">          Node* temp &#x3D; new Node(data); </span><br><span class="line">          temp-&gt;next &#x3D; head; </span><br><span class="line">          head &#x3D; temp; </span><br><span class="line">      &#125; </span><br><span class="line">  &#125;; </span><br><span class="line"></span><br><span class="line">  &#x2F;* Driver program to test above function*&#x2F;</span><br><span class="line">  int main() </span><br><span class="line">  &#123; </span><br><span class="line">      &#x2F;* Start with the empty list *&#x2F;</span><br><span class="line">      LinkedList ll; </span><br><span class="line">      ll.push(20); </span><br><span class="line">      ll.push(4); </span><br><span class="line">      ll.push(15); </span><br><span class="line">      ll.push(85); </span><br><span class="line"></span><br><span class="line">      cout &lt;&lt; &quot;Given linked list\n&quot;; </span><br><span class="line">      ll.print(); </span><br><span class="line"></span><br><span class="line">      ll.reverse(); </span><br><span class="line"></span><br><span class="line">      cout &lt;&lt; &quot;\nReversed Linked list \n&quot;; </span><br><span class="line">      ll.print(); </span><br><span class="line">      return 0; </span><br><span class="line">  &#125; </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1135,7 +1021,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

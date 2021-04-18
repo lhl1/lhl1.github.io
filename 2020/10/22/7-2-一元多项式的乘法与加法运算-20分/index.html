@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="7-2 一元多项式的乘法与加法运算 (20分), LHL&#39; s NetWork Station">
+    <meta name="keywords" content="7-2 一元多项式的乘法与加法运算 (20分), LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>7-2 一元多项式的乘法与加法运算 (20分) | LHL&#39; s NetWork Station</title>
+    <title>7-2 一元多项式的乘法与加法运算 (20分) | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -509,201 +506,8 @@
 <p>7-2 一元多项式的乘法与加法运算 (20分)</p>
 </blockquote>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">设计函数分别求两个一元多项式的乘积与和。
-
-输入格式:
-输入分2行，每行分别先给出多项式非零项的个数，再以指数递降方式输入一个多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。
-
-输出格式:
-输出分2行，分别以指数递降方式输出乘积多项式以及和多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。零多项式应输出0 0。
-
-输入样例:
-4 3 4 -5 2  6 1  -2 0
-3 5 20  -7 4  3 1
-输出样例:
-15 24 -25 22 30 21 -10 20 -21 8 35 6 -33 5 14 4 -15 3 18 2 -6 1
-5 20 -4 4 -5 2 9 1 -2 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-&#x2F;&#x2F; 多项式相乘 相加
-&#x2F;&#x2F; 数据结构设计
-typedef struct PolyNode *Polynomial;
-struct PolyNode
-&#123;
-    int coef;
-    int expon;
-    Polynomial link;
-&#125;;
-
-Polynomial ReadPoly();
-void Attach(int c, int e, Polynomial* pRear);
-Polynomial Add(Polynomial P1, Polynomial P2);
-Polynomial Mult(Polynomial P1, Polynomial P2);
-void PrintPoly(Polynomial P);
-int Compare(int a, int b);
-
-&#x2F;&#x2F; 程序框架搭建
-int main()
-&#123;
-    Polynomial P1, P2, PP, PS;
-
-    P1 &#x3D; ReadPoly();
-    P2 &#x3D; ReadPoly();
-    PP &#x3D; Mult(P1, P2);
-    PrintPoly(PP);
-    PS &#x3D; Add(P1, P2);
-    PrintPoly(PS);
-
-    return 0;
-&#125;
-
-&#x2F;&#x2F; 如何读入多项式
-
-Polynomial ReadPoly()
-&#123;
-    Polynomial p, rear, t;
-    int c, e, n;
-
-    scanf(&quot;%d&quot;, &amp;n);
-    p &#x3D; (Polynomial)malloc(sizeof(Polynomial));
-    p-&gt;link &#x3D; NULL;
-    rear &#x3D; p;
-    while (n--)
-    &#123;
-        scanf(&quot;%d %d&quot;, &amp;c, &amp;e);
-        Attach(c, e, &amp;rear);&#x2F;&#x2F;将当前输入项插入多项式尾部
-    &#125;
-    t &#x3D; p;
-    p &#x3D; p-&gt;link;
-    free(t);
-    return p;
-&#125;
-
-void Attach(int c, int e, Polynomial* pRear)
-&#123;
-    Polynomial P;
-
-    P &#x3D; (Polynomial)malloc(sizeof(struct PolyNode));
-    P-&gt;coef &#x3D; c; &#x2F;&#x2F; 对新结点赋值
-    P-&gt;expon &#x3D; e;
-    P-&gt;link &#x3D; NULL;
-    (*pRear)-&gt;link &#x3D; P;
-    *pRear &#x3D; P; &#x2F;&#x2F; 修改pRear的值
-&#125;
-
-int Compare(int a, int b)
-&#123;
-    if (a &gt; b)    return 1;
-    else if (a &lt; b)   return -1;
-    else    return 0;
-&#125;
-
-&#x2F;&#x2F; 多项式相加
-Polynomial Add(Polynomial P1, Polynomial P2)
-&#123;
-    Polynomial P, Rear, t, t1, t2;
-    t1 &#x3D; P1; t2 &#x3D; P2;
-    P &#x3D; (Polynomial)malloc(sizeof(struct PolyNode));
-    P-&gt;link &#x3D; NULL;
-    Rear &#x3D; P;
-    while (t1 &amp;&amp; t2)
-    &#123;
-        switch (Compare(t1-&gt;expon, t2-&gt;expon))
-        &#123;
-        case 1:
-            Attach(t1-&gt;coef, t1-&gt;expon, &amp;Rear);
-            t1 &#x3D; t1-&gt;link;
-            break;
-        case -1:
-            Attach(t2-&gt;coef, t2-&gt;expon, &amp;Rear);
-            t2 &#x3D; t2-&gt;link;
-            break;
-        case 0:
-            if (t1-&gt;coef + t2-&gt;coef)   Attach(t1-&gt;coef + t2-&gt;coef, t1-&gt;expon, &amp;Rear);
-            t1 &#x3D; t1-&gt;link;
-            t2 &#x3D; t2-&gt;link;
-            break;
-        &#125;
-    &#125;
-    &#x2F;&#x2F;注意细心，不要把遍历写到前面那个括号去了
-    for (; t1; t1 &#x3D; t1-&gt;link) Attach(t1-&gt;coef, t1-&gt;expon, &amp;Rear);
-    for (; t2; t2 &#x3D; t2-&gt;link) Attach(t2-&gt;coef, t2-&gt;expon, &amp;Rear);
-    Rear-&gt;link &#x3D; NULL;
-    t &#x3D; P;
-    P &#x3D; P-&gt;link;
-    free(t);
-    return P;
-&#125;
-
-&#x2F;&#x2F; 多项式相乘
-Polynomial Mult(Polynomial P1, Polynomial P2)
-&#123;
-    Polynomial P, Rear, t1, t2, t;
-    int c, e;
-
-    if (!P1 || !P2)  return NULL;
-
-    t1 &#x3D; P1;
-    P &#x3D; (Polynomial)malloc(sizeof(struct PolyNode));
-    P-&gt;link &#x3D; NULL; 
-
-    while (t1)
-    &#123;
-       t2 &#x3D; P2; Rear &#x3D; P;&#x2F;&#x2F;必须在里面，每个数字都要循环遍历
-        while (t2)
-        &#123;
-            e &#x3D; t1-&gt;expon + t2-&gt;expon;
-            c &#x3D; t1-&gt;coef * t2-&gt;coef;
-          while (Rear-&gt;link!&#x3D;NULL &amp;&amp; Rear-&gt;link-&gt;expon &gt; e) 
-              Rear &#x3D; Rear-&gt;link;
-            if (Rear-&gt;link &amp;&amp; Rear-&gt;link-&gt;expon &#x3D;&#x3D; e)
-            &#123;   &#x2F;&#x2F; 指数的系数相等
-                if (Rear-&gt;link-&gt;coef + c!&#x3D;0)
-                    Rear-&gt;link-&gt;coef +&#x3D; c;
-                else &#123;
-                      Rear-&gt;link &#x3D; Rear-&gt;link-&gt;link;                  
-                &#125;
-            &#125;
-            else    &#x2F;&#x2F; 指数的系数不相等
-            &#123;
-                t &#x3D; (Polynomial)malloc(sizeof(struct PolyNode));
-                t-&gt;coef &#x3D; c;
-                t-&gt;expon &#x3D; e;
-                t-&gt;link &#x3D; Rear-&gt;link;
-                Rear-&gt;link &#x3D; t;
-                Rear &#x3D; t;&#x2F;&#x2F;Rear-&gt;link;
-            &#125;
-            t2 &#x3D; t2-&gt;link;
-        &#125;
-        t1 &#x3D; t1-&gt;link;
-    &#125;
-
-    P &#x3D; P-&gt;link;
-    free(t2);
- free(t1);
-    return P;
-&#125;
-
-&#x2F;&#x2F; 如何将多项式输出
-void PrintPoly(Polynomial P)
-&#123;
-    int flag &#x3D; 0;   &#x2F;&#x2F; 辅助调整输出格式用
-    if (!P)
-    &#123;
-        printf(&quot;0 0\n&quot;);
-        return;
-    &#125;
-
-    while (P)
-    &#123;
-        if (flag&#x3D;&#x3D;0)   flag &#x3D; 1;
-        else    printf(&quot; &quot;);
-        printf(&quot;%d %d&quot;, P-&gt;coef, P-&gt;expon);
-        P &#x3D; P-&gt;link;
-    &#125;
-    printf(&quot;\n&quot;);
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">设计函数分别求两个一元多项式的乘积与和。</span><br><span class="line"></span><br><span class="line">输入格式:</span><br><span class="line">输入分2行，每行分别先给出多项式非零项的个数，再以指数递降方式输入一个多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。</span><br><span class="line"></span><br><span class="line">输出格式:</span><br><span class="line">输出分2行，分别以指数递降方式输出乘积多项式以及和多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。零多项式应输出0 0。</span><br><span class="line"></span><br><span class="line">输入样例:</span><br><span class="line">4 3 4 -5 2  6 1  -2 0</span><br><span class="line">3 5 20  -7 4  3 1</span><br><span class="line">输出样例:</span><br><span class="line">15 24 -25 22 30 21 -10 20 -21 8 35 6 -33 5 14 4 -15 3 18 2 -6 1</span><br><span class="line">5 20 -4 4 -5 2 9 1 -2 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">&#x2F;&#x2F; 多项式相乘 相加</span><br><span class="line">&#x2F;&#x2F; 数据结构设计</span><br><span class="line">typedef struct PolyNode *Polynomial;</span><br><span class="line">struct PolyNode</span><br><span class="line">&#123;</span><br><span class="line">    int coef;</span><br><span class="line">    int expon;</span><br><span class="line">    Polynomial link;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Polynomial ReadPoly();</span><br><span class="line">void Attach(int c, int e, Polynomial* pRear);</span><br><span class="line">Polynomial Add(Polynomial P1, Polynomial P2);</span><br><span class="line">Polynomial Mult(Polynomial P1, Polynomial P2);</span><br><span class="line">void PrintPoly(Polynomial P);</span><br><span class="line">int Compare(int a, int b);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 程序框架搭建</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    Polynomial P1, P2, PP, PS;</span><br><span class="line"></span><br><span class="line">    P1 &#x3D; ReadPoly();</span><br><span class="line">    P2 &#x3D; ReadPoly();</span><br><span class="line">    PP &#x3D; Mult(P1, P2);</span><br><span class="line">    PrintPoly(PP);</span><br><span class="line">    PS &#x3D; Add(P1, P2);</span><br><span class="line">    PrintPoly(PS);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 如何读入多项式</span><br><span class="line"></span><br><span class="line">Polynomial ReadPoly()</span><br><span class="line">&#123;</span><br><span class="line">    Polynomial p, rear, t;</span><br><span class="line">    int c, e, n;</span><br><span class="line"></span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    p &#x3D; (Polynomial)malloc(sizeof(Polynomial));</span><br><span class="line">    p-&gt;link &#x3D; NULL;</span><br><span class="line">    rear &#x3D; p;</span><br><span class="line">    while (n--)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d %d&quot;, &amp;c, &amp;e);</span><br><span class="line">        Attach(c, e, &amp;rear);&#x2F;&#x2F;将当前输入项插入多项式尾部</span><br><span class="line">    &#125;</span><br><span class="line">    t &#x3D; p;</span><br><span class="line">    p &#x3D; p-&gt;link;</span><br><span class="line">    free(t);</span><br><span class="line">    return p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Attach(int c, int e, Polynomial* pRear)</span><br><span class="line">&#123;</span><br><span class="line">    Polynomial P;</span><br><span class="line"></span><br><span class="line">    P &#x3D; (Polynomial)malloc(sizeof(struct PolyNode));</span><br><span class="line">    P-&gt;coef &#x3D; c; &#x2F;&#x2F; 对新结点赋值</span><br><span class="line">    P-&gt;expon &#x3D; e;</span><br><span class="line">    P-&gt;link &#x3D; NULL;</span><br><span class="line">    (*pRear)-&gt;link &#x3D; P;</span><br><span class="line">    *pRear &#x3D; P; &#x2F;&#x2F; 修改pRear的值</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int Compare(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">    if (a &gt; b)    return 1;</span><br><span class="line">    else if (a &lt; b)   return -1;</span><br><span class="line">    else    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 多项式相加</span><br><span class="line">Polynomial Add(Polynomial P1, Polynomial P2)</span><br><span class="line">&#123;</span><br><span class="line">    Polynomial P, Rear, t, t1, t2;</span><br><span class="line">    t1 &#x3D; P1; t2 &#x3D; P2;</span><br><span class="line">    P &#x3D; (Polynomial)malloc(sizeof(struct PolyNode));</span><br><span class="line">    P-&gt;link &#x3D; NULL;</span><br><span class="line">    Rear &#x3D; P;</span><br><span class="line">    while (t1 &amp;&amp; t2)</span><br><span class="line">    &#123;</span><br><span class="line">        switch (Compare(t1-&gt;expon, t2-&gt;expon))</span><br><span class="line">        &#123;</span><br><span class="line">        case 1:</span><br><span class="line">            Attach(t1-&gt;coef, t1-&gt;expon, &amp;Rear);</span><br><span class="line">            t1 &#x3D; t1-&gt;link;</span><br><span class="line">            break;</span><br><span class="line">        case -1:</span><br><span class="line">            Attach(t2-&gt;coef, t2-&gt;expon, &amp;Rear);</span><br><span class="line">            t2 &#x3D; t2-&gt;link;</span><br><span class="line">            break;</span><br><span class="line">        case 0:</span><br><span class="line">            if (t1-&gt;coef + t2-&gt;coef)   Attach(t1-&gt;coef + t2-&gt;coef, t1-&gt;expon, &amp;Rear);</span><br><span class="line">            t1 &#x3D; t1-&gt;link;</span><br><span class="line">            t2 &#x3D; t2-&gt;link;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;注意细心，不要把遍历写到前面那个括号去了</span><br><span class="line">    for (; t1; t1 &#x3D; t1-&gt;link) Attach(t1-&gt;coef, t1-&gt;expon, &amp;Rear);</span><br><span class="line">    for (; t2; t2 &#x3D; t2-&gt;link) Attach(t2-&gt;coef, t2-&gt;expon, &amp;Rear);</span><br><span class="line">    Rear-&gt;link &#x3D; NULL;</span><br><span class="line">    t &#x3D; P;</span><br><span class="line">    P &#x3D; P-&gt;link;</span><br><span class="line">    free(t);</span><br><span class="line">    return P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 多项式相乘</span><br><span class="line">Polynomial Mult(Polynomial P1, Polynomial P2)</span><br><span class="line">&#123;</span><br><span class="line">    Polynomial P, Rear, t1, t2, t;</span><br><span class="line">    int c, e;</span><br><span class="line"></span><br><span class="line">    if (!P1 || !P2)  return NULL;</span><br><span class="line"></span><br><span class="line">    t1 &#x3D; P1;</span><br><span class="line">    P &#x3D; (Polynomial)malloc(sizeof(struct PolyNode));</span><br><span class="line">    P-&gt;link &#x3D; NULL; </span><br><span class="line"></span><br><span class="line">    while (t1)</span><br><span class="line">    &#123;</span><br><span class="line">       t2 &#x3D; P2; Rear &#x3D; P;&#x2F;&#x2F;必须在里面，每个数字都要循环遍历</span><br><span class="line">        while (t2)</span><br><span class="line">        &#123;</span><br><span class="line">            e &#x3D; t1-&gt;expon + t2-&gt;expon;</span><br><span class="line">            c &#x3D; t1-&gt;coef * t2-&gt;coef;</span><br><span class="line">          while (Rear-&gt;link!&#x3D;NULL &amp;&amp; Rear-&gt;link-&gt;expon &gt; e) </span><br><span class="line">              Rear &#x3D; Rear-&gt;link;</span><br><span class="line">            if (Rear-&gt;link &amp;&amp; Rear-&gt;link-&gt;expon &#x3D;&#x3D; e)</span><br><span class="line">            &#123;   &#x2F;&#x2F; 指数的系数相等</span><br><span class="line">                if (Rear-&gt;link-&gt;coef + c!&#x3D;0)</span><br><span class="line">                    Rear-&gt;link-&gt;coef +&#x3D; c;</span><br><span class="line">                else &#123;</span><br><span class="line">                      Rear-&gt;link &#x3D; Rear-&gt;link-&gt;link;                  </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            else    &#x2F;&#x2F; 指数的系数不相等</span><br><span class="line">            &#123;</span><br><span class="line">                t &#x3D; (Polynomial)malloc(sizeof(struct PolyNode));</span><br><span class="line">                t-&gt;coef &#x3D; c;</span><br><span class="line">                t-&gt;expon &#x3D; e;</span><br><span class="line">                t-&gt;link &#x3D; Rear-&gt;link;</span><br><span class="line">                Rear-&gt;link &#x3D; t;</span><br><span class="line">                Rear &#x3D; t;&#x2F;&#x2F;Rear-&gt;link;</span><br><span class="line">            &#125;</span><br><span class="line">            t2 &#x3D; t2-&gt;link;</span><br><span class="line">        &#125;</span><br><span class="line">        t1 &#x3D; t1-&gt;link;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    P &#x3D; P-&gt;link;</span><br><span class="line">    free(t2);</span><br><span class="line"> free(t1);</span><br><span class="line">    return P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 如何将多项式输出</span><br><span class="line">void PrintPoly(Polynomial P)</span><br><span class="line">&#123;</span><br><span class="line">    int flag &#x3D; 0;   &#x2F;&#x2F; 辅助调整输出格式用</span><br><span class="line">    if (!P)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;0 0\n&quot;);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    while (P)</span><br><span class="line">    &#123;</span><br><span class="line">        if (flag&#x3D;&#x3D;0)   flag &#x3D; 1;</span><br><span class="line">        else    printf(&quot; &quot;);</span><br><span class="line">        printf(&quot;%d %d&quot;, P-&gt;coef, P-&gt;expon);</span><br><span class="line">        P &#x3D; P-&gt;link;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1201,7 +1005,7 @@ void PrintPoly(Polynomial P)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

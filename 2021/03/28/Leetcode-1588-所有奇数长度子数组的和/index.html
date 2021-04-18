@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 1588. 所有奇数长度子数组的和, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="Leetcode 1588. 所有奇数长度子数组的和, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 1588. 所有奇数长度子数组的和 | LHL&#39; s NetWork Station</title>
+    <title>Leetcode 1588. 所有奇数长度子数组的和 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -507,206 +504,13 @@
             <div id="articleContent">
                 <p>所有奇数长度子数组的和</p>
 <a id="more"></a>
-<pre class="line-numbers language-none"><code class="language-none">给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
-
-子数组 定义为原数组中的一个连续子序列。
-
-请你返回 arr 中 所有奇数长度子数组的和 。
-
- 
-
-示例 1：
-
-输入：arr &#x3D; [1,4,2,5,3]
-输出：58
-解释：所有奇数长度子数组和它们的和为：
-[1] &#x3D; 1
-[4] &#x3D; 4
-[2] &#x3D; 2
-[5] &#x3D; 5
-[3] &#x3D; 3
-[1,4,2] &#x3D; 7
-[4,2,5] &#x3D; 11
-[2,5,3] &#x3D; 10
-[1,4,2,5,3] &#x3D; 15
-我们将所有值求和得到 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 &#x3D; 58
-示例 2：
-
-输入：arr &#x3D; [1,2]
-输出：3
-解释：总共只有 2 个长度为奇数的子数组，[1] 和 [2]。它们的和为 3 。
-示例 3：
-
-输入：arr &#x3D; [10,11,12]
-输出：66
- 
-
-提示：
-
-1 &lt;&#x3D; arr.length &lt;&#x3D; 100
-1 &lt;&#x3D; arr[i] &lt;&#x3D; 1000
-
-来源：力扣（LeetCode）
-链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;sum-of-all-odd-length-subarrays
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。</span><br><span class="line"></span><br><span class="line">子数组 定义为原数组中的一个连续子序列。</span><br><span class="line"></span><br><span class="line">请你返回 arr 中 所有奇数长度子数组的和 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：arr &#x3D; [1,4,2,5,3]</span><br><span class="line">输出：58</span><br><span class="line">解释：所有奇数长度子数组和它们的和为：</span><br><span class="line">[1] &#x3D; 1</span><br><span class="line">[4] &#x3D; 4</span><br><span class="line">[2] &#x3D; 2</span><br><span class="line">[5] &#x3D; 5</span><br><span class="line">[3] &#x3D; 3</span><br><span class="line">[1,4,2] &#x3D; 7</span><br><span class="line">[4,2,5] &#x3D; 11</span><br><span class="line">[2,5,3] &#x3D; 10</span><br><span class="line">[1,4,2,5,3] &#x3D; 15</span><br><span class="line">我们将所有值求和得到 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 &#x3D; 58</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：arr &#x3D; [1,2]</span><br><span class="line">输出：3</span><br><span class="line">解释：总共只有 2 个长度为奇数的子数组，[1] 和 [2]。它们的和为 3 。</span><br><span class="line">示例 3：</span><br><span class="line"></span><br><span class="line">输入：arr &#x3D; [10,11,12]</span><br><span class="line">输出：66</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;&#x3D; arr.length &lt;&#x3D; 100</span><br><span class="line">1 &lt;&#x3D; arr[i] &lt;&#x3D; 1000</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;sum-of-all-odd-length-subarrays</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">第一想法：
-class Solution &#123;
-public:
-    int sumOddLengthSubarrays(vector&lt;int&gt;&amp; arr) 
-    &#123;
-        int i,j,k;
-        int sum&#x3D;0;
-        for(i&#x3D;0;i&lt;arr.size();i+&#x3D;2)
-        &#123;
-            for(j&#x3D;0;i+j&lt;arr.size();j++)
-            &#123;
-                for(k&#x3D;0;k&lt;&#x3D;i;k++)
-                sum+&#x3D; arr[k+j];
-                
-            &#125;
-        &#125;
-        return sum;
-    &#125;
-&#125;;
-
-首先，力扣比赛第一题通常无脑暴力都能过。
-
-我们只需要枚举所有的奇数长度的子数组即可。在下面的代码中，i 用来枚举每个连续子数组的起点，sz 为连续子数组的长度。accumulate用来计算起点是 i，长度为 sz 的子数组的和。时间复杂度是 O(n^3) 的。
-
-我的参考代码（C++）：
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">第一想法：</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumOddLengthSubarrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,j,k;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;arr.size();i+=<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(j=<span class="number">0</span>;i+j&lt;arr.size();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;=i;k++)</span><br><span class="line">                sum+= arr[k+j];</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">首先，力扣比赛第一题通常无脑暴力都能过。</span><br><span class="line"></span><br><span class="line">我们只需要枚举所有的奇数长度的子数组即可。在下面的代码中，i 用来枚举每个连续子数组的起点，sz 为连续子数组的长度。accumulate用来计算起点是 i，长度为 sz 的子数组的和。时间复杂度是 O(n^<span class="number">3</span>) 的。</span><br><span class="line"></span><br><span class="line">我的参考代码（C++）：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumOddLengthSubarrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.size(); i ++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> sz = <span class="number">1</span>; i + sz - <span class="number">1</span> &lt; arr.size(); sz += <span class="number">2</span>)</span><br><span class="line">                res += accumulate(arr.begin() + i, arr.begin() + i + sz, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;; </span><br><span class="line">我的提交结果：时间 <span class="number">24</span>ms；空间 <span class="number">8.2</span> MB。</span><br><span class="line"></span><br><span class="line">在上面的解法中，accumulate的本质就是在计算从 arr[i] 到 arr[i + sz - <span class="number">1</span>] 的连续子数组的和。计算连续子数组的和，很容想到可以使用前缀和（Prefix Sum）的方式。使用 O(n) 的时间可以预处理前缀和数组，之后使用 O(<span class="number">1</span>) 的时间即可计算出一个连续子数组的和。</span><br><span class="line"></span><br><span class="line">时间复杂度是 O(n^<span class="number">2</span>) 的，空间复杂度是 O(n) 的。</span><br><span class="line"></span><br><span class="line">我的参考代码（C++）：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumOddLengthSubarrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; presum = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> e: arr) presum.push_back(presum.back() + e);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.size(); i ++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> sz = <span class="number">1</span>; i + sz - <span class="number">1</span> &lt; arr.size(); sz += <span class="number">2</span>)</span><br><span class="line">                res += presum[i + sz] - presum[i];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">我的提交结果：时间 <span class="number">8</span>ms；空间 <span class="number">8.6</span> MB。</span><br><span class="line"></span><br><span class="line">下面重点来了。这个问题有 O(n) 的解法。</span><br><span class="line"></span><br><span class="line">其实想法很简单，相对也比较套路。就是遍历一遍所有的元素，然后查看这个元素会在多少个长度为奇数的数组中出现过。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">比如题目给出的第一个测试用例 [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>] 中；</span><br><span class="line"></span><br><span class="line"><span class="number">1</span> 在 <span class="number">3</span> 个长度为奇数的数组中出现过：[<span class="number">1</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>]；所以最终的和，要加上 <span class="number">1</span> * <span class="number">3</span>；</span><br><span class="line"></span><br><span class="line"><span class="number">4</span> 在 <span class="number">4</span> 个长度为奇数的数组中出现过：[<span class="number">4</span>], [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>]；所以最终和，要加上 <span class="number">4</span> * <span class="number">4</span>；</span><br><span class="line"></span><br><span class="line"><span class="number">2</span> 在 <span class="number">5</span> 个长度为奇数的数组中出现过：[<span class="number">2</span>], [<span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>]；所以最终和，要加上 <span class="number">5</span> * <span class="number">2</span>；</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">下面的关键就是，如何计算一个数字在多少个奇数长度的数组中出现过？</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">对于一个数字，它所在的数组，可以在它前面再选择 <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, ... 个数字，一共有 left = i + <span class="number">1</span> 个选择；</span><br><span class="line"></span><br><span class="line">可以在它后面再选择 <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, ... 个数字，一共有 right = n - i 个选择。</span><br><span class="line"></span><br><span class="line">如果在前面选择了偶数个数字，那么在后面，也必须选择偶数个数字，这样加上它自身，才构成奇数长度的数组；</span><br><span class="line"></span><br><span class="line">如果在前面选择了奇数个数字，那么在后面，也必须选择奇数个数字，这样加上它自身，才构成奇数长度的数组；</span><br><span class="line"></span><br><span class="line">数字前面共有 left 个选择，其中偶数个数字的选择方案有 left_even = (left + <span class="number">1</span>) / <span class="number">2</span> 个，奇数个数字的选择方案有 left_odd = left / <span class="number">2</span> 个；</span><br><span class="line"></span><br><span class="line">数字后面共有 right 个选择，其中偶数个数字的选择方案有 right_even = (right + <span class="number">1</span>) / <span class="number">2</span> 个，奇数个数字的选择方案有 right_odd = right / <span class="number">2</span> 个；</span><br><span class="line"></span><br><span class="line">所以，每个数字一共在 left_even * right_even + left_odd * right_odd 个奇数长度的数组中出现过。</span><br><span class="line"></span><br><span class="line">我的参考代码（C++）：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> sumOddLengthSubarrays(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.size(); i ++)&#123;</span><br><span class="line">            <span class="keyword">int</span> left = i + <span class="number">1</span>, right = arr.size() - i,</span><br><span class="line">                left_even = (left + <span class="number">1</span>) / <span class="number">2</span>, right_even = (right + <span class="number">1</span>) / <span class="number">2</span>,</span><br><span class="line">                left_odd = left / <span class="number">2</span>, right_odd = right / <span class="number">2</span>;</span><br><span class="line">            res += (left_even * right_even + left_odd * right_odd) * arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">我的提交结果：时间 <span class="number">4</span>ms；空间 <span class="number">8</span> MB。</span><br><span class="line"></span><br><span class="line">O(n) 的解法可以应对 <span class="number">10</span>^<span class="number">6</span> 乃至 <span class="number">10</span>^<span class="number">7</span> 的数字规模。如果这道题的数字规模是这样的，那么上面两种解法都将超时，这个问题也就变成了一个 Medium 甚至是 Hard 的问题了吧：）</span><br><span class="line"></span><br><span class="line">* odd奇数，even偶数</span><br><span class="line">* 对于每个元素i(数组中下标为i)来说，要构成奇数长度的子数组</span><br><span class="line">  即 i左边的元素个数left+i本身自己一个+右边元素的个数right=奇数</span><br><span class="line">  即 left+right=偶数</span><br><span class="line">* 满足a+b=偶数就只有两种情况</span><br><span class="line">  <span class="number">1.</span> 奇数+奇数=偶数</span><br><span class="line">  <span class="number">2.</span> 偶数+偶数=偶数</span><br><span class="line">* <span class="number">1.</span> 所以只需要求得i左边可以选择奇数长度的可能有多少种，即left_odd,同样求右边奇数right_odd</span><br><span class="line">     就可以求出策略<span class="number">1</span>有多少种可能</span><br><span class="line">  <span class="number">2.</span> 所以只需要求得i左边可以选择偶数长度的可能有多少种，即left_odd,同样求右边偶数right_odd</span><br><span class="line">     就可以求出策略<span class="number">1</span>有多少种可能，注意<span class="number">0</span>也算选择的一种可能</span><br><span class="line">* 即元素i在所有奇数长度子数组出现的次数总和是</span><br><span class="line">  left_odd*right_odd+left_even*right_even</span><br><span class="line">* 元素i左边元素共有i个，右边元素共有siz-i<span class="number">-1</span>个</span><br></pre></td></tr></table></figure>
 
 
-class Solution &#123;
-public:
-    int sumOddLengthSubarrays(vector&lt;int&gt;&amp; arr) &#123;
-
-        int res &#x3D; 0;
-        for(int i &#x3D; 0; i &lt; arr.size(); i ++)
-            for(int sz &#x3D; 1; i + sz - 1 &lt; arr.size(); sz +&#x3D; 2)
-                res +&#x3D; accumulate(arr.begin() + i, arr.begin() + i + sz, 0);
-        return res;
-    &#125;
-&#125;; 
-我的提交结果：时间 24ms；空间 8.2 MB。
-
-在上面的解法中，accumulate的本质就是在计算从 arr[i] 到 arr[i + sz - 1] 的连续子数组的和。计算连续子数组的和，很容想到可以使用前缀和（Prefix Sum）的方式。使用 O(n) 的时间可以预处理前缀和数组，之后使用 O(1) 的时间即可计算出一个连续子数组的和。
-
-时间复杂度是 O(n^2) 的，空间复杂度是 O(n) 的。
-
-我的参考代码（C++）：
-
-
-class Solution &#123;
-public:
-    int sumOddLengthSubarrays(vector&lt;int&gt;&amp; arr) &#123;
-
-        vector&lt;int&gt; presum &#x3D; &#123;0&#125;;
-        for(int e: arr) presum.push_back(presum.back() + e);
-
-        int res &#x3D; 0;
-        for(int i &#x3D; 0; i &lt; arr.size(); i ++)
-            for(int sz &#x3D; 1; i + sz - 1 &lt; arr.size(); sz +&#x3D; 2)
-                res +&#x3D; presum[i + sz] - presum[i];
-
-        return res;
-    &#125;
-&#125;;
-我的提交结果：时间 8ms；空间 8.6 MB。
-
-下面重点来了。这个问题有 O(n) 的解法。
-
-其实想法很简单，相对也比较套路。就是遍历一遍所有的元素，然后查看这个元素会在多少个长度为奇数的数组中出现过。
-
-
-
-比如题目给出的第一个测试用例 [1, 4, 2, 5, 3] 中；
-
-1 在 3 个长度为奇数的数组中出现过：[1], [1, 4, 2], [1, 4, 2, 5, 3]；所以最终的和，要加上 1 * 3；
-
-4 在 4 个长度为奇数的数组中出现过：[4], [4, 2, 5], [1, 4, 2], [1, 4, 2, 5, 3]；所以最终和，要加上 4 * 4；
-
-2 在 5 个长度为奇数的数组中出现过：[2], [2, 5, 3], [4, 2, 5], [1, 4, 2], [1, 4, 2, 5, 3]；所以最终和，要加上 5 * 2；
-
-...
-
-下面的关键就是，如何计算一个数字在多少个奇数长度的数组中出现过？
-
-
-
-对于一个数字，它所在的数组，可以在它前面再选择 0, 1, 2, ... 个数字，一共有 left &#x3D; i + 1 个选择；
-
-可以在它后面再选择 0, 1, 2, ... 个数字，一共有 right &#x3D; n - i 个选择。
-
-如果在前面选择了偶数个数字，那么在后面，也必须选择偶数个数字，这样加上它自身，才构成奇数长度的数组；
-
-如果在前面选择了奇数个数字，那么在后面，也必须选择奇数个数字，这样加上它自身，才构成奇数长度的数组；
-
-数字前面共有 left 个选择，其中偶数个数字的选择方案有 left_even &#x3D; (left + 1) &#x2F; 2 个，奇数个数字的选择方案有 left_odd &#x3D; left &#x2F; 2 个；
-
-数字后面共有 right 个选择，其中偶数个数字的选择方案有 right_even &#x3D; (right + 1) &#x2F; 2 个，奇数个数字的选择方案有 right_odd &#x3D; right &#x2F; 2 个；
-
-所以，每个数字一共在 left_even * right_even + left_odd * right_odd 个奇数长度的数组中出现过。
-
-我的参考代码（C++）：
-
-
-class Solution &#123;
-public:
-    int sumOddLengthSubarrays(vector&lt;int&gt;&amp; arr) &#123;
-
-        int res &#x3D; 0;
-        for(int i &#x3D; 0; i &lt; arr.size(); i ++)&#123;
-            int left &#x3D; i + 1, right &#x3D; arr.size() - i,
-                left_even &#x3D; (left + 1) &#x2F; 2, right_even &#x3D; (right + 1) &#x2F; 2,
-                left_odd &#x3D; left &#x2F; 2, right_odd &#x3D; right &#x2F; 2;
-            res +&#x3D; (left_even * right_even + left_odd * right_odd) * arr[i];
-        &#125;
-        return res;
-    &#125;
-&#125;;
-我的提交结果：时间 4ms；空间 8 MB。
-
-O(n) 的解法可以应对 10^6 乃至 10^7 的数字规模。如果这道题的数字规模是这样的，那么上面两种解法都将超时，这个问题也就变成了一个 Medium 甚至是 Hard 的问题了吧：）
-
-* odd奇数，even偶数
-* 对于每个元素i(数组中下标为i)来说，要构成奇数长度的子数组
-  即 i左边的元素个数left+i本身自己一个+右边元素的个数right&#x3D;奇数
-  即 left+right&#x3D;偶数
-* 满足a+b&#x3D;偶数就只有两种情况
-  1. 奇数+奇数&#x3D;偶数
-  2. 偶数+偶数&#x3D;偶数
-* 1. 所以只需要求得i左边可以选择奇数长度的可能有多少种，即left_odd,同样求右边奇数right_odd
-     就可以求出策略1有多少种可能
-  2. 所以只需要求得i左边可以选择偶数长度的可能有多少种，即left_odd,同样求右边偶数right_odd
-     就可以求出策略1有多少种可能，注意0也算选择的一种可能
-* 即元素i在所有奇数长度子数组出现的次数总和是
-  left_odd*right_odd+left_even*right_even
-* 元素i左边元素共有i个，右边元素共有siz-i-1个<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-&#x2F;&#x2F; 前缀和
-    int sumOddLengthSubarrays(vector&lt;int&gt;&amp; arr) &#123;
-        int n &#x3D; arr.size(), ans &#x3D; 0;
-        vector&lt;int&gt; pre(n + 1, 0);
-        for (int i &#x3D; 0; i &lt; n; ++i) &#123;
-            pre[i + 1] &#x3D; pre[i] + arr[i];
-        &#125;
-        for (int i &#x3D; 1; i &lt;&#x3D; n; i +&#x3D; 2) &#123;
-            for (int j &#x3D; 1; j &lt;&#x3D; n; ++j) &#123;
-                if (j - i &gt;&#x3D; 0) ans +&#x3D; (pre[j] - pre[j - i]);
-            &#125;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="comment">// 前缀和</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumOddLengthSubarrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = arr.size(), ans = <span class="number">0</span>;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">pre</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            pre[i + <span class="number">1</span>] = pre[i] + arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i += <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j - i &gt;= <span class="number">0</span>) ans += (pre[j] - pre[j - i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
@@ -1207,7 +1011,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             

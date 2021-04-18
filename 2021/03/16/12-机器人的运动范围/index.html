@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指offer 12.机器人的运动范围, LHL&#39; s NetWork Station">
+    <meta name="keywords" content="剑指offer 12.机器人的运动范围, LHL&#39; s Network Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指offer 12.机器人的运动范围 | LHL&#39; s NetWork Station</title>
+    <title>剑指offer 12.机器人的运动范围 | LHL&#39; s Network Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s NetWork Station</span>
+                    <span class="logo-span">LHL&#39; s Network Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s NetWork Station</div>
+        <div class="logo-name">LHL&#39; s Network Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    411
+                    409
                 </div>
                 
 
@@ -492,9 +492,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
         <!-- 代码块折行 -->
@@ -508,80 +505,10 @@
                 <p>机器人的运动范围</p>
 <a id="more"></a>
 
-<pre class="line-numbers language-none"><code class="language-none">地上有一个 m 行和 n 列的方格，横纵坐标范围分别是 0∼m−1 和 0∼n−1。
-
-一个机器人从坐标 (0,0) 的格子开始移动，每一次只能向左，右，上，下四个方向移动一格。
-
-但是不能进入行坐标和列坐标的数位之和大于 k 的格子。
-
-请问该机器人能够达到多少个格子？
-
-样例1
-输入：k&#x3D;7, m&#x3D;4, n&#x3D;5
-
-输出：20
-样例2
-输入：k&#x3D;18, m&#x3D;40, n&#x3D;40
-
-输出：1484
-
-解释：当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 &#x3D; 18。
-      但是，它不能进入方格（35,38），因为3+5+3+8 &#x3D; 19。
-注意:
-
-0&lt;&#x3D;m&lt;&#x3D;50
-0&lt;&#x3D;n&lt;&#x3D;50
-0&lt;&#x3D;k&lt;&#x3D;100
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">地上有一个 m 行和 n 列的方格，横纵坐标范围分别是 0∼m−1 和 0∼n−1。</span><br><span class="line"></span><br><span class="line">一个机器人从坐标 (0,0) 的格子开始移动，每一次只能向左，右，上，下四个方向移动一格。</span><br><span class="line"></span><br><span class="line">但是不能进入行坐标和列坐标的数位之和大于 k 的格子。</span><br><span class="line"></span><br><span class="line">请问该机器人能够达到多少个格子？</span><br><span class="line"></span><br><span class="line">样例1</span><br><span class="line">输入：k&#x3D;7, m&#x3D;4, n&#x3D;5</span><br><span class="line"></span><br><span class="line">输出：20</span><br><span class="line">样例2</span><br><span class="line">输入：k&#x3D;18, m&#x3D;40, n&#x3D;40</span><br><span class="line"></span><br><span class="line">输出：1484</span><br><span class="line"></span><br><span class="line">解释：当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 &#x3D; 18。</span><br><span class="line">      但是，它不能进入方格（35,38），因为3+5+3+8 &#x3D; 19。</span><br><span class="line">注意:</span><br><span class="line"></span><br><span class="line">0&lt;&#x3D;m&lt;&#x3D;50</span><br><span class="line">0&lt;&#x3D;n&lt;&#x3D;50</span><br><span class="line">0&lt;&#x3D;k&lt;&#x3D;100</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
-public:
-	int get_simple_sum(int n)
-	&#123;
-		int s&#x3D;0;
-		while(n)
-		&#123;
-			s+&#x3D;n%10;
-			n&#x2F;&#x3D;10;
-		&#125;
-		return s;
-	&#125;
-	int get_sum(pair&lt;int,int&gt; p)
-	&#123;
-		return get_simple_sum(p.first)+get_simple_sum(p.second);
-	&#125;
-    int movingCount(int threshold, int rows, int cols)
-    &#123;
-    	int res&#x3D;0;
-    	if(!rows||!cols)
-        	return 0;
-    	vector&lt; vector&lt;bool&gt; &gt; st(rows,vector&lt;bool&gt;(cols));
-    	queue&lt;pair&lt;int,int&gt; &gt; q;
-    	q.push(&#123;0,0&#125;);
-    	int dx[4]&#x3D;&#123;0,1,0,-1&#125;;
-    	int dy[4]&#x3D;&#123;-1,0,1,0&#125;;
-    	while(q.size())
-    	&#123;
-    		auto t&#x3D;q.front();
-    		q.pop();
-    		if(get_sum(t)&gt;threshold||st[t.first][t.second])
-    			continue;
-    		res++;
-    		st[t.first][t.second]&#x3D;true;
-    		for(int i&#x3D;0;i&lt;4;i++)
-    		&#123;
-    			int a&#x3D;t.first+dx[i];
-    			int b&#x3D;t.second+dy[i];
-    			if(a&gt;&#x3D;0 &amp;&amp;a&lt;rows &amp;&amp; b&gt;&#x3D;0 &amp;&amp;b&lt;cols)
-    				q.push(&#123;a,b&#125;);
-    		&#125;
-
-    	&#125;
-    	return res;
-    &#125;
-&#125;;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">	int get_simple_sum(int n)</span><br><span class="line">	&#123;</span><br><span class="line">		int s&#x3D;0;</span><br><span class="line">		while(n)</span><br><span class="line">		&#123;</span><br><span class="line">			s+&#x3D;n%10;</span><br><span class="line">			n&#x2F;&#x3D;10;</span><br><span class="line">		&#125;</span><br><span class="line">		return s;</span><br><span class="line">	&#125;</span><br><span class="line">	int get_sum(pair&lt;int,int&gt; p)</span><br><span class="line">	&#123;</span><br><span class="line">		return get_simple_sum(p.first)+get_simple_sum(p.second);</span><br><span class="line">	&#125;</span><br><span class="line">    int movingCount(int threshold, int rows, int cols)</span><br><span class="line">    &#123;</span><br><span class="line">    	int res&#x3D;0;</span><br><span class="line">    	if(!rows||!cols)</span><br><span class="line">        	return 0;</span><br><span class="line">    	vector&lt; vector&lt;bool&gt; &gt; st(rows,vector&lt;bool&gt;(cols));</span><br><span class="line">    	queue&lt;pair&lt;int,int&gt; &gt; q;</span><br><span class="line">    	q.push(&#123;0,0&#125;);</span><br><span class="line">    	int dx[4]&#x3D;&#123;0,1,0,-1&#125;;</span><br><span class="line">    	int dy[4]&#x3D;&#123;-1,0,1,0&#125;;</span><br><span class="line">    	while(q.size())</span><br><span class="line">    	&#123;</span><br><span class="line">    		auto t&#x3D;q.front();</span><br><span class="line">    		q.pop();</span><br><span class="line">    		if(get_sum(t)&gt;threshold||st[t.first][t.second])</span><br><span class="line">    			continue;</span><br><span class="line">    		res++;</span><br><span class="line">    		st[t.first][t.second]&#x3D;true;</span><br><span class="line">    		for(int i&#x3D;0;i&lt;4;i++)</span><br><span class="line">    		&#123;</span><br><span class="line">    			int a&#x3D;t.first+dx[i];</span><br><span class="line">    			int b&#x3D;t.second+dy[i];</span><br><span class="line">    			if(a&gt;&#x3D;0 &amp;&amp;a&lt;rows &amp;&amp; b&gt;&#x3D;0 &amp;&amp;b&lt;cols)</span><br><span class="line">    				q.push(&#123;a,b&#125;);</span><br><span class="line">    		&#125;</span><br><span class="line"></span><br><span class="line">    	&#125;</span><br><span class="line">    	return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1080,7 +1007,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.5k</span>&nbsp;字
+                class="white-color">65.9k</span>&nbsp;字
             
             
             
