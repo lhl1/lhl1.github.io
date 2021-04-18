@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="广义表定义及其实现, LHL&#39; s Network Station">
+    <meta name="keywords" content="广义表定义及其实现, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>广义表定义及其实现 | LHL&#39; s Network Station</title>
+    <title>广义表定义及其实现 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    551
+                    550
                 </div>
                 
 
@@ -492,19 +492,173 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>广义表定义及其实现</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class GListNode &#x2F;&#x2F;广义表结构</span><br><span class="line">&#123;</span><br><span class="line">    public:</span><br><span class="line">    int type;</span><br><span class="line">    union</span><br><span class="line">    &#123;</span><br><span class="line">        char data;</span><br><span class="line">        GListNode * sublist;</span><br><span class="line">    &#125;;</span><br><span class="line">    GListNode *next;</span><br><span class="line">&#125;;</span><br><span class="line">class GList</span><br><span class="line">&#123;public:</span><br><span class="line">    GListNode *head; &#x2F;&#x2F;头指针</span><br><span class="line">    GListNode *DoCreate(char s[],int &amp;i);&#x2F;&#x2F;创建广义表</span><br><span class="line">    GListNode *Copy(GListNode *p);&#x2F;&#x2F;复制广义表</span><br><span class="line">    void Traverse(GListNode *p);&#x2F;&#x2F;遍历广义表</span><br><span class="line">    void Free(GListNode *p);&#x2F;&#x2F;释放广义表</span><br><span class="line">    int Depth(GListNode *p);&#x2F;&#x2F;返回广义表深度</span><br><span class="line"></span><br><span class="line">    GList();&#x2F;&#x2F;创建广义表</span><br><span class="line">    GList(char s[]);</span><br><span class="line">    GList(GList &amp;gl);</span><br><span class="line">    ~GList();</span><br><span class="line">    void Traverse();</span><br><span class="line">    int Length();&#x2F;&#x2F;广义表长度</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">GList::GList()</span><br><span class="line">&#123;</span><br><span class="line">    head&#x3D;new GListNode;</span><br><span class="line">    head-&gt;type&#x3D;1;</span><br><span class="line">    head-&gt;sublist&#x3D;head-&gt;next&#x3D;NULL;</span><br><span class="line">&#125;</span><br><span class="line">GListNode * GList::DoCreate(char s[],int &amp;i)</span><br><span class="line">&#123;</span><br><span class="line">    GListNode *p;</span><br><span class="line">    while(s[i]&#x3D;&#x3D;&#39; &#39;||s[i]&#x3D;&#x3D;&#39;,&#39;)</span><br><span class="line">        i++;</span><br><span class="line">    char e&#x3D;s[i];</span><br><span class="line">    i++;</span><br><span class="line">    if(e&#x3D;&#x3D;&#39;(&#39;)</span><br><span class="line">    &#123;</span><br><span class="line">        p&#x3D;new GListNode;</span><br><span class="line">        p-&gt;type&#x3D;1;</span><br><span class="line">        p-&gt;sublist&#x3D;DoCreate(s,i);</span><br><span class="line">        p-&gt;next&#x3D;DoCreate(s,i);</span><br><span class="line">        return p;</span><br><span class="line">    &#125;</span><br><span class="line">    if(e&#x3D;&#x3D;&#39;)&#39;||e&#x3D;&#x3D;&#39;\0&#39;)</span><br><span class="line">    &#123;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    p&#x3D;new GListNode;</span><br><span class="line">    p-&gt;type&#x3D;0;</span><br><span class="line">    p-&gt;data&#x3D;e;</span><br><span class="line">    p-&gt;next&#x3D;DoCreate(s,i);</span><br><span class="line">    return p;</span><br><span class="line">&#125;</span><br><span class="line">GList::GList(char s[])</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;0;</span><br><span class="line">    head&#x3D;DoCreate(s,i);</span><br><span class="line">&#125;</span><br><span class="line">void GList::Traverse(GListNode *p)</span><br><span class="line">&#123;</span><br><span class="line">    if(p&#x3D;&#x3D;NULL)</span><br><span class="line">    return ;</span><br><span class="line">    if(p-&gt;type&#x3D;&#x3D;0)</span><br><span class="line">    cout&lt;&lt;p-&gt;data;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;(&quot;;</span><br><span class="line">        Traverse(p-&gt;sublist);</span><br><span class="line">        cout&lt;&lt;&quot;)&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    if(p-&gt;next)</span><br><span class="line">        cout&lt;&lt;&quot;,&quot;;</span><br><span class="line">    Traverse(p-&gt;next);</span><br><span class="line">&#125;</span><br><span class="line">void GList::Traverse()</span><br><span class="line">&#123;</span><br><span class="line">    Traverse(this-&gt;head);</span><br><span class="line">&#125;</span><br><span class="line">void GList::Free(GListNode * p)</span><br><span class="line">&#123;</span><br><span class="line">    if(p&#x3D;&#x3D;NULL)</span><br><span class="line">        return ;</span><br><span class="line">    if(p-&gt;type&#x3D;&#x3D;1)</span><br><span class="line">        Free(p-&gt;next);</span><br><span class="line">    Free(p-&gt;next);</span><br><span class="line">    delete p;</span><br><span class="line">&#125;</span><br><span class="line">GList::~GList()</span><br><span class="line">&#123;Free(head);&#125;</span><br><span class="line">GListNode *GList::Copy(GListNode *p)</span><br><span class="line">&#123;</span><br><span class="line">    if(p&#x3D;&#x3D;NULL)</span><br><span class="line">        return NULL;</span><br><span class="line">    GListNode *newp&#x3D;new GListNode;</span><br><span class="line">    newp-&gt;type&#x3D;p-&gt;type;</span><br><span class="line">    if(p-&gt;type&#x3D;&#x3D;1)</span><br><span class="line">        newp-&gt;sublist&#x3D;Copy(p-&gt;next);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">            newp-&gt;data&#x3D;p-&gt;data;</span><br><span class="line">            newp-&gt;next&#x3D;Copy(p-&gt;next);</span><br><span class="line">    return newp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">int GList::Length()</span><br><span class="line">&#123;</span><br><span class="line">    GListNode *p;</span><br><span class="line">    int n&#x3D;0;</span><br><span class="line">    p&#x3D;head-&gt;sublist;</span><br><span class="line">    while(p)</span><br><span class="line">    &#123;</span><br><span class="line">        p&#x3D;p-&gt;next;</span><br><span class="line">        n++;</span><br><span class="line">    &#125;</span><br><span class="line">    return n;</span><br><span class="line">&#125;</span><br><span class="line">int GList::Depth(GListNode *p)</span><br><span class="line">&#123;   </span><br><span class="line">    if(p-&gt;type&#x3D;&#x3D;0)</span><br><span class="line">    return 0;</span><br><span class="line">    int maxdepth&#x3D;0;</span><br><span class="line">    GListNode * q;</span><br><span class="line">    q&#x3D;p-&gt;sublist;</span><br><span class="line">    while(q)</span><br><span class="line">    &#123;</span><br><span class="line">        depth&#x3D;Depth(q);</span><br><span class="line">        if(depth&gt;maxdepth)</span><br><span class="line">            maxdepth&#x3D;depth;</span><br><span class="line">        q&#x3D;q-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    return maxdepth+1;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    char s[200];</span><br><span class="line">    cin&gt;&gt;s;</span><br><span class="line">    GList gl(s);</span><br><span class="line">    gl.Traverse();</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;stdlib.h&gt;
+using namespace std;
+
+class GListNode &#x2F;&#x2F;广义表结构
+&#123;
+    public:
+    int type;
+    union
+    &#123;
+        char data;
+        GListNode * sublist;
+    &#125;;
+    GListNode *next;
+&#125;;
+class GList
+&#123;public:
+    GListNode *head; &#x2F;&#x2F;头指针
+    GListNode *DoCreate(char s[],int &amp;i);&#x2F;&#x2F;创建广义表
+    GListNode *Copy(GListNode *p);&#x2F;&#x2F;复制广义表
+    void Traverse(GListNode *p);&#x2F;&#x2F;遍历广义表
+    void Free(GListNode *p);&#x2F;&#x2F;释放广义表
+    int Depth(GListNode *p);&#x2F;&#x2F;返回广义表深度
+
+    GList();&#x2F;&#x2F;创建广义表
+    GList(char s[]);
+    GList(GList &amp;gl);
+    ~GList();
+    void Traverse();
+    int Length();&#x2F;&#x2F;广义表长度
+
+&#125;;
+GList::GList()
+&#123;
+    head&#x3D;new GListNode;
+    head-&gt;type&#x3D;1;
+    head-&gt;sublist&#x3D;head-&gt;next&#x3D;NULL;
+&#125;
+GListNode * GList::DoCreate(char s[],int &amp;i)
+&#123;
+    GListNode *p;
+    while(s[i]&#x3D;&#x3D;&#39; &#39;||s[i]&#x3D;&#x3D;&#39;,&#39;)
+        i++;
+    char e&#x3D;s[i];
+    i++;
+    if(e&#x3D;&#x3D;&#39;(&#39;)
+    &#123;
+        p&#x3D;new GListNode;
+        p-&gt;type&#x3D;1;
+        p-&gt;sublist&#x3D;DoCreate(s,i);
+        p-&gt;next&#x3D;DoCreate(s,i);
+        return p;
+    &#125;
+    if(e&#x3D;&#x3D;&#39;)&#39;||e&#x3D;&#x3D;&#39;\0&#39;)
+    &#123;
+        return NULL;
+    &#125;
+    p&#x3D;new GListNode;
+    p-&gt;type&#x3D;0;
+    p-&gt;data&#x3D;e;
+    p-&gt;next&#x3D;DoCreate(s,i);
+    return p;
+&#125;
+GList::GList(char s[])
+&#123;
+    int i&#x3D;0;
+    head&#x3D;DoCreate(s,i);
+&#125;
+void GList::Traverse(GListNode *p)
+&#123;
+    if(p&#x3D;&#x3D;NULL)
+    return ;
+    if(p-&gt;type&#x3D;&#x3D;0)
+    cout&lt;&lt;p-&gt;data;
+    else
+    &#123;
+        cout&lt;&lt;&quot;(&quot;;
+        Traverse(p-&gt;sublist);
+        cout&lt;&lt;&quot;)&quot;;
+    &#125;
+    if(p-&gt;next)
+        cout&lt;&lt;&quot;,&quot;;
+    Traverse(p-&gt;next);
+&#125;
+void GList::Traverse()
+&#123;
+    Traverse(this-&gt;head);
+&#125;
+void GList::Free(GListNode * p)
+&#123;
+    if(p&#x3D;&#x3D;NULL)
+        return ;
+    if(p-&gt;type&#x3D;&#x3D;1)
+        Free(p-&gt;next);
+    Free(p-&gt;next);
+    delete p;
+&#125;
+GList::~GList()
+&#123;Free(head);&#125;
+GListNode *GList::Copy(GListNode *p)
+&#123;
+    if(p&#x3D;&#x3D;NULL)
+        return NULL;
+    GListNode *newp&#x3D;new GListNode;
+    newp-&gt;type&#x3D;p-&gt;type;
+    if(p-&gt;type&#x3D;&#x3D;1)
+        newp-&gt;sublist&#x3D;Copy(p-&gt;next);
+    else
+    &#123;
+            newp-&gt;data&#x3D;p-&gt;data;
+            newp-&gt;next&#x3D;Copy(p-&gt;next);
+    return newp;
+    &#125;
+    
+&#125;
+int GList::Length()
+&#123;
+    GListNode *p;
+    int n&#x3D;0;
+    p&#x3D;head-&gt;sublist;
+    while(p)
+    &#123;
+        p&#x3D;p-&gt;next;
+        n++;
+    &#125;
+    return n;
+&#125;
+int GList::Depth(GListNode *p)
+&#123;   
+    if(p-&gt;type&#x3D;&#x3D;0)
+    return 0;
+    int maxdepth&#x3D;0;
+    GListNode * q;
+    q&#x3D;p-&gt;sublist;
+    while(q)
+    &#123;
+        depth&#x3D;Depth(q);
+        if(depth&gt;maxdepth)
+            maxdepth&#x3D;depth;
+        q&#x3D;q-&gt;next;
+    &#125;
+    return maxdepth+1;
+&#125;
+int main()
+&#123;
+
+    char s[200];
+    cin&gt;&gt;s;
+    GList gl(s);
+    gl.Traverse();
+    system(&quot;pause&quot;);
+    return 0;
+
+&#125;
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -717,6 +871,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Sat Oct 17 2020 09:34:01 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1002,7 +1183,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

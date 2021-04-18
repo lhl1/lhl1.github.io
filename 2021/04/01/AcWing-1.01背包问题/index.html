@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="AcWing 背包问题, LHL&#39; s Network Station">
+    <meta name="keywords" content="AcWing 背包问题, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>AcWing 背包问题 | LHL&#39; s Network Station</title>
+    <title>AcWing 背包问题 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,12 +492,10 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
@@ -513,9 +511,13 @@
 <p>接下来有 NN 行，每行两个整数 vi,wivi,wi，用空格隔开，分别表示第 ii 件物品的体积和价值。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一个整数，表示最大价值。</p>
 <h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>0&lt;N,V≤10000&lt;N,V≤1000<br>0&lt;vi,wi≤10000&lt;vi,wi≤1000</p>
-<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">1 2</span><br><span class="line">2 4</span><br><span class="line">3 4</span><br><span class="line">4 5</span><br></pre></td></tr></table></figure>
+<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><pre class="line-numbers language-none"><code class="language-none">4 5
+1 2
+2 4
+3 4
+4 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><pre class="line-numbers language-none"><code class="language-none">8<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -534,7 +536,37 @@
 <p>当前的状态依赖于之前的状态，可以理解为从初始状态f[0][0] = 0开始决策，有 NN 件物品，则需要 NN 次决 策，每一次对第 ii 件物品的决策，状态f[i][j]不断由之前的状态更新而来。<br>（2）当前背包容量不够（j &lt; v[i]），没得选，因此前 ii 个物品最优解即为前 i−1i−1 个物品最优解：</p>
 <p>对应代码：f[i][j] = f[i - 1][j]。<br>（3）当前背包容量够，可以选，因此需要决策选与不选第 ii 个物品：</p>
 <p>选：f[i][j] = f[i - 1][j - v[i]] + w[i]。<br>不选：f[i][j] = f[i - 1][j] 。<br>我们的决策是如何取到最大价值，因此以上两种情况取 max() 。<br>代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1005</span>;</span><br><span class="line"><span class="keyword">int</span> v[MAXN];    <span class="comment">// 体积</span></span><br><span class="line"><span class="keyword">int</span> w[MAXN];    <span class="comment">// 价值 </span></span><br><span class="line"><span class="keyword">int</span> f[MAXN][MAXN];  <span class="comment">// f[i][j], j体积下前i个物品的最大价值 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;   </span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) </span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; v[i] &gt;&gt; w[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//  当前背包容量装不进第i个物品，则价值等于前i-1个物品</span></span><br><span class="line">            <span class="keyword">if</span>(j &lt; v[i]) </span><br><span class="line">                f[i][j] = f[i - <span class="number">1</span>][j];</span><br><span class="line">            <span class="comment">// 能装，需进行决策是否选择第i个物品</span></span><br><span class="line">            <span class="keyword">else</span>    </span><br><span class="line">                f[i][j] = max(f[i - <span class="number">1</span>][j], f[i - <span class="number">1</span>][j - v[i]] + w[i]);</span><br><span class="line">        &#125;           </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[n][m] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+
+using namespace std;
+
+const int MAXN &#x3D; 1005;
+int v[MAXN];    &#x2F;&#x2F; 体积
+int w[MAXN];    &#x2F;&#x2F; 价值 
+int f[MAXN][MAXN];  &#x2F;&#x2F; f[i][j], j体积下前i个物品的最大价值 
+
+int main() 
+&#123;
+    int n, m;   
+    cin &gt;&gt; n &gt;&gt; m;
+    for(int i &#x3D; 1; i &lt;&#x3D; n; i++) 
+        cin &gt;&gt; v[i] &gt;&gt; w[i];
+
+    for(int i &#x3D; 1; i &lt;&#x3D; n; i++) 
+        for(int j &#x3D; 1; j &lt;&#x3D; m; j++)
+        &#123;
+            &#x2F;&#x2F;  当前背包容量装不进第i个物品，则价值等于前i-1个物品
+            if(j &lt; v[i]) 
+                f[i][j] &#x3D; f[i - 1][j];
+            &#x2F;&#x2F; 能装，需进行决策是否选择第i个物品
+            else    
+                f[i][j] &#x3D; max(f[i - 1][j], f[i - 1][j - v[i]] + w[i]);
+        &#125;           
+    
+    cout &lt;&lt; f[n][m] &lt;&lt; endl;
+    
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>2.2 版本2 一维<br>将状态f[i][j]优化到一维f[j]，实际上只需要做一个等价变形。</p>
 <p>为什么可以这样变形呢？我们定义的状态f[i][j]可以求得任意合法的i与j最优解，但题目只需要求得最终状态f[n][m]，因此我们只需要一维的空间来更新状态。</p>
@@ -543,10 +575,25 @@
 <p>（3）为什么一维情况下枚举背包容量需要逆序？在二维情况下，状态f[i][j]是由上一轮i - 1的状态得来的，f[i][j]与f[i - 1][j]是独立的。而优化到一维后，如果我们还是正序，则有f[较小体积]更新到f[较大体积]，则有可能本应该用第i-1轮的状态却用的是第i轮的状态。</p>
 <p>（4）例如，一维状态第i轮对体积为 33 的物品进行决策，则f[7]由f[4]更新而来，这里的f[4]正确应该是f[i - 1][4]，但从小到大枚举j这里的f[4]在第i轮计算却变成了f[i][4]。当逆序枚举背包容量j时，我们求f[7]同样由f[4]更新，但由于是逆序，这里的f[4]还没有在第i轮计算，所以此时实际计算的f[4]仍然是f[i - 1][4]。</p>
 <p>（5）简单来说，一维情况正序更新状态f[j]需要用到前面计算的状态已经被「污染」，逆序则不会有这样的问题。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">状态转移方程为：f[j] = max(f[j], f[j - v[i]] + w[i] 。</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = m; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(j &lt; v[i]) </span><br><span class="line">            f[i][j] = f[i - <span class="number">1</span>][j];  <span class="comment">// 优化前</span></span><br><span class="line">            f[j] = f[j];            <span class="comment">// 优化后，该行自动成立，可省略。</span></span><br><span class="line">        <span class="keyword">else</span>    </span><br><span class="line">            f[i][j] = max(f[i - <span class="number">1</span>][j], f[i - <span class="number">1</span>][j - v[i]] + w[i]);  <span class="comment">// 优化前</span></span><br><span class="line">            f[j] = max(f[j], f[j - v[i]] + w[i]);                   <span class="comment">// 优化后</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">状态转移方程为：f[j] &#x3D; max(f[j], f[j - v[i]] + w[i] 。
+
+for(int i &#x3D; 1; i &lt;&#x3D; n; i++) 
+    for(int j &#x3D; m; j &gt;&#x3D; 0; j--)
+    &#123;
+        if(j &lt; v[i]) 
+            f[i][j] &#x3D; f[i - 1][j];  &#x2F;&#x2F; 优化前
+            f[j] &#x3D; f[j];            &#x2F;&#x2F; 优化后，该行自动成立，可省略。
+        else    
+            f[i][j] &#x3D; max(f[i - 1][j], f[i - 1][j - v[i]] + w[i]);  &#x2F;&#x2F; 优化前
+            f[j] &#x3D; max(f[j], f[j - v[i]] + w[i]);                   &#x2F;&#x2F; 优化后
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>实际上，只有当枚举的背包容量 &gt;= v[i] 时才会更新状态，因此我们可以修改循环终止条件进一步优化。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = m; j &gt;= v[i]; j--)  </span><br><span class="line">        f[j] = max(f[j], f[j - v[i]] + w[i]);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i &#x3D; 1; i &lt;&#x3D; n; i++)
+&#123;
+    for(int j &#x3D; m; j &gt;&#x3D; v[i]; j--)  
+        f[j] &#x3D; max(f[j], f[j - v[i]] + w[i]);
+&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>关于状态f[j]的补充说明<br>二维下的状态定义f[i][j]是前 ii 件物品，背包容量 jj 下的最大价值。一维下，少了前 ii 件物品这个维度，我们的代码中决策到第 ii 件物品（循环到第i轮），f[j]就是前i轮已经决策的物品且背包容量 jj 下的最大价值。</p>
 <p>因此当执行完循环结构后，由于已经决策了所有物品，f[j]就是所有物品背包容量 jj 下的最大价值。即一维f[j]等价于二维f[n][j]。</p>
@@ -556,7 +603,16 @@
 <p>using namespace std;</p>
 <p>const int MAXN = 1005;<br>int f[MAXN];  // </p>
 <p>int main()<br>{<br>    int n, m;<br>    cin &gt;&gt; n &gt;&gt; m;</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> v, w;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; v &gt;&gt; w;      <span class="comment">// 边输入边处理</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = m; j &gt;= v; j--)</span><br><span class="line">        f[j] = max(f[j], f[j - v] + w);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; f[m] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i &#x3D; 1; i &lt;&#x3D; n; i++) &#123;
+    int v, w;
+    cin &gt;&gt; v &gt;&gt; w;      &#x2F;&#x2F; 边输入边处理
+    for(int j &#x3D; m; j &gt;&#x3D; v; j--)
+        f[j] &#x3D; max(f[j], f[j - v] + w);
+&#125;
+
+cout &lt;&lt; f[m] &lt;&lt; endl;
+
+return 0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>}</p>
 
@@ -772,6 +828,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Thu Apr 01 2021 08:57:12 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1065,7 +1148,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

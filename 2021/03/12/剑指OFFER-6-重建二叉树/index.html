@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 6.重建二叉树, LHL&#39; s Network Station">
+    <meta name="keywords" content="剑指OFFER 6.重建二叉树, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 6.重建二叉树 | LHL&#39; s Network Station</title>
+    <title>剑指OFFER 6.重建二叉树 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    253
+                    252
                 </div>
                 
 
@@ -492,21 +492,63 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>重建二叉树</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">输入一棵二叉树前序遍历和中序遍历的结果，请重建该二叉树。</span><br><span class="line"></span><br><span class="line">注意:</span><br><span class="line"></span><br><span class="line">二叉树中每个节点的值都互不相同；</span><br><span class="line">输入的前序遍历和中序遍历一定合法；</span><br><span class="line">样例</span><br><span class="line">给定：</span><br><span class="line">前序遍历是：[3, 9, 20, 15, 7]</span><br><span class="line">中序遍历是：[9, 3, 15, 20, 7]</span><br><span class="line"></span><br><span class="line">返回：[3, 9, 20, null, null, 15, 7, null, null, null, null]</span><br><span class="line">返回的二叉树如下所示：</span><br><span class="line">    3</span><br><span class="line">   &#x2F; \</span><br><span class="line">  9  20</span><br><span class="line">    &#x2F;  \</span><br><span class="line">   15   7</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入一棵二叉树前序遍历和中序遍历的结果，请重建该二叉树。
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">        map&lt;int,int&gt; hash;</span><br><span class="line">        vector&lt;int&gt; preorder,inorder;</span><br><span class="line">        TreeNode* buildTree(vector&lt;int&gt;&amp; _preorder, vector&lt;int&gt;&amp; _inorder) </span><br><span class="line">        &#123;</span><br><span class="line">            preorder&#x3D;_preorder,inorder&#x3D;_inorder;</span><br><span class="line">            for(int i&#x3D;0;i&lt;inorder.size();i++)</span><br><span class="line">            &#123;</span><br><span class="line">                hash[inorder[i]]&#x3D;i;</span><br><span class="line">            &#125;</span><br><span class="line">            return dfs(0,preorder.size()-1,0,preorder.size()-1);</span><br><span class="line">        &#125;    </span><br><span class="line">        TreeNode * dfs(int pl,int pr,int il,int ir)</span><br><span class="line">        &#123;</span><br><span class="line">            if(pl&gt;pr)</span><br><span class="line">                return nullptr;</span><br><span class="line">                auto root&#x3D;new TreeNode(preorder[pl]);</span><br><span class="line">                int k&#x3D;hash[root-&gt;val];</span><br><span class="line">                auto left&#x3D;dfs(pl+1,pl+k-il,il,k-1);</span><br><span class="line">                auto right&#x3D;dfs(pl+k-il+1,pr,k+1,ir);</span><br><span class="line">                root-&gt;left&#x3D;left,root-&gt;right&#x3D;right;</span><br><span class="line">                return root;</span><br><span class="line">                </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+注意:
+
+二叉树中每个节点的值都互不相同；
+输入的前序遍历和中序遍历一定合法；
+样例
+给定：
+前序遍历是：[3, 9, 20, 15, 7]
+中序遍历是：[9, 3, 15, 20, 7]
+
+返回：[3, 9, 20, null, null, 15, 7, null, null, null, null]
+返回的二叉树如下所示：
+    3
+   &#x2F; \
+  9  20
+    &#x2F;  \
+   15   7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+        map&lt;int,int&gt; hash;
+        vector&lt;int&gt; preorder,inorder;
+        TreeNode* buildTree(vector&lt;int&gt;&amp; _preorder, vector&lt;int&gt;&amp; _inorder) 
+        &#123;
+            preorder&#x3D;_preorder,inorder&#x3D;_inorder;
+            for(int i&#x3D;0;i&lt;inorder.size();i++)
+            &#123;
+                hash[inorder[i]]&#x3D;i;
+            &#125;
+            return dfs(0,preorder.size()-1,0,preorder.size()-1);
+        &#125;    
+        TreeNode * dfs(int pl,int pr,int il,int ir)
+        &#123;
+            if(pl&gt;pr)
+                return nullptr;
+                auto root&#x3D;new TreeNode(preorder[pl]);
+                int k&#x3D;hash[root-&gt;val];
+                auto left&#x3D;dfs(pl+1,pl+k-il,il,k-1);
+                auto right&#x3D;dfs(pl+k-il+1,pr,k+1,ir);
+                root-&gt;left&#x3D;left,root-&gt;right&#x3D;right;
+                return root;
+                
+        &#125;
+        
+        
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -719,6 +761,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Fri Mar 12 2021 16:11:29 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1004,7 +1073,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

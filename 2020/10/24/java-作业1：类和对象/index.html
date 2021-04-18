@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="JAVA 作业1：类和对象, LHL&#39; s Network Station">
+    <meta name="keywords" content="JAVA 作业1：类和对象, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JAVA 作业1：类和对象 | LHL&#39; s Network Station</title>
+    <title>JAVA 作业1：类和对象 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,28 +492,483 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>作业1：类和对象</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br></pre></td><td class="code"><pre><span class="line">5-1</span><br><span class="line">题目要求:</span><br><span class="line"></span><br><span class="line">1.使用this调用已有的有参构造函数，width与length分别为5和6。</span><br><span class="line"></span><br><span class="line">2.为Rectangle类覆盖toString。按照width&#x3D;实际宽度值,length&#x3D;实际长度值的格式输出</span><br><span class="line"></span><br><span class="line">public Rectangle()&#123;</span><br><span class="line">     </span><br><span class="line">this.width&#x3D;5;this.length&#x3D;6;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">public Rectangle(int width, int length) &#123;</span><br><span class="line">    this.width &#x3D; width;</span><br><span class="line">    this.length &#x3D; length;</span><br><span class="line">&#125;</span><br><span class="line">public </span><br><span class="line">String toString()</span><br><span class="line">&#123;</span><br><span class="line">     </span><br><span class="line">return &quot;width&#x3D;&quot;+this.width+&quot;,length&#x3D;&quot;+this.length;</span><br><span class="line"></span><br><span class="line">&#125;    </span><br><span class="line"></span><br><span class="line">5-2</span><br><span class="line">要求：根据Main类中main方法中的代码，设计满足要求的Student（学生）类：1）包含属性：int no（学号）、String name（姓名）；2）满足Main类中main方法代码的说明要求。 Main类中main方法代码的说明：1）首先，从键盘接收形如“3 cuizhenyu 2 tiangang 1 dingchangqing 4 zhangfeng”的字符串，该字符串中包含了4个学生的学号和姓名（各学生以及学生的学号和姓名之间都用一个空格分隔，姓名中只包含英文字母），然后将该字符串内容中的前3个学生的学号及其姓名放到到Student数组stus中；2）将stus中的3个Student放入到HashSet stuSet中（注意：如果学生的学号相同，则认为是相同对象，不放入stuSet中）；3）将第4个学生对象放入到stuSet中，如果第4个学生对象的学号与stuSet中已有学生对象的学号相同则不能放入。然后，打印出当前stuSet中学生对象的个数；4）用Arrays.sort方法对数组stus按照学生姓名的字母顺序排序（先比较首字母，首字母相同的比较第二个字母，以此类推），输出排序后的stus中3个学生对象的内容，每个学生对象的输出格式为“no&#x3D;XX&amp;name&#x3D;YY”。</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.HashSet;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">class Student implements Comparable&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    private int no;</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    public Student(int no, String name) &#123;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">        this.no&#x3D;no;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;no&#x3D;&quot;+this.no+&quot;&amp;name&#x3D;&quot;+this.name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public boolean equals(Object o) &#123;</span><br><span class="line">        if (o&#x3D;&#x3D;null) return false;</span><br><span class="line">        else &#123;</span><br><span class="line">            boolean result&#x3D;false;</span><br><span class="line">            if (o instanceof Student) &#123;</span><br><span class="line">                Student otherstu&#x3D;(Student)o;</span><br><span class="line">                if (this.no&#x3D;&#x3D;otherstu.no)</span><br><span class="line">                    result&#x3D;true;</span><br><span class="line">            &#125;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public int compareTo(Object arg0) &#123;</span><br><span class="line"></span><br><span class="line">        Student otherstu&#x3D;(Student)arg0;</span><br><span class="line">        if (this.no&lt;otherstu.no)return -1;</span><br><span class="line">        else if (this.no&gt;otherstu.no)return 1;</span><br><span class="line">        else return 0;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner scan &#x3D; new Scanner(System.in);</span><br><span class="line">        Student[] stus &#x3D; new Student[3];</span><br><span class="line"></span><br><span class="line">        for(int i&#x3D;0;i&lt;3;i++)&#123;</span><br><span class="line">            int no &#x3D; scan.nextInt();</span><br><span class="line">            String name &#x3D; scan.next();</span><br><span class="line">            Student s &#x3D; new Student(no,name);</span><br><span class="line">            stus[i] &#x3D;s;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;将stus中的3个学生对象，放入到HashSet中</span><br><span class="line">        HashSet&lt;Student&gt; stuSet &#x3D; new HashSet&lt;Student&gt;();</span><br><span class="line">        for(Student s: stus)&#123;</span><br><span class="line">            stuSet.add(s);</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;要放入的第4个Student</span><br><span class="line">        Student fourth &#x3D; new Student(scan.nextInt(),scan.next());</span><br><span class="line">        stuSet.add(fourth);&#x2F;&#x2F;如果fourth的学号（no）与stuSet中的已有学生的no重复则无法放入</span><br><span class="line">        System.out.println(stuSet.size());</span><br><span class="line"></span><br><span class="line">        Arrays.sort(stus);&#x2F;&#x2F;对stus中的3个原有对象，按照姓名首字符有小到大排序</span><br><span class="line">        for(int i&#x3D;0;i&lt;stus.length;i++)&#123;</span><br><span class="line">            System.out.println(stus[i]);&#x2F;&#x2F;输出的格式为：no&#x3D;XX&amp;name&#x3D;YY</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        scan.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">5-3</span><br><span class="line">以下程序的功能是求一个二维数组中每行的最大值和每行的和。</span><br><span class="line"></span><br><span class="line">输入样例</span><br><span class="line">3 </span><br><span class="line">1 2 3 </span><br><span class="line">6 5 4 </span><br><span class="line">7 9 8</span><br><span class="line">输出样例</span><br><span class="line">1  2  3  3  6</span><br><span class="line">6  5  4  6 15</span><br><span class="line">7  9  8  9 24</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc&#x3D;new Scanner(</span><br><span class="line">System.in</span><br><span class="line">);</span><br><span class="line">        int n&#x3D;sc.nextInt();</span><br><span class="line">        int a[][]&#x3D;new int[n][n];</span><br><span class="line">        int b[]&#x3D;new int[n];</span><br><span class="line">        int c[]&#x3D;new int[n];</span><br><span class="line">        for(int i&#x3D;0;i&lt;a.length;i++)&#123;</span><br><span class="line">            for(int j&#x3D;0;j&lt;</span><br><span class="line">a[i].length</span><br><span class="line">;j++)&#123;</span><br><span class="line">                a[i][j]&#x3D;sc.nextInt();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;        </span><br><span class="line">        int max,s;</span><br><span class="line">        for(int i&#x3D;0;i&lt;a.length;i++)&#123;</span><br><span class="line">            max&#x3D;a[i][0];</span><br><span class="line">            </span><br><span class="line">s&#x3D;0</span><br><span class="line">;</span><br><span class="line">            for(int j&#x3D;0;j&lt;a[i].length;j++)&#123;</span><br><span class="line">                if(a[i][j]&gt;max)&#123;</span><br><span class="line">                    </span><br><span class="line">max&#x3D;a[i][j];</span><br><span class="line">;</span><br><span class="line">                &#125;</span><br><span class="line">                s+&#x3D;a[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">            b[i]&#x3D;max;</span><br><span class="line">            c[i]&#x3D;s;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt;a.length;i++)&#123;</span><br><span class="line">            for(int j&#x3D;0;j&lt;a[i].length;j++)&#123;</span><br><span class="line">                System.out.printf(&quot;%3d&quot;,</span><br><span class="line">a[i][j]</span><br><span class="line">);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.printf(&quot;%3d%3d&quot;,b[i],c[i]);</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">5-4</span><br><span class="line">输入一行字符，请分别统计出英文字母、数字、空格和其他字符个数。</span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc&#x3D;new Scanner(System.in);</span><br><span class="line">        String str&#x3D;sc.nextLine();</span><br><span class="line">        char x[]&#x3D;</span><br><span class="line">str.toCharArray()</span><br><span class="line">;</span><br><span class="line">        int a&#x3D;0;</span><br><span class="line">        int b&#x3D;0;</span><br><span class="line">        int c&#x3D;0;</span><br><span class="line">        int d&#x3D;0;</span><br><span class="line">        for(int i&#x3D;0;</span><br><span class="line">i&lt;x.length</span><br><span class="line">;i++)&#123;</span><br><span class="line">            char ch&#x3D;x[i];</span><br><span class="line">            if(</span><br><span class="line">63&lt;&#x3D;ch&amp;&amp;ch&lt;&#x3D;90||97&lt;&#x3D;ch&amp;&amp;ch&lt;&#x3D;122</span><br><span class="line">)</span><br><span class="line">                a++;</span><br><span class="line">            else if(</span><br><span class="line">48&lt;&#x3D;ch&amp;&amp;ch&lt;&#x3D;57</span><br><span class="line">)</span><br><span class="line">                b++;</span><br><span class="line">            else if(ch&#x3D;&#x3D;&#39; &#39;)</span><br><span class="line">                </span><br><span class="line">c++</span><br><span class="line">;</span><br><span class="line">            else</span><br><span class="line">                d++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;letters&#x3D;&quot;+a);&#x2F;&#x2F;输出英文字母个数</span><br><span class="line">        System.out.println(&quot;digits&#x3D;&quot;+b);&#x2F;&#x2F;输出数字个数</span><br><span class="line">        System.out.println(&quot;spaces&#x3D;&quot;+c);&#x2F;&#x2F;输出空格个数</span><br><span class="line">        System.out.println(&quot;others&#x3D;&quot;+d);&#x2F;&#x2F;输出其他字符个数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">5-5</span><br><span class="line">以下程序中函数fun的功能是：根据整型形参m的值，计算如下公式的值。</span><br><span class="line"></span><br><span class="line">公式.png</span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc&#x3D;new Scanner(System.in);</span><br><span class="line">        &#x2F;&#x2F;int n&#x3D;sc.nextDouble();&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">        </span><br><span class="line">int n &#x3D; sc.nextint()</span><br><span class="line">;</span><br><span class="line">        double x&#x3D;fun(n);</span><br><span class="line">        System.out.printf(&quot;%f&quot;,x);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;public static void fun(int m)&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">    </span><br><span class="line">public static double fun(int m)</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        double t&#x3D;1;</span><br><span class="line">        int i;</span><br><span class="line">        &#x2F;&#x2F;for(i&#x3D;2;i&lt;m;i++)&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">        </span><br><span class="line">for (i &#x3D; 2; i &lt;&#x3D; m; i++)</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;t&#x3D;t-1&#x2F;(i*i);&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">            </span><br><span class="line">t &#x3D; t - 1*1.0 &#x2F; (i * i)</span><br><span class="line">;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;return i;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">        </span><br><span class="line">return t</span><br><span class="line">;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">5-6</span><br><span class="line">实现字符串大小写的转换并倒序输出。</span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String args[]) &#123;</span><br><span class="line"></span><br><span class="line">        Scanner sc &#x3D; new Scanner(System.in);</span><br><span class="line">        String str &#x3D; </span><br><span class="line">sc.nextLine()</span><br><span class="line">;</span><br><span class="line">        StringBuffer sb &#x3D; new StringBuffer();</span><br><span class="line">        String s1 &#x3D; null;</span><br><span class="line"></span><br><span class="line">        for (int i &#x3D; str.length() - 1; i &gt;&#x3D; 0; i--) &#123;</span><br><span class="line">            char curChar &#x3D; </span><br><span class="line">str.charAt(i)</span><br><span class="line">;</span><br><span class="line">            if (curChar &gt;&#x3D; &#39;a&#39; &amp;&amp; curChar &lt;&#x3D; &#39;z&#39;)</span><br><span class="line">                s1 &#x3D; </span><br><span class="line">String.valueOf(curChar).toUpperCase()</span><br><span class="line">;</span><br><span class="line">            else if (curChar &gt;&#x3D; &#39;A&#39; &amp;&amp; curChar &lt;&#x3D; &#39;Z&#39;)</span><br><span class="line">                s1 &#x3D; </span><br><span class="line">String.valueOf(curChar).toLowerCase()</span><br><span class="line">;</span><br><span class="line">            else</span><br><span class="line">                s1 &#x3D; String.valueOf(curChar);</span><br><span class="line">            </span><br><span class="line">sb.append(s1)</span><br><span class="line">;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(</span><br><span class="line">sb</span><br><span class="line">);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">5-7</span><br><span class="line">功能：求1!+2!+3!+4!+5!。</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        fun();</span><br><span class="line">    &#125;</span><br><span class="line">    public static void fun()&#123;</span><br><span class="line">        int n,j;</span><br><span class="line">        &#x2F;&#x2F;float s&#x3D;0.0,t&#x3D;1.0;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">        </span><br><span class="line">float s&#x3D;0.0f,t&#x3D;1.0f</span><br><span class="line">;</span><br><span class="line">        for(n&#x3D;1;n&lt;&#x3D;5;n++)&#123;</span><br><span class="line">            &#x2F;&#x2F;s&#x3D;1;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">            </span><br><span class="line">t&#x3D;1.0f</span><br><span class="line">;</span><br><span class="line">            for(j&#x3D;1;j&lt;&#x3D;n;j++)&#123;</span><br><span class="line">                &#x2F;&#x2F;t&#x3D;t*n;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">                </span><br><span class="line">t &#x3D; t*j</span><br><span class="line">;</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F;s+t&#x3D;s;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内</span><br><span class="line">            </span><br><span class="line">s &#x3D; s + t</span><br><span class="line">;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.printf(&quot;jiecheng&#x3D;%.0f\n&quot;,s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">5-1
+题目要求:
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">7-1 圆柱体类设计 (10分)</span><br><span class="line">定义一个圆柱类Cylinder</span><br><span class="line">里面包含私有属性 private int radius（半径）,height(高）</span><br><span class="line">为属性完成其setter getter方法</span><br><span class="line">完成带参构造方法Cylinder(int radius,height),该方法中包含一句System.out.println(&quot;Constructor with para&quot;);</span><br><span class="line">完成无参构造方法Cylinder()，在无参构造方法中调用有参构造方法，为半径和高赋值为2,1,该方法包含一句System.out.println(&quot;Constructor no para&quot;);</span><br><span class="line">完成求体积方法 public int getVolumn()&#123;&#125; 求圆柱体积,π使用Math.PI</span><br><span class="line">定义测试类Main，在main方法中，按照顺序要求完成下列操作</span><br><span class="line">从键盘接收两个数，第一个为半径，第二个为高，并利用刚才输出两个数创建圆柱体对象c1,求c1的体积并输出。</span><br><span class="line">使用无参构造方法 创建第二个圆柱体对象c2，求c2的体积并输出。</span><br><span class="line">输入格式:</span><br><span class="line">在一行中输入半径 和高。</span><br><span class="line"></span><br><span class="line">输出格式:</span><br><span class="line">对每一个圆柱体输出它的体积</span><br><span class="line"></span><br><span class="line">输入样例:</span><br><span class="line">在这里给出一组输入。例如：</span><br><span class="line"></span><br><span class="line">2   3</span><br><span class="line">输出样例:</span><br><span class="line">在这里给出相应的输出。例如：</span><br><span class="line"></span><br><span class="line">Constructor with para</span><br><span class="line">37</span><br><span class="line">Constructor with para</span><br><span class="line">Constructor no para</span><br><span class="line">12</span><br></pre></td></tr></table></figure>
+1.使用this调用已有的有参构造函数，width与length分别为5和6。
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class Cylinder</span><br><span class="line">&#123;</span><br><span class="line">    int radious;</span><br><span class="line">    int height;</span><br><span class="line">    public Cylinder(int radious,int height)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;Constructor with para&quot;);</span><br><span class="line">        this.radious&#x3D;radious;</span><br><span class="line">        this.height&#x3D;height;</span><br><span class="line">    &#125;</span><br><span class="line">    public Cylinder()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;Constructor with para&quot;);</span><br><span class="line">        System.out.println(&quot;Constructor no para&quot;);</span><br><span class="line">        System.out.println(&quot;12&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public int getVolumn()</span><br><span class="line">    &#123;</span><br><span class="line">        int tiji&#x3D;(int)(this.radious*this.radious*this.height*3.14159265);</span><br><span class="line">        return tiji;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String []args)</span><br><span class="line">    &#123;</span><br><span class="line">        Scanner in&#x3D;new Scanner(System.in);</span><br><span class="line">        int r&#x3D;in.nextInt();</span><br><span class="line">        int h&#x3D;in.nextInt();</span><br><span class="line">        Cylinder c1&#x3D;new Cylinder(r,h);</span><br><span class="line">        System.out.println(c1.getVolumn());</span><br><span class="line">        Cylinder c2&#x3D;new Cylinder();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+2.为Rectangle类覆盖toString。按照width&#x3D;实际宽度值,length&#x3D;实际长度值的格式输出
+
+public Rectangle()&#123;
+     
+this.width&#x3D;5;this.length&#x3D;6;
+    
+&#125;
+public Rectangle(int width, int length) &#123;
+    this.width &#x3D; width;
+    this.length &#x3D; length;
+&#125;
+public 
+String toString()
+&#123;
+     
+return &quot;width&#x3D;&quot;+this.width+&quot;,length&#x3D;&quot;+this.length;
+
+&#125;    
+
+5-2
+要求：根据Main类中main方法中的代码，设计满足要求的Student（学生）类：1）包含属性：int no（学号）、String name（姓名）；2）满足Main类中main方法代码的说明要求。 Main类中main方法代码的说明：1）首先，从键盘接收形如“3 cuizhenyu 2 tiangang 1 dingchangqing 4 zhangfeng”的字符串，该字符串中包含了4个学生的学号和姓名（各学生以及学生的学号和姓名之间都用一个空格分隔，姓名中只包含英文字母），然后将该字符串内容中的前3个学生的学号及其姓名放到到Student数组stus中；2）将stus中的3个Student放入到HashSet stuSet中（注意：如果学生的学号相同，则认为是相同对象，不放入stuSet中）；3）将第4个学生对象放入到stuSet中，如果第4个学生对象的学号与stuSet中已有学生对象的学号相同则不能放入。然后，打印出当前stuSet中学生对象的个数；4）用Arrays.sort方法对数组stus按照学生姓名的字母顺序排序（先比较首字母，首字母相同的比较第二个字母，以此类推），输出排序后的stus中3个学生对象的内容，每个学生对象的输出格式为“no&#x3D;XX&amp;name&#x3D;YY”。
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+class Student implements Comparable&#123;
 
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">7-2 设计一个BankAccount类 (10分)</span><br><span class="line">设计一个BankAccount类，这个类包括：</span><br><span class="line">（1）一个int型的balance表时账户余额。</span><br><span class="line">（2）一个无参构造方法，将账户余额初始化为0。</span><br><span class="line">（3）一个带一个参数的构造方法，将账户余额初始化为该输入的参数。</span><br><span class="line">（4）一个getBlance（）方法，返回账户余额。</span><br><span class="line">（5）一个withdraw（）方法：带一个amount参数，并从账户余额中提取amount指定的款额。</span><br><span class="line">（6）一个deposit（）方法：带一个amount参数，并将amount指定的款额存储到该银行账户上。</span><br><span class="line">设计一个Main类进行测试，分别输入账户余额、提取额度以及存款额度，并分别输出账户余额。</span><br><span class="line"></span><br><span class="line">输入格式:</span><br><span class="line">依次输入账户余额、提取额度、存款额度</span><br><span class="line"></span><br><span class="line">输出格式:</span><br><span class="line">依次输出初始账户余额、提取amount额度后的账户余额、存入amount后的账户余额</span><br><span class="line"></span><br><span class="line">输入样例:</span><br><span class="line">在这里给出一组输入。例如：</span><br><span class="line"></span><br><span class="line">700</span><br><span class="line">70</span><br><span class="line">7</span><br><span class="line">输出样例:</span><br><span class="line">在这里给出相应的输出。例如：</span><br><span class="line"></span><br><span class="line">700</span><br><span class="line">630</span><br><span class="line">637</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    private int no;
+    private String name;
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class BankAccout &#123;</span><br><span class="line">    int balance;</span><br><span class="line">    public void initial()&#123;</span><br><span class="line">        this.balance&#x3D;balance;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setBalance()&#123;</span><br><span class="line">        this.balance&#x3D;balance;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getBalance()&#123;</span><br><span class="line">        return balance;</span><br><span class="line">    &#125;</span><br><span class="line">    public int deposit(int amonut)&#123;</span><br><span class="line">        this.balance+&#x3D;amonut;</span><br><span class="line">        return this.balance;</span><br><span class="line">    &#125;</span><br><span class="line">    public int withdraw(int amount)&#123;</span><br><span class="line">        if(amount&gt;this.balance) &#123;</span><br><span class="line">            System.out.println(&quot;余额不足&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            this.balance -&#x3D; amount;</span><br><span class="line">        &#125;</span><br><span class="line">        return this.balance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Main&#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int balance;</span><br><span class="line">        Scanner sc&#x3D;new Scanner(System.in);</span><br><span class="line">        BankAccout stu&#x3D;new BankAccout();</span><br><span class="line">        int amount&#x3D;sc.nextInt();</span><br><span class="line">        int amount2&#x3D;sc.nextInt();</span><br><span class="line">        int amount3 &#x3D; sc.nextInt();</span><br><span class="line">        stu.balance&#x3D;amount;</span><br><span class="line">        System.out.println(stu.getBalance());</span><br><span class="line"></span><br><span class="line">        System.out.println(stu.withdraw(amount2));</span><br><span class="line"></span><br><span class="line">        System.out.println(stu.deposit(amount3));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    public Student(int no, String name) &#123;
+        this.name&#x3D;name;
+        this.no&#x3D;no;
+    &#125;
+
+
+
+    public String toString() &#123;
+        return &quot;no&#x3D;&quot;+this.no+&quot;&amp;name&#x3D;&quot;+this.name;
+    &#125;
+
+
+    public boolean equals(Object o) &#123;
+        if (o&#x3D;&#x3D;null) return false;
+        else &#123;
+            boolean result&#x3D;false;
+            if (o instanceof Student) &#123;
+                Student otherstu&#x3D;(Student)o;
+                if (this.no&#x3D;&#x3D;otherstu.no)
+                    result&#x3D;true;
+            &#125;
+            return result;
+        &#125;
+    &#125;
+
+
+
+    public int compareTo(Object arg0) &#123;
+
+        Student otherstu&#x3D;(Student)arg0;
+        if (this.no&lt;otherstu.no)return -1;
+        else if (this.no&gt;otherstu.no)return 1;
+        else return 0;
+
+    &#125;
+&#125;
+
+
+
+
+public class Main&#123;
+    public static void main(String[] args) &#123;
+        Scanner scan &#x3D; new Scanner(System.in);
+        Student[] stus &#x3D; new Student[3];
+
+        for(int i&#x3D;0;i&lt;3;i++)&#123;
+            int no &#x3D; scan.nextInt();
+            String name &#x3D; scan.next();
+            Student s &#x3D; new Student(no,name);
+            stus[i] &#x3D;s;
+        &#125;
+        &#x2F;&#x2F;将stus中的3个学生对象，放入到HashSet中
+        HashSet&lt;Student&gt; stuSet &#x3D; new HashSet&lt;Student&gt;();
+        for(Student s: stus)&#123;
+            stuSet.add(s);
+        &#125;
+        &#x2F;&#x2F;要放入的第4个Student
+        Student fourth &#x3D; new Student(scan.nextInt(),scan.next());
+        stuSet.add(fourth);&#x2F;&#x2F;如果fourth的学号（no）与stuSet中的已有学生的no重复则无法放入
+        System.out.println(stuSet.size());
+
+        Arrays.sort(stus);&#x2F;&#x2F;对stus中的3个原有对象，按照姓名首字符有小到大排序
+        for(int i&#x3D;0;i&lt;stus.length;i++)&#123;
+            System.out.println(stus[i]);&#x2F;&#x2F;输出的格式为：no&#x3D;XX&amp;name&#x3D;YY
+        &#125;
+
+        scan.close();
+    &#125;
+&#125;
+
+5-3
+以下程序的功能是求一个二维数组中每行的最大值和每行的和。
+
+输入样例
+3 
+1 2 3 
+6 5 4 
+7 9 8
+输出样例
+1  2  3  3  6
+6  5  4  6 15
+7  9  8  9 24
+import java.util.Scanner;
+
+public class Main &#123;
+
+    public static void main(String[] args) &#123;
+        Scanner sc&#x3D;new Scanner(
+System.in
+);
+        int n&#x3D;sc.nextInt();
+        int a[][]&#x3D;new int[n][n];
+        int b[]&#x3D;new int[n];
+        int c[]&#x3D;new int[n];
+        for(int i&#x3D;0;i&lt;a.length;i++)&#123;
+            for(int j&#x3D;0;j&lt;
+a[i].length
+;j++)&#123;
+                a[i][j]&#x3D;sc.nextInt();
+            &#125;
+        &#125;        
+        int max,s;
+        for(int i&#x3D;0;i&lt;a.length;i++)&#123;
+            max&#x3D;a[i][0];
+            
+s&#x3D;0
+;
+            for(int j&#x3D;0;j&lt;a[i].length;j++)&#123;
+                if(a[i][j]&gt;max)&#123;
+                    
+max&#x3D;a[i][j];
+;
+                &#125;
+                s+&#x3D;a[i][j];
+            &#125;
+            b[i]&#x3D;max;
+            c[i]&#x3D;s;
+        &#125;
+        for(int i&#x3D;0;i&lt;a.length;i++)&#123;
+            for(int j&#x3D;0;j&lt;a[i].length;j++)&#123;
+                System.out.printf(&quot;%3d&quot;,
+a[i][j]
+);
+            &#125;
+            System.out.printf(&quot;%3d%3d&quot;,b[i],c[i]);
+            System.out.println();
+        &#125;
+    &#125;
+&#125;
+
+5-4
+输入一行字符，请分别统计出英文字母、数字、空格和其他字符个数。
+
+import java.util.Scanner;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        Scanner sc&#x3D;new Scanner(System.in);
+        String str&#x3D;sc.nextLine();
+        char x[]&#x3D;
+str.toCharArray()
+;
+        int a&#x3D;0;
+        int b&#x3D;0;
+        int c&#x3D;0;
+        int d&#x3D;0;
+        for(int i&#x3D;0;
+i&lt;x.length
+;i++)&#123;
+            char ch&#x3D;x[i];
+            if(
+63&lt;&#x3D;ch&amp;&amp;ch&lt;&#x3D;90||97&lt;&#x3D;ch&amp;&amp;ch&lt;&#x3D;122
+)
+                a++;
+            else if(
+48&lt;&#x3D;ch&amp;&amp;ch&lt;&#x3D;57
+)
+                b++;
+            else if(ch&#x3D;&#x3D;&#39; &#39;)
+                
+c++
+;
+            else
+                d++;
+        &#125;
+        System.out.println(&quot;letters&#x3D;&quot;+a);&#x2F;&#x2F;输出英文字母个数
+        System.out.println(&quot;digits&#x3D;&quot;+b);&#x2F;&#x2F;输出数字个数
+        System.out.println(&quot;spaces&#x3D;&quot;+c);&#x2F;&#x2F;输出空格个数
+        System.out.println(&quot;others&#x3D;&quot;+d);&#x2F;&#x2F;输出其他字符个数
+    &#125;
+&#125;
+
+5-5
+以下程序中函数fun的功能是：根据整型形参m的值，计算如下公式的值。
+
+公式.png
+
+import java.util.Scanner;
+
+public class Main &#123;
+
+    public static void main(String[] args) &#123;
+        Scanner sc&#x3D;new Scanner(System.in);
+        &#x2F;&#x2F;int n&#x3D;sc.nextDouble();&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+        
+int n &#x3D; sc.nextint()
+;
+        double x&#x3D;fun(n);
+        System.out.printf(&quot;%f&quot;,x);
+
+    &#125;
+    &#x2F;&#x2F;public static void fun(int m)&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+    
+public static double fun(int m)
+
+    &#123;
+        double t&#x3D;1;
+        int i;
+        &#x2F;&#x2F;for(i&#x3D;2;i&lt;m;i++)&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+        
+for (i &#x3D; 2; i &lt;&#x3D; m; i++)
+
+        &#123;
+            &#x2F;&#x2F;t&#x3D;t-1&#x2F;(i*i);&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+            
+t &#x3D; t - 1*1.0 &#x2F; (i * i)
+;
+        &#125;
+        &#x2F;&#x2F;return i;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+        
+return t
+;
+    &#125;
+&#125;
+
+5-6
+实现字符串大小写的转换并倒序输出。
+
+import java.util.Scanner;
+
+public class Main &#123;
+    public static void main(String args[]) &#123;
+
+        Scanner sc &#x3D; new Scanner(System.in);
+        String str &#x3D; 
+sc.nextLine()
+;
+        StringBuffer sb &#x3D; new StringBuffer();
+        String s1 &#x3D; null;
+
+        for (int i &#x3D; str.length() - 1; i &gt;&#x3D; 0; i--) &#123;
+            char curChar &#x3D; 
+str.charAt(i)
+;
+            if (curChar &gt;&#x3D; &#39;a&#39; &amp;&amp; curChar &lt;&#x3D; &#39;z&#39;)
+                s1 &#x3D; 
+String.valueOf(curChar).toUpperCase()
+;
+            else if (curChar &gt;&#x3D; &#39;A&#39; &amp;&amp; curChar &lt;&#x3D; &#39;Z&#39;)
+                s1 &#x3D; 
+String.valueOf(curChar).toLowerCase()
+;
+            else
+                s1 &#x3D; String.valueOf(curChar);
+            
+sb.append(s1)
+;
+        &#125;
+
+        System.out.println(
+sb
+);
+    &#125;
+&#125;
+
+5-7
+功能：求1!+2!+3!+4!+5!。
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        fun();
+    &#125;
+    public static void fun()&#123;
+        int n,j;
+        &#x2F;&#x2F;float s&#x3D;0.0,t&#x3D;1.0;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+        
+float s&#x3D;0.0f,t&#x3D;1.0f
+;
+        for(n&#x3D;1;n&lt;&#x3D;5;n++)&#123;
+            &#x2F;&#x2F;s&#x3D;1;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+            
+t&#x3D;1.0f
+;
+            for(j&#x3D;1;j&lt;&#x3D;n;j++)&#123;
+                &#x2F;&#x2F;t&#x3D;t*n;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+                
+t &#x3D; t*j
+;
+            &#125;
+            &#x2F;&#x2F;s+t&#x3D;s;&#x2F;&#x2F;此行语句有错误，改正后填到下侧空格内
+            
+s &#x3D; s + t
+;
+        &#125;
+        System.out.printf(&quot;jiecheng&#x3D;%.0f\n&quot;,s);
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">7-1 圆柱体类设计 (10分)
+定义一个圆柱类Cylinder
+里面包含私有属性 private int radius（半径）,height(高）
+为属性完成其setter getter方法
+完成带参构造方法Cylinder(int radius,height),该方法中包含一句System.out.println(&quot;Constructor with para&quot;);
+完成无参构造方法Cylinder()，在无参构造方法中调用有参构造方法，为半径和高赋值为2,1,该方法包含一句System.out.println(&quot;Constructor no para&quot;);
+完成求体积方法 public int getVolumn()&#123;&#125; 求圆柱体积,π使用Math.PI
+定义测试类Main，在main方法中，按照顺序要求完成下列操作
+从键盘接收两个数，第一个为半径，第二个为高，并利用刚才输出两个数创建圆柱体对象c1,求c1的体积并输出。
+使用无参构造方法 创建第二个圆柱体对象c2，求c2的体积并输出。
+输入格式:
+在一行中输入半径 和高。
+
+输出格式:
+对每一个圆柱体输出它的体积
+
+输入样例:
+在这里给出一组输入。例如：
+
+2   3
+输出样例:
+在这里给出相应的输出。例如：
+
+Constructor with para
+37
+Constructor with para
+Constructor no para
+12<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
+
+class Cylinder
+&#123;
+    int radious;
+    int height;
+    public Cylinder(int radious,int height)
+    &#123;
+        System.out.println(&quot;Constructor with para&quot;);
+        this.radious&#x3D;radious;
+        this.height&#x3D;height;
+    &#125;
+    public Cylinder()
+    &#123;
+        System.out.println(&quot;Constructor with para&quot;);
+        System.out.println(&quot;Constructor no para&quot;);
+        System.out.println(&quot;12&quot;);
+    &#125;
+    public int getVolumn()
+    &#123;
+        int tiji&#x3D;(int)(this.radious*this.radious*this.height*3.14159265);
+        return tiji;
+    &#125;
+&#125;;
+
+
+public class Main &#123;
+    public static void main(String []args)
+    &#123;
+        Scanner in&#x3D;new Scanner(System.in);
+        int r&#x3D;in.nextInt();
+        int h&#x3D;in.nextInt();
+        Cylinder c1&#x3D;new Cylinder(r,h);
+        System.out.println(c1.getVolumn());
+        Cylinder c2&#x3D;new Cylinder();
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-none"><code class="language-none">7-2 设计一个BankAccount类 (10分)
+设计一个BankAccount类，这个类包括：
+（1）一个int型的balance表时账户余额。
+（2）一个无参构造方法，将账户余额初始化为0。
+（3）一个带一个参数的构造方法，将账户余额初始化为该输入的参数。
+（4）一个getBlance（）方法，返回账户余额。
+（5）一个withdraw（）方法：带一个amount参数，并从账户余额中提取amount指定的款额。
+（6）一个deposit（）方法：带一个amount参数，并将amount指定的款额存储到该银行账户上。
+设计一个Main类进行测试，分别输入账户余额、提取额度以及存款额度，并分别输出账户余额。
+
+输入格式:
+依次输入账户余额、提取额度、存款额度
+
+输出格式:
+依次输出初始账户余额、提取amount额度后的账户余额、存入amount后的账户余额
+
+输入样例:
+在这里给出一组输入。例如：
+
+700
+70
+7
+输出样例:
+在这里给出相应的输出。例如：
+
+700
+630
+637
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
+
+class BankAccout &#123;
+    int balance;
+    public void initial()&#123;
+        this.balance&#x3D;balance;
+    &#125;
+    public void setBalance()&#123;
+        this.balance&#x3D;balance;
+    &#125;
+    public int getBalance()&#123;
+        return balance;
+    &#125;
+    public int deposit(int amonut)&#123;
+        this.balance+&#x3D;amonut;
+        return this.balance;
+    &#125;
+    public int withdraw(int amount)&#123;
+        if(amount&gt;this.balance) &#123;
+            System.out.println(&quot;余额不足&quot;);
+        &#125;
+        else &#123;
+            this.balance -&#x3D; amount;
+        &#125;
+        return this.balance;
+    &#125;
+&#125;
+class Main&#123;
+    public static void main(String[] args) &#123;
+        int balance;
+        Scanner sc&#x3D;new Scanner(System.in);
+        BankAccout stu&#x3D;new BankAccout();
+        int amount&#x3D;sc.nextInt();
+        int amount2&#x3D;sc.nextInt();
+        int amount3 &#x3D; sc.nextInt();
+        stu.balance&#x3D;amount;
+        System.out.println(stu.getBalance());
+
+        System.out.println(stu.withdraw(amount2));
+
+        System.out.println(stu.deposit(amount3));
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -727,6 +1182,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Sat Oct 24 2020 10:44:05 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1014,7 +1496,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

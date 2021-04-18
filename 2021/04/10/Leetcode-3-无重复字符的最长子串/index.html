@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 3. 无重复字符的最长子串, LHL&#39; s Network Station">
+    <meta name="keywords" content="Leetcode 3. 无重复字符的最长子串, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 3. 无重复字符的最长子串 | LHL&#39; s Network Station</title>
+    <title>Leetcode 3. 无重复字符的最长子串 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    321
+                    323
                 </div>
                 
 
@@ -492,12 +492,10 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
@@ -506,16 +504,24 @@
 <a id="more"></a>
 <h4 id="3-无重复字符的最长子串"><a href="#3-无重复字符的最长子串" class="headerlink" title="3. 无重复字符的最长子串"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">3. 无重复字符的最长子串</a></h4><p>给定一个字符串，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
 <p><strong>示例 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s &#x3D; &quot;abcabcbb&quot;</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入: s &#x3D; &quot;abcabcbb&quot;
+输出: 3 
+解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>示例 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s &#x3D; &quot;bbbbb&quot;</span><br><span class="line">输出: 1</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入: s &#x3D; &quot;bbbbb&quot;
+输出: 1
+解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>示例 3:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: s &#x3D; &quot;pwwkew&quot;</span><br><span class="line">输出: 3</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。</span><br><span class="line">     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入: s &#x3D; &quot;pwwkew&quot;
+输出: 3
+解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。
+     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>示例 4:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s &#x3D; &quot;&quot;</span><br><span class="line">输出: 0</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入: s &#x3D; &quot;&quot;
+输出: 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -530,7 +536,28 @@
 <p>  <img src="https://i.loli.net/2021/04/10/9TuJVUmso8ZzBEW.png" alt="image-20210410095103513"><img src="https://i.loli.net/2021/04/10/xdZKcFL7vDs1rgY.png" alt="image-20210410094844274"></p>
 <p><img src="https://i.loli.net/2021/04/10/UTAsZqPuCJjgfQX.png" alt="image-20210410094942013"></p>
 <p><img src="https://i.loli.net/2021/04/10/bWS8f5plzv1wZAB.png" alt="image-20210410094951727"></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> n=s.size();</span><br><span class="line">    	<span class="built_in">unordered_set</span>&lt;<span class="keyword">char</span>&gt; sum;</span><br><span class="line">    	<span class="keyword">int</span> k=<span class="number">-1</span>;</span><br><span class="line">    	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">if</span>(i!=<span class="number">0</span>)</span><br><span class="line">    			sum.erase(s[i<span class="number">-1</span>]);</span><br><span class="line">    		<span class="keyword">while</span>(k+<span class="number">1</span>  &lt; n &amp;&amp; !sum.count(s[k+<span class="number">1</span>]))</span><br><span class="line">    		&#123;</span><br><span class="line">    			sum.insert(s[k+<span class="number">1</span>]);</span><br><span class="line">    			++k;</span><br><span class="line">    		&#125;</span><br><span class="line">    		cnt=max(cnt,k-i+<span class="number">1</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    int lengthOfLongestSubstring(string s) 
+    &#123;
+    	int n&#x3D;s.size();
+    	unordered_set&lt;char&gt; sum;
+    	int k&#x3D;-1;
+    	int cnt&#x3D;0;
+    	for(int i&#x3D;0;i&lt;n;i++)
+    	&#123;
+    		if(i!&#x3D;0)
+    			sum.erase(s[i-1]);
+    		while(k+1  &lt; n &amp;&amp; !sum.count(s[k+1]))
+    		&#123;
+    			sum.insert(s[k+1]);
+    			++k;
+    		&#125;
+    		cnt&#x3D;max(cnt,k-i+1);
+    	&#125;
+    	return cnt;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -744,6 +771,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Sat Apr 10 2021 09:45:17 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1029,7 +1083,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

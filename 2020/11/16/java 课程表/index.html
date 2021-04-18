@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Java 实现课程表, LHL&#39; s Network Station">
+    <meta name="keywords" content="Java 实现课程表, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java 实现课程表 | LHL&#39; s Network Station</title>
+    <title>Java 实现课程表 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,19 +492,107 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Java 课程表</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">package test;</span><br><span class="line"></span><br><span class="line">import javax.swing.*;</span><br><span class="line">import javax.swing.event.TableModelListener;</span><br><span class="line">import javax.swing.table.TableModel;</span><br><span class="line"></span><br><span class="line">class KCBData implements TableModel &#123;</span><br><span class="line">	private String[] title&#x3D; &#123;</span><br><span class="line">	&quot;周一&quot;,&quot;周二&quot;,&quot;周三&quot;,&quot;周四&quot;,&quot;周五&quot;,&quot;周六&quot;,&quot;周日&quot;</span><br><span class="line">	&#125;;</span><br><span class="line">	private String[][]data&#x3D;new String[8][7];</span><br><span class="line">	public KCBData()</span><br><span class="line">	&#123;</span><br><span class="line">		for(int i&#x3D;0;i&lt;data.length;i++)</span><br><span class="line">			for(int j&#x3D;0;j&lt;data[i].length;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				data[i][j]&#x3D;&quot;&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	@Override</span><br><span class="line">	public void addTableModelListener(TableModelListener arg0) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Class&lt;?&gt; getColumnClass(int arg0) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		return String.class;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public int getColumnCount() &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		return 7;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public String getColumnName(int arg0) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		return title[arg0];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public int getRowCount() &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		return 8;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Object getValueAt(int arg0, int arg1) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		return data[arg0][arg1];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public boolean isCellEditable(int arg0, int arg1) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void removeTableModelListener(TableModelListener arg0) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void setValueAt(Object arg0, int arg1, int arg2) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		data[arg1][arg2]&#x3D;(String)arg0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">public class KCB</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String []args)</span><br><span class="line">    &#123;</span><br><span class="line">        JFrame frame&#x3D;new JFrame();</span><br><span class="line">        JTable table&#x3D;new JTable(new KCBData());</span><br><span class="line">        JScrollPane pane&#x3D;new JScrollPane(table);</span><br><span class="line">        frame.add(pane);</span><br><span class="line">        frame.pack();</span><br><span class="line">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">        frame.setVisible(true);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">package test;
+
+import javax.swing.*;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
+
+class KCBData implements TableModel &#123;
+	private String[] title&#x3D; &#123;
+	&quot;周一&quot;,&quot;周二&quot;,&quot;周三&quot;,&quot;周四&quot;,&quot;周五&quot;,&quot;周六&quot;,&quot;周日&quot;
+	&#125;;
+	private String[][]data&#x3D;new String[8][7];
+	public KCBData()
+	&#123;
+		for(int i&#x3D;0;i&lt;data.length;i++)
+			for(int j&#x3D;0;j&lt;data[i].length;j++)
+			&#123;
+				data[i][j]&#x3D;&quot;&quot;;
+			&#125;
+	&#125;
+		
+	@Override
+	public void addTableModelListener(TableModelListener arg0) &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+
+	&#125;
+
+	@Override
+	public Class&lt;?&gt; getColumnClass(int arg0) &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+		return String.class;
+	&#125;
+
+	@Override
+	public int getColumnCount() &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+		return 7;
+	&#125;
+
+	@Override
+	public String getColumnName(int arg0) &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+		return title[arg0];
+	&#125;
+
+	@Override
+	public int getRowCount() &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+		return 8;
+	&#125;
+
+	@Override
+	public Object getValueAt(int arg0, int arg1) &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+		return data[arg0][arg1];
+	&#125;
+
+	@Override
+	public boolean isCellEditable(int arg0, int arg1) &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+		return true;
+	&#125;
+
+	@Override
+	public void removeTableModelListener(TableModelListener arg0) &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+
+	&#125;
+
+	@Override
+	public void setValueAt(Object arg0, int arg1, int arg2) &#123;
+		&#x2F;&#x2F; TODO Auto-generated method stub
+		data[arg1][arg2]&#x3D;(String)arg0;
+	&#125;
+
+&#125;
+public class KCB
+&#123;
+    public static void main(String []args)
+    &#123;
+        JFrame frame&#x3D;new JFrame();
+        JTable table&#x3D;new JTable(new KCBData());
+        JScrollPane pane&#x3D;new JScrollPane(table);
+        frame.add(pane);
+        frame.pack();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        
+    &#125;
+&#125;
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -718,6 +806,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Mon Nov 16 2020 21:33:31 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1003,7 +1118,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

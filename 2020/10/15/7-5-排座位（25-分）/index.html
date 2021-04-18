@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="7-5 排座位（25 分）, LHL&#39; s Network Station">
+    <meta name="keywords" content="7-5 排座位（25 分）, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>7-5 排座位（25 分） | LHL&#39; s Network Station</title>
+    <title>7-5 排座位（25 分） | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    978
+                    989
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -492,12 +492,10 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
@@ -524,12 +522,173 @@
 <li>对每个查询输出一行结果：如果两位宾客之间是朋友，且没有敌对关系，则输出No problem；如果他们之间并不是朋友，但也不敌对，则输出OK；如果他们之间有敌对，然而也有共同的朋友，则输出OK but…；如果他们之间只有敌对关系，则输出No way。</li>
 </ul>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">输入样例：</span><br><span class="line"></span><br><span class="line">7 8 4</span><br><span class="line">5 6 1</span><br><span class="line">2 7 -1</span><br><span class="line">1 3 1</span><br><span class="line">3 4 1</span><br><span class="line">6 7 -1</span><br><span class="line">1 2 1</span><br><span class="line">1 4 1</span><br><span class="line">2 3 -1</span><br><span class="line">3 4</span><br><span class="line">5 7</span><br><span class="line">2 3</span><br><span class="line">7 2</span><br><span class="line"></span><br><span class="line">输出样例：</span><br><span class="line"></span><br><span class="line">No problem</span><br><span class="line">OK</span><br><span class="line">OK but…</span><br><span class="line">No way</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入样例：
+
+7 8 4
+5 6 1
+2 7 -1
+1 3 1
+3 4 1
+6 7 -1
+1 2 1
+1 4 1
+2 3 -1
+3 4
+5 7
+2 3
+7 2
+
+输出样例：
+
+No problem
+OK
+OK but…
+No way<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int f[110];</span><br><span class="line">int map[110][110];</span><br><span class="line">void init(int n)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i&#x3D;1;i&lt;&#x3D;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        f[i] &#x3D; i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int getf(int v)</span><br><span class="line">&#123;</span><br><span class="line">    if(v &#x3D;&#x3D; f[v])</span><br><span class="line">        return v;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        f[v] &#x3D; getf(f[v]);</span><br><span class="line">        return f[v];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void Merge(int u,int v)</span><br><span class="line">&#123;</span><br><span class="line">    int t1 &#x3D; getf(u);</span><br><span class="line">    int t2 &#x3D;getf(v);</span><br><span class="line">    if(t1!&#x3D;t2)</span><br><span class="line">    &#123;</span><br><span class="line">        f[t1] &#x3D; t2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m,t;</span><br><span class="line">    int x,y;</span><br><span class="line">    scanf(&quot;%d %d %d&quot;,&amp;n,&amp;m,&amp;t);</span><br><span class="line">    init(n);</span><br><span class="line">    int a,b,r;</span><br><span class="line">    while(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d %d %d&quot;,&amp;a,&amp;b,&amp;r);</span><br><span class="line">        if(r &#x3D;&#x3D; 1)</span><br><span class="line">        &#123;</span><br><span class="line">            Merge(a,b);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">            map[a][b] &#x3D; map[b][a] &#x3D; 1;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    for(int i&#x3D;0;i&lt;t;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d %d&quot;,&amp;x,&amp;y);</span><br><span class="line">        int flag1&#x3D;0,flag2&#x3D;0;</span><br><span class="line">        if(getf(x) &#x3D;&#x3D; getf(y))</span><br><span class="line">            flag1 &#x3D; 1;</span><br><span class="line">        if(map[x][y]||map[y][x])</span><br><span class="line">            flag2 &#x3D; 1;</span><br><span class="line">        if(flag1&amp;&amp;!flag2)</span><br><span class="line">            printf(&quot;No problem\n&quot;);</span><br><span class="line">        else if(flag1&amp;&amp;flag2)</span><br><span class="line">            printf(&quot;OK but...\n&quot;);</span><br><span class="line">        else if(!flag1&amp;&amp;flag2)</span><br><span class="line">            printf(&quot;No way\n&quot;);</span><br><span class="line">        else</span><br><span class="line">        printf(&quot;OK\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;string.h&gt;
+#include&lt;queue&gt;
+using namespace std;
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">利用“并查集”查找：</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">    int zz[200];</span><br><span class="line"></span><br><span class="line">int find_(int x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x&#x3D;&#x3D;zz[x])</span><br><span class="line">    return x;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        zz[x]&#x3D;find_(zz[x]);</span><br><span class="line">        return zz[x];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void connect(int r1,int r2)</span><br><span class="line">&#123;</span><br><span class="line">    int x&#x3D;find_(r1);</span><br><span class="line">    int y&#x3D;find_(r2);</span><br><span class="line">    if(x!&#x3D;y)</span><br><span class="line">    zz[x]&#x3D;y;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;   </span><br><span class="line"></span><br><span class="line">    int renshu,tiaoshu,chashu;</span><br><span class="line">    cin&gt;&gt;renshu&gt;&gt;tiaoshu&gt;&gt;chashu;</span><br><span class="line">    int i,j,k,l,n,m,x,y,a,b;</span><br><span class="line">    int r1,r2,gx;</span><br><span class="line">    int cr[200][200];</span><br><span class="line">    for(i&#x3D;1;i&lt;&#x3D;renshu;i++)</span><br><span class="line">    zz[i]&#x3D;i;</span><br><span class="line">    for(i&#x3D;0;i&lt;tiaoshu;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;r1&gt;&gt;r2&gt;&gt;gx;</span><br><span class="line">        if(gx&#x3D;&#x3D;1)</span><br><span class="line">        &#123;</span><br><span class="line">            connect(r1,r2);</span><br><span class="line">        &#125;</span><br><span class="line">        if(gx&#x3D;&#x3D;-1)</span><br><span class="line">        &#123;</span><br><span class="line">            cr[r1][r2]&#x3D;cr[r2][r1]&#x3D;1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i&#x3D;0;i&lt;chashu;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int f1&#x3D;0,f2&#x3D;0;</span><br><span class="line">        cin&gt;&gt;r1&gt;&gt;r2;</span><br><span class="line">        if(find_(r1)&#x3D;&#x3D;find_(r2))</span><br><span class="line">        f1&#x3D;1;</span><br><span class="line">        if(cr[r1][r2]||cr[r2][r1])</span><br><span class="line">        f2&#x3D;1;</span><br><span class="line">        if(f1&amp;&amp;!f2)</span><br><span class="line">        cout&lt;&lt;&quot;No problem&quot;&lt;&lt;endl;</span><br><span class="line">        if(!f1&amp;&amp;!f2)</span><br><span class="line">        cout&lt;&lt;&quot;OK&quot;&lt;&lt;endl;</span><br><span class="line">        if(f1&amp;&amp;f2)</span><br><span class="line">        cout&lt;&lt;&quot;OK but...&quot;&lt;&lt;endl;</span><br><span class="line">        if(!f1&amp;&amp;f2)</span><br><span class="line">        cout&lt;&lt;&quot;No way&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+int f[110];
+int map[110][110];
+void init(int n)
+&#123;
+    for(int i&#x3D;1;i&lt;&#x3D;n;i++)
+    &#123;
+        f[i] &#x3D; i;
+    &#125;
+&#125;
+int getf(int v)
+&#123;
+    if(v &#x3D;&#x3D; f[v])
+        return v;
+    else
+    &#123;
+        f[v] &#x3D; getf(f[v]);
+        return f[v];
+    &#125;
+&#125;
+void Merge(int u,int v)
+&#123;
+    int t1 &#x3D; getf(u);
+    int t2 &#x3D;getf(v);
+    if(t1!&#x3D;t2)
+    &#123;
+        f[t1] &#x3D; t2;
+    &#125;
+&#125;
+int main()
+&#123;
+    int n,m,t;
+    int x,y;
+    scanf(&quot;%d %d %d&quot;,&amp;n,&amp;m,&amp;t);
+    init(n);
+    int a,b,r;
+    while(m--)
+    &#123;
+        scanf(&quot;%d %d %d&quot;,&amp;a,&amp;b,&amp;r);
+        if(r &#x3D;&#x3D; 1)
+        &#123;
+            Merge(a,b);
+        &#125;
+        else
+            map[a][b] &#x3D; map[b][a] &#x3D; 1;
+
+    &#125;
+    for(int i&#x3D;0;i&lt;t;i++)
+    &#123;
+        scanf(&quot;%d %d&quot;,&amp;x,&amp;y);
+        int flag1&#x3D;0,flag2&#x3D;0;
+        if(getf(x) &#x3D;&#x3D; getf(y))
+            flag1 &#x3D; 1;
+        if(map[x][y]||map[y][x])
+            flag2 &#x3D; 1;
+        if(flag1&amp;&amp;!flag2)
+            printf(&quot;No problem\n&quot;);
+        else if(flag1&amp;&amp;flag2)
+            printf(&quot;OK but...\n&quot;);
+        else if(!flag1&amp;&amp;flag2)
+            printf(&quot;No way\n&quot;);
+        else
+        printf(&quot;OK\n&quot;);
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">利用“并查集”查找：
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+    int zz[200];
+
+int find_(int x)
+&#123;
+    if(x&#x3D;&#x3D;zz[x])
+    return x;
+    else
+    &#123;
+        zz[x]&#x3D;find_(zz[x]);
+        return zz[x];
+    &#125;
+    
+&#125;
+
+void connect(int r1,int r2)
+&#123;
+    int x&#x3D;find_(r1);
+    int y&#x3D;find_(r2);
+    if(x!&#x3D;y)
+    zz[x]&#x3D;y;
+
+&#125;
+int main()
+&#123;   
+
+    int renshu,tiaoshu,chashu;
+    cin&gt;&gt;renshu&gt;&gt;tiaoshu&gt;&gt;chashu;
+    int i,j,k,l,n,m,x,y,a,b;
+    int r1,r2,gx;
+    int cr[200][200];
+    for(i&#x3D;1;i&lt;&#x3D;renshu;i++)
+    zz[i]&#x3D;i;
+    for(i&#x3D;0;i&lt;tiaoshu;i++)
+    &#123;
+        cin&gt;&gt;r1&gt;&gt;r2&gt;&gt;gx;
+        if(gx&#x3D;&#x3D;1)
+        &#123;
+            connect(r1,r2);
+        &#125;
+        if(gx&#x3D;&#x3D;-1)
+        &#123;
+            cr[r1][r2]&#x3D;cr[r2][r1]&#x3D;1;
+        &#125;
+    &#125;
+    for(i&#x3D;0;i&lt;chashu;i++)
+    &#123;
+        int f1&#x3D;0,f2&#x3D;0;
+        cin&gt;&gt;r1&gt;&gt;r2;
+        if(find_(r1)&#x3D;&#x3D;find_(r2))
+        f1&#x3D;1;
+        if(cr[r1][r2]||cr[r2][r1])
+        f2&#x3D;1;
+        if(f1&amp;&amp;!f2)
+        cout&lt;&lt;&quot;No problem&quot;&lt;&lt;endl;
+        if(!f1&amp;&amp;!f2)
+        cout&lt;&lt;&quot;OK&quot;&lt;&lt;endl;
+        if(f1&amp;&amp;f2)
+        cout&lt;&lt;&quot;OK but...&quot;&lt;&lt;endl;
+        if(!f1&amp;&amp;f2)
+        cout&lt;&lt;&quot;No way&quot;&lt;&lt;endl;
+    &#125;
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -742,6 +901,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Thu Oct 15 2020 07:24:31 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1027,7 +1213,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="数据结构 查找算法, LHL&#39; s Network Station">
+    <meta name="keywords" content="数据结构 查找算法, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据结构 查找算法 | LHL&#39; s Network Station</title>
+    <title>数据结构 查找算法 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    517
+                    516
                 </div>
                 
 
@@ -492,19 +492,149 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>数据结构 BF算法，KMP算法，KMP改进算法</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int next[100]&#x3D;&#123;0&#125;;</span><br><span class="line">int BF(char *s, char *t)</span><br><span class="line">&#123;</span><br><span class="line">    int i &#x3D; 0, j &#x3D; 0;</span><br><span class="line">    int n &#x3D; strlen(s);</span><br><span class="line">    int m &#x3D; strlen(t);</span><br><span class="line">    while (i &lt; n &amp;&amp; j &lt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        if (s[i] &#x3D;&#x3D; t[j])</span><br><span class="line">        &#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            i &#x3D; i - j + 1;</span><br><span class="line">            j &#x3D; 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (j &gt;&#x3D; m)</span><br><span class="line">        return i - j;</span><br><span class="line">    else</span><br><span class="line">        return -1;</span><br><span class="line">&#125;</span><br><span class="line">void getnext(char *t)</span><br><span class="line">&#123;</span><br><span class="line">	int i,j,k,m,n;</span><br><span class="line">	j&#x3D;0;</span><br><span class="line">	k&#x3D;-1;</span><br><span class="line">	m&#x3D;strlen(t);</span><br><span class="line">	next[0]&#x3D;-1;</span><br><span class="line">	while(j&lt;m-1)</span><br><span class="line">	&#123;</span><br><span class="line">		if(k&#x3D;&#x3D;-1||t[j]&#x3D;&#x3D;t[k])</span><br><span class="line">		&#123;</span><br><span class="line">			j++;</span><br><span class="line">			k++;</span><br><span class="line">			next[j]&#x3D;k;</span><br><span class="line">		&#125;</span><br><span class="line">		else </span><br><span class="line">			k&#x3D;next[k];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void getnextval(char *t)</span><br><span class="line">&#123;</span><br><span class="line">	int i,j,k,m,n;</span><br><span class="line">	j&#x3D;0;</span><br><span class="line">	k&#x3D;-1;</span><br><span class="line">	m&#x3D;strlen(t);</span><br><span class="line">	next[0]&#x3D;-1;</span><br><span class="line">	while(j&lt;m-1)</span><br><span class="line">	&#123;</span><br><span class="line">		if(k&#x3D;&#x3D;-1||t[j]&#x3D;&#x3D;t[k])</span><br><span class="line">		&#123;</span><br><span class="line">			j++;</span><br><span class="line">			k++;</span><br><span class="line">			if(t[j]!&#x3D;t[k])</span><br><span class="line">				next[j]&#x3D;k;</span><br><span class="line">			else</span><br><span class="line">				next[j]&#x3D;next[k];</span><br><span class="line">		&#125;</span><br><span class="line">		else </span><br><span class="line">			k&#x3D;next[k];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int KMP(char *s,char *t)</span><br><span class="line">&#123;</span><br><span class="line">	int i,j,k,l,n,m;</span><br><span class="line">	i&#x3D;0;j&#x3D;0;</span><br><span class="line">	n&#x3D;strlen(s);</span><br><span class="line">	m&#x3D;strlen(t);</span><br><span class="line">	while(i&lt;n&amp;&amp;j&lt;m)</span><br><span class="line">	&#123;</span><br><span class="line">		if(j&#x3D;&#x3D;-1||s[i]&#x3D;&#x3D;t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">			j&#x3D;next[j];</span><br><span class="line">	&#125;</span><br><span class="line">	if(j&gt;&#x3D;m)</span><br><span class="line">		return i-m;</span><br><span class="line">	else return -1;	</span><br><span class="line">&#125;</span><br><span class="line">void Showme()</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; &quot;1.BF算法查找&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;2.KMP算法查找&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;3.KMP改进算法查找&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char s1[100], s2[100];</span><br><span class="line">	cout &lt;&lt; &quot;		查找程序&quot; &lt;&lt; endl;</span><br><span class="line">    int f &#x3D; -1;</span><br><span class="line">    while (f)</span><br><span class="line">    &#123;</span><br><span class="line">    	</span><br><span class="line">        cout &lt;&lt; &quot;请输入原来字符串:&quot; &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; s1;</span><br><span class="line">        cout &lt;&lt; &quot;请输入需要查找的字符串:&quot; &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; s2;</span><br><span class="line">        Showme();</span><br><span class="line">        cin &gt;&gt; f;</span><br><span class="line">        switch (f)</span><br><span class="line">        &#123;</span><br><span class="line">        case 1:</span><br><span class="line">            cout &lt;&lt; &quot;BF算法查找:&quot; &lt;&lt; endl;</span><br><span class="line">            cout &lt;&lt; BF(s1, s2) &lt;&lt; endl;</span><br><span class="line">            break;</span><br><span class="line">            case 2:</span><br><span class="line">                cout &lt;&lt; &quot;KMP算法查找:&quot; &lt;&lt; endl;</span><br><span class="line">                getnext(s2);</span><br><span class="line">                cout &lt;&lt; KMP(s1, s2) &lt;&lt; endl;</span><br><span class="line">                break;</span><br><span class="line">            case 3:</span><br><span class="line">                cout &lt;&lt; &quot;KMP改进算法查找:&quot; &lt;&lt; endl;</span><br><span class="line">                getnextval(s2);</span><br><span class="line">                cout &lt;&lt; KMP(s1, s2) &lt;&lt; endl;</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;cstring&gt;
+using namespace std;
+int next[100]&#x3D;&#123;0&#125;;
+int BF(char *s, char *t)
+&#123;
+    int i &#x3D; 0, j &#x3D; 0;
+    int n &#x3D; strlen(s);
+    int m &#x3D; strlen(t);
+    while (i &lt; n &amp;&amp; j &lt; m)
+    &#123;
+        if (s[i] &#x3D;&#x3D; t[j])
+        &#123;
+            i++;
+            j++;
+        &#125;
+        else
+        &#123;
+            i &#x3D; i - j + 1;
+            j &#x3D; 0;
+        &#125;
+    &#125;
+    if (j &gt;&#x3D; m)
+        return i - j;
+    else
+        return -1;
+&#125;
+void getnext(char *t)
+&#123;
+	int i,j,k,m,n;
+	j&#x3D;0;
+	k&#x3D;-1;
+	m&#x3D;strlen(t);
+	next[0]&#x3D;-1;
+	while(j&lt;m-1)
+	&#123;
+		if(k&#x3D;&#x3D;-1||t[j]&#x3D;&#x3D;t[k])
+		&#123;
+			j++;
+			k++;
+			next[j]&#x3D;k;
+		&#125;
+		else 
+			k&#x3D;next[k];
+	&#125;
+&#125;
+void getnextval(char *t)
+&#123;
+	int i,j,k,m,n;
+	j&#x3D;0;
+	k&#x3D;-1;
+	m&#x3D;strlen(t);
+	next[0]&#x3D;-1;
+	while(j&lt;m-1)
+	&#123;
+		if(k&#x3D;&#x3D;-1||t[j]&#x3D;&#x3D;t[k])
+		&#123;
+			j++;
+			k++;
+			if(t[j]!&#x3D;t[k])
+				next[j]&#x3D;k;
+			else
+				next[j]&#x3D;next[k];
+		&#125;
+		else 
+			k&#x3D;next[k];
+	&#125;
+&#125;
+int KMP(char *s,char *t)
+&#123;
+	int i,j,k,l,n,m;
+	i&#x3D;0;j&#x3D;0;
+	n&#x3D;strlen(s);
+	m&#x3D;strlen(t);
+	while(i&lt;n&amp;&amp;j&lt;m)
+	&#123;
+		if(j&#x3D;&#x3D;-1||s[i]&#x3D;&#x3D;t[j])
+		&#123;
+			i++;
+			j++;
+		&#125;
+		else
+			j&#x3D;next[j];
+	&#125;
+	if(j&gt;&#x3D;m)
+		return i-m;
+	else return -1;	
+&#125;
+void Showme()
+&#123;
+    cout &lt;&lt; &quot;1.BF算法查找&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;2.KMP算法查找&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;3.KMP改进算法查找&quot; &lt;&lt; endl;
+&#125;
+
+
+int main()
+&#123;
+    char s1[100], s2[100];
+	cout &lt;&lt; &quot;		查找程序&quot; &lt;&lt; endl;
+    int f &#x3D; -1;
+    while (f)
+    &#123;
+    	
+        cout &lt;&lt; &quot;请输入原来字符串:&quot; &lt;&lt; endl;
+        cin &gt;&gt; s1;
+        cout &lt;&lt; &quot;请输入需要查找的字符串:&quot; &lt;&lt; endl;
+        cin &gt;&gt; s2;
+        Showme();
+        cin &gt;&gt; f;
+        switch (f)
+        &#123;
+        case 1:
+            cout &lt;&lt; &quot;BF算法查找:&quot; &lt;&lt; endl;
+            cout &lt;&lt; BF(s1, s2) &lt;&lt; endl;
+            break;
+            case 2:
+                cout &lt;&lt; &quot;KMP算法查找:&quot; &lt;&lt; endl;
+                getnext(s2);
+                cout &lt;&lt; KMP(s1, s2) &lt;&lt; endl;
+                break;
+            case 3:
+                cout &lt;&lt; &quot;KMP改进算法查找:&quot; &lt;&lt; endl;
+                getnextval(s2);
+                cout &lt;&lt; KMP(s1, s2) &lt;&lt; endl;
+                break;
+        &#125;
+    &#125;
+
+    return 0;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -717,6 +847,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Mon Nov 23 2020 22:43:21 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1002,7 +1159,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

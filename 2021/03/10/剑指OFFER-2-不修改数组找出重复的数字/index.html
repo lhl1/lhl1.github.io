@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 2.不修改数组找出重复的数字, LHL&#39; s Network Station">
+    <meta name="keywords" content="剑指OFFER 2.不修改数组找出重复的数字, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 2.不修改数组找出重复的数字 | LHL&#39; s Network Station</title>
+    <title>剑指OFFER 2.不修改数组找出重复的数字 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    190
+                    189
                 </div>
                 
 
@@ -492,21 +492,47 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>不修改数组找出重复的数字</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">给定一个长度为 n+1 的数组nums，数组中所有的数均在 1∼n 的范围内，其中 n≥1。</span><br><span class="line"></span><br><span class="line">请找出数组中任意一个重复的数，但不能修改输入的数组。</span><br><span class="line"></span><br><span class="line">样例</span><br><span class="line">给定 nums &#x3D; [2, 3, 5, 4, 3, 2, 6, 7]。</span><br><span class="line"></span><br><span class="line">返回 2 或 3。</span><br><span class="line">思考题：如果只能使用 O(1) 的额外空间，该怎么做呢？</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">给定一个长度为 n+1 的数组nums，数组中所有的数均在 1∼n 的范围内，其中 n≥1。
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int duplicateInArray(vector&lt;int&gt;&amp; nums) </span><br><span class="line">    &#123;</span><br><span class="line">        int l&#x3D;1,r&#x3D;nums.size()-1;</span><br><span class="line">        while(l&lt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            int mid&#x3D;l+r&gt;&gt;1;</span><br><span class="line">            int s&#x3D;0;</span><br><span class="line">            for(auto x:nums)</span><br><span class="line">                s&#x3D;(x&gt;&#x3D;l&amp;&amp;x&lt;&#x3D;mid)+s;</span><br><span class="line">            </span><br><span class="line">            if(s&gt;mid-l+1)</span><br><span class="line">                    r&#x3D;mid;</span><br><span class="line">                else l&#x3D;mid+1;</span><br><span class="line">        &#125;</span><br><span class="line">        return r(r or l都可以);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+请找出数组中任意一个重复的数，但不能修改输入的数组。
+
+样例
+给定 nums &#x3D; [2, 3, 5, 4, 3, 2, 6, 7]。
+
+返回 2 或 3。
+思考题：如果只能使用 O(1) 的额外空间，该怎么做呢？<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">
+class Solution &#123;
+public:
+    int duplicateInArray(vector&lt;int&gt;&amp; nums) 
+    &#123;
+        int l&#x3D;1,r&#x3D;nums.size()-1;
+        while(l&lt;r)
+        &#123;
+            int mid&#x3D;l+r&gt;&gt;1;
+            int s&#x3D;0;
+            for(auto x:nums)
+                s&#x3D;(x&gt;&#x3D;l&amp;&amp;x&lt;&#x3D;mid)+s;
+            
+            if(s&gt;mid-l+1)
+                    r&#x3D;mid;
+                else l&#x3D;mid+1;
+        &#125;
+        return r(r or l都可以);
+    &#125;
+&#125;;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -720,6 +746,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Wed Mar 10 2021 18:21:04 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1005,7 +1058,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

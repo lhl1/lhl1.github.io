@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 167. 两数之和 II - 输入有序数组, LHL&#39; s Network Station">
+    <meta name="keywords" content="Leetcode 167. 两数之和 II - 输入有序数组, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 167. 两数之和 II - 输入有序数组 | LHL&#39; s Network Station</title>
+    <title>Leetcode 167. 两数之和 II - 输入有序数组 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,12 +492,10 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
@@ -508,13 +506,17 @@
 <p>函数应该以长度为 <code>2</code> 的整数数组的形式返回这两个数的下标值<em>。</em><code>numbers</code> 的下标 <strong>从 1 开始计数</strong> ，所以答案数组应当满足 <code>1 &lt;= answer[0] &lt; answer[1] &lt;= numbers.length</code> 。</p>
 <p>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：numbers &#x3D; [2,7,11,15], target &#x3D; 9</span><br><span class="line">输出：[1,2]</span><br><span class="line">解释：2 与 7 之和等于目标数 9 。因此 index1 &#x3D; 1, index2 &#x3D; 2 。</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入：numbers &#x3D; [2,7,11,15], target &#x3D; 9
+输出：[1,2]
+解释：2 与 7 之和等于目标数 9 。因此 index1 &#x3D; 1, index2 &#x3D; 2 。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：numbers &#x3D; [2,3,4], target &#x3D; 6</span><br><span class="line">输出：[1,3]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入：numbers &#x3D; [2,3,4], target &#x3D; 6
+输出：[1,3]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：numbers &#x3D; [-1,0], target &#x3D; -1</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入：numbers &#x3D; [-1,0], target &#x3D; -1
+输出：[1,2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -543,10 +545,37 @@
 <p><img src="https://i.loli.net/2021/04/11/ia4YOvS5k6tKwmT.jpg" alt="排除 i = 0 的全部解"></p>
 <p>可以看到，无论 A[i] + A[j] 的结果是大了还是小了，我们都可以排除掉一行或者一列的搜索空间。经过 nn 步以后，就能排除所有的搜索空间，检查完所有的可能性。搜索空间的减小过程如下面动图所示：</p>
 <p><img src="https://i.loli.net/2021/04/11/bAFoYEIvVDSpNJi.jpg" alt="检查单元格 1, 7"></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; 题解</span><br><span class="line">因为数组已经排好序，我们可以采用方向相反的双指针来寻找这两个数字，一个初始指向最</span><br><span class="line">小的元素，即数组最左边，向右遍历；一个初始指向最大的元素，即数组最右边，向左遍历。</span><br><span class="line">如果两个指针指向元素的和等于给定值，那么它们就是我们要的结果。如果两个指针指向元</span><br><span class="line">素的和小于给定值，我们把左边的指针右移一位，使得当前的和增加一点。如果两个指针指向元</span><br><span class="line">素的和大于给定值，我们把右边的指针左移一位，使得当前的和减少一点。</span><br><span class="line">可以证明，对于排好序且有解的数组，双指针一定能遍历到最优解。证明方法如下：假设最</span><br><span class="line">优解的两个数的位置分别是 l 和 r。我们假设在左指针在 l 左边的时候，右指针已经移动到了 r；</span><br><span class="line">此时两个指针指向值的和小于给定值，因此左指针会一直右移直到到达 l。同理，如果我们假设</span><br><span class="line">在右指针在 r 右边的时候，左指针已经移动到了 l；此时两个指针指向值的和大于给定值，因此</span><br><span class="line">右指针会一直左移直到到达 r。所以双指针在任何时候都不可能处于 (l,r) 之间，又因为不满足条</span><br><span class="line">件时指针必须移动一个，所以最终一定会收敛在 l 和 r。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&gt; 题解
+因为数组已经排好序，我们可以采用方向相反的双指针来寻找这两个数字，一个初始指向最
+小的元素，即数组最左边，向右遍历；一个初始指向最大的元素，即数组最右边，向左遍历。
+如果两个指针指向元素的和等于给定值，那么它们就是我们要的结果。如果两个指针指向元
+素的和小于给定值，我们把左边的指针右移一位，使得当前的和增加一点。如果两个指针指向元
+素的和大于给定值，我们把右边的指针左移一位，使得当前的和减少一点。
+可以证明，对于排好序且有解的数组，双指针一定能遍历到最优解。证明方法如下：假设最
+优解的两个数的位置分别是 l 和 r。我们假设在左指针在 l 左边的时候，右指针已经移动到了 r；
+此时两个指针指向值的和小于给定值，因此左指针会一直右移直到到达 l。同理，如果我们假设
+在右指针在 r 右边的时候，左指针已经移动到了 l；此时两个指针指向值的和大于给定值，因此
+右指针会一直左移直到到达 r。所以双指针在任何时候都不可能处于 (l,r) 之间，又因为不满足条
+件时指针必须移动一个，所以最终一定会收敛在 l 和 r。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; num, <span class="keyword">int</span> t)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n=num.size();</span><br><span class="line">		<span class="keyword">int</span> l=<span class="number">0</span>,r=n<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> sum=num[l]+num[r];</span><br><span class="line">			<span class="keyword">if</span>(t==sum) <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">if</span>(t&gt;sum) ++l;</span><br><span class="line">			<span class="keyword">else</span> --r;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &#123;l+<span class="number">1</span>,r+<span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; num, int t) 
+	&#123;
+		int n&#x3D;num.size();
+		int l&#x3D;0,r&#x3D;n-1;
+		for(int i&#x3D;0;i&lt;n;++i)
+		&#123;
+			int sum&#x3D;num[l]+num[r];
+			if(t&#x3D;&#x3D;sum) break;
+			if(t&gt;sum) ++l;
+			else --r;
+		&#125;
+		return vector&lt;int&gt; &#123;l+1,r+1&#125;;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -761,6 +790,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Sun Apr 11 2021 10:35:50 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1046,7 +1102,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

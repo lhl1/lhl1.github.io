@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 239. 滑动窗口最大值, LHL&#39; s Network Station">
+    <meta name="keywords" content="Leetcode 239. 滑动窗口最大值, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 239. 滑动窗口最大值 | LHL&#39; s Network Station</title>
+    <title>Leetcode 239. 滑动窗口最大值 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -492,12 +492,10 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
@@ -507,15 +505,166 @@
 <p>给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。</p>
 <p>返回滑动窗口中的最大值。</p>
 <p>示例 1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [1,3,-1,-3,5,3,6,7], k &#x3D; 3</span><br><span class="line">输出：[3,3,5,5,6,7]</span><br><span class="line">解释：</span><br><span class="line">滑动窗口的位置                最大s值</span><br><span class="line"></span><br><span class="line">---------------               -----</span><br><span class="line">[1  3  -1] -3  5  3  6  7       3</span><br><span class="line"> 1 [3  -1  -3] 5  3  6  7       3</span><br><span class="line"> 1  3 [-1  -3  5] 3  6  7       5</span><br><span class="line"> 1  3  -1 [-3  5  3] 6  7       5</span><br><span class="line"> 1  3  -1  -3 [5  3  6] 7       6</span><br><span class="line"> 1  3  -1  -3  5 [3  6  7]      7</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：nums &#x3D; [1], k &#x3D; 1</span><br><span class="line">输出：[1]</span><br><span class="line">示例 3：</span><br><span class="line"></span><br><span class="line">输入：nums &#x3D; [1,-1], k &#x3D; 1</span><br><span class="line">输出：[1,-1]</span><br><span class="line">示例 4：</span><br><span class="line"></span><br><span class="line">输入：nums &#x3D; [9,11], k &#x3D; 2</span><br><span class="line">输出：[11]</span><br><span class="line">示例 5：</span><br><span class="line"></span><br><span class="line">输入：nums &#x3D; [4,-2], k &#x3D; 2</span><br><span class="line">输出：[4]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;&#x3D; nums.length &lt;&#x3D; 105</span><br><span class="line">-104 &lt;&#x3D; nums[i] &lt;&#x3D; 104</span><br><span class="line">1 &lt;&#x3D; k &lt;&#x3D; nums.length</span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">maxSlidingWindow</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> n=nums.size();</span><br><span class="line">    	vector&lt;int&gt; pre(n),tail(n);</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">    	&#123;	</span><br><span class="line">    		<span class="keyword">if</span>(i%k==<span class="number">0</span>)</span><br><span class="line">    			pre[i]=nums[i];</span><br><span class="line">    		<span class="keyword">else</span></span><br><span class="line">    			pre[i]=max(pre[i<span class="number">-1</span>],nums[i]);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">if</span>(i== n<span class="number">-1</span> || (i+<span class="number">1</span>)%k==<span class="number">0</span>)</span><br><span class="line">    			tail[i]=nums[i];</span><br><span class="line">    		<span class="keyword">else</span></span><br><span class="line">    			tail[i]=max(tail[i+<span class="number">1</span>],nums[i]);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ams;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n-k;++i)</span><br><span class="line">    	&#123;</span><br><span class="line">    		ams.push_back(max(tail[i],pre[i+k<span class="number">-1</span>]));</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> ams;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入：nums &#x3D; [1,3,-1,-3,5,3,6,7], k &#x3D; 3
+输出：[3,3,5,5,6,7]
+解释：
+滑动窗口的位置                最大s值
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">duilie</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; data;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(!data.empty() &amp;&amp; data.back() &lt; n)</span><br><span class="line">			data.pop_back();</span><br><span class="line">		data.push_back(n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Max</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> data.front();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Pop</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(!data.empty() &amp;&amp; data.front() ==n)</span><br><span class="line">			data.pop_front();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">maxSlidingWindow</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	duilie dan;</span><br><span class="line">    	<span class="keyword">int</span> n=nums.size();</span><br><span class="line">    	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">if</span>(i&lt;k<span class="number">-1</span>)</span><br><span class="line">    			dan.Push(nums[i]);</span><br><span class="line">    		<span class="keyword">else</span></span><br><span class="line">    		&#123;</span><br><span class="line">    			dan.Push(nums[i]);</span><br><span class="line">    			s.push_back(dan.Max());</span><br><span class="line">    			dan.Pop(nums[i-k+<span class="number">1</span>]);</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+示例 2：
+
+输入：nums &#x3D; [1], k &#x3D; 1
+输出：[1]
+示例 3：
+
+输入：nums &#x3D; [1,-1], k &#x3D; 1
+输出：[1,-1]
+示例 4：
+
+输入：nums &#x3D; [9,11], k &#x3D; 2
+输出：[11]
+示例 5：
+
+输入：nums &#x3D; [4,-2], k &#x3D; 2
+输出：[4]
+
+
+提示：
+
+1 &lt;&#x3D; nums.length &lt;&#x3D; 105
+-104 &lt;&#x3D; nums[i] &lt;&#x3D; 104
+1 &lt;&#x3D; k &lt;&#x3D; nums.length<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k)
+    &#123;
+    	int n&#x3D;nums.size();
+    	vector&lt;int&gt; pre(n),tail(n);
+    	for(int i&#x3D;0;i&lt;n;++i)
+    	&#123;	
+    		if(i%k&#x3D;&#x3D;0)
+    			pre[i]&#x3D;nums[i];
+    		else
+    			pre[i]&#x3D;max(pre[i-1],nums[i]);
+    	&#125;
+    	for(int i&#x3D;n-1;i&gt;&#x3D;0;--i)
+    	&#123;
+    		if(i&#x3D;&#x3D; n-1 || (i+1)%k&#x3D;&#x3D;0)
+    			tail[i]&#x3D;nums[i];
+    		else
+    			tail[i]&#x3D;max(tail[i+1],nums[i]);
+    	&#125;
+    	vector&lt;int&gt; ams;
+    	for(int i&#x3D;0;i&lt;&#x3D;n-k;++i)
+    	&#123;
+    		ams.push_back(max(tail[i],pre[i+k-1]));
+    	&#125;
+    	return ams;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class duilie
+&#123;
+public:
+	deque&lt;int&gt; data;
+
+	void Push(int n)
+	&#123;
+		while(!data.empty() &amp;&amp; data.back() &lt; n)
+			data.pop_back();
+		data.push_back(n);
+	&#125;
+	int Max()
+	&#123;
+		return data.front();
+	&#125;
+	void Pop(int n)
+	&#123;
+		if(!data.empty() &amp;&amp; data.front() &#x3D;&#x3D;n)
+			data.pop_front();
+	&#125;
+&#125;;
+
+
+class Solution &#123;
+public:
+    vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) 
+    &#123;
+    	duilie dan;
+    	int n&#x3D;nums.size();
+    	vector&lt;int&gt; s;
+    	for(int i&#x3D;0;i&lt;n;++i)
+    	&#123;
+    		if(i&lt;k-1)
+    			dan.Push(nums[i]);
+    		else
+    		&#123;
+    			dan.Push(nums[i]);
+    			s.push_back(dan.Max());
+    			dan.Pop(nums[i-k+1]);
+    		&#125;
+    	&#125;
+    	return s;
+
+    &#125;
+&#125;;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 <p>思路<br>遍历数组，将 数 存放在双向队列中，并用 L,R 来标记窗口的左边界和右边界。队列中保存的并不是真的 数，而是该数值对应的数组下标位置，并且数组中的数要从大到小排序。如果当前遍历的数比队尾的值大，则需要弹出队尾值，直到队列重新满足从大到小的要求。刚开始遍历时，L 和 R 都为 0，有一个形成窗口的过程，此过程没有最大值，L 不动，R 向右移。当窗口大小形成时，L 和 R 一起向右移，每次移动时，判断队首的值的数组下标是否在 [L,R] 中，如果不在则需要弹出队首的值，当前窗口的最大值即为队首的数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">示例</span><br><span class="line"></span><br><span class="line">输入: nums &#x3D; [1,3,-1,-3,5,3,6,7], 和 k &#x3D; 3</span><br><span class="line">输出: [3,3,5,5,6,7]</span><br><span class="line"></span><br><span class="line">解释过程中队列中都是具体的值，方便理解，具体见代码。</span><br><span class="line">初始状态：L&#x3D;R&#x3D;0,队列:&#123;&#125;</span><br><span class="line">i&#x3D;0,nums[0]&#x3D;1。队列为空,直接加入。队列：&#123;1&#125;</span><br><span class="line">i&#x3D;1,nums[1]&#x3D;3。队尾值为1，3&gt;1，弹出队尾值，加入3。队列：&#123;3&#125;</span><br><span class="line">i&#x3D;2,nums[2]&#x3D;-1。队尾值为3，-1&lt;3，直接加入。队列：&#123;3,-1&#125;。此时窗口已经形成，L&#x3D;0,R&#x3D;2，result&#x3D;[3]</span><br><span class="line">i&#x3D;3,nums[3]&#x3D;-3。队尾值为-1，-3&lt;-1，直接加入。队列：&#123;3,-1,-3&#125;。队首3对应的下标为1，L&#x3D;1,R&#x3D;3，有效。result&#x3D;[3,3]</span><br><span class="line">i&#x3D;4,nums[4]&#x3D;5。队尾值为-3，5&gt;-3，依次弹出后加入。队列：&#123;5&#125;。此时L&#x3D;2,R&#x3D;4，有效。result&#x3D;[3,3,5]</span><br><span class="line">i&#x3D;5,nums[5]&#x3D;3。队尾值为5，3&lt;5，直接加入。队列：&#123;5,3&#125;。此时L&#x3D;3,R&#x3D;5，有效。result&#x3D;[3,3,5,5]</span><br><span class="line">i&#x3D;6,nums[6]&#x3D;6。队尾值为3，6&gt;3，依次弹出后加入。队列：&#123;6&#125;。此时L&#x3D;4,R&#x3D;6，有效。result&#x3D;[3,3,5,5,6]</span><br><span class="line">i&#x3D;7,nums[7]&#x3D;7。队尾值为6，7&gt;6，弹出队尾值后加入。队列：&#123;7&#125;。此时L&#x3D;5,R&#x3D;7，有效。result&#x3D;[3,3,5,5,6,7]</span><br><span class="line">通过示例发现 R&#x3D;i，L&#x3D;k-R。由于队列中的值是从大到小排序的，所以每次窗口变动时，只需要判断队首的值是否还在窗口中就行了。</span><br><span class="line">解释一下为什么队列中要存放数组下标的值而不是直接存储数值，因为要判断队首的值是否在窗口范围内，由数组下标取值很方便，而由值取数组下标不是很方便。</span><br><span class="line">代码</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Java</span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int[] maxSlidingWindow(int[] nums, int k) &#123;</span><br><span class="line">        if(nums &#x3D;&#x3D; null || nums.length &lt; 2) return nums;</span><br><span class="line">        &#x2F;&#x2F; 双向队列 保存当前窗口最大值的数组位置 保证队列中数组位置的数值按从大到小排序</span><br><span class="line">        LinkedList&lt;Integer&gt; queue &#x3D; new LinkedList();</span><br><span class="line">        &#x2F;&#x2F; 结果数组</span><br><span class="line">        int[] result &#x3D; new int[nums.length-k+1];</span><br><span class="line">        &#x2F;&#x2F; 遍历nums数组</span><br><span class="line">        for(int i &#x3D; 0;i &lt; nums.length;i++)&#123;</span><br><span class="line">            &#x2F;&#x2F; 保证从大到小 如果前面数小则需要依次弹出，直至满足要求</span><br><span class="line">            while(!queue.isEmpty() &amp;&amp; nums[queue.peekLast()] &lt;&#x3D; nums[i])&#123;</span><br><span class="line">                queue.pollLast();</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F; 添加当前值对应的数组下标</span><br><span class="line">            queue.addLast(i);</span><br><span class="line">            &#x2F;&#x2F; 判断当前队列中队首的值是否有效</span><br><span class="line">            if(queue.peek() &lt;&#x3D; i-k)&#123;</span><br><span class="line">                queue.poll();   </span><br><span class="line">            &#125; </span><br><span class="line">            &#x2F;&#x2F; 当窗口长度为k时 保存当前窗口中最大值</span><br><span class="line">            if(i+1 &gt;&#x3D; k)&#123;</span><br><span class="line">                result[i+1-k] &#x3D; nums[queue.peek()];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">示例
+
+输入: nums &#x3D; [1,3,-1,-3,5,3,6,7], 和 k &#x3D; 3
+输出: [3,3,5,5,6,7]
+
+解释过程中队列中都是具体的值，方便理解，具体见代码。
+初始状态：L&#x3D;R&#x3D;0,队列:&#123;&#125;
+i&#x3D;0,nums[0]&#x3D;1。队列为空,直接加入。队列：&#123;1&#125;
+i&#x3D;1,nums[1]&#x3D;3。队尾值为1，3&gt;1，弹出队尾值，加入3。队列：&#123;3&#125;
+i&#x3D;2,nums[2]&#x3D;-1。队尾值为3，-1&lt;3，直接加入。队列：&#123;3,-1&#125;。此时窗口已经形成，L&#x3D;0,R&#x3D;2，result&#x3D;[3]
+i&#x3D;3,nums[3]&#x3D;-3。队尾值为-1，-3&lt;-1，直接加入。队列：&#123;3,-1,-3&#125;。队首3对应的下标为1，L&#x3D;1,R&#x3D;3，有效。result&#x3D;[3,3]
+i&#x3D;4,nums[4]&#x3D;5。队尾值为-3，5&gt;-3，依次弹出后加入。队列：&#123;5&#125;。此时L&#x3D;2,R&#x3D;4，有效。result&#x3D;[3,3,5]
+i&#x3D;5,nums[5]&#x3D;3。队尾值为5，3&lt;5，直接加入。队列：&#123;5,3&#125;。此时L&#x3D;3,R&#x3D;5，有效。result&#x3D;[3,3,5,5]
+i&#x3D;6,nums[6]&#x3D;6。队尾值为3，6&gt;3，依次弹出后加入。队列：&#123;6&#125;。此时L&#x3D;4,R&#x3D;6，有效。result&#x3D;[3,3,5,5,6]
+i&#x3D;7,nums[7]&#x3D;7。队尾值为6，7&gt;6，弹出队尾值后加入。队列：&#123;7&#125;。此时L&#x3D;5,R&#x3D;7，有效。result&#x3D;[3,3,5,5,6,7]
+通过示例发现 R&#x3D;i，L&#x3D;k-R。由于队列中的值是从大到小排序的，所以每次窗口变动时，只需要判断队首的值是否还在窗口中就行了。
+解释一下为什么队列中要存放数组下标的值而不是直接存储数值，因为要判断队首的值是否在窗口范围内，由数组下标取值很方便，而由值取数组下标不是很方便。
+代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">Java
+
+class Solution &#123;
+    public int[] maxSlidingWindow(int[] nums, int k) &#123;
+        if(nums &#x3D;&#x3D; null || nums.length &lt; 2) return nums;
+        &#x2F;&#x2F; 双向队列 保存当前窗口最大值的数组位置 保证队列中数组位置的数值按从大到小排序
+        LinkedList&lt;Integer&gt; queue &#x3D; new LinkedList();
+        &#x2F;&#x2F; 结果数组
+        int[] result &#x3D; new int[nums.length-k+1];
+        &#x2F;&#x2F; 遍历nums数组
+        for(int i &#x3D; 0;i &lt; nums.length;i++)&#123;
+            &#x2F;&#x2F; 保证从大到小 如果前面数小则需要依次弹出，直至满足要求
+            while(!queue.isEmpty() &amp;&amp; nums[queue.peekLast()] &lt;&#x3D; nums[i])&#123;
+                queue.pollLast();
+            &#125;
+            &#x2F;&#x2F; 添加当前值对应的数组下标
+            queue.addLast(i);
+            &#x2F;&#x2F; 判断当前队列中队首的值是否有效
+            if(queue.peek() &lt;&#x3D; i-k)&#123;
+                queue.poll();   
+            &#125; 
+            &#x2F;&#x2F; 当窗口长度为k时 保存当前窗口中最大值
+            if(i+1 &gt;&#x3D; k)&#123;
+                result[i+1-k] &#x3D; nums[queue.peek()];
+            &#125;
+        &#125;
+        return result;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -740,6 +889,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Mon Apr 05 2021 13:26:34 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1033,7 +1209,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

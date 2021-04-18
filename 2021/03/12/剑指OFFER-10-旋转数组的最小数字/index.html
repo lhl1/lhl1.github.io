@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 10.旋转数组的最小数字, LHL&#39; s Network Station">
+    <meta name="keywords" content="剑指OFFER 10.旋转数组的最小数字, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 10.旋转数组的最小数字 | LHL&#39; s Network Station</title>
+    <title>剑指OFFER 10.旋转数组的最小数字 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    322
+                    321
                 </div>
                 
 
@@ -492,12 +492,10 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
@@ -510,12 +508,71 @@
 
 
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。</span><br><span class="line"></span><br><span class="line">输入一个升序的数组的一个旋转，输出旋转数组的最小元素。</span><br><span class="line"></span><br><span class="line">例如数组 &#123;3,4,5,1,2&#125; 为 &#123;1,2,3,4,5&#125; 的一个旋转，该数组的最小值为 1。</span><br><span class="line"></span><br><span class="line">数组可能包含重复项。</span><br><span class="line"></span><br><span class="line">注意：数组内所含元素非负，若数组大小为 0，请返回 −1。</span><br><span class="line"></span><br><span class="line">样例</span><br><span class="line">输入：nums&#x3D;[2,2,2,0,1]</span><br><span class="line"></span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">
+把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
+
+输入一个升序的数组的一个旋转，输出旋转数组的最小元素。
+
+例如数组 &#123;3,4,5,1,2&#125; 为 &#123;1,2,3,4,5&#125; 的一个旋转，该数组的最小值为 1。
+
+数组可能包含重复项。
+
+注意：数组内所含元素非负，若数组大小为 0，请返回 −1。
+
+样例
+输入：nums&#x3D;[2,2,2,0,1]
+
+输出：0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int findMin(vector&lt;int&gt;&amp; nums) </span><br><span class="line">    &#123;</span><br><span class="line">        int n&#x3D;nums.size()-1;</span><br><span class="line">        if(n&lt;0) return -1;</span><br><span class="line">        while(n&gt;0&amp;&amp;nums[0]&#x3D;&#x3D;nums[n])</span><br><span class="line">        	n--;</span><br><span class="line">        if(nums[n]&gt;&#x3D;nums[0]) return nums[0];</span><br><span class="line">        int l&#x3D;0,r&#x3D;n;</span><br><span class="line">        while(l&lt;r)</span><br><span class="line">        &#123;</span><br><span class="line">        	int mid&#x3D;r+l&gt;&gt;1;</span><br><span class="line">        	if(nums[mid]&lt;nums[0])</span><br><span class="line">        		r&#x3D;mid;</span><br><span class="line">        	else l&#x3D;mid+1;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        return nums[r];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int findMin(vector&lt;int&gt;&amp; nums) 
+    &#123;
+        int n&#x3D;nums.size()-1;
+        if(n&lt;0) return -1;
+        while(n&gt;0&amp;&amp;nums[0]&#x3D;&#x3D;nums[n])
+        	n--;
+        if(nums[n]&gt;&#x3D;nums[0]) return nums[0];
+        int l&#x3D;0,r&#x3D;n;
+        while(l&lt;r)
+        &#123;
+        	int mid&#x3D;r+l&gt;&gt;1;
+        	if(nums[mid]&lt;nums[0])
+        		r&#x3D;mid;
+        	else l&#x3D;mid+1;
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int findMin(vector&lt;int&gt;&amp; nums) </span><br><span class="line">    &#123;</span><br><span class="line">        int n&#x3D;nums.size()-1;</span><br><span class="line">        if(n&lt;0)</span><br><span class="line">            return -1;</span><br><span class="line">        while(n&gt;0&amp;&amp;nums[0]&#x3D;&#x3D;nums[n])</span><br><span class="line">            n--;</span><br><span class="line">        if(nums[n]&gt;&#x3D;nums[0])</span><br><span class="line">            return nums[0];</span><br><span class="line">        int l&#x3D;0;</span><br><span class="line">        int r&#x3D;n;</span><br><span class="line">        while(l&lt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            int mid&#x3D;l+r&gt;&gt;1;</span><br><span class="line">            if(nums[0]&lt;&#x3D;nums[mid])</span><br><span class="line">                l&#x3D;mid+1;</span><br><span class="line">            else r&#x3D;mid;</span><br><span class="line">        &#125;</span><br><span class="line">        return nums[r];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        &#125;
+        return nums[r];
+    &#125;
+&#125;;
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int findMin(vector&lt;int&gt;&amp; nums) 
+    &#123;
+        int n&#x3D;nums.size()-1;
+        if(n&lt;0)
+            return -1;
+        while(n&gt;0&amp;&amp;nums[0]&#x3D;&#x3D;nums[n])
+            n--;
+        if(nums[n]&gt;&#x3D;nums[0])
+            return nums[0];
+        int l&#x3D;0;
+        int r&#x3D;n;
+        while(l&lt;r)
+        &#123;
+            int mid&#x3D;l+r&gt;&gt;1;
+            if(nums[0]&lt;&#x3D;nums[mid])
+                l&#x3D;mid+1;
+            else r&#x3D;mid;
+        &#125;
+        return nums[r];
+    &#125;
+&#125;;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -728,6 +785,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Fri Mar 12 2021 19:17:03 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1013,7 +1097,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 21.链表中环的入口结点, LHL&#39; s Network Station">
+    <meta name="keywords" content="剑指OFFER 21.链表中环的入口结点, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 21.链表中环的入口结点 | LHL&#39; s Network Station</title>
+    <title>剑指OFFER 21.链表中环的入口结点 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    893
+                    901
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -492,30 +492,130 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>链表中环的入口结点</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">给定一个链表，若其中包含环，则输出环的入口节点。</span><br><span class="line"></span><br><span class="line">若其中不包含环，则输出&#96;null&#96;。</span><br><span class="line"></span><br><span class="line">#### 样例</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">给定一个链表，若其中包含环，则输出环的入口节点。
+
+若其中不包含环，则输出&#96;null&#96;。
+
+#### 样例
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://www.acwing.com/media/article/image/2018/12/02/19_69ba6d14f5-QQ%E6%88%AA%E5%9B%BE20181202023846.png" alt="QQ截图20181202023846.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#96;&#96;&#96;c++</span><br><span class="line">给定如上所示的链表：</span><br><span class="line">[1, 2, 3, 4, 5, 6]</span><br><span class="line">2</span><br><span class="line">注意，这里的2表示编号是2的节点，节点编号从0开始。所以编号是2的节点就是val等于3的节点。</span><br><span class="line"></span><br><span class="line">则输出环的入口节点3.</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">
+&#96;&#96;&#96;c++
+给定如上所示的链表：
+[1, 2, 3, 4, 5, 6]
+2
+注意，这里的2表示编号是2的节点，节点编号从0开始。所以编号是2的节点就是val等于3的节点。
+
+则输出环的入口节点3.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 
 
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">entryNodeOfLoop</span><span class="params">(ListNode *head)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	 ListNode *h1=head,*h2=head;</span><br><span class="line">    	 <span class="keyword">if</span>(!head ||!head-&gt;next)</span><br><span class="line">    	 	<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    	 <span class="keyword">while</span>(h1 &amp;&amp; h2)</span><br><span class="line">    	 &#123;</span><br><span class="line">    	 	h1=h1-&gt;next;</span><br><span class="line">    	 	h2=h2-&gt;next;</span><br><span class="line">    	 	<span class="keyword">if</span>(h2)</span><br><span class="line">    	 		h2=h2-&gt;next;</span><br><span class="line">    	 	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    	 	<span class="keyword">if</span>(h1==h2)</span><br><span class="line">    	 	&#123;</span><br><span class="line">    	 		h1=head;</span><br><span class="line">    	 		<span class="keyword">while</span>(h1!=h2)</span><br><span class="line">    	 		&#123;</span><br><span class="line">    	 			h1=h1-&gt;next;</span><br><span class="line">    	 			h2=h2-&gt;next;</span><br><span class="line">    	 		&#125;</span><br><span class="line">    	 		<span class="keyword">return</span> h1;</span><br><span class="line">    	 	&#125;</span><br><span class="line">    	 &#125;</span><br><span class="line">    	 <span class="keyword">return</span> <span class="literal">NULL</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">
+class Solution &#123;
+public:
+    ListNode *entryNodeOfLoop(ListNode *head) 
+    &#123;
+    	 ListNode *h1&#x3D;head,*h2&#x3D;head;
+    	 if(!head ||!head-&gt;next)
+    	 	return NULL;
+    	 while(h1 &amp;&amp; h2)
+    	 &#123;
+    	 	h1&#x3D;h1-&gt;next;
+    	 	h2&#x3D;h2-&gt;next;
+    	 	if(h2)
+    	 		h2&#x3D;h2-&gt;next;
+    	 	else return NULL;
+    	 	if(h1&#x3D;&#x3D;h2)
+    	 	&#123;
+    	 		h1&#x3D;head;
+    	 		while(h1!&#x3D;h2)
+    	 		&#123;
+    	 			h1&#x3D;h1-&gt;next;
+    	 			h2&#x3D;h2-&gt;next;
+    	 		&#125;
+    	 		return h1;
+    	 	&#125;
+    	 &#125;
+    	 return NULL;   
+    &#125;
+&#125;;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">算法</span><br><span class="line">(链表，快慢指针扫描) O(n)O(n)</span><br><span class="line">本题的做法比较巧妙。</span><br><span class="line">用两个指针 first,secondfirst,second 分别从起点开始走，firstfirst 每次走一步，secondsecond 每次走两步。</span><br><span class="line">如果过程中 secondsecond 走到null，则说明不存在环。否则当 firstfirst 和 secondsecond 相遇后，让 firstfirst 返回起点，secondsecond 待在原地不动，然后两个指针每次分别走一步，当相遇时，相遇点就是环的入口。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">证明：如上图所示，aa 是起点，bb 是环的入口，cc 是两个指针的第一次相遇点，abab 之间的距离是 xx，bcbc 之间的距离是 yy。</span><br><span class="line">则当 firstfirst 走到 bb 时，由于 secondsecond 比 firstfirst 多走一倍的路，所以 secondsecond 已经从 bb 开始在环上走了 xx 步，可能多余1圈，距离 bb 还差 yy 步（这是因为第一次相遇点在 bb 之后 yy 步，我们让 firstfirst 退回 bb 点，则 secondsecond 会退 2y2y 步，也就是距离 bb 点还差 yy 步）；所以 secondsecond 从 bb 点走 x+yx+y 步即可回到 bb 点，所以 secondsecond 从 cc 点开始走，走 xx 步即可恰好走到 bb 点，同时让 firstfirst 从头开始走，走 xx 步也恰好可以走到 bb 点。所以第二次相遇点就是 bb 点。</span><br><span class="line"></span><br><span class="line">另外感谢@watay147提供的另一种思路，可以用公式来说明：a,b,c,x,ya,b,c,x,y 的含义同上，我们用 zz 表示从 cc 点顺时针走到 bb 的距离。则第一次相遇时 secondsecond 所走的距离是 x+(y+z)∗n+yx+(y+z)∗n+y, nn 表示圈数，同时 secondsecond 走过的距离是 firstfirst 的两倍，也就是 2(x+y)2(x+y)，所以我们有 x+(y+z)∗n+y&#x3D;2(x+y)x+(y+z)∗n+y&#x3D;2(x+y)，所以 x&#x3D;(n−1)×(y+z)+zx&#x3D;(n−1)×(y+z)+z。那么我们让 secondsecond 从 cc 点开始走，走 xx 步，会恰好走到 bb 点；让 firstfirst 从 aa 点开始走，走 xx 步，也会走到 bb 点。</span><br><span class="line"></span><br><span class="line">时间复杂度</span><br><span class="line">firstfirst 总共走了 2x+y2x+y 步，secondsecond 总共走了 2x+2y+x2x+2y+x 步，所以两个指针总共走了 5x+3y5x+3y 步。由于当第一次 firstfirst 走到 bb 点时，secondsecond 最多追一圈即可追上 firstfirst，所以 yy 小于环的长度，所以 x+yx+y 小于等于链表总长度。所以总时间复杂度是 O(n)O(n)。</span><br><span class="line"></span><br><span class="line">C++ 代码</span><br><span class="line">&#x2F;**</span><br><span class="line"></span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"></span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"></span><br><span class="line"> * int val;</span><br><span class="line"></span><br><span class="line"> * ListNode *next;</span><br><span class="line"></span><br><span class="line"> * ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="line"></span><br><span class="line"> * &#125;;</span><br><span class="line">   *&#x2F;</span><br><span class="line">   class Solution &#123;</span><br><span class="line">   public:</span><br><span class="line">   ListNode *entryNodeOfLoop(ListNode *head) &#123;</span><br><span class="line">       if (!head || !head-&gt;next) return 0;</span><br><span class="line">       ListNode *first &#x3D; head, *second &#x3D; head;</span><br><span class="line"></span><br><span class="line">       while (first &amp;&amp; second)</span><br><span class="line">       &#123;</span><br><span class="line">           first &#x3D; first-&gt;next;</span><br><span class="line">           second &#x3D; second-&gt;next;</span><br><span class="line">           if (second) second &#x3D; second-&gt;next;</span><br><span class="line">           else return 0;</span><br><span class="line">       </span><br><span class="line">           if (first &#x3D;&#x3D; second)</span><br><span class="line">           &#123;</span><br><span class="line">               first &#x3D; head;</span><br><span class="line">               while (first !&#x3D; second)</span><br><span class="line">               &#123;</span><br><span class="line">                   first &#x3D; first-&gt;next;</span><br><span class="line">                   second &#x3D; second-&gt;next;</span><br><span class="line">               &#125;</span><br><span class="line">               return first;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       return 0;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">算法
+(链表，快慢指针扫描) O(n)O(n)
+本题的做法比较巧妙。
+用两个指针 first,secondfirst,second 分别从起点开始走，firstfirst 每次走一步，secondsecond 每次走两步。
+如果过程中 secondsecond 走到null，则说明不存在环。否则当 firstfirst 和 secondsecond 相遇后，让 firstfirst 返回起点，secondsecond 待在原地不动，然后两个指针每次分别走一步，当相遇时，相遇点就是环的入口。
+
+
+
+证明：如上图所示，aa 是起点，bb 是环的入口，cc 是两个指针的第一次相遇点，abab 之间的距离是 xx，bcbc 之间的距离是 yy。
+则当 firstfirst 走到 bb 时，由于 secondsecond 比 firstfirst 多走一倍的路，所以 secondsecond 已经从 bb 开始在环上走了 xx 步，可能多余1圈，距离 bb 还差 yy 步（这是因为第一次相遇点在 bb 之后 yy 步，我们让 firstfirst 退回 bb 点，则 secondsecond 会退 2y2y 步，也就是距离 bb 点还差 yy 步）；所以 secondsecond 从 bb 点走 x+yx+y 步即可回到 bb 点，所以 secondsecond 从 cc 点开始走，走 xx 步即可恰好走到 bb 点，同时让 firstfirst 从头开始走，走 xx 步也恰好可以走到 bb 点。所以第二次相遇点就是 bb 点。
+
+另外感谢@watay147提供的另一种思路，可以用公式来说明：a,b,c,x,ya,b,c,x,y 的含义同上，我们用 zz 表示从 cc 点顺时针走到 bb 的距离。则第一次相遇时 secondsecond 所走的距离是 x+(y+z)∗n+yx+(y+z)∗n+y, nn 表示圈数，同时 secondsecond 走过的距离是 firstfirst 的两倍，也就是 2(x+y)2(x+y)，所以我们有 x+(y+z)∗n+y&#x3D;2(x+y)x+(y+z)∗n+y&#x3D;2(x+y)，所以 x&#x3D;(n−1)×(y+z)+zx&#x3D;(n−1)×(y+z)+z。那么我们让 secondsecond 从 cc 点开始走，走 xx 步，会恰好走到 bb 点；让 firstfirst 从 aa 点开始走，走 xx 步，也会走到 bb 点。
+
+时间复杂度
+firstfirst 总共走了 2x+y2x+y 步，secondsecond 总共走了 2x+2y+x2x+2y+x 步，所以两个指针总共走了 5x+3y5x+3y 步。由于当第一次 firstfirst 走到 bb 点时，secondsecond 最多追一圈即可追上 firstfirst，所以 yy 小于环的长度，所以 x+yx+y 小于等于链表总长度。所以总时间复杂度是 O(n)O(n)。
+
+C++ 代码
+&#x2F;**
+
+ * Definition for singly-linked list.
+
+ * struct ListNode &#123;
+
+ * int val;
+
+ * ListNode *next;
+
+ * ListNode(int x) : val(x), next(NULL) &#123;&#125;
+
+ * &#125;;
+   *&#x2F;
+   class Solution &#123;
+   public:
+   ListNode *entryNodeOfLoop(ListNode *head) &#123;
+       if (!head || !head-&gt;next) return 0;
+       ListNode *first &#x3D; head, *second &#x3D; head;
+
+       while (first &amp;&amp; second)
+       &#123;
+           first &#x3D; first-&gt;next;
+           second &#x3D; second-&gt;next;
+           if (second) second &#x3D; second-&gt;next;
+           else return 0;
+       
+           if (first &#x3D;&#x3D; second)
+           &#123;
+               first &#x3D; head;
+               while (first !&#x3D; second)
+               &#123;
+                   first &#x3D; first-&gt;next;
+                   second &#x3D; second-&gt;next;
+               &#125;
+               return first;
+           &#125;
+       &#125;
+       
+       return 0;
+
+   &#125;
+   &#125;;
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -728,6 +828,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Sun Mar 28 2021 16:52:52 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1016,7 +1143,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

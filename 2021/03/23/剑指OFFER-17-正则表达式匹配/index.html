@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="剑指OFFER 17.正则表达式匹配, LHL&#39; s Network Station">
+    <meta name="keywords" content="剑指OFFER 17.正则表达式匹配, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指OFFER 17.正则表达式匹配 | LHL&#39; s Network Station</title>
+    <title>剑指OFFER 17.正则表达式匹配 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    305
+                    304
                 </div>
                 
 
@@ -492,12 +492,10 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
@@ -505,10 +503,53 @@
                 <p>正则表达式匹配</p>
 <a id="more"></a>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">请实现一个函数用来匹配包括&#39;.&#39;和&#39;*&#39;的正则表达式。</span><br><span class="line"></span><br><span class="line">模式中的字符&#39;.&#39;表示任意一个字符，而&#39;*&#39;表示它前面的字符可以出现任意次（含0次）。</span><br><span class="line"></span><br><span class="line">在本题中，匹配是指字符串的所有字符匹配整个模式。</span><br><span class="line"></span><br><span class="line">例如，字符串&quot;aaa&quot;与模式&quot;a.a&quot;和&quot;ab*ac*a&quot;匹配，但是与&quot;aa.a&quot;和&quot;ab*a&quot;均不匹配。</span><br><span class="line"></span><br><span class="line">样例</span><br><span class="line">输入：</span><br><span class="line"></span><br><span class="line">s&#x3D;&quot;aa&quot;</span><br><span class="line">p&#x3D;&quot;a*&quot;</span><br><span class="line"></span><br><span class="line">输出:true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">请实现一个函数用来匹配包括&#39;.&#39;和&#39;*&#39;的正则表达式。
+
+模式中的字符&#39;.&#39;表示任意一个字符，而&#39;*&#39;表示它前面的字符可以出现任意次（含0次）。
+
+在本题中，匹配是指字符串的所有字符匹配整个模式。
+
+例如，字符串&quot;aaa&quot;与模式&quot;a.a&quot;和&quot;ab*ac*a&quot;匹配，但是与&quot;aa.a&quot;和&quot;ab*a&quot;均不匹配。
+
+样例
+输入：
+
+s&#x3D;&quot;aa&quot;
+p&#x3D;&quot;a*&quot;
+
+输出:true
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">	int n,m;</span><br><span class="line">	vector&lt;vector&lt;int&gt; &gt;f;</span><br><span class="line">	string s,p;</span><br><span class="line">    bool isMatch(string _s, string _p) </span><br><span class="line">    &#123;</span><br><span class="line">        s&#x3D;_s;</span><br><span class="line">        p&#x3D;_p;</span><br><span class="line">        n&#x3D;s.size();</span><br><span class="line">        m&#x3D;p.size();</span><br><span class="line">        f&#x3D;vector&lt;vector&lt;int&gt; &gt;(n+1,vector&lt;int&gt;(m+1,-1));</span><br><span class="line">        return dp(0,0);</span><br><span class="line">    &#125;</span><br><span class="line">    bool dp(int x,int y)</span><br><span class="line">    &#123;</span><br><span class="line">    	if(f[x][y]!&#x3D;-1)</span><br><span class="line">    		return f[x][y];</span><br><span class="line">    	if(y&#x3D;&#x3D;m)</span><br><span class="line">    		return f[x][y]&#x3D;x&#x3D;&#x3D;n;</span><br><span class="line">    	bool first_match&#x3D;	x&lt;n &amp;&amp;(p[y]&#x3D;&#x3D;&#39;.&#39;||s[x]&#x3D;&#x3D;p[y]);</span><br><span class="line">    	if(y+1&lt;m &amp;&amp; p[y+1]&#x3D;&#x3D;&#39;*&#39;)</span><br><span class="line">    		f[x][y]&#x3D;dp(x,y+2)||dp(x+1,y);</span><br><span class="line">    	else </span><br><span class="line">    		f[x][y]&#x3D;first_match	&amp;&amp;	dp(x+1,y+1);</span><br><span class="line">    	return f[x][y];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+	int n,m;
+	vector&lt;vector&lt;int&gt; &gt;f;
+	string s,p;
+    bool isMatch(string _s, string _p) 
+    &#123;
+        s&#x3D;_s;
+        p&#x3D;_p;
+        n&#x3D;s.size();
+        m&#x3D;p.size();
+        f&#x3D;vector&lt;vector&lt;int&gt; &gt;(n+1,vector&lt;int&gt;(m+1,-1));
+        return dp(0,0);
+    &#125;
+    bool dp(int x,int y)
+    &#123;
+    	if(f[x][y]!&#x3D;-1)
+    		return f[x][y];
+    	if(y&#x3D;&#x3D;m)
+    		return f[x][y]&#x3D;x&#x3D;&#x3D;n;
+    	bool first_match&#x3D;	x&lt;n &amp;&amp;(p[y]&#x3D;&#x3D;&#39;.&#39;||s[x]&#x3D;&#x3D;p[y]);
+    	if(y+1&lt;m &amp;&amp; p[y+1]&#x3D;&#x3D;&#39;*&#39;)
+    		f[x][y]&#x3D;dp(x,y+2)||dp(x+1,y);
+    	else 
+    		f[x][y]&#x3D;first_match	&amp;&amp;	dp(x+1,y+1);
+    	return f[x][y];
+    &#125;
+    
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -721,6 +762,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Tue Mar 23 2021 22:53:35 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1006,7 +1074,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="AcWing 785. 快速排序, LHL&#39; s Network Station">
+    <meta name="keywords" content="AcWing 785. 快速排序, LHL&#39; s NetWork Station">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>AcWing 785. 快速排序 | LHL&#39; s Network Station</title>
+    <title>AcWing 785. 快速排序 | LHL&#39; s NetWork Station</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LHL&#39; s Network Station</span>
+                    <span class="logo-span">LHL&#39; s NetWork Station</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LHL&#39; s Network Station</div>
+        <div class="logo-name">LHL&#39; s NetWork Station</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    285
+                    313
                 </div>
                 
 
@@ -492,12 +492,10 @@
         <hr class="clearfix">
 
         
-
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
+
         
 
         <div class="card-content article-card-content">
@@ -505,10 +503,52 @@
                 <p>AcWing 785. 快速排序</p>
 <a id="more"></a>
 <p><img src="https://cdn.acwing.com/media/article/image/2020/08/09/33780_2e3053bad9-qq_pic_merged_1596864959814.jpg" alt="qq_pic_merged_1596864959814.jpg"></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> n, a[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 递归边界条件</span></span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">// 步骤 ① 中 C 方式确定分界点</span></span><br><span class="line">    <span class="keyword">int</span> x = a[l + r &gt;&gt; <span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 步骤 ② 中 B 方式的 a 步</span></span><br><span class="line">    <span class="keyword">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 步骤 ② 中 B 方式下方的“注” 确定循环条件 i, j 相遇时划分完毕</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="comment">// 步骤 ② 中 B 方式的 b 步</span></span><br><span class="line">        <span class="keyword">do</span> i++; <span class="keyword">while</span> (a[i] &lt; x);</span><br><span class="line">        <span class="comment">// 步骤 ② 中 B 方式的 c 步</span></span><br><span class="line">        <span class="keyword">do</span> j--; <span class="keyword">while</span> (a[j] &gt; x);</span><br><span class="line">        <span class="comment">// 步骤 ② 中 B 方式的 d 步</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) swap(a[i], a[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 递归处理左边区间</span></span><br><span class="line">    quicksort(l, j);</span><br><span class="line">    <span class="comment">// 递归处理右边区间</span></span><br><span class="line">    quicksort(j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    quicksort(<span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+const int N &#x3D; 100010;
+int n, a[N];
+void quicksort(int l, int r) &#123;
+    &#x2F;&#x2F; 递归边界条件
+    if (l &gt;&#x3D; r) return;
+    &#x2F;&#x2F; 步骤 ① 中 C 方式确定分界点
+    int x &#x3D; a[l + r &gt;&gt; 1];
+    &#x2F;&#x2F; 步骤 ② 中 B 方式的 a 步
+    int i &#x3D; l - 1, j &#x3D; r + 1;
+    &#x2F;&#x2F; 步骤 ② 中 B 方式下方的“注” 确定循环条件 i, j 相遇时划分完毕
+    while (i &lt; j) &#123;
+        &#x2F;&#x2F; 步骤 ② 中 B 方式的 b 步
+        do i++; while (a[i] &lt; x);
+        &#x2F;&#x2F; 步骤 ② 中 B 方式的 c 步
+        do j--; while (a[j] &gt; x);
+        &#x2F;&#x2F; 步骤 ② 中 B 方式的 d 步
+        if (i &lt; j) swap(a[i], a[j]);
+    &#125;
+    &#x2F;&#x2F; 递归处理左边区间
+    quicksort(l, j);
+    &#x2F;&#x2F; 递归处理右边区间
+    quicksort(j + 1, r);
+&#125;
+int main() &#123;
+    cin &gt;&gt; n;
+    for (int i &#x3D; 0; i &lt; n; i++) cin &gt;&gt; a[i];
+    quicksort(0, n - 1);
+    for (int i &#x3D; 0; i &lt; n; i++) cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qsort</span><span class="params">(<span class="keyword">int</span> *q,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span> ;</span><br><span class="line">	<span class="keyword">int</span> i=l<span class="number">-1</span>,j=r+<span class="number">1</span>,x=q[l+r &gt;&gt;<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">while</span>(i&lt;j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(q[++i]&lt;x);</span><br><span class="line">		<span class="keyword">while</span>(q[--j]&gt;x);</span><br><span class="line">		<span class="keyword">if</span>(i&lt;j) swap(q[i],q[j]);</span><br><span class="line">	&#125;</span><br><span class="line">	qsort(q,l,j);</span><br><span class="line">	qsort(q,j+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void qsort(int *q,int l,int r)
+&#123;
+	if(l&gt;&#x3D;r) return ;
+	int i&#x3D;l-1,j&#x3D;r+1,x&#x3D;q[l+r &gt;&gt;1];
+	while(i&lt;j)
+	&#123;
+		while(q[++i]&lt;x);
+		while(q[--j]&gt;x);
+		if(i&lt;j) swap(q[i],q[j]);
+	&#125;
+	qsort(q,l,j);
+	qsort(q,j+1,r);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -723,6 +763,33 @@
     </div>
 
     
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Sat Apr 10 2021 09:32:50 GMT+0800',
+    owner: 'lhl1',
+    repo: 'lhl1.github.io',
+    oauth: {
+        client_id: 'a8ef7b27e1e48aaf7b28',
+        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
 
     
 
@@ -1008,7 +1075,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.9k</span>&nbsp;字
+                class="white-color">66.5k</span>&nbsp;字
             
             
             
