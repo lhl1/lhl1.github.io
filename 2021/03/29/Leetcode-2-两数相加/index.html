@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Leetcode 2.两数相加, Web">
+    <meta name="keywords" content="Leetcode 2.两数相加, Simple">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Leetcode 2.两数相加 | Web</title>
+    <title>Leetcode 2.两数相加 | Simple</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Web</span>
+                    <span class="logo-span">Simple</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Web</div>
+        <div class="logo-name">Simple</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -815,33 +815,33 @@ public:
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
 
-    
-        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
-<link rel="stylesheet" href="/css/gitment.css">
-
-<div class="gitment-card card" data-aos="fade-up">
+<div class="card gitalk-card" data-aos="fade-up">
     <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
-    <div id="gitment-content" class="card-content"></div>
+    <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitment/gitment.js"></script>
+<script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
-var gitment = new Gitment({
-    id: 'Mon Mar 29 2021 23:15:47 GMT+0800',
-    owner: 'lhl1',
-    repo: 'lhl1.github.io',
-    oauth: {
-        client_id: 'a8ef7b27e1e48aaf7b28',
-        client_secret: '4d9b4d803f2b2eabfe33dea225050ce30649ef81'
-    }
-});
+    let gitalk = new Gitalk({
+        clientID: '85047d9e6fdec4072a39',
+        clientSecret: '82bb0fb038b01645246770674e69d56e83e3fb6e',
+        repo: 'comment',
+        owner: 'lhl1',
+        admin: ["lhl1"],
+        id: '2021-03-29T23-15-47',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-gitment.render('gitment-content');
+    gitalk.render('gitalk-container');
 </script>
+
+    
 
     
 
