@@ -1,0 +1,2865 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Java_AWT_Swing 学习过程, Simple">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java_AWT_Swing 学习过程 | Simple</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Simple</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Simple</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lhl1" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/lhl1" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/56.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java_AWT_Swing 学习过程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-01
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-12-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    32 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Java_AWT_Swing 学习过程</p>
+<a id="more"></a>
+<pre class="line-numbers language-none"><code class="language-none">import javax.swing.*;
+import java.awt.*;
+
+public class Test &#123;
+    public static void main(String[] args) &#123;
+        JFrame f1&#x3D;new JFrame(&quot;LHL&#39;s First Java&quot;);
+        f1.setVisible(true);
+        f1.setSize(800,600);
+        &#x2F;&#x2F;f1.setBackground(Color.blue);
+        f1.setLocation(40,400);
+        f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f1.setResizable(true);
+
+
+    &#125;
+&#125;
+-------------------------------------
+import javax.swing.*;
+import java.awt.*;
+
+public class Test &#123;
+    public static void main(String[] args) &#123;
+        JFrame f1&#x3D;new JFrame(&quot;LHL&#39;s First Java&quot;);
+        f1.setVisible(true);
+        
+        f1.setSize(800,600);
+        Container con&#x3D;f1.getContentPane();
+        con.setBackground(new Color(154,204,255));
+        f1.setLocation(40,400);
+        f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f1.setResizable(true);
+
+
+    &#125;
+&#125;
+----------------------------------------------
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
+class WindowMenu extends JFrame
+&#123;
+    JMenuBar menubar;
+    JMenu menu,subMenu;
+    JMenuItem item1,item2;
+    public WindowMenu()
+    &#123;
+
+    &#125;
+    public WindowMenu(String s,int x,int y,int w,int h)
+    &#123;
+        init(s);
+        setLocation(x,y);
+        setVisible(true);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+    &#125;
+    void init(String s)
+    &#123;
+        setTitle(s);
+        menubar&#x3D;new JMenuBar();
+        menu&#x3D;new JMenu(&quot;1&quot;);
+        subMenu&#x3D;new JMenu(&quot;2&quot;);
+        item1&#x3D;new JMenuItem(&quot;3&quot;);
+        item2&#x3D;new JMenuItem(&quot;4&quot;);
+        item1.setAccelerator(KeyStroke.getKeyStroke(&#39;A&#39;));
+        item2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
+        menu.add(item1);
+        menu.addSeparator();
+        menu.add(item2);
+        menu.add(subMenu);
+        subMenu.add(new JMenuItem(&quot;5&quot;));
+        subMenu.add(new JMenuItem(&quot;6&quot;));
+        menubar.add(menu);
+        setJMenuBar(menubar);
+
+
+
+    &#125;
+&#125;
+public class Test &#123;
+    public static void main(String[] args) &#123;
+        WindowMenu w1&#x3D;new WindowMenu(&quot;菜单&quot;,20,30,200,190);
+        w1.setSize(800,600);
+
+    &#125;
+&#125;
+------------------------------------------------
+import javax.swing.*;
+
+class window extends JFrame
+&#123;
+    JMenuBar menber;
+    JMenu m1;
+    JMenuItem mi1,mi2;
+    window(String s,int x,int y,int w,int h)
+    &#123;
+        setLocation(x,y);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    &#125;
+    &#123;
+        
+    &#125;
+    void init(String s)
+    &#123;
+        setTitle(s);
+        menber&#x3D;new JMenuBar();
+        m1&#x3D;new JMenu();
+        mi1&#x3D;new JMenuItem();
+        mi2&#x3D;new JMenuItem();
+        m1.add()
+        
+    &#125;
+&#125;
+public class Test &#123;
+    public static void main(String[] args) &#123;
+       
+
+    &#125;
+&#125;
+--------------------------------------
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
+class WindowMenu extends JFrame
+&#123;
+    JMenuBar menubar;
+    JMenu head;
+    JMenu m1,m2;
+    JMenuItem t1,t2;
+    public WindowMenu()
+    &#123;
+
+    &#125;
+    public WindowMenu(String s,int x,int y,int w,int h)
+    &#123;
+        init(s);
+        setLocation(x,y);
+        setVisible(true);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        Container con&#x3D; getContentPane();
+        con.setBackground(new Color(43,43,43));
+
+    &#125;
+    void init(String s)
+    &#123;
+        setTitle(s);
+        menubar &#x3D;new JMenuBar();
+        head&#x3D;new JMenu(&quot;头&quot;);
+        m1&#x3D;new JMenu(&quot;第一项&quot;);
+        m2&#x3D;new JMenu(&quot;第二项&quot;);
+        t1&#x3D;new JMenuItem(&quot;第一项的第一项&quot;);
+        t2&#x3D;new JMenuItem(&quot;第一项的第二项&quot;);
+        m1.add(t1);
+        m1.add(t2);
+        head.add(m1);
+        head.add(m2);
+        menubar.add(head);
+        setJMenuBar(menubar);
+
+
+    &#125;
+&#125;
+public class Test &#123;
+    public static void main(String[] args) &#123;
+        WindowMenu w1&#x3D;new WindowMenu(&quot;菜单&quot;,20,30,200,190);
+        w1.setSize(800,600);
+
+    &#125;
+&#125;
+----------------------------------------------
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
+class WindowMenu extends JFrame
+&#123;
+    JMenuBar menubar;
+    JMenu head;
+    JMenu m1,m2;
+    JMenuItem t1,t2,t3;
+    public WindowMenu()
+    &#123;
+
+    &#125;
+    public WindowMenu(String s,int x,int y,int w,int h)
+    &#123;
+        init(s);
+        setLocation(x,y);
+        setVisible(true);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        Container con&#x3D; getContentPane();
+        con.setBackground(new Color(43,43,43));
+
+    &#125;
+    void init(String s)
+    &#123;
+        setTitle(s);
+        menubar &#x3D;new JMenuBar();
+        head&#x3D;new JMenu(&quot;头&quot;);
+        m1&#x3D;new JMenu(&quot;第一项&quot;);
+        m2&#x3D;new JMenu(&quot;第二项&quot;);
+        t1&#x3D;new JMenuItem(&quot;第一项的第一项&quot;);
+        t2&#x3D;new JMenuItem(&quot;第一项的第二项&quot;);
+        t3&#x3D;new JMenuItem(&quot;第三项&quot;,new ImageIcon(&quot;favicon.ico&quot;));
+        m1.add(t1);
+        m1.add(t2);
+        head.add(m1);
+        head.add(m2);
+        head.add(t3);
+        menubar.add(head);
+        setJMenuBar(menubar);
+
+
+    &#125;
+&#125;
+public class Test &#123;
+    public static void main(String[] args) &#123;
+        WindowMenu w1&#x3D;new WindowMenu(&quot;菜单&quot;,20,30,200,190);
+        w1.setSize(800,600);
+
+    &#125;
+&#125;
+-------------------------------------------------------------------------
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
+class windows extends JFrame &#123;
+    JCheckBox c1, c2;
+    JRadioButton rm, rf;
+    ButtonGroup group;
+    JComboBox&lt;String&gt; comBox;
+
+    public windows() &#123;
+        init();
+        setTitle(&quot;LHL&#39;s Java&quot;);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
+
+        setSize(300, 100);
+        setLocation(40, 100);
+    &#125;
+
+    void init() &#123;
+        setLayout(new FlowLayout());
+        comBox &#x3D; new JComboBox&lt;String&gt;();
+        c1 &#x3D; new JCheckBox(&quot;音乐&quot;);
+        c2 &#x3D; new JCheckBox(&quot;旅游&quot;);
+        group &#x3D; new ButtonGroup();
+        rm &#x3D; new JRadioButton(&quot;男&quot;);
+        rf &#x3D; new JRadioButton(&quot;女&quot;);
+        group.add(rm);
+        group.add(rf);
+        add(c1);
+        add(c2);
+        add(rf);
+        add(rm);
+        comBox.addItem(&quot;音乐天地&quot;);
+        comBox.addItem(&quot;武术天地&quot;);
+        add(comBox);
+    &#125;
+
+&#125;
+
+public class Test &#123;
+    public static void main(String[] args) &#123;
+        windows w1 &#x3D; new windows();
+    &#125;
+&#125;
+-------------------------------------------------
+import javax.swing.*;
+import java.awt.*;
+
+class windows extends JFrame
+&#123;
+    JComboBox&lt;String&gt; box;
+    JCheckBox x1, x2;
+    JRadioButton m, w;
+    ButtonGroup group;
+    windows()
+    &#123;
+        init();
+        setTitle(&quot;LHL&#39;s Java&quot;);
+        setVisible(true);
+        setSize(400,100);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocation(40,200);
+    &#125;
+    void init()
+    &#123;
+        setLayout(new FlowLayout());
+        box&#x3D;new JComboBox&lt;String&gt;();
+        x1&#x3D;new JCheckBox(&quot;赛博朋克2077&quot;);
+        x2&#x3D;new JCheckBox(&quot;刺客信条英灵殿&quot;);
+        m&#x3D;new JRadioButton(&quot;男&quot;);
+        w&#x3D;new JRadioButton(&quot;女&quot;);
+        group&#x3D;new ButtonGroup();
+        group.add(m);
+        group.add(w);
+        add(x1);
+        add(x2);
+        add(m);
+        add(w);
+        box.addItem(&quot;$39.99&quot;);
+        box.addItem(&quot;$49.99&quot;);
+        add(box);
+
+    &#125;
+&#125;
+
+public class Test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        windows w1&#x3D;new windows();
+    &#125;
+&#125;
+-------------------------
+import javax.swing.*;
+import java.*;
+import java.awt.*;
+
+class PanelNullLayout extends JPanel
+&#123;
+    JButton button;
+    JTextField text;
+    PanelNullLayout()
+    &#123;
+        setLayout(null);
+        button &#x3D;new JButton(&quot;确定&quot;);
+        text&#x3D;new JTextField();
+        add(text);
+        add(button);
+        text.setBounds(100,30,90,30);
+        button.setBounds(190,30,66,30);
+    &#125;
+&#125;
+
+class PanelGridLayout extends JPanel
+&#123;
+    PanelGridLayout()
+    &#123;
+        GridLayout grid &#x3D; new GridLayout(12, 12);
+        setLayout(grid);
+        Label label[][] &#x3D; new Label[12][12];
+        for (int i &#x3D; 0; i &lt; 12; i++) &#123;
+            for (int j &#x3D; 0; j &lt; 12; j++) &#123;
+                label[i][j]&#x3D;new Label();
+                if ((i + j) % 2 &#x3D;&#x3D; 0)
+                    label[i][j].setBackground(Color.black);
+                else
+                    label[i][j].setBackground(Color.white);
+                add(label[i][j]);
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+class ShowLayout extends JFrame
+&#123;
+    PanelGridLayout pannelGrid;
+    PanelNullLayout panelNull;
+    JTabbedPane p;
+    ShowLayout()
+    &#123;
+        pannelGrid&#x3D;new PanelGridLayout();
+        panelNull&#x3D;new PanelNullLayout();
+        p&#x3D;new JTabbedPane();
+        p.add(&quot;网格布局的面板&quot;,pannelGrid);
+        p.add(&quot;空布局的面板&quot;,panelNull);
+        add(p,BorderLayout.CENTER);
+        add(new JButton(&quot;窗体是BorderLayout布局&quot;),BorderLayout.NORTH);
+        add(new JButton(&quot;南&quot;),BorderLayout.SOUTH);
+        add(new JButton(&quot;西&quot;),BorderLayout.WEST);
+        add(new JButton(&quot;东&quot;),BorderLayout.EAST);
+        setBounds(10,10,570,390);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        validate();
+    &#125;
+
+&#125;
+
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        new ShowLayout();
+    &#125;
+&#125;
+-------------------------------------------------
+import javax.swing.*;
+import java.awt.*;
+
+class windowboxLayout extends JFrame
+&#123;
+    Box boxH;
+    Box boxVOne,boxVTwo;
+    public windowboxLayout()
+    &#123;
+        setLayout(new FlowLayout());
+        init();
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    &#125;
+    void init()
+    &#123;
+        boxH &#x3D;Box.createHorizontalBox();
+        boxVOne&#x3D;Box.createVerticalBox();
+        boxVTwo&#x3D;Box.createVerticalBox();
+        boxVOne.add(new JLabel(&quot;姓名：&quot;));
+        boxVOne.add(new JLabel(&quot;职业：&quot;));
+        boxVTwo.add(new JTextField(10));
+        boxVTwo.add(new JTextField(10));
+        boxH.add(boxVOne);
+        boxH.add(Box.createHorizontalStrut(10));
+        boxH.add(boxVTwo);
+        add(boxH);
+        setBounds(10,10,300,110);
+    &#125;
+&#125;
+
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        windowboxLayout w1&#x3D;new windowboxLayout();
+    &#125;
+&#125;
+----------------------------------
+import javax.swing.*;
+import java.awt.*;
+class windowboxLayout extends  JFrame
+&#123;
+    Box wai;
+    Box nei1,nei2;
+    windowboxLayout()
+    &#123;
+        setLayout(new FlowLayout());
+        init();
+        setVisible(true);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setBounds(10,10,300,90);
+    &#125;
+    void init()
+    &#123;
+        wai&#x3D;Box.createHorizontalBox();
+        nei1&#x3D;Box.createVerticalBox();
+        nei2&#x3D;Box.createVerticalBox();
+        nei1.add(new JLabel(&quot;姓名:&quot;));
+        nei1.add(new JLabel(&quot;性别:&quot;));
+        nei2.add(new JTextField(10));
+        nei2.add(new JTextField(10));
+        wai.add(nei1);
+        wai.add(nei2);
+        add(wai);
+    &#125;
+&#125;
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        windowboxLayout w1 &#x3D; new windowboxLayout();
+    &#125;
+&#125;
+----------------------------
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class WindowActionEvent extends JFrame
+&#123;
+    JTextField text;
+    ActionListener listener;
+    WindowActionEvent()
+    &#123;
+        setLayout(new FlowLayout());
+        text&#x3D;new JTextField(10);
+        add(text);
+        listener&#x3D;new ReaderListen();
+        text.addActionListener(listener);
+        setVisible(true);
+        setBounds(10,10,200,400);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    &#125;
+&#125;
+class ReaderListen implements ActionListener
+&#123;
+    public void actionPerformed(ActionEvent e)
+    &#123;
+        String str&#x3D;e.getActionCommand();
+        System.out.println(str+&quot;:&quot;+str.length());
+    &#125;
+&#125;
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        WindowActionEvent w1&#x3D;new WindowActionEvent();
+    &#125;
+&#125;
+--------------------------------------
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class WindowActionEvent extends JFrame
+&#123;
+    JTextField text;
+    ActionListener listener;
+    WindowActionEvent()
+    &#123;
+        setLayout(new FlowLayout());
+        Container co&#x3D;this.getContentPane();
+        co.setBackground(new Color(27,40,56));
+        text&#x3D;new JTextField(10);
+        listener&#x3D;new ReaderListen();
+        text.addActionListener(listener);
+        add(text);
+        setBounds(10,10,200,400);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    &#125;
+&#125;
+class ReaderListen implements ActionListener
+&#123;
+    @Override
+    public void actionPerformed(ActionEvent e)
+    &#123;
+        String s&#x3D;e.getActionCommand();
+        System.out.println(s+&quot;的字节数是:&quot;+s.length());
+    &#125;
+&#125;
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        WindowActionEvent w1&#x3D;new WindowActionEvent();
+    &#125;
+&#125;
+--------------------------------------------
+import com.sun.javaws.util.JfxHelper;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+interface MycommandListener extends ActionListener
+&#123;
+    public void setJTextField(JTextField text);
+
+    public void setJTextArea(JTextArea area);
+&#125;
+
+class WindowActionEvent extends JFrame
+&#123;
+    JTextField inputText;
+    JTextArea textShow;
+    JButton button;
+    MycommandListener listener;
+
+    public WindowActionEvent()
+    &#123;
+        init();
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 360, 230);
+        setTitle(&quot;LHL&#39;s Java&quot;);
+    &#125;
+
+    void init()
+    &#123;
+        setLayout(new FlowLayout());
+        inputText &#x3D; new JTextField(10);
+        button &#x3D; new JButton(&quot;确定&quot;);
+        textShow &#x3D; new JTextArea(9, 30);
+        add(inputText);
+        add(button);
+        add(new JScrollPane(textShow));
+    &#125;
+
+    void setMyCommandListener(MycommandListener listener)
+    &#123;
+        this.listener &#x3D; listener;
+        listener.setJTextField(inputText);
+        listener.setJTextArea(textShow);
+        inputText.addActionListener(listener);
+        button.addActionListener(listener);
+    &#125;
+&#125;
+
+class PoliceListen implements MycommandListener
+&#123;
+    JTextField textInput;
+    JTextArea textShow;
+
+    @Override
+    public void setJTextField(JTextField text)
+    &#123;
+        textInput &#x3D; text;
+    &#125;
+
+    @Override
+    public void setJTextArea(JTextArea area)
+    &#123;
+        textShow &#x3D; area;
+    &#125;
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    &#123;
+        String str &#x3D; textInput.getText();
+        textShow.append(str + &quot;的长度:&quot; + str.length() + &#39;\n&#39;);
+    &#125;
+&#125;
+
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        WindowActionEvent win &#x3D; new WindowActionEvent();
+        PoliceListen police &#x3D; new PoliceListen();
+        win.setMyCommandListener(police);
+
+    &#125;
+&#125;
+-0------------------------
+错误：
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+interface Mylisten extends ActionListener
+&#123;
+    public void setText(JTextField text);
+    public void setShow(JTextArea show);
+&#125;
+class window extends JFrame
+&#123;
+    JButton button;
+    JTextArea show;
+    JTextField text;
+    Mylisten listen ;
+    window()
+    &#123;
+        init();
+        setVisible(true);
+        setBounds(10,10,360,230);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    &#125;
+    void init()
+    &#123;
+        setLayout(new FlowLayout());
+        JButton button&#x3D;new JButton(&quot;计算&quot;);
+        JTextField text&#x3D;new JTextField(10);
+        JTextArea show&#x3D;new JTextArea(9,30);
+        add(text);
+        add(button);
+        add(new JScrollPane(show));
+    &#125;
+    void setListen(Mylisten listener)
+    &#123;
+        listen&#x3D;listener;
+        listener.setShow(show);
+        listener.setText(text);
+        text.addActionListener(listener);
+        button.addActionListener(listener);
+    &#125;
+&#125;
+class police implements Mylisten
+&#123;
+    JTextArea area;
+    JTextField Text;
+
+    @Override
+    public void setText(JTextField text)
+    &#123;
+        Text&#x3D;text;
+    &#125;
+
+    @Override
+    public void setShow(JTextArea show)
+    &#123;
+        area&#x3D;show;
+    &#125;
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    &#123;
+        String s&#x3D;Text.getText();
+        area.append(s+&quot;长度为:&quot;+s.length());
+    &#125;
+&#125;
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        window w1&#x3D;new window();
+        police p1&#x3D;new police();
+        w1.setListen(p1);
+
+    &#125;
+&#125;
+----------------------------------------
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+interface listenList extends ActionListener
+&#123;
+    public void setText(JTextField text);
+    public void setShow(JTextArea show);
+&#125;
+class window extends JFrame
+&#123;
+    JButton button;
+    JTextField text;
+    JTextArea show;
+    listenList listen;
+    window()
+    &#123;
+        init();
+        setVisible(true);
+        setBounds(10,10,400,300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    &#125;
+    void init()
+    &#123;
+        setLayout(new FlowLayout());
+        button&#x3D;new JButton(&quot;计算&quot;);
+        text&#x3D;new JTextField(10);
+        show&#x3D;new JTextArea(9,30);
+        add(text);
+        add(button);
+        add(new JScrollPane(show));
+    &#125;
+    void setList(listenList listen)
+    &#123;
+        this.listen&#x3D;listen;
+        listen.setShow(show);
+        listen.setText(text);
+        text.addActionListener(listen);
+        button.addActionListener(listen);
+    &#125;
+
+&#125;
+class police implements listenList
+&#123;
+    JTextArea Show;
+    JTextField Text;
+    @Override
+    public void setText(JTextField text)
+    &#123;
+        Text&#x3D;text;
+    &#125;
+
+    @Override
+    public void setShow(JTextArea show)
+    &#123;
+        Show&#x3D;show;
+    &#125;
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    &#123;
+        String str&#x3D;Text.getText();
+        Show.append(str+&quot;的长度为：&quot;+str.length()+&#39;\n&#39;);
+    &#125;
+&#125;
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        window w1&#x3D;new window();
+        police p1&#x3D;new police();
+        w1.setList(p1);
+
+    &#125;
+&#125;
+-------------------------------------------------------------
+计算器
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+class ComputerListerner implements ActionListener
+&#123;
+    JTextField inputNumberOne,inputNuberTwo;
+    JTextArea textShow;
+    String fuhao;
+    public void setTextFieldOne(JTextField t)
+    &#123;
+        inputNumberOne&#x3D;t;
+    &#125;
+    public void setJTextFieldTwo(JTextField t)
+    &#123;
+        inputNuberTwo&#x3D;t;
+    &#125;
+    public void setJTextArea(JTextArea area)
+    &#123;
+        textShow&#x3D;area;
+    &#125;
+    public  void setFuhao(String s)
+    &#123;
+        fuhao&#x3D;s;
+    &#125;
+    @Override
+    public void actionPerformed(ActionEvent e)
+    &#123;
+        try
+        &#123;
+            double number1&#x3D;Double.parseDouble(inputNumberOne.getText());
+            double number2&#x3D;Double.parseDouble(inputNuberTwo.getText());
+            double result&#x3D;0;
+            if(fuhao.equals(&quot;+&quot;))
+            &#123;
+                result &#x3D;number1+number2;
+            &#125;
+            else if(fuhao.equals(&quot;-&quot;))
+            &#123;
+                result&#x3D;number1-number2;
+            &#125;
+            else if(fuhao.equals(&quot;*&quot;))
+            &#123;
+                result&#x3D;number1*number2;
+            &#125;
+            else if(fuhao.equals(&quot;&#x2F;&quot;))
+            &#123;
+                result&#x3D;number1&#x2F;number2;
+            &#125;
+            textShow.append(number1+&quot; &quot;+fuhao+&#39; &#39;+number2+&quot; &#x3D; &quot;+result+&quot;\n&quot;);
+        &#125;
+        catch (Exception exp)
+        &#123;
+            textShow.append(&quot;\n请输入数字字符\n&quot;);
+        &#125;
+    &#125;
+
+&#125;
+
+class OperatorListener implements ItemListener
+&#123;
+    JComboBox choice;
+    ComputerListerner workTogether;
+    public void setJCombBox(JComboBox box)
+    &#123;
+        choice&#x3D;box;
+    &#125;
+    public void setWorkTogether(ComputerListerner computer)
+    &#123;
+        workTogether&#x3D;computer;
+    &#125;
+    public void itemStateChanged(ItemEvent e)
+    &#123;
+        String fuhao&#x3D;choice.getSelectedItem().toString();
+        workTogether.setFuhao(fuhao);
+    &#125;
+&#125;
+
+
+class WindowOperation extends JFrame
+&#123;
+    JTextField inputNumberOne,inputNuberTwo;
+    JComboBox choiceFuhao;
+    JTextArea textShow;
+    JButton button;
+    OperatorListener operator;
+    ComputerListerner computer;
+    public WindowOperation()
+    &#123;
+        init();
+        setVisible(true);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setBounds(100,100,390,360);
+        setTitle(&quot;LHL&#39;s Java&quot;);
+    &#125;
+    void init()
+    &#123;
+        setLayout(new FlowLayout());
+        inputNumberOne&#x3D;new JTextField(5);
+        inputNuberTwo&#x3D;new JTextField(5);
+        choiceFuhao&#x3D;new JComboBox();
+        button &#x3D;new JButton(&quot;计算&quot;);
+        choiceFuhao.addItem(&quot;选择运算符号:&quot;);
+
+        String []a&#x3D;&#123;&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;&#x2F;&quot;&#125;;
+        for(int i&#x3D;0;i&lt;a.length;i++)
+        &#123;
+            choiceFuhao.addItem(a[i]);
+        &#125;
+        textShow&#x3D;new JTextArea(9,30);
+        operator&#x3D;new OperatorListener();
+        computer&#x3D;new ComputerListerner();
+        operator.setJCombBox(choiceFuhao);
+        operator.setWorkTogether(computer);
+        computer.setTextFieldOne(inputNumberOne);
+        computer.setJTextFieldTwo(inputNuberTwo);
+        computer.setJTextArea(textShow);
+        choiceFuhao.addItemListener(operator);
+
+        button.addActionListener(computer);
+        add(inputNumberOne);
+        add(choiceFuhao);
+        add(inputNuberTwo);
+        add(button);
+        add(new JScrollPane(textShow));
+    &#125;
+
+&#125;
+public class test
+&#123;
+    public static void main(String []args)
+    &#123;
+        WindowOperation w1&#x3D;new WindowOperation();
+    &#125;
+&#125;
+-----------------------------
+import javax.swing.*;
+import java.awt.*;
+
+class create extends JFrame
+&#123;
+    Box b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;
+    JButton t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+    create() &#123;
+
+        setLayout(new FlowLayout());
+        t1.setSize(10,14);
+        t4.setSize(10,14);
+        t5.setSize(10,14);
+        t10.setSize(10,14);
+        t2.setSize(20,7);
+        t3.setSize(20,7);
+        t6.setSize(10,7);
+        t7.setSize(10,7);
+        t8.setSize(10,7);
+        t9.setSize(10,7);
+
+        b1&#x3D;Box.createVerticalBox();
+        b1.add(t1);
+        b1&#x3D;Box.createVerticalBox();
+        b2.add(t2);
+        b2.add(t3);
+        b3&#x3D;Box.createVerticalBox();
+        b3.add(t4);
+        b4&#x3D;Box.createVerticalBox();
+        b4.add(t5);
+        b5.add(t6);
+        b5.add(t8);
+        b6&#x3D;Box.createVerticalBox();
+        b6.add(t7);
+        b6.add(t9);
+        b7&#x3D;Box.createVerticalBox();
+        b7.add(t10);
+        b8&#x3D;Box.createHorizontalBox();
+        b8.add(b1);
+        b8.add(b2);
+        b8.add(b3);
+        b9&#x3D;Box.createHorizontalBox();
+        b9.add(b4);
+        b9.add(b5);
+        b9.add(b6);
+        b9.add(b7);
+        b10&#x3D;Box.createVerticalBox();
+        b10.add(b8);
+        b10.add(b9);
+        add(b10);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 300, 200);
+    &#125;
+&#125;
+public class test
+&#123;
+    public static void main(String []args)
+    &#123;
+        create c1&#x3D;new create();
+    &#125;
+&#125;
+-------------------------------------
+import javax.swing.*;
+import java.awt.*;
+
+class create extends JFrame
+&#123;
+    Box b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;
+    JButton t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+    create() &#123;
+
+        t1&#x3D;new JButton(&quot;BUTTON&quot;);
+        t2&#x3D;new JButton(&quot;BUTTON&quot;);
+        t3&#x3D;new JButton(&quot;BUTTON&quot;);
+        t4&#x3D;new JButton(&quot;BUTTON&quot;);
+        t5&#x3D;new JButton(&quot;BUTTON&quot;);
+        t6&#x3D;new JButton(&quot;BUTTON&quot;);
+        t7&#x3D;new JButton(&quot;BUTTON&quot;);
+        t8&#x3D;new JButton(&quot;BUTTON&quot;);
+        t9&#x3D;new JButton(&quot;BUTTON&quot;);
+        t10&#x3D;new JButton(&quot;BUTTON&quot;);
+        setLayout(new FlowLayout());
+        b1&#x3D;Box.createVerticalBox();
+        b1.add(t1);
+        b2&#x3D;Box.createVerticalBox();
+        b2.add(t2);
+        b2.add(t3);
+        b3&#x3D;Box.createVerticalBox();
+        b3.add(t4);
+        b4&#x3D;Box.createVerticalBox();
+        b5&#x3D;Box.createVerticalBox();
+        b4.add(t5);
+        b5.add(t6);
+        b5.add(t8);
+        b6&#x3D;Box.createVerticalBox();
+        b6.add(t7);
+        b6.add(t9);
+        b7&#x3D;Box.createVerticalBox();
+        b7.add(t10);
+        b8&#x3D;Box.createHorizontalBox();
+        b8.add(b1);
+        b8.add(b2);
+        b8.add(b3);
+        b9&#x3D;Box.createHorizontalBox();
+        b9.add(b4);
+        b9.add(b5);
+        b9.add(b6);
+        b9.add(b7);
+        b10&#x3D;Box.createVerticalBox();
+        b10.add(b8);
+        b10.add(b9);
+        add(b10);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 300, 200);
+    &#125;
+&#125;
+public class test
+&#123;
+    public static void main(String []args)
+    &#123;
+        create c1&#x3D;new create();
+    &#125;
+&#125;
+-------------------------
+import javax.swing.*;
+import java.awt.*;
+
+class create extends JFrame
+&#123;
+    Box b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;
+    JButton t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+    create() &#123;
+        Dimension preferredSize &#x3D; new Dimension(10,14);
+        t1&#x3D;new JButton(&quot;BUTTON&quot;);
+        t2&#x3D;new JButton(&quot;BUTTON&quot;);
+        t3&#x3D;new JButton(&quot;BUTTON&quot;);
+        t4&#x3D;new JButton(&quot;BUTTON&quot;);
+        t5&#x3D;new JButton(&quot;BUTTON&quot;);
+        t6&#x3D;new JButton(&quot;BUTTON&quot;);
+        t7&#x3D;new JButton(&quot;BUTTON&quot;);
+        t8&#x3D;new JButton(&quot;BUTTON&quot;);
+        t9&#x3D;new JButton(&quot;BUTTON&quot;);
+        t10&#x3D;new JButton(&quot;BUTTON&quot;);
+        setLayout(new FlowLayout());
+        
+        b1&#x3D;Box.createVerticalBox();
+        b1.add(t1);
+        b2&#x3D;Box.createVerticalBox();
+        b2.add(t2);
+        b2.add(t3);
+        b3&#x3D;Box.createVerticalBox();
+        b3.add(t4);
+        b4&#x3D;Box.createVerticalBox();
+        b5&#x3D;Box.createVerticalBox();
+        b4.add(t5);
+        b5.add(t6);
+        b5.add(t8);
+        b6&#x3D;Box.createVerticalBox();
+        b6.add(t7);
+        b6.add(t9);
+        b7&#x3D;Box.createVerticalBox();
+        b7.add(t10);
+        b8&#x3D;Box.createHorizontalBox();
+        b8.add(b1);
+        b8.add(b2);
+        b8.add(b3);
+        b9&#x3D;Box.createHorizontalBox();
+        b9.add(b4);
+        b9.add(b5);
+        b9.add(b6);
+        b9.add(b7);
+        b10&#x3D;Box.createVerticalBox();
+        b10.add(b8);
+        b10.add(b9);
+        add(b10);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 300, 200);
+    &#125;
+&#125;
+public class test
+&#123;
+    public static void main(String []args)
+    &#123;
+        create c1&#x3D;new create();
+    &#125;
+&#125;
+-----------------------------
+import java.awt.Container;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
+&#x2F;**
+ * 1:常用面板
+ * 面板也是一个Swing容器，他可以看作为容器容纳其他组件，但它也必须被添加到其他容器中
+ * Swing中常用的面板包括JPanel面板和JScrollPane面板
+ *
+ * 2:JPanel面板可以聚集一些组件来布局
+ * 读者首先应该明白面板也是一种容器，因为它继承了java.awt.Container类
+ * @author biexiansheng
+ *
+ *&#x2F;
+class JPanelTest extends JFrame&#123;
+
+    public JPanelTest()&#123;
+        Container container&#x3D;getContentPane();&#x2F;&#x2F;设置一个容器
+
+        &#x2F;&#x2F;将整个容器设置为2行1列的网格布局     网格布局管理器x,y代表行和列
+        container.setLayout(new GridLayout(2,3,0,0));
+
+        &#x2F;&#x2F;初始化一个面板，设置1行3列的网格布局
+        JPanel p1&#x3D;new JPanel(new GridLayout(1,1,0,0));
+        JPanel p2&#x3D;new JPanel(new GridLayout(2,1,0,0));
+        JPanel p3&#x3D;new JPanel(new GridLayout(1,2,0,0));
+        JPanel p4&#x3D;new JPanel(new GridLayout(1,1,0,0));
+        JPanel p5&#x3D;new JPanel(new GridLayout(2,2,0,0));
+        JPanel p6&#x3D;new JPanel(new GridLayout(1,1,0,0));
+
+        &#x2F;&#x2F;在面板中添加按钮
+        p1.add(new JButton(&quot;1&quot;));
+        p2.add(new JButton(&quot;2&quot;));
+        p2.add(new JButton(&quot;3&quot;));
+        p3.add(new JButton(&quot;4&quot;));
+        p4.add(new JButton(&quot;5&quot;));
+        p5.add(new JButton(&quot;6&quot;));
+        p5.add(new JButton(&quot;7&quot;));
+        p5.add(new JButton(&quot;8&quot;));
+        p5.add(new JButton(&quot;9&quot;));
+        p6.add(new JButton(&quot;10&quot;));
+
+        &#x2F;&#x2F;最重要的一步，将面板实例添加到容器中
+        container.add(p1);
+        container.add(p2);
+        container.add(p3);
+        container.add(p4);
+        container.add(p5);
+        container.add(p6);
+
+        &#x2F;&#x2F;将容器外部特性实例化
+        setTitle(&quot;JPanel面板的案例&quot;);
+        setSize(400,250);&#x2F;&#x2F;设窗体的大小     宽和高
+        setVisible(true);&#x2F;&#x2F;设定窗体的可视化
+        &#x2F;&#x2F;设置窗体的关闭方式
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    &#125;
+    public static void main(String[] args) &#123;
+        &#x2F;&#x2F; TODO Auto-generated method stub
+        JPanelTest jt&#x3D;new JPanelTest();
+    &#125;
+
+&#125;
+-0----------------------------------
+import java.awt.*;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
+public class JPanelTest extends JFrame&#123;
+    public JPanelTest() &#123;
+        Container c &#x3D; getContentPane();
+        c.setLayout(new GridLayout(2,3,0,0));
+
+        JPanel p1 &#x3D; new JPanel(new GridLayout(1,1,0,0));
+        JPanel p2 &#x3D; new JPanel(new GridLayout(2,1,0,0));
+        JPanel p3 &#x3D; new JPanel(new GridLayout(1,1,0,0));
+        JPanel p4 &#x3D; new JPanel(new GridLayout(1,1,0,0));
+        JPanel p5 &#x3D; new JPanel(new GridLayout(2,2,0,0));
+        JPanel p6 &#x3D; new JPanel(new GridLayout(1,1,0,0));
+        p1.setPreferredSize(new Dimension(10,14));
+        p2.setPreferredSize(new Dimension(20,14));
+        p3.setPreferredSize(new Dimension(10,14));
+        p4.setPreferredSize(new Dimension(10,14));
+        p5.setPreferredSize(new Dimension(20,14));
+        p6.setPreferredSize(new Dimension(10,14));
+        p1.add(new JButton(&quot;BUTTON&quot;));
+        p2.add(new JButton(&quot;BUTTON&quot;));
+        p2.add(new JButton(&quot;BUTTON&quot;));
+        p3.add(new JButton(&quot;BUTTON&quot;));
+        p4.add(new JButton(&quot;BUTTON&quot;));
+        p5.add(new JButton(&quot;BUTTON&quot;));
+        p5.add(new JButton(&quot;BUTTON&quot;));
+        p5.add(new JButton(&quot;BUTTON&quot;));
+        p5.add(new JButton(&quot;BUTTON&quot;));
+        p6.add(new JButton(&quot;BUTTON&quot;));
+
+        
+        c.add(p1);
+        c.add(p2);
+        c.add(p3);
+        c.add(p4);
+        c.add(p5);
+        c.add(p6);
+        setSize(600,300);
+        setTitle(&quot;这是一个JPanel的窗体&quot;);
+        setVisible(true);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    &#125;
+    public static void main(String args[]) &#123;
+        new JPanelTest();
+    &#125;
+&#125;
+-------------------
+import javax.swing.*;
+import java.awt.*;
+
+public class test
+&#123;
+    public static void main(String []args)
+    &#123;
+        Frame f&#x3D;new JFrame(&quot;LHL&#39;S Java&quot;);
+        ScrollPane s&#x3D;new ScrollPane(ScrollPane.SCROLLBARS_ALWAYS);
+        s.add(new TextField(&quot;adfasdf&quot;));
+        s.add(new Button(&quot;asdfasdf&quot;));
+        f.add(s);
+
+        f.setVisible(true);
+        f.setBounds(10,10,500,300);
+    &#125;
+&#125;
+------------------------------------
+import javax.swing.*;
+import java.awt.*;
+
+public class test
+&#123;
+    public static void main(String []args)
+    &#123;
+        Frame f&#x3D;new JFrame(&quot;LHL&#39;S Java&quot;);
+        Panel p1&#x3D;new Panel();
+        p1.add(new TextField(30));
+        f.add(p1,BorderLayout.NORTH);
+
+        Panel p2&#x3D;new Panel();
+        p2.setLayout(new GridLayout(3,4,4,4));
+        for(int i&#x3D;0;i&lt;10;i++)
+        &#123;
+            p2.add(new Button(i+&quot;&quot;));
+        &#125;
+        p2.add(new Button(&quot;+&quot;));
+        p2.add(new Button(&quot;-&quot;));
+        p2.add(new Button(&quot;*&quot;));
+        p2.add(new Button(&quot;&#x2F;&quot;));
+        f.add(p2,BorderLayout.SOUTH);
+        f.setVisible(true);
+        f.pack();
+        &#x2F;&#x2F;f.setBounds(10,10,500,300);
+    &#125;
+&#125;
+---------------------------------------
+import javax.smartcardio.Card;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class test
+&#123;
+    public static void main(String[] args)
+    &#123;
+        Frame f &#x3D; new JFrame(&quot;LHL&#39;S Java&quot;);
+        Panel p1 &#x3D; new Panel();
+        CardLayout cardLayout &#x3D; new CardLayout();
+        p1.setLayout(cardLayout);
+        String names[] &#x3D; &#123;&quot;第一张&quot;, &quot;第二张&quot;, &quot;第三张&quot;, &quot;第四张&quot;, &quot;第五张&quot;&#125;;
+        for (int i &#x3D; 0; i &lt; names.length; i++)
+            p1.add(names[i], new Button(names[i]));
+        f.add(p1, BorderLayout.CENTER);
+        Panel p2 &#x3D; new Panel();
+        Button b1 &#x3D; new Button(&quot;上一张&quot;);
+        Button b2 &#x3D; new Button(&quot;下一张&quot;);
+        Button b3 &#x3D; new Button(&quot;第一张&quot;);
+        Button b4 &#x3D; new Button(&quot;最后一张&quot;);
+        Button b5 &#x3D; new Button(&quot;第三张&quot;);
+        ActionListener listener &#x3D; new ActionListener()
+        &#123;
+            @Override
+            public void actionPerformed(ActionEvent e)
+            &#123;
+                String s &#x3D; e.getActionCommand();
+                switch (s)
+                &#123;
+                    case &quot;上一张&quot;:
+                        cardLayout.previous(p1);
+                        break;
+                    case &quot;下一张&quot;:
+                        cardLayout.next(p1);
+                        break;
+                    case &quot;第一张&quot;:
+                        cardLayout.first(p1);
+                        break;
+                    case &quot;最后一张&quot;:
+                        cardLayout.last(p1);
+                        break;
+                    case &quot;第三张&quot;:
+                        cardLayout.show(p1, &quot;第三张&quot;);
+                        break;
+                &#125;
+            &#125;
+        &#125;;
+        b1.addActionListener(listener);
+        b2.addActionListener(listener);
+        b3.addActionListener(listener);
+        b4.addActionListener(listener);
+        b5.addActionListener(listener);
+
+        p2.add(b1);
+        p2.add(b2);
+        p2.add(b3);
+        p2.add(b4);
+        p2.add(b5);
+        f.add(p2, BorderLayout.SOUTH);
+
+
+        f.setVisible(true);
+        f.pack();
+        &#x2F;&#x2F;f.setBounds(10,10,500,300);
+    &#125;
+&#125;
+---------------------------------
+import javax.swing.*;
+import java.awt.*;
+
+public class  test
+&#123;
+    public static void main(String []args)
+    &#123;
+        Frame frame&#x3D;new Frame(&quot;LHL&quot;);
+        BoxLayout boxLayout&#x3D;new BoxLayout(frame,BoxLayout.Y_AXIS);
+        frame.setLayout(boxLayout);
+        frame.add(new Button(&quot;按钮1&quot;));
+        frame.add(new Button(&quot;按钮2&quot;));
+        frame.pack();
+        frame.setVisible(true);
+        
+
+    &#125;
+&#125;
+------------------------------
+import javafx.scene.control.CheckBox;
+import javafx.scene.layout.VBox;
+
+import javax.swing.*;
+import java.awt.*;
+class create
+&#123;
+    Frame frame&#x3D;new Frame();
+    TextArea ta&#x3D;new TextArea(5,50);
+    Choice colorChooser&#x3D;new Choice();
+    CheckboxGroup cbg&#x3D;new CheckboxGroup();
+    Checkbox male&#x3D;new Checkbox(&quot;男&quot;,cbg,true);
+    Checkbox female&#x3D;new Checkbox(&quot;女&quot;,cbg,false);
+    Checkbox isMarried &#x3D;new Checkbox(&quot;是否已婚&quot;);
+    TextField tf&#x3D;new TextField(20);
+    Button ok&#x3D;new Button(&quot;确认&quot;);
+    List colorList&#x3D;new List(6,true);
+
+    create()
+    &#123;
+        Box bBox&#x3D;Box.createHorizontalBox();
+        bBox.add(tf);
+        bBox.add(ok);
+        frame.add(bBox,BorderLayout.SOUTH);
+        Box cBox&#x3D;Box.createHorizontalBox();
+        colorChooser.add(&quot;红色&quot;);
+        colorChooser.add(&quot;蓝色&quot;);
+        colorChooser.add(&quot;绿色&quot;);
+        cBox.add(colorChooser);
+        cBox.add(male);
+        cBox.add(female);
+        cBox.add(isMarried);
+        Box topLeft&#x3D;Box.createVerticalBox();
+        topLeft.add(ta);
+        topLeft.add(cBox);
+        Box top&#x3D;Box.createHorizontalBox();
+        top.add(topLeft);
+        colorList.add(&quot;红色&quot;);
+        colorList.add(&quot;蓝色&quot;);
+        colorList.add(&quot;绿色&quot;);
+        top.add(colorList);
+        frame.add(top);
+        frame.setVisible(true);
+        frame.pack();
+        frame.setBounds(10,10,400,600);
+    &#125;
+
+&#125;
+public class test
+&#123;
+
+    public static void main(String []args)
+    &#123;
+        new create();
+
+    &#125;
+&#125;
+------------------------------
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class test
+&#123;
+
+    public static void main(String[] args)
+    &#123;
+        Frame frame &#x3D;new Frame();
+        Dialog d1&#x3D;new Dialog(frame,&quot;模式对话框&quot;,true);
+        Dialog d2&#x3D;new Dialog(frame,&quot;非模式对话框&quot;,false);
+        d1.setBounds(20,30,300,200);
+        d2.setBounds(20,30,300,200);
+        Button b1&#x3D;new Button(&quot;打开模式对话框&quot;);
+        Button b2&#x3D;new Button(&quot;打开非模式对话框&quot;);
+        b1.addActionListener(new ActionListener()
+        &#123;
+            @Override
+            public void actionPerformed(ActionEvent e)
+            &#123;
+                d1.setVisible(true);
+            &#125;
+        &#125;);
+        b2.addActionListener(new ActionListener()
+        &#123;
+            @Override
+            public void actionPerformed(ActionEvent e)
+            &#123;
+                d2.setVisible(true);
+            &#125;
+        &#125;);
+        frame.add(b1,BorderLayout.NORTH);
+        frame.add(b2);
+        frame.pack();
+        frame.setVisible(true);
+    &#125;
+&#125;
+-----------------------------------------------------------------
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class test
+&#123;
+
+    public static void main(String[] args)
+    &#123;
+        Frame frame &#x3D;new Frame();
+        Dialog d1&#x3D;new Dialog(frame,&quot;模式对话框&quot;,true);
+        Dialog d2&#x3D;new Dialog(frame,&quot;非模式对话框&quot;,false);
+        d1.add(new TextField(30),BorderLayout.CENTER);
+        d1.add(new Button(&quot;确认&quot;),BorderLayout.SOUTH);
+        d1.setBounds(20,30,300,200);
+        d2.setBounds(20,30,300,200);
+        Button b1&#x3D;new Button(&quot;打开模式对话框&quot;);
+        Button b2&#x3D;new Button(&quot;打开非模式对话框&quot;);
+        b1.addActionListener(new ActionListener()
+        &#123;
+            @Override
+            public void actionPerformed(ActionEvent e)
+            &#123;
+                d1.setVisible(true);
+            &#125;
+        &#125;);
+        b2.addActionListener(new ActionListener()
+        &#123;
+            @Override
+            public void actionPerformed(ActionEvent e)
+            &#123;
+                d2.setVisible(true);
+            &#125;
+        &#125;);
+        frame.add(b1,BorderLayout.NORTH);
+        frame.add(b2);
+        frame.pack();
+        frame.setVisible(true);
+    &#125;
+&#125;
+------------------------------------
+点击出现Hello
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class test
+&#123;
+
+    public static void main(String[] args)
+    &#123;
+        Frame frame&#x3D;new Frame(&quot;LHL&#39;s Java&quot;);
+        FileDialog f1&#x3D;new FileDialog(frame,&quot;选择要打开的文件&quot;,FileDialog.LOAD);
+        FileDialog f2&#x3D;new FileDialog(frame,&quot;选择要保存的路径&quot;,FileDialog.SAVE);
+        Button b1&#x3D;new Button(&quot;打开文件&quot;);
+        Button b2&#x3D;new Button(&quot;保存文件&quot;);
+        b1.addActionListener(new ActionListener()
+        &#123;
+            @Override
+            public void actionPerformed(ActionEvent e)
+            &#123;
+                f1.setVisible(true);
+                String directory&#x3D;f1.getDirectory();
+                String file&#x3D;f1.getFile();
+                System.out.println(&quot;打开的文件路径为:&quot;+directory);
+                System.out.println(&quot;打开的文件名为:&quot;+file);
+            &#125;
+        &#125;);
+        b2.addActionListener(new ActionListener()
+        &#123;
+            @Override
+            public void actionPerformed(ActionEvent e)
+            &#123;
+                String directroy&#x3D;f2.getDirectory();
+                String file&#x3D;f2.getFile();
+                System.out.println(&quot;保存的文件路径为:&quot;+directroy);
+                System.out.println(&quot;保存的文件名为:&quot;+file);
+            &#125;
+        &#125;);
+        frame.add(b1,BorderLayout.NORTH);
+        frame.add(b2);
+        frame.setVisible(true);
+        frame.pack();
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">LHL</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://lhl11.gitee.io/2020/12/01/Java-AWT-Swing-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/">http://lhl11.gitee.io/2020/12/01/Java-AWT-Swing-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">LHL</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '85047d9e6fdec4072a39',
+        clientSecret: '82bb0fb038b01645246770674e69d56e83e3fb6e',
+        repo: 'comment',
+        owner: 'lhl1',
+        admin: ["lhl1"],
+        id: '2020-12-01T13-25-37',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/12/06/Java-PokeFrame22/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/66.jpg" class="responsive-img" alt="Java PokeFrame22">
+                        
+                        <span class="card-title">Java PokeFrame22</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java PokeFrame22
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            LHL
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-BF%E7%AE%97%E6%B3%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="数据结构 查找算法">
+                        
+                        <span class="card-title">数据结构 查找算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数据结构 BF算法，KMP算法，KMP改进算法
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            LHL
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">LHL</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/lhl1" target="_blank">LHL</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/lhl1" target="_blank">LHL's Engine</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">82.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "14";
+                    var startHour = "08";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lhl1" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:975237535@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/lhlssgcom" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/lhlssgcom" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=975237535" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 975237535" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1681 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Java学习路线, Simple">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java学习路线 | Simple</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Simple</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Simple</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lhl1" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/lhl1" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java学习路线</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-05-30
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-05-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    33 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>记得多做一些实战项目！</p>
+<a id="more"></a>
+
+<p><img src="https://pic4.zhimg.com/50/v2-e9205e1dea9a05c4073ca3d72ff3becc_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-e9205e1dea9a05c4073ca3d72ff3becc_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>项目地址：</p>
+<ul>
+<li>Github地址：<a href="https://link.zhihu.com/?target=https://github.com/Snailclimb/JavaGuide">Snailclimb/JavaGuide</a></li>
+<li>Gitee地址： <a href="https://link.zhihu.com/?target=https://gitee.com/SnailClimb/JavaGuide">SnailClimb/JavaGuide</a>（Github 无法访问或者访问速度比较慢的小伙伴可以看码云上的对应内容）</li>
+</ul>
+<p>如果你想让自己的简历更好看的话，记得多做一些实战项目！</p>
+<p><a href="https://link.zhihu.com/?target=https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=100018862&idx=1&sn=858e00b60c6097e3ba061e79be472280&chksm=4ea1856579d60c73224e4d852af6b0188c3ab905069fc28f4b293963fd1ee55d2069fb229848%23rd">2021 最新Java实战项目源码打包下载mp.weixin.qq.com<img src="https://pic2.zhimg.com/v2-5c70f2d4123edf16afab8b4bed070b4d_180x120.jpg" alt="图标"></a></p>
+<p>断断续续写了快大半个月，终于把 2021 最新版的 Java 后端学习路线给整完了！希望对你有帮助！</p>
+<p>这篇回答可能是你看过最用心、最全面的 Java 后端学习路线。</p>
+<p>为了完成这份学习路线，最近熬了很多次夜，因为琐碎的事情太多，很难有一块比较完整的时间专门用来做这件事。</p>
+<p>其实，说这个并不是为了让大家同情我。相反，我觉得我在熬夜肝学习路线的时候是快乐的，因为这是我喜欢做的事情。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-805206e68c9c8c29733c32888eeef216_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-805206e68c9c8c29733c32888eeef216_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这篇回答不会涉及到学习方法以及学习网站的推荐，我不想让篇幅太长，内容太杂，我希望留着下一篇文章专门来谈一谈。</p>
+<p>另外，这篇回答也不会涉及到计算机基础，也是为了保证内容的不至于太杂。计算基础相关的内容我也已经写好，预计会在五一同步给小伙伴们。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-06c2cdc3e5d417486d1cb92687350ed4_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-06c2cdc3e5d417486d1cb92687350ed4_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>多说一句，对于编程初学者，我不太建议上来通过做项目学习。实践确实很重要，如果你没有编程基础的话，直接上手实战，很容易最后学个四不像。</p>
+<p>建议你在学习编程的初期尽量多看一些优质视频。跟着视频一步一步走，可以让你少踩很多坑，学习编程的信心也会增加。</p>
+<p><strong>概览：</strong></p>
+<p><img src="https://pic4.zhimg.com/50/v2-62586d6789e1a081cc3dc6efd7bdd289_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-62586d6789e1a081cc3dc6efd7bdd289_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>回答中的相关书籍我也已经同步到了 Github和Gitee上（有PDF版本可供下载），欢迎小伙伴们一起完善。</p>
+<ul>
+<li>Github地址：<a href="https://link.zhihu.com/?target=https://github.com/CodingDocs/awesome-cs">https://github.com/CodingDocs/awesome-cs</a></li>
+<li>码云地址：<a href="https://link.zhihu.com/?target=https://gitee.com/SnailClimb/awesome-cs">https://gitee.com/SnailClimb/awesome-cs</a> （Github无法访问或者访问速度比较慢的小伙伴可以看码云上的对应内容）</li>
+</ul>
+<h2 id="Java-基础"><a href="#Java-基础" class="headerlink" title="Java 基础"></a><strong>Java 基础</strong></h2><p>如果你之前没有学习过编程的话，我建议你可以看看视频教程。</p>
+<p>像尚硅谷的 <a href="https://link.zhihu.com/?target=https://www.bilibili.com/video/BV1Kb411W75N">《 Java 基础教程系列》</a>和韩顺平老师的<a href="https://link.zhihu.com/?target=https://www.bilibili.com/video/BV1fh411y7R8">《零基础 30 天学会 Java》</a>就很不错。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-2217d04b42c6f79aa126432672133c25_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-2217d04b42c6f79aa126432672133c25_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>学习过 Java 的朋友，大部分应该都看过韩老师的课程吧！韩老师毕业于清华大学，录制的视频课程质量都非常高。内容易懂，并且不失严谨。</p>
+<p>韩老师的<a href="https://link.zhihu.com/?target=https://www.bilibili.com/video/BV1fh411y7R8">《零基础 30 天学会 Java》</a>系列不光会教你 Java 基础，还会帮你建立编程思想，让你知道学习了 Java 之后，你可以从事什么工作。</p>
+<p>看视频的同时，配套一本好书也是非常有作用的。</p>
+<p><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/2000732/">《Head First Java》</a></strong> 这本书在是入门 Java 的很不错的书籍 。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-d264e3d06d0f86175c542c60a032fea4_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-d264e3d06d0f86175c542c60a032fea4_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>《Head First Java》这本书的内容很轻松有趣，可以说是我学习编程初期最喜欢的几本书之一了。同时，这本书也是我的 Java 启蒙书籍。我在学习 Java 的初期多亏了这本书的帮助，自己才算是跨进 Java 语言的大门。</p>
+<p>我觉得我在 Java 这块能够坚持下来，这本书有很大的功劳。我身边的的很多朋友学习 Java 初期都是看的这本书。</p>
+<p>有很多小伙伴就会问了：<strong>这本书适不适合编程新手阅读呢？</strong></p>
+<p>我个人觉得这本书还是挺适合编程新手阅读的，毕竟是 “Head First” 系列。</p>
+<p><img src="https://pic3.zhimg.com/50/v2-66d3ede459a86d010402186346189af1_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic3.zhimg.com/80/v2-66d3ede459a86d010402186346189af1_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/34898994/">《Java 核心技术卷 1+卷 2》</a></strong> 这两本书也非常不错。不过，这两本书的内容很多，全看的话比较费时间。我现在是把这两本书当做工具书来用，就比如我平时写文章的时候，碰到一些 Java 基础方面的问题，经常就翻看这两本来当做参考！</p>
+<p>我当时在大学的时候就买了两本放在寝室，没事的时候就翻翻。建议有点 Java 基础之后再读，介绍的还是比较深入和全面的，非常推荐。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-bc98859a3b5e17b38c9d4606c1cd3ffd_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-bc98859a3b5e17b38c9d4606c1cd3ffd_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/2130190/">《Java 编程思想 》</a></strong> 这本书被很多人称之为 Java 领域的圣经（*感觉有点过了<del>~</del>*）。不太推荐编程初学者阅读，有点劝退的味道，稍微有点基础后阅读更好。</p>
+<p>我第一次看的时候还觉得有点枯燥，那时候还在上大二，看了 1/3 就没看下去了。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-e14d41b9f1dd4c9184466bb94c59401b_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-e14d41b9f1dd4c9184466bb94c59401b_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>另外，Java 8 算是一个里程碑式的版本，现在一般企业还是用 Java 8 比较多。掌握 Java 8 的一些新特性比如 Lambda、Strean API 还是挺有必要的。这块的话，我推荐 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/26772632/">《Java 8 实战》</a></strong> 这本书。</p>
+<p>学完 Java 基础之后，你可以用自己学的东西实现一个简单的 Java 程序，也可以尝试用 Java 解决一些编程问题，以此来将自己学到的东西付诸于实践。</p>
+<p>不太建议学习 Java 基础的之后通过做游戏来巩固。为什么培训班喜欢通过这种方式呢？说白点就是为了找到你的 G 点。新手学习完 Java 基础后做游戏一般是不太现实的，还不如找一些简单的程序问题解决一下比如简单的算法题。</p>
+<p>记得多总结！打好基础！把自己重要的东西都记录下来。 API 文档放在自己可以看到的地方，以备自己可以随时查阅。为了能让自己写出更优秀的代码，《Effective Java》、《重构》 这两本书没事也可以看</p>
+<h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a><strong>并发</strong></h2><p>多线程这部分内容稍微会比较难以理解和实践。如果你刚学完 Java 基础的话，我建议你学习并发这部分内容的时候，可以先简单地了解一下基础知识比如线程和进程的对比。到了后面，你对于 Java 了解的更深了之后，再回来仔细看看这部分的内容。</p>
+<p>下面是一些我比较推荐的书籍。</p>
+<p><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/30351286/">《Java 并发编程之美》</a></strong></p>
+<p><img src="https://pic1.zhimg.com/50/v2-2ca1ce12697e4368246b124cc5ebf295_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-2ca1ce12697e4368246b124cc5ebf295_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p><em>这本书还是非常适合我们用来学习 Java 多线程的。这本书的讲解非常通俗易懂，作者从并发编程基础到实战都是信手拈来。</em></p>
+<p>另外，这本书的作者加多自身也会经常在网上发布各种技术文章。这本书也是加多大佬这么多年在多线程领域的沉淀所得的结果吧！他书中的内容基本都是结合代码讲解，非常有说服力！</p>
+<p><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/30358019/">《实战 Java 高并发程序设计》</a></strong></p>
+<p><img src="https://pic2.zhimg.com/50/v2-c83749f4bc91edbb131681d9f94f821f_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-c83749f4bc91edbb131681d9f94f821f_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这个是我第二本要推荐的书籍，比较适合作为多线程入门/进阶书籍来看。这本书内容同样是理论结合实战，对于每个知识点的讲解也比较通俗易懂，整体结构也比较清。</p>
+<p><strong><a href="https://link.zhihu.com/?target=https://github.com/RedSpider1/concurrent">《深入浅出 Java 多线程》</a></strong></p>
+<p><img src="https://pic2.zhimg.com/50/v2-b477244d7b3229167ea31aa2e16e3302_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-b477244d7b3229167ea31aa2e16e3302_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这本书是几位大厂的大佬开源的。</p>
+<p>这几位作者为了写好《深入浅出 Java 多线程》这本书阅读了大量的 Java 多线程方面的书籍和博客，然后再加上他们的经验总结、Demo 实例、源码解析，最终才形成了这本书。</p>
+<p>这本书的质量也是非常过硬！给作者们点个赞！这本书有统一的排版规则和语言风格、清晰的表达方式和逻辑。并且每篇文章初稿写完后，作者们就会互相审校，合并到主分支时所有成员会再次审校，最后再通篇修订了三遍。</p>
+<p><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/35013531/">《Java 并发实现原理：JDK 源码剖析》</a></strong></p>
+<p><img src="https://pic2.zhimg.com/50/v2-9da660b9c3acde7a185d342c0dbbbb09_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-9da660b9c3acde7a185d342c0dbbbb09_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这本书是去年也就是 2020 年新出的，所以，现在知道的人还不是很多。</p>
+<p>这本书主要是对 Java Concurrent 包中一些比较重要的源码进行了讲解，另外，像 JMM、happen-before、CAS 等等比较重要的并发知识这本书也都会一并介绍到。</p>
+<p>不论是你想要深入研究 Java 并发，还是说要准备面试，你都可以看看这本书。</p>
+<p>下面是我总结的一些关于并发的小问题，你可以拿来自测：</p>
+<ol>
+<li>什么是线程和进程? 线程与进程的关系,区别及优缺点？</li>
+<li>说说并发与并行的区别?</li>
+<li>为什么要使用多线程呢?</li>
+<li>使用多线程可能带来什么问题?（内存泄漏、死锁、线程不安全等等）</li>
+<li>创建线程有哪几种方式？（a.继承 Thread 类;b.实现 Runnable 接口;c. 使用 Executor 框架;d.使用 FutureTask）</li>
+<li>说说线程的生命周期和状态?</li>
+<li>什么是上下文切换?</li>
+<li>什么是线程死锁?如何避免死锁?</li>
+<li>说说 sleep() 方法和 wait() 方法区别和共同点?</li>
+<li>Java 内存模型（JMM）、重排序与 happens-before 原则了解吗？</li>
+<li>synchronized 关键字、volatile 关键字</li>
+<li>ThreadLocal 有啥用（解决了什么问题）？怎么用？原理了解吗？内存泄露问题了解吗？</li>
+<li>为什么要用线程池？ThreadPoolExecutor 类的重要参数了解吗？ThreadPoolExecutor 饱和策略了解吗？线程池原理了解吗？几种常见的线程池了解吗？为什么不推荐使用FixedThreadPool？如何设置线程池的大小？</li>
+<li>AQS 了解么？原理？AQS 常用组件：Semaphore (信号量)、CountDownLatch （倒计时器） CyclicBarrier(循环栅栏)</li>
+<li>ReentrantLock 、 ReentrantReadWriteLock 、StampedLock（JDK8）</li>
+<li>CAS 了解么？原理？</li>
+<li>Atomic 原子类</li>
+<li>并发容器：ConcurrentHashMap 、 CopyOnWriteArrayList 、 ConcurrentLinkedQueue BlockingQueue 、ConcurrentSkipListMap</li>
+<li>Future 和 CompletableFuture</li>
+<li>……</li>
+</ol>
+<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a><strong>JVM</strong></h2><p>对于 Java 程序员来说，JVM 帮助我们做了很多事情比如内存管理、垃圾回收等等。在 JVM 的帮助下，我们的程序出现内存泄漏这些问题的概率相对来说是比较低的。但是，这并不代表我们在日常开发工作中不会遇到。万一你在工作中遇到了 OOM 问题，你至少要知道如何去排查和解决问题吧！</p>
+<p>并且，就单纯从面试角度来说，JVM 是 Java 后端面试（大厂）中非常重要的一环。不论是应届还是社招，面试国内的一些大厂，你都会被问到很多 JVM 相关的问题（应届的话侧重理论，社招实践）。</p>
+<p>只有搞懂了 JVM 才有可能真正把 Java 语言“吃透”。学习 JVM 这部分的内容，一定要注意要实战和理论结合。</p>
+<p>书籍的话，**<a href="https://link.zhihu.com/?target=https://book.douban.com/subject/34907497/">《深入理解 Java 虚拟机》</a>** 这本书是首先要推荐的。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-ef98840c238a19a70318ae9fa3ec7bf5_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-ef98840c238a19a70318ae9fa3ec7bf5_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这本书就一句话形容：<strong>国产书籍中的战斗机，实实在在的优秀！</strong> （真心希望国内能有更多这样的优质书籍出现！加油！ ）</p>
+<p>这本书的第三版去年年底已经出来了，新增了很多实在的内容比如 ZGC 等新一代 GC 的原理剖析。目前豆瓣上是 9.6 的高分，  不   我就不多说了！</p>
+<p>不论是你面试还是你想要在 Java 领域学习的更深，你都离不开这本书籍。这本书不光要看，你还要多看几遍，里面都是干货。这本书里面还有一些需要自己实践的东西，我建议你也跟着实践一下。</p>
+<p>类似的书籍还有 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/26354292/">《实战 Java 虚拟机》</a>**、</strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/34935105/">《虚拟机设计与实现:以 JVM 为例》</a>** ，这两本都是非常不错的！</p>
+<p><img src="https://pic4.zhimg.com/50/v2-114035a0430694dd2562e5a136aa410b_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-114035a0430694dd2562e5a136aa410b_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>如果你对实战比较感兴趣，想要自己动手写一个简易的 JVM 的话，可以看看 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/26802084/">《自己动手写 Java 虚拟机》</a></strong> 这本书。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-171e35db906d0d4b330afe176a6ed823_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-171e35db906d0d4b330afe176a6ed823_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>书中的代码是基于 Go 语言实现的，搞懂了原理之后，你可以使用 Java 语言模仿着写一个，也算是练练手！ 如果你当前没有能力独立使用 Java 语言模仿着写一个的话，你也可以在网上找到很多基于 Java 语言版本的实现，比如<a href="https://link.zhihu.com/?target=https://zachaxy.github.io/tags/JVM/">《zachaxy 的手写 JVM 系列》</a> 。</p>
+<p>这本书目前在豆瓣有 8.2 的评分，我个人觉得张秀宏老师写的挺好的，这本书值得更高的评分。</p>
+<p>另外，R 大在豆瓣发的<a href="https://link.zhihu.com/?target=https://www.douban.com/doulist/2545443/">《从表到里学习 JVM 实现》</a>这篇文章中也推荐了很多不错的 JVM 相关的书籍，推荐小伙伴们去看看。</p>
+<p>再推荐两个视频给喜欢看视频学习的小伙伴。</p>
+<p>第 1 个是尚硅谷的宋红康老师讲的<a href="https://link.zhihu.com/?target=https://www.bilibili.com/video/BV1PJ411n7xZ">《JVM 全套教程》</a>。这个课程的内容非常硬，一共有接近 400 小节。</p>
+<p>课程的内容分为 3 部分：</p>
+<ol>
+<li>《内存与垃圾回收篇》</li>
+<li>《字节码与类的加载篇》</li>
+<li>《性能监控与调优篇》</li>
+</ol>
+<p><img src="https://pic3.zhimg.com/50/v2-4d2a238642281bdf1b8bda06b34eb8be_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic3.zhimg.com/80/v2-4d2a238642281bdf1b8bda06b34eb8be_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>第 2 个是你假笨大佬的 <strong><a href="https://link.zhihu.com/?target=https://club.perfma.com/course/438755/list">《JVM 参数【Memory 篇】》</a></strong> 教程，很厉害了！</p>
+<p><img src="https://pic1.zhimg.com/50/v2-30067f8554c7bd6089a87e971d14b069_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-30067f8554c7bd6089a87e971d14b069_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>下面是我总结的一些关于 JVM 的小问题，你可以拿来自测：</p>
+<ol>
+<li>什么是虚拟机？</li>
+<li>Java 内存区域是怎么划分的？大对象放在哪个内存区域？</li>
+<li>垃圾回收有哪些算法？GC 的流程</li>
+<li>什么是类加载？何时类加载？类加载流程？</li>
+<li>知道哪些类加载器。类加载器之间的关系？</li>
+<li>类加载器的双亲委派了解么？ 结合 Tomcat 说一下双亲委派（Tomcat 如何打破双亲委托机制？…）。</li>
+<li>常见调优参数有哪些？</li>
+<li>……</li>
+</ol>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a><strong>数据库</strong></h2><p>我们网站或 者 APP 的数据都是需要使用数据库来存储数据的。</p>
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a><strong>MySQL</strong></h3><p>一般企业项目开发中，使用 MySQL 比较多。如果你要学习 MySQL 的话，可以看下面这 3 本书籍：</p>
+<ul>
+<li><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/3354490/">《MySQL 必知必会》</a></strong> ：非常薄！非常适合 MySQL 新手阅读，很棒的入门教材。</li>
+<li><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/23008813/">《高性能 MySQL》</a></strong> ： MySQL 领域的经典之作！学习 MySQL 必看！属于进阶内容，主要教你如何更好地使用 MySQL 。既有有理论，又有实践！如果你没时间都看一遍的话，拿我建议第 5 章（创建高性能的索引） 、第 6 章（查询性能优化） 你你一定要认真看一下。</li>
+<li><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/24708143/">《MySQL 技术内幕》</a></strong> ：你想深入了解 MySQL 存储引擎的话，看这本书准没错！</li>
+</ul>
+<p><img src="https://pic4.zhimg.com/50/v2-3446cfaa214394ec7137ba34ca5362ba_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-3446cfaa214394ec7137ba34ca5362ba_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>视频的话，你可以看看动力节点的 <a href="https://link.zhihu.com/?target=https://www.bilibili.com/video/BV1fx411X7BD">《MySQL 数据库教程视频》</a>。这个视频基本上把 MySQL 的相关一些入门知识给介绍完了。</p>
+<p>学习了 MySQL 之后，务必确保自己掌握下面这些知识点：</p>
+<ol>
+<li>MySQL 常用命令 ：</li>
+</ol>
+<ul>
+<li>安全：登录、增加/删除用户、备份数据和还原数据</li>
+<li>数据库操作： 建库建表/删库删表、用户权限分配</li>
+<li>……</li>
+</ul>
+<ol>
+<li>MySQL 中常用的数据类型、字符集编码</li>
+<li>MySQL 简单查询、条件查询、模糊查询、多表查询以及如何对查询结果排序、过滤、分组……</li>
+<li>MySQL 中使用索引、视图、存储过程、游标、触发器</li>
+<li>……</li>
+</ol>
+<p>如果你想让自己更加了解 MySQL ，同时也是为了准备面试的话，下面这些知识点要格外注意：</p>
+<ol>
+<li>索引：索引优缺点、B 树和 B+树、聚集索引与非聚集索引、覆盖索引</li>
+<li>事务：事务、数据库事务、ACID、并发事务、事务隔离级别</li>
+<li>存储引擎（MyISAM 和 InnoDB）</li>
+<li>锁机制与 InnoDB 锁算法</li>
+</ol>
+<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a><strong>Redis</strong></h3><p><strong>Redis 就是一个使用 C 语言开发的数据库</strong>，不过与传统数据库不同的是 <strong>Redis 的数据是存在内存中的</strong> ，也就是它是内存数据库，所以读写速度非常快，因此 Redis 被广泛应用于缓存方向。</p>
+<p>如果你要学习 Redis 的话，强烈推荐 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/25900156/">《Redis 设计与实现》</a></strong> 和 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/26612779/">《Redis 实战》</a></strong> 这两本书。另外，**<a href="https://link.zhihu.com/?target=https://book.douban.com/subject/26971561/">《Redis 开发与运维》</a>** 这本书也非常不错，既有基础介绍，又有一线开发运维经验分享。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-6fe8373526af0107bcda6a73b2e9a801_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-6fe8373526af0107bcda6a73b2e9a801_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>下面是我总结的一些关于并发的小问题，你可以拿来自测：</p>
+<ol>
+<li>Redis 和 Memcached 的区别和共同点</li>
+<li>为什么要用 Redis/为什么要用缓存？</li>
+<li>Redis 常见数据结构以及使用场景分析</li>
+<li>Redis 没有使用多线程？为什么不使用多线程？Redis6.0 之后为何引入了多线程？</li>
+<li>Redis 给缓存数据设置过期时间有啥用？</li>
+<li>Redis 是如何判断数据是否过期的呢？</li>
+<li>过期的数据的删除策略了解么？</li>
+<li>Redis 内存淘汰机制了解么？</li>
+<li>Redis 持久化机制(怎么保证 Redis 挂掉之后再重启数据可以进行恢复)</li>
+<li>Redis 缓存穿透、缓存雪崩？</li>
+<li>如何保证缓存和数据库数据的一致性？</li>
+<li>……</li>
+</ol>
+<h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a><strong>常用工具</strong></h2><p>非常重要！非常重要！特别是 Git 和 Docker。</p>
+<p>除了下面这些工具之外，我强烈建议你一定要搞懂 Github 的使用。一些使用 Github 的小技巧，你可以看<a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/tools/Github%E6%8A%80%E5%B7%A7">《Github 小技巧》</a>这篇文章。</p>
+<h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a><strong>IDEA</strong></h3><p>俗话说：“工欲善其事，必先利其器 !”。选择一款好的开发工具对于我们高效率编码非常有帮助！</p>
+<p>常用的 Java 开发工具就 Eclipse 和 IDEA。就我个人而言 IDEA 是最适合 Java 开发者的 IDE 。</p>
+<p>建议你要熟悉 IDEA 的基本操作以及常用快捷。你可以通过 Github 上的开源教程 <a href="https://link.zhihu.com/?target=https://github.com/judasn/IntelliJ-IDEA-Tutorial">《IntelliJ IDEA 简体中文专题教程》</a> 来学习 IDEA 的相关使用。</p>
+<p>除了 IDEA 自身对编码优秀的支持（比如智能上下文提示）之外，IDEA 中还有丰富的插件来帮助我们高效开发。<a href="https://link.zhihu.com/?target=https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2OTA0Njk0OA==&action=getalbum&album_id=1319419426898329600%23wechat_redirect">《IDEA 插件》</a> 这个系列专辑中推荐了很多实用 IDEA 必备的插件！</p>
+<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a><strong>Maven</strong></h3><p>强烈建议学习常用框架之前可以提前花几天时间学习一下<strong>Maven</strong>的使用。（到处找 Jar 包，下载 Jar 包是真的麻烦费事，使用 Maven 可以为你省很多事情）。</p>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a><strong>Git</strong></h3><p>Git 技能对于程序员来说也是必备的！试着在学习的过程中将自己的代码托管在 Github 上，有一个漂亮的 Github 主页在求职面试中是十分加分的。并且，现在的企业都是基于 Git 在 GitHub 或 GitLab 平台上做版本控制。</p>
+<p>学习 Git 的话，强烈推荐给大家一个可以交互式学习 Git 的网站 <a href="https://link.zhihu.com/?target=https://learngitbranching.js.org/">Learn Git Branching</a>。效果真的非常非常棒，通过游戏的方式让你学习 Git 的常见操作。</p>
+<p>整个教程分为很多关，每一关都有非常详细的指导，还会有详细的动图展示结果。并且，你做错了之后还可以使用 reset 命令从头开始。</p>
+<p><img src="https://pic4.zhimg.com/50/v2-964b02483882588923780a75d9775ab8_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-964b02483882588923780a75d9775ab8_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>如果你是在不知道答案的话，还可以使用 show solution 命令查看答案。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-1924f6df27c62026f3d531e7de843fb4_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-1924f6df27c62026f3d531e7de843fb4_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这种即时反馈的学习让过程变得有趣！真心感谢这个网站的作者，太爱了！</p>
+<p>另外，你可以看看 Github 上开源的这篇 <a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/tools/Git">《Git 极简入门》</a> ，像版本控制和 Git 的相关概念、Git 常见操作这篇文章都有介绍到。</p>
+<p>如果想要详细了解 Git 的话，<a href="https://link.zhihu.com/?target=https://git-scm.com/book/zh/v2">Git 官方文档教程</a>是肯定要看的，介绍的非常全面，并且有中文版！</p>
+<p><img src="https://pic1.zhimg.com/50/v2-0b2163d2c8064c33a034d9bb31ced577_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-0b2163d2c8064c33a034d9bb31ced577_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p><a href="https://link.zhihu.com/?target=https://www.progit.cn/">《Pro Git》</a>这本书也非常不错，还有中文版，内容非常全面，硬核！</p>
+<p><img src="https://pic1.zhimg.com/50/v2-ce008dd1ba37fc12e91e9adf63f87fe6_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-ce008dd1ba37fc12e91e9adf63f87fe6_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p><img src="https://pic4.zhimg.com/50/v2-566dccf603d7708a831be89f993c8c3d_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-566dccf603d7708a831be89f993c8c3d_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>如果你比较喜欢看视频教程的话，可以看看极客时间的<a href="https://link.zhihu.com/?target=http://gk.link/a/10qcT">《玩转 Git 三剑客》</a>，课程的作者是携程代码平台负责人苏玲，讲的挺不错的！</p>
+<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><strong>Docker</strong></h3><p>传统的开发流程中，我们的项目通常需要使用 MySQL、Redis、FastDFS 等等环境，这些环境都是需要我们手动去进行下载并配置的，安装配置流程极其复杂，而且不同系统下的操作也不一样。</p>
+<p>Docker 的出现完美地解决了这一问题，我们可以在容器中安装 MySQL、Redis 等软件环境，使得应用和环境架构分开，它的优势在于：</p>
+<ol>
+<li>一致的运行环境，能够更轻松地迁移</li>
+<li>对进程进行封装隔离，容器与容器之间互不影响，更高效地利用系统资源</li>
+<li>可以通过镜像复制多个一致的容器</li>
+</ol>
+<p>Docker 常见概念解读，可以看这篇 Github 上开源的这篇<a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/tools/Docker">《Docker 基本概念解读》</a> ，从零到上手实战可以看<a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/tools/Docker%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98">《Docker 从入门到上手干事》</a>这篇文章，内容非常详细！</p>
+<p>另外，再给大家推荐一本质量非常高的开源书籍<a href="https://link.zhihu.com/?target=https://yeasy.gitbook.io/docker_practice/introduction/why">《Docker 从入门到实践》</a> ，这本书的内容非常新，毕竟书籍的内容是开源的，可以随时改进。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-f5d0bf0587f742c9a65f985e7fc12f93_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-f5d0bf0587f742c9a65f985e7fc12f93_1440w.jpg?source=1940ef5c" alt="img"></p>
+<h2 id="常用框架"><a href="#常用框架" class="headerlink" title="常用框架"></a><strong>常用框架</strong></h2><p><a href="https://link.zhihu.com/?target=https://t.1yb.co/mBsy">2021 最新Java实战项目源码打包下载t.1yb.co<img src="https://pic2.zhimg.com/v2-5c70f2d4123edf16afab8b4bed070b4d_180x120.jpg" alt="图标"></a></p>
+<h3 id="Spring-SpringBoot"><a href="#Spring-SpringBoot" class="headerlink" title="Spring/SpringBoot"></a><strong>Spring/SpringBoot</strong></h3><p><strong>Spring 和 SpringBoot 真的很重要！</strong></p>
+<p>一定要搞懂 AOP 和 IOC 这两个概念。Spring 中 bean 的作用域与生命周期、SpringMVC 工作原理详解等等知识点都是非常重要的，一定要搞懂。</p>
+<p>企业中做 Java 后端，你一定离不开 SpringBoot ，这个是必备的技能了！一定一定一定要学好！</p>
+<p>像 SpringBoot 和一些常见技术的整合你也要知识怎么做，比如 SpringBoot 整合 MyBatis、 ElasticSearch、SpringSecurity、Redis 等等。</p>
+<p>学习 Spring 的话，可以多看看 **<a href="https://link.zhihu.com/?target=https://spring.io/projects/spring-framework%23learn">《Spring 的官方文档》</a>**，写的很详细。你可以在这里找到 Spring 全家桶的学习资源。</p>
+<p><img src="https://pic4.zhimg.com/50/v2-617c73716c914ce3ee4c9a32be97daa3_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-617c73716c914ce3ee4c9a32be97daa3_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>你也可以把 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/34949443/">《Spring 实战》</a></strong> 这本书作为学习 Spring 的参考资料。 这本书还是比较新的，目前已经出到了第 5 版，基于 Spring 5 来讲。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-27116d84a7876e40fe9e008d0bd1927e_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-27116d84a7876e40fe9e008d0bd1927e_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>了解了 Spring 中的一些常见概念和基本用法之后，你就可以开始学习 Spring Boot 了。</p>
+<p>当然了，Spring 其实并不是学习 Spring Boot 的前置基础，相比于 Spring 来说，Spring Boot 要更容易上手一些！如果你只是想使用 Spring Boot 来做项目的话，直接学 Spring Boot 就可以了。</p>
+<p>不过，我建议你在学习 Spring Boot 之前，可以看看 <strong><a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/framework/spring/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93">《Spring 常见问题总结》</a></strong> 。这些问题都是 Spring 比较重要的知识点，也是面试中经常会被问到的。</p>
+<p>学习 Spring Boot 的话，还是建议可以多看看  **<a href="https://link.zhihu.com/?target=https://spring.io/projects/spring-boot%23learn">《Spring Boot 的官方文档》</a>**，写的很详细。</p>
+<p>你也可以把 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/26857423/">《Spring Boot 实战》</a></strong> 这本书作为学习 Spring Boot 的参考资料。</p>
+<p><img src="https://pic4.zhimg.com/50/v2-ccd869cdada64fb595d5e2c524180eba_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-ccd869cdada64fb595d5e2c524180eba_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这本书的整体质量实际一般，你当做参考书来看就好了!</p>
+<p>相比于 《Spring Boot 实战》这本书，我更推荐国人写的 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/34894533/">《Spring Boot 实战派》</a></strong> 。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-347c02b27d1c8074dd6423c11c867b95_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-347c02b27d1c8074dd6423c11c867b95_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这本书使用的 Spring Boot 2.0+的版本，还算比较新。整本书采用“知识点+实例”的形式编写，书籍的最后两章还有 2 个综合性的企业实战项目：</p>
+<ul>
+<li>开发企业级通用的后台系统</li>
+<li>实现一个类似“京东”的电子商务商城</li>
+</ul>
+<p>作者在注意实战的过程中还不忘记对于一些重要的基础知识的讲解。</p>
+<p>如果你想专研 Spring Boot 底层原理的话，可以看看 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/33390560/">《Spring Boot 编程思想（核心篇）》</a></strong> 。</p>
+<p><img src="https://pic3.zhimg.com/50/v2-2c3fd8e3b31d9020d78e49fac4ecb91a_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic3.zhimg.com/80/v2-2c3fd8e3b31d9020d78e49fac4ecb91a_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这本书稍微有点啰嗦，不过，原理介绍的比较清楚（不适合初学者）。</p>
+<p>如果你比较喜欢看视频的话，推荐尚硅谷雷神的**<a href="https://link.zhihu.com/?target=https://www.bilibili.com/video/BV19K4y1L7MT">《2021 版 Spring Boot2 零基础入门》</a>** 。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-8edcdf9da09d431d5a827737df1326f8_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-8edcdf9da09d431d5a827737df1326f8_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这可能是全网质量最高并且免费的 Spring Boot 教程了，好评爆炸！</p>
+<p>另外，Spring Boot 这块还有很多优质的开源教程，我已经整理好放到 <a href="https://link.zhihu.com/?target=https://github.com/CodingDocs/awesome-java%23springboot">awesome-java@SpringBoot</a> 中了。</p>
+<p><img src="https://pic3.zhimg.com/50/v2-bd98e686b9da09ebbe25bfc843364147_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic3.zhimg.com/80/v2-bd98e686b9da09ebbe25bfc843364147_1440w.jpg?source=1940ef5c" alt="img"></p>
+<h3 id="Netty"><a href="#Netty" class="headerlink" title="Netty"></a><strong>Netty</strong></h3><p>但凡涉及到网络通信就必然必然离不开网络编程。 Netty 目前作为 Java 网络编程最热门的框架，毫不夸张地说是每个 Java 程序员必备的技能之一。</p>
+<p><strong>为什么说学好 Netty 很有必要呢？</strong></p>
+<ol>
+<li>Netty 基于 NIO （NIO 是一种同步非阻塞的 I/O 模型，在 Java 1.4 中引入了 NIO ）。使用 Netty 可以极大地简化并简化了 TCP 和 UDP 套接字服务器等网络编程,并且性能以及安全性等很多方面都非常优秀。</li>
+<li>我们平常经常接触的 Dubbo、RocketMQ、Elasticsearch、gRPC、Spark、Elasticsearch 等等热门开源项目都用到了 Netty。</li>
+<li>大部分微服务框架底层涉及到网络通信的部分都是基于 Netty 来做的，比如说 Spring Cloud 生态系统中的网关 Spring Cloud Gateway 。</li>
+</ol>
+<p>下面是一些比较推荐的书籍/专栏。</p>
+<p><strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/27038538/">《Netty 实战》</a></strong></p>
+<p><img src="https://pic4.zhimg.com/50/v2-8a4c942af44520f5d2c99c3d6f37b4dc_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-8a4c942af44520f5d2c99c3d6f37b4dc_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这本书可以用来入门 Netty ，内容从 BIO 聊到了 NIO、之后才详细介绍为什么有 Netty 、Netty 为什么好用以及 Netty 重要的知识点讲解。</p>
+<p>这本书基本把 Netty 一些重要的知识点都介绍到了，而且基本都是通过实战的形式讲解。</p>
+<p><strong>《Netty 进阶之路：跟着案例学 Netty》</strong></p>
+<p><img src="https://pic2.zhimg.com/50/v2-214ed872bb89b37b2b3c06b4c8c022e5_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-214ed872bb89b37b2b3c06b4c8c022e5_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>内容都是关于使用 Netty 的实践案例比如内存泄露这些东西。如果你觉得你的 Netty 已经完全入门了，并且你想要对 Netty 掌握的更深的话，推荐你看一下这本书。</p>
+<p><strong>《Netty 入门与实战：仿写微信 IM 即时通讯系统》</strong></p>
+<p><img src="https://pic2.zhimg.com/50/v2-31d3de0843d01caea292fc461ca00d55_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-31d3de0843d01caea292fc461ca00d55_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>通过一个基于 Netty 框架实现 IM 核心系统为引子，带你学习 Netty。整个小册的质量还是很高的，即使你没有 Netty 使用经验也能看懂。</p>
+<h2 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a><strong>搜索引擎</strong></h2><p>搜索引擎用于提高搜索效率，功能和浏览器搜索引擎类似。比较常见的搜索引擎是 Elasticsearch（推荐） 和 Solr。</p>
+<p>如果你要学习 Elasticsearch 的话，<a href="https://link.zhihu.com/?target=http://www.elasticsearch.cn/">Elastic 中文社区</a> 以及 <a href="https://link.zhihu.com/?target=https://www.elastic.co/cn/blog/">Elastic 官方博客</a> 都是非常不错的资源，上面会分享很多具体的实践案例。</p>
+<p>除此之外，极客时间的<a href="https://link.zhihu.com/?target=http://gk.link/a/10bcT">《Elasticsearch 核心技术与实战》</a>这门课程非常赞！这门课基于 Elasticsearch 7.1 版本讲解，比较新。并且，作者是 eBay 资深技术专家，有 20 年的行业经验，课程质量有保障！</p>
+<p><img src="https://pic2.zhimg.com/50/v2-057c22f1e83338a78f2e6b22e5da777d_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-057c22f1e83338a78f2e6b22e5da777d_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>如果你想看书的话，可以考虑一下 《Elasticsearch 实战》 这本书。不过，需要说明的是，这本书中的 Elasticsearch 版本比较老，你可以将其作为一个参考书籍来看，有一些原理性的东西可以在上面找找答案。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-d2048059f45eac3a26001579c7826d8f_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-d2048059f45eac3a26001579c7826d8f_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>如果你想进一步深入研究 Elasticsearch 原理的话，可以看看张超老师的《Elasticsearch 源码解析与优化实战》这本书。这是市面上唯一一本写 Elasticsearch 源码的书。</p>
+<p><img src="https://pic3.zhimg.com/50/v2-85d4049c868a55ecbc76ae6c329eaebf_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic3.zhimg.com/80/v2-85d4049c868a55ecbc76ae6c329eaebf_1440w.jpg?source=1940ef5c" alt="img"></p>
+<h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a><strong>分布式</strong></h2><p>下面我们开始学习分布式以及高并发、高可用了。</p>
+<p>这块内容的话，对于每一个知识点没有特定的书籍。我就推荐 2 本我觉得还不错的书籍吧！这两把书籍基本把下面涉及到的知识点给涵盖了。</p>
+<p>第一本是李运华老师的**<a href="https://link.zhihu.com/?target=https://book.douban.com/subject/30335935/">《从零开始学架构》</a>** 。</p>
+<p><img src="https://pic4.zhimg.com/50/v2-145c577cd6856daca487eec730ffc394_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-145c577cd6856daca487eec730ffc394_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这本书对应的有一个极客时间的专栏—<a href="https://link.zhihu.com/?target=http://gk.link/a/10pKZ">《从零开始学架构》</a>，里面的很多内容都是这个专栏里面的，两者买其一就可以了。</p>
+<p>第二本是余老师的 <strong><a href="https://link.zhihu.com/?target=https://book.douban.com/subject/30443578/">《软件架构设计：大型网站技术架构与业务架构融合之道》</a></strong> 。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-fe7286730c9ea0f94196b5e9f1dd3e07_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-fe7286730c9ea0f94196b5e9f1dd3e07_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>事务与锁、分布式（CAP、分布式事务……）、高并发、高可用这本书都有介绍到。值得推荐！良心好书！</p>
+<h3 id="理论"><a href="#理论" class="headerlink" title="理论"></a><strong>理论</strong></h3><h3 id="CAP-理论"><a href="#CAP-理论" class="headerlink" title="CAP 理论"></a><strong>CAP 理论</strong></h3><p>CAP 也就是 Consistency（一致性）、Availability（可用性）、Partition Tolerance（分区容错性） 这三个单词首字母组合。</p>
+<p>关于 CAP 的详细解读请看：<a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/distributed-system/CAP%E7%90%86%E8%AE%BA">《CAP 理论解读》</a>。</p>
+<h3 id="BASE-理论"><a href="#BASE-理论" class="headerlink" title="BASE 理论"></a><strong>BASE 理论</strong></h3><p><strong>BASE</strong> 是 <strong>Basically Available（基本可用）</strong> 、<strong>Soft-state（软状态）</strong> 和 <strong>Eventually Consistent（最终一致性）</strong> 三个短语的缩写。BASE 理论是对 CAP 中一致性和可用性权衡的结果，其来源于对大规模互联网系统分布式实践的总结，是基于 CAP 定理逐步演化而来的，它大大降低了我们对系统的要求。</p>
+<p>关于 CAP 的详细解读请看：<a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/distributed-system/BASE%E7%90%86%E8%AE%BA">《BASE 理论解读》</a>。</p>
+<h3 id="Paxos-算法和-Raft-算法"><a href="#Paxos-算法和-Raft-算法" class="headerlink" title="Paxos 算法和 Raft 算法"></a><strong>Paxos 算法和 Raft 算法</strong></h3><p><strong>Paxos 算法</strong>诞生于 1990 年，这是一种解决分布式系统一致性的经典算法 。但是，由于 Paxos 算法非常难以理解和实现，不断有人尝试简化这一算法。到了 2013 年才诞生了一个比 Paxos 算法更易理解和实现的分布式一致性算法—<strong>Raft 算法</strong>。</p>
+<h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a><strong>RPC</strong></h3><p>RPC 让调用远程服务调用像调用本地方法那样简单。</p>
+<p>Dubbo 是一款国产的 RPC 框架，由阿里开源。相关阅读：</p>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/distributed-system/rpc/Dubbo">Dubbo 常见问题总结</a></li>
+<li><a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/distributed-system/rpc/%E6%9C%8D%E5%8A%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E8%B0%83%E7%94%A8%E4%B8%BA%E5%95%A5%E4%B8%8D%E7%9B%B4%E6%8E%A5%E7%94%A8HTTP%E8%80%8C%E7%94%A8RPC">服务之间的调用为啥不直接用 HTTP 而用 RPC？</a></li>
+</ul>
+<h3 id="服务注册与发现"><a href="#服务注册与发现" class="headerlink" title="服务注册与发现"></a><strong>服务注册与发现</strong></h3><p>Eureka、Zookeeper、Consul、Nacos 都可以提供服务注册与发现的功能。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-c5458b7d70c752fcaa3f42e1ee1aa2ea_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-c5458b7d70c752fcaa3f42e1ee1aa2ea_1440w.jpg?source=1940ef5c" alt="img"></p>
+<h3 id="API-网关"><a href="#API-网关" class="headerlink" title="API 网关"></a><strong>API 网关</strong></h3><p>网关主要用于请求转发、安全认证、协议转换、容灾。</p>
+<p>SpringCloud Gateway 是 Spring Cloud 的一个全新项目，为了取代 Netflix Zuul。</p>
+<h3 id="配置中心"><a href="#配置中心" class="headerlink" title="配置中心"></a><strong>配置中心</strong></h3><p>微服务下，业务的发展一般会导致服务数量的增加，进而导致程序配置（服务地址、数据库参数等等）增多。</p>
+<p>传统的配置文件的方式已经无法满足当前需求，主要有两点原因：一是安全性得不到保障（配置放在代码库中容易泄露）；二是时效性不行 （修改配置需要重启服务才能生效）。</p>
+<p>Spring Cloud Config、Nacos 、Apollo、K8s ConfigMap 都可以用来做配置中心。</p>
+<p>Apollo 和 Nacos 我个人更喜欢。Nacos 使用起来更加顺手，Apollo 在配置管理方面做的更加全面。</p>
+<h3 id="分布式-id"><a href="#分布式-id" class="headerlink" title="分布式 id"></a><strong>分布式 id</strong></h3><p>日常开发中，我们需要对系统中的各种数据使用 ID 唯一表示，比如用户 ID 对应且仅对应一个人，商品 ID 对应且仅对应一件商品，订单 ID 对应且仅对应一个订单。</p>
+<p><img src="https://pic4.zhimg.com/50/v2-21c5fb2a333d04d70ccf2554e4a66995_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-21c5fb2a333d04d70ccf2554e4a66995_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>简单来说，<strong>ID 就是数据的唯一标识</strong>。</p>
+<p>分布式 ID 是分布式系统下的 ID。分布式 ID 不存在与现实生活中，属于计算机系统中的一个概念。</p>
+<p>我简单举一个分库分表的例子。</p>
+<p>我司的一个项目，使用的是单机 MySQL 。但是，没想到的是，项目上线一个月之后，随着使用人数越来越多，整个系统的数据量将越来越大。</p>
+<p>单机 MySQL 已经没办法支撑了，需要进行分库分表（推荐 Sharding-JDBC）。</p>
+<p>在分库之后， 数据遍布在不同服务器上的数据库，数据库的自增主键已经没办法满足生成的主键唯一了。<strong>我们如何为不同的数据节点生成全局唯一主键呢？</strong></p>
+<p><img src="https://pic4.zhimg.com/50/v2-1f699f3733924441f3707926da884744_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-1f699f3733924441f3707926da884744_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>这个时候就需要生成<strong>分布式 ID</strong>了。</p>
+<p>分布式 ID 的解决方案有很多比如 ：</p>
+<ul>
+<li>算法 ：UUID、Snowflake</li>
+<li>开源框架 ： UidGenerator、Leaf 、Tinyid</li>
+</ul>
+<h3 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a><strong>分布式事务</strong></h3><p>微服务架构下，一个系统被拆分为多个小的微服务。</p>
+<p>每个微服务都可能存在不同的机器上，并且每个微服务可能都有一个单独的数据库供自己使用。这种情况下，一组操作可能会涉及到多个微服务以及多个数据库。</p>
+<p>举个例子：电商系统中，你创建一个订单往往会涉及到订单服务（订单数加一）、库存服务（库存减一）等等服务，这些服务会有供自己单独使用的数据库。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-feaa7d9765154fa367bc008444d208c3_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-feaa7d9765154fa367bc008444d208c3_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p><strong>那么如何保证这一组操作要么都执行成功，要么都执行失败呢？</strong></p>
+<p>这个时候单单依靠数据库事务就不行了！我们就需要引入 <strong>分布式事务</strong> 这个概念了！</p>
+<p>常用分布式事务解决方案有 Seata 和 Hmily。</p>
+<ol>
+<li><strong><a href="https://link.zhihu.com/?target=https://seata.io/zh-cn/index.html">Seata</a></strong> :Seata 是一款开源的分布式事务解决方案，致力于在微服务架构下提供高性能和简单易用的分布式事务服务。</li>
+<li><strong><a href="https://link.zhihu.com/?target=https://gitee.com/shuaiqiyu/hmily">Hmily</a></strong> : 金融级分布式事务解决方案</li>
+</ol>
+<h3 id="分布式链路追踪"><a href="#分布式链路追踪" class="headerlink" title="分布式链路追踪"></a><strong>分布式链路追踪</strong></h3><p>不同于单体架构，在分布式架构下，请求需要在多个服务之间调用，排查问题会非常麻烦。我们需要分布式链路追踪系统来解决这个痛点。</p>
+<p>目前分布式链路追踪系统基本都是根据谷歌的《Dapper 大规模分布式系统的跟踪系统》这篇论文发展而来，主流的有 Pinpoint，Skywalking ，CAT（当然也有其他的例如 Zipkin，Jaeger 等产品，不过总体来说不如前面选取的 3 个完成度高）等。</p>
+<p>Zipkin 是 Twitter 公司开源的一个分布式链路追踪工具，Spring Cloud Sleuth 实际是基于 Zipkin 的。</p>
+<p>SkyWalking 是国人吴晟（华为）开源的一款分布式追踪，分析，告警的工具，现在是 Apache 旗下开源项目</p>
+<h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a><strong>微服务</strong></h2><p>微服务的很多东西实际在分布式这一节已经提到了。</p>
+<p>我这里就再补充一些微服务架构中，经常使用到的一些组件。</p>
+<ul>
+<li><strong>声明式服务调用</strong> : Feign</li>
+<li><strong>负载均衡</strong> : Ribbon</li>
+<li>……</li>
+</ul>
+<h2 id="高并发"><a href="#高并发" class="headerlink" title="高并发"></a><strong>高并发</strong></h2><h3 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a><strong>消息队列</strong></h3><p><img src="https://pic2.zhimg.com/50/v2-4903cf7307350d41a16d0277112d5424_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-4903cf7307350d41a16d0277112d5424_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>消息队列在分布式系统中主要是为了解耦和削峰。相关阅读：<a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/distributed-system/message-queue/message-queue">消息队列常见问题总结</a>。</p>
+<p>常用的消息队列如下：</p>
+<ol>
+<li><strong><a href="https://link.zhihu.com/?target=https://github.com/apache/rocketmq">RocketMQ</a></strong> ：阿里巴巴开源的一款高性能、高吞吐量的分布式消息中间件。</li>
+<li><strong><a href="https://link.zhihu.com/?target=https://github.com/apache/kafka">Kafaka</a></strong>: Kafka 是一种分布式的，基于发布 / 订阅的消息系统。关于它的入门可以查看：<a href="https://link.zhihu.com/?target=https://github.com/Snailclimb/JavaGuide/blob/master/docs/system-design/data-communication/Kafka%E5%85%A5%E9%97%A8%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.md">Kafka 入门看这一篇就够了</a></li>
+<li><strong><a href="https://link.zhihu.com/?target=https://github.com/rabbitmq">RabbitMQ</a></strong> :由 erlang 开发的基于 AMQP（Advanced Message Queue 高级消息队列协议）协议实现的消息队列。</li>
+</ol>
+<h3 id="读写分离-amp-分库分表"><a href="#读写分离-amp-分库分表" class="headerlink" title="读写分离&amp;分库分表"></a><strong>读写分离&amp;分库分表</strong></h3><p>读写分离主要是为了将数据库的读和写操作分不到不同的数据库节点上。主服务器负责写，从服务器负责读。另外，一主一从或者一主多从都可以。</p>
+<p>读写分离可以大幅提高读性能，小幅提高写的性能。因此，读写分离更适合单机并发读请求比较多的场景。</p>
+<p><img src="https://pic4.zhimg.com/50/v2-36f2ed6de6018bb4cebab32623373864_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-36f2ed6de6018bb4cebab32623373864_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>分库分表是为了解决由于库、表数据量过大，而导致数据库性能持续下降的问题。</p>
+<p>常见的分库分表工具有：sharding-jdbc（当当）、TSharding（蘑菇街）、MyCAT（基于 Cobar）、Cobar（阿里巴巴）…。 推荐使用 sharding-jdbc。 因为，sharding-jdbc 是一款轻量级 Java 框架，以 jar 包形式提供服务，不要我们做额外的运维工作，并且兼容性也很好。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-635a97b84f0e3b718b1cfdc61a0bbe08_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-635a97b84f0e3b718b1cfdc61a0bbe08_1440w.jpg?source=1940ef5c" alt="img"></p>
+<p>相关阅读： <a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB&%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8">读写分离&amp;分库分表常见问题总结</a></p>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a><strong>负载均衡</strong></h3><p>负载均衡系统通常用于将任务比如用户请求处理分配到多个服务器处理以提高网站、应用或者数据库的性能和可靠性。</p>
+<p>常见的负载均衡系统包括 3 种：</p>
+<ol>
+<li><strong>DNS 负载均衡</strong> ：一般用来实现地理级别的均衡。</li>
+<li><strong>硬件负载均衡</strong> ： 通过单独的硬件设备比如 F5 来实现负载均衡功能（硬件的价格一般很贵）。</li>
+<li><strong>软件负载均衡</strong> ：通过负载均衡软件比如 Nginx 来实现负载均衡功能。</li>
+</ol>
+<h2 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a><strong>高可用</strong></h2><p>高可用描述的是一个系统在大部分时间都是可用的，可以为我们提供服务的。高可用代表系统即使在发生硬件故障或者系统升级的时候，服务仍然是可用的 。</p>
+<p>相关阅读： <strong>《<a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/high-availability/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E9%AB%98%E5%8F%AF%E7%94%A8%E7%B3%BB%E7%BB%9F%E8%A6%81%E8%80%83%E8%99%91%E5%93%AA%E4%BA%9B%E5%9C%B0%E6%96%B9">如何设计一个高可用系统？要考虑哪些地方？</a>》</strong> 。</p>
+<h3 id="限流-amp-降级-amp-熔断"><a href="#限流-amp-降级-amp-熔断" class="headerlink" title="限流&amp;降级&amp;熔断"></a><strong>限流&amp;降级&amp;熔断</strong></h3><p>限流是从用户访问压力的角度来考虑如何应对系统故障。限流为了对服务端的接口接受请求的频率进行限制，防止服务挂掉。比如某一接口的请求限制为 100 个每秒, 对超过限制的请求放弃处理或者放到队列中等待处理。限流可以有效应对突发请求过多。相关阅读：<a href="https://link.zhihu.com/?target=https://snailclimb.gitee.io/javaguide/%23/docs/system-design/high-availability/limit-request">限流算法有哪些？</a></p>
+<p>降级是从系统功能优先级的角度考虑如何应对系统故障。服务降级指的是当服务器压力剧增的情况下，根据当前业务情况及流量对一些服务和页面有策略的降级，以此释放服务器资源以保证核心任务的正常运行。</p>
+<p>熔断和降级是两个比较容易混淆的概念，两者的含义并不相同。</p>
+<p>降级的目的在于应对系统自身的故障，而熔断的目的在于应对当前系统依赖的外部系统或者第三方系统的故障。</p>
+<p><a href="https://link.zhihu.com/?target=https://github.com/Netflix/Hystrix">Hystrix</a> 和 <a href="https://link.zhihu.com/?target=https://github.com/alibaba/Sentinel">Sentinel</a> 都能实现限流、降级、熔断。</p>
+<p>Hystrix 是 Netflix 开源的熔断降级组件，Sentinel 是阿里中间件团队开源的一款不光具有熔断降级功能，同时还支持系统负载保护的组件。</p>
+<p>两者都是主要做熔断降级 ，那么两者到底有啥异同呢？该如何选择呢？</p>
+<p><a href="https://link.zhihu.com/?target=https://github.com/alibaba/Sentinel/wiki/Sentinel-%E4%B8%8E-Hystrix-%E7%9A%84%E5%AF%B9%E6%AF%94">Sentinel 的 wiki 中已经详细描述了其与 Hystrix 的区别</a>，你可以看看。</p>
+<h3 id="排队"><a href="#排队" class="headerlink" title="排队"></a><strong>排队</strong></h3><p>另类的一种限流，类比于现实世界的排队。玩过英雄联盟的小伙伴应该有体会，每次一有活动，就要经历一波排队才能进入游戏。</p>
+<h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a><strong>集群</strong></h3><p>相同的服务部署多份，避免单点故障。</p>
+<h3 id="超时和重试机制"><a href="#超时和重试机制" class="headerlink" title="超时和重试机制"></a><strong>超时和重试机制</strong></h3><p><strong>一旦用户的请求超过某个时间得不到响应就结束此次请求并抛出异常。</strong> 如果不进行超时设置可能会导致请求响应速度慢，甚至导致请求堆积进而让系统无法在处理请求。</p>
+<p>另外，重试的次数一般设为 3 次，再多次的重试没有好处，反而会加重服务器压力（部分场景使用失败重试机制会不太适合）。</p>
+<p>我是Guide哥，开源项目 <a href="https://link.zhihu.com/?target=https://github.com/Snailclimb/JavaGuide">JavaGuide</a> 作者，Github：<a href="https://link.zhihu.com/?target=https://github.com/Snailclimb">Snailclimb - Overview</a> 。本回答为我本人原创，如需转载，还请注明出处啊！</p>
+<p>欢迎关注 <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/ee0f19babdc46c21672264080ad7a641">@JavaGuide</a>,我会持续分享原创干货~</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">LHL</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://lhl11.gitee.io/2021/05/30/java%E8%B7%AF%E7%BA%BF/">http://lhl11.gitee.io/2021/05/30/java%E8%B7%AF%E7%BA%BF/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">LHL</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '85047d9e6fdec4072a39',
+        clientSecret: '82bb0fb038b01645246770674e69d56e83e3fb6e',
+        repo: 'comment',
+        owner: 'lhl1',
+        admin: ["lhl1"],
+        id: '2021-05-30T23-41-16',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/05/31/python%E7%88%AC%E8%99%AB%E5%87%86%E5%A4%87/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python爬虫准备">
+                        
+                        <span class="card-title">python爬虫准备</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            PyCharm安装Python第三方库教程以及报错解决方法
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            LHL
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/04/14/Leetcode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/45.jpg" class="responsive-img" alt="Leetcode 1.两数之和">
+                        
+                        <span class="card-title">Leetcode 1.两数之和</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. 两数之和
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            LHL
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">LHL</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/lhl1" target="_blank">LHL</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/lhl1" target="_blank">LHL's Engine</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">82.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "14";
+                    var startHour = "08";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lhl1" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:975237535@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/lhlssgcom" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/lhlssgcom" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=975237535" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 975237535" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>
